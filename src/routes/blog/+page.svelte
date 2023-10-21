@@ -1,7 +1,7 @@
 <script>
+	import { siteDescription } from '$lib/config';
 	import PostsList from '$lib/components/PostsList.svelte';
 	import Pagination from '$lib/components/Pagination.svelte';
-	import { siteDescription } from '$lib/config';
 
 	export let data;
 </script>

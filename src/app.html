@@ -5,16 +5,15 @@
 		<link rel="icon" href="/favicon.png" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 
-		%sveltekit.head%
-
 		<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css" />
 		<link
 			href="https://fonts.googleapis.com/css?family=Merriweather:400,300"
 			rel="stylesheet"
 			type="text/css"
 		/>
+		<link href="/global.css" rel="stylesheet" type="text/css" />
 
-		<!-- You can add global <meta> tags here, but anything not global or dynamic should be a `<svelte:head>` tag on the proper page(s) instead. -->
+		%sveltekit.head%
 	</head>
 	<body>
 		<div id="svelte">%sveltekit.body%</div>

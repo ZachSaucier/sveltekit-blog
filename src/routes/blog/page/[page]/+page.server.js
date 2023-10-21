@@ -1,6 +1,6 @@
+import { redirect } from '@sveltejs/kit';
 import { postsPerPage } from '$lib/config';
 import fetchPosts from '$lib/utilities/fetchPosts';
-import { redirect } from '@sveltejs/kit';
 
 export const load = async ({ url, params, fetch }) => {
 	const page = parseInt(params.page) || 1;

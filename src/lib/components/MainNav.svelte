@@ -1,12 +1,9 @@
 <script>
 	import { navItems } from '$lib/config';
-	import { isMenuOpen } from '$lib/utilities/store';
-	import NavItem from './NavItem.svelte';
-	import HamburgerMenuButton from './HamburgerMenuButton.svelte';
+	import NavItem from '$lib/components/NavItem.svelte';
 </script>
 
-<!-- Contents of this file will be used in the header and the responsive hamburger menu. -->
-<nav class="main-nav" class:open={$isMenuOpen}>
+<nav class="main-nav">
 	<ul>
 		{#each navItems as page}
 			<NavItem href={page.route}>
@@ -14,5 +11,4 @@
 			</NavItem>
 		{/each}
 	</ul>
-	<HamburgerMenuButton closeOnly="true" />
 </nav>
