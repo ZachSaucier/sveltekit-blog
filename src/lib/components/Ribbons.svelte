@@ -4,6 +4,7 @@
 <style>
 	.ribbon {
 		position: absolute;
+		z-index: -1;
 	}
 	.ribbon::before,
 	.ribbon::after {
@@ -12,28 +13,28 @@
 		transform-origin: bottom right;
 	}
 	.ribbon__horiz {
-		background: #2095f2;
+		background-color: var(--accent);
 		left: 300px;
 		top: 130px;
 		width: calc(100% - 300px);
 		height: 80px;
 	}
 	.ribbon__horiz::before {
-		background: inherit;
+		background-color: inherit;
 		height: 100%;
 		width: 420px;
 		left: -420px;
 		transform: rotate(30deg);
 	}
 	.ribbon__vert {
-		background: #212121;
+		background-color: var(--accent-dark);
 		left: 30px;
 		top: 171px;
 		height: calc(100% - 172px);
 		width: 80px;
 	}
 	.ribbon__vert::before {
-		background: inherit;
+		background-color: inherit;
 		width: 95%;
 		height: 500px;
 		top: -438px;
@@ -41,7 +42,7 @@
 		transform: rotate(55deg);
 	}
 	.ribbon__vert::after {
-		background: #2095f2;
+		background-color: var(--accent);
 		width: 100%;
 		height: 92px;
 		top: -68px;

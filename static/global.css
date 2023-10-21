@@ -134,15 +134,23 @@ summary {
 }
 
 :root {
-	--link-color: #2095f2;
+	--accent: #2095f2;
+	--accent-dark: #212121;
+
+	--link-color: var(--accent);
 	--link-color-hover: #46adff;
 	--link-color-active: #008af9;
 	--link-color-visited: #0e8cf0;
+
+	--grayed-text: #aaa;
+
+	--nav-gap: 25px;
+	--content-gutter: 55px;
 }
 
 body {
 	font-family: 'Lato', 'Helvetica Neue', Arial, sans-serif;
-	font-size: 16px;
+	font-size: 18px;
 	line-height: 1.7em;
 	background: #fff url('/images/noise.png') top left;
 	color: #222;
@@ -151,8 +159,6 @@ body {
 main {
 	font-family: 'Merriweather', serif;
 }
-
-/* font-family: 'PT Sans', 'Helvetica Neue', Arial, sans-serif; */
 
 pre,
 code {
@@ -172,4 +178,14 @@ a:hover {
 }
 a:active {
 	color: #008af9;
+}
+
+h1,
+h2,
+h3,
+h4 {
+	/* font-family: 'PT Sans', 'Helvetica Neue', Arial, sans-serif; */
+	font-family: 'Lato', 'Helvetica Neue', Arial, sans-serif;
+	font-weight: 700;
+	line-height: 1.2;
 }

@@ -7,11 +7,9 @@
 </script>
 
 <svelte:head>
-	<title>Blog</title>
+	<title>Musings - Zach Saucier's blog</title>
 	<meta data-key="description" name="description" content={siteDescription} />
 </svelte:head>
-
-<h1>Blog</h1>
 
 <PostsList posts={data.posts} />
 

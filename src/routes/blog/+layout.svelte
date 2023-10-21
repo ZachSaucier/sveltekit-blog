@@ -39,43 +39,41 @@
 <div class="content">
 	<Ribbons />
 
-	<Header />
+	<Header style="grid-area: Header;" />
 
 	{#key data.path}
 		<main id="main" tabindex="-1" in:fade={transitionIn} out:fade={transitionOut}>
 			<slot />
+
+			<Footer />
 		</main>
 	{/key}
 
-	<Sidebar />
-
-	<Footer />
+	<Sidebar style="grid-area: Aside;" />
 </div>
 
 <style>
 	.content {
 		position: relative;
 		max-width: 1200px;
+		padding-left: 110px;
 		margin: 0 auto;
 		display: grid;
 		grid-template-columns: 1fr 300px;
-		grid-template-rows: auto 1fr auto;
+		grid-template-rows: auto 1fr;
 		grid-template-areas:
 			'Header Header'
-			'Main Aside'
-			'Footer Footer';
+			'Main Aside';
+		min-height: 100vh;
 	}
 
-	Header {
-		grid-area: Header;
-	}
 	main {
+		position: relative;
 		grid-area: Main;
+		padding-bottom: 85px;
 	}
-	Sidebar {
-		grid-area: Aside;
-	}
-	Footer {
-		grid-area: Footer;
+
+	:global(main article) {
+		padding: 37px var(--content-gutter);
 	}
 </style>

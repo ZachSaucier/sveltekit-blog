@@ -1,21 +1,38 @@
 <script>
 	import { siteAuthor } from '$lib/config';
-	import MainNav from '$lib/components/MainNav.svelte';
+
+	export let style = '';
 </script>
 
-<footer>
-	<MainNav />
-
+<footer {style}>
 	<nav>
 		<ul>
+			<li>
+				<p>&copy;{new Date().getFullYear()} {siteAuthor}</p>
+			</li>
 			<li>
 				<a href="/blog/api/rss.xml" data-sveltekit-reload>RSS</a>
 			</li>
 			<li>
-				<a href="/">Home</a>
+				<a href="/blog">Blog home</a>
+			</li>
+			<li>
+				<a href="/">Personal website</a>
 			</li>
 		</ul>
 	</nav>
-
-	<p>&copy;{new Date().getFullYear()} {siteAuthor}</p>
 </footer>
+
+<style>
+	footer {
+		position: absolute;
+		bottom: 25px;
+		left: var(--content-gutter);
+		right: var(--content-gutter);
+	}
+
+	ul {
+		display: flex;
+		gap: var(--nav-gap);
+	}
+</style>
