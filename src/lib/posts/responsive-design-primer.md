@@ -1,15 +1,15 @@
 ---
-title: 'The responsive design primer'
-date: '2014-08-11'
-updated: '2023-10-22'
+title: The responsive design primer
+date: 2014-08-11
+updated: 2023-10-22
 categories:
-  - 'code'
-  - 'css'
-  - 'responsive'
-# coverImage: '/images/linus-nylund-Q5QspluNZmM-unsplash.jpg'
+  - code
+  - css
+  - responsive
+# coverImage: /images/linus-nylund-Q5QspluNZmM-unsplash.jpg
 # coverWidth: 16
 # coverHeight: 9
-description: 'A primer on responsive web design, including how to use media queries, a mobile-first approach, and other techniques.'
+description: A primer on responsive web design, including how to use media queries, a mobile-first approach, and other techniques.
 ---
 
 <div class="aside">

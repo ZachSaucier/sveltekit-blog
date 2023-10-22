@@ -1,12 +1,12 @@
 ---
-title: 'The creative process'
-date: '2014-06-20'
-updated: '2023-10-22'
+title: The creative process
+date: 2014-06-20
+updated: 2023-10-22
 categories:
-  - 'code'
-  - 'css'
-  - 'meta'
-# coverImage: '/images/jerry-zhang-ePpaQC2c1xA-unsplash.jpg'
+  - code
+  - css
+  - meta
+# coverImage: /images/jerry-zhang-ePpaQC2c1xA-unsplash.jpg
 # coverWidth: 16
 # coverHeight: 9
 description: How my creative process works.

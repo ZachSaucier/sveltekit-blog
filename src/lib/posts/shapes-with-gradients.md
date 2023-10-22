@@ -1,10 +1,10 @@
 ---
-title: 'Single element shapes with gradients'
-date: '2014-05-14'
-updated: '2023-10-22'
+title: Single element shapes with gradients
+date: 2014-05-14
+updated: 2023-10-22
 categories:
-  - 'code'
-  - 'css'
+  - code
+  - css
 # coverImage: "/images/jefferson-santos-fCEJGBzAkrU-unsplash.jpg"
 # coverWidth: 16
 # coverHeight: 9

@@ -40,6 +40,14 @@
 </script>
 
 <aside {style}>
+	<section>
+		<h1>About me</h1>
+		<p>
+			Welcome to my blog! I'm a product, design, and animation minded engineer. I love creating
+			useful tools as much as I do new animation techniques.
+		</p>
+	</section>
+
 	<!-- TODO recent posts -->
 
 	<section>
