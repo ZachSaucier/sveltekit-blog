@@ -36,7 +36,7 @@
 						<time datetime={post.date}>{dateString}</time>
 					</header>
 
-					<p>{post.excerpt}</p>
+					<p>{post.description}</p>
 				</a>
 			</article>
 		</li>

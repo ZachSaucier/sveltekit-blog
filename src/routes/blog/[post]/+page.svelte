@@ -2,7 +2,7 @@
 <script>
 	export let data;
 
-	const { title, excerpt, date, updated, coverImage, coverWidth, coverHeight, categories } =
+	const { title, description, date, updated, coverImage, coverWidth, coverHeight, categories } =
 		data.meta;
 	const { PostContent } = data;
 </script>
@@ -10,12 +10,12 @@
 <svelte:head>
 	<!-- Be sure to add your image files and un-comment the lines below -->
 	<title>{title}</title>
-	<meta data-key="description" name="description" content={excerpt} />
+	<meta data-key="description" name="description" content={description} />
 	<meta property="og:type" content="article" />
 	<meta property="og:title" content={title} />
 	<meta name="twitter:title" content={title} />
-	<meta property="og:description" content={excerpt} />
-	<meta name="twitter:description" content={excerpt} />
+	<meta property="og:description" content={description} />
+	<meta name="twitter:description" content={description} />
 	<!-- <meta property="og:image" content="https://yourdomain.com/image_path" /> -->
 	<meta property="og:image:width" content={coverWidth} />
 	<meta property="og:image:height" content={coverHeight} />
