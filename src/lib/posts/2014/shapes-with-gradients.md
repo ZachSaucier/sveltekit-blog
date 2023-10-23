@@ -11,53 +11,53 @@ categories:
 description: An exploration into how to make CSS-only shapes with gradients and outlines.
 ---
 
-<p>It’s easy to make CSS shapes with solid colors by using borders, but it’s more difficult to make them with gradient backgrounds. The main trick is to use pseudo elements and `overflow: hidden`` to cut out the desired shape. There are many more shapes that this technique could be applied to, include <a href="https://css-tricks.com/examples/ShapesOfCSS/">many listed here</a>, but I didn’t include them for brevity. <a href="https://codepen.io/ZachSaucier/pen/rvLsB">See them on CodePen</a>.</p>
+It’s easy to make CSS shapes with solid colors by using borders, but it’s more difficult to make them with gradient backgrounds. The main trick is to use pseudo elements and `overflow: hidden`` to cut out the desired shape. There are many more shapes that this technique could be applied to, include <a href="https://css-tricks.com/examples/ShapesOfCSS/">many listed here</a>, but I didn’t include them for brevity. <a href="https://codepen.io/ZachSaucier/pen/rvLsB">See them on CodePen</a>.
 
 <!-- more -->
 
-<p>Special thanks to <a href="https://codepen.io/thebabydino/">Ana Tudor</a> because I took several of these shapes directly from her.</p>
+Special thanks to <a href="https://codepen.io/thebabydino/">Ana Tudor</a> because I took several of these shapes directly from her.
 
 <div class="gradient rectangle"></div>
 
-<p>This is the base.</p>
+This is the base.
 
 <div class="gradient rhombus"></div>
 
-<p>Added a little skew and scaled down the Y to keep in the correct proportions.</p>
+Added a little skew and scaled down the Y to keep in the correct proportions.
 
 <div class="gradient triangle"></div>
 
-<p>Similar as above, but with the rhombus rotated and cut off using a pseudo element.</p>
+Similar as above, but with the rhombus rotated and cut off using a pseudo element.
 
 <div class="gradient octagon"></div>
 
-<p>Exactly the same as above, but with the translate(50%) taken out. For a parrallelogram cut this in half by covering it up with a pseudoelement or something similar.</p>
+Exactly the same as above, but with the translate(50%) taken out. For a parrallelogram cut this in half by covering it up with a pseudoelement or something similar.
 
 <div class="gradient hexagon"></div>
 
-<p>The same technique, but using a hexagon.</p>
+The same technique, but using a hexagon.
 
 <h2>Shape outlines</h2>
 
-<p>Even harder than that is it to make shapes with outlines. This is because gradients don’t like to for to their shape and we cannot really use </p>
+Even harder than that is it to make shapes with outlines. This is because gradients don’t like to for to their shape and we cannot really use
 
 <div class="gradient rectangle border"></div>
 
-<p>Our new base.</p>
+Our new base.
 
 <div class="gradient rhombus border"></div>
 
-<p>Nothing new so far</p>
+Nothing new so far
 
 <div class="triangleBorder"></div>
 
-<p>Here’s where it gets interesting. The most practical way I’ve found to make a bordered triangle is to make two triangles and layer them, either using the conventional border trick (which I use here for ease) or by using Ana Tudor’s transform with overflow:hidden trick like I did above. With that being said, I did come up with an <em>extremely</em> <a href="https://codepen.io/ZachSaucier/pen/olAIs">impractical way using box shadows</a> that doesn’t use pseudo elements.</p>
+Here’s where it gets interesting. The most practical way I’ve found to make a bordered triangle is to make two triangles and layer them, either using the conventional border trick (which I use here for ease) or by using Ana Tudor’s transform with overflow:hidden trick like I did above. With that being said, I did come up with an _extremely_ <a href="https://codepen.io/ZachSaucier/pen/olAIs">impractical way using box shadows</a> that doesn’t use pseudo elements.
 
 <div class="parrallelogram border"></div>
 
-<p>Sadly only shapes that can be made using one pseudo element can be done using this technique in one element. Using two elements any shape can have a border though</p>
+Sadly only shapes that can be made using one pseudo element can be done using this technique in one element. Using two elements any shape can have a border though
 
-<p>And that about wraps up what I have to offer on the subject. If you liked this you might also like <a href="https://codepen.io/ZachSaucier/pen/xnGmu">my box-shadow play</a>. There are probably some ghetto tricks like I linked above to do similar things with gradients/outlines, but if there is a cleaner approach for one of these please don’t hesitate to comment!</p>
+And that about wraps up what I have to offer on the subject. If you liked this you might also like <a href="https://codepen.io/ZachSaucier/pen/xnGmu">my box-shadow play</a>. There are probably some ghetto tricks like I linked above to do similar things with gradients/outlines, but if there is a cleaner approach for one of these please don’t hesitate to comment!
 
 <style>
 /* Gradient styling */
