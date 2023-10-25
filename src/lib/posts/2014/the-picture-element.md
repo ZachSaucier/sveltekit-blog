@@ -18,7 +18,7 @@ I know how to use the `<img>` element, but I’ve been hearing things about the 
 
 How is the `<picture>` element different from the `<img>` element? Should I always use it instead of the `<img>` element given that I want all of my sites to be responsive?
 
-<!--more-->
+<span class="excerpt-marker"></span>
 
 <hr>
 

@@ -22,7 +22,7 @@ This question has been discussed <a href="https://stackoverflow.com/q/83073/2065
 
 We should use tables, but **_only for tabular data_** because it is incorrect, and more difficult to use tables for layout.
 
-<!--more-->
+<span class="excerpt-marker"></span>
 
 - **It’s invalid HTML** to use tables for _layout_ as of HTML 4.01
 - **Tables take longer to render** due to the in depth calculations for positioning/sizing

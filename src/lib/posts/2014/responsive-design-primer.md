@@ -24,7 +24,7 @@ Countless articles, many quite useful, have been written on the subject of respo
 
 _Design:_ making plans and decisions about how something will be created [<a href="https://www.merriam-webster.com/dictionary/design">1</a>].
 
-<!--more-->
+<span class="excerpt-marker"></span>
 
 _Responsive:_ reacting in a desired or positive way, or quick to react [<a href="https://www.merriam-webster.com/dictionary/responsive?show=0&amp;t=1405636347">2</a>].
 

@@ -20,7 +20,7 @@ I understand that the overall goal is to stay responsive, but what is the purpos
 
 The purpose of avoiding any **absolutely**<sup class="footnote"><a href="#one">1</a></sup> **sized units** like `px` (includes `in`, `mm`, and `cm`) is to allow our content to be as responsive as possible with the least amount of work. Absolutely sized units are only one type of unit. In this post I’ll go into more detail about the others.
 
-<!--more-->
+<span class="excerpt-marker"></span>
 
 <h3>Font-relative units</h3>
 

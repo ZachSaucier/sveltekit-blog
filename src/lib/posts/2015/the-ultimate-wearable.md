@@ -15,7 +15,7 @@ It’s obvious: we want to enhance the way we interact with the world. Everythin
 
 Today I’ll focus on what I’m most excited about in this new world that is soon to come: the ever growing <a href="https://en.wikipedia.org/wiki/Internet_of_Things">internet of things</a> and our interaction with it through <a href="https://en.wikipedia.org/wiki/Wearable_technology">wearable technology</a>. Both seek to expand our human _<a href="https://en.wikipedia.org/wiki/Umwelt">umwelt</a>_, allowing for new and better interactions with the world that surrounds us.
 
-<!-- more -->
+<span class="excerpt-marker"></span>
 
 Many of you may know her already, but let me introduce Jane, an artificial sentient being from Orson Scott Card’s Ender series<sup>[1]</sup>. Essentially, Jane is what Siri dreams of being — a computer program capable of doing millions of things at once with a near perfect ability to interact with humans like humans interact with each other through devices. Although I love the character (all of my devices are named Jane partially because of a hope that one day they will be connected through a similar system<sup>[2]</sup>), she’s not my topic for today.
 

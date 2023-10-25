@@ -18,7 +18,7 @@ I love music. Especially music that varies throughout the song (not all verses a
 
 The genre that I’ve listened to that most often has these characteristics is electronic music. I was introduced to it as a kid by an older friend and I’ve been an avid listener for about 10 years now. Today I hope to help you better understand why I fell in love with the gigantic, diverse genre that is electronic music.
 
-<!-- more -->
+<span class="excerpt-marker"></span>
 
 <hr>
 

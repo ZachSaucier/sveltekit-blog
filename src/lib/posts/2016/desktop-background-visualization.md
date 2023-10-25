@@ -17,7 +17,7 @@ On a seemingly different note, I have warm memories of the screensavers from whe
 
 Also, ever since I got into animating, I’ve wanted to include the things I make into more areas of my life. One area that has come into my mind several times was my desktop background.
 
-<!--more-->
+<span class="excerpt-marker"></span>
 
 If you’ve looked into this subject at all, you may know that Windows used to have a way to do this called <a href="https://en.wikipedia.org/wiki/Active_Desktop">Active Desktop</a> but removed it because of the security problems it allowed. You may also know that all software that changes the desktop now does so in a static way. In fact, the only really interactive desktop software I could find is <a href="https://www.rainmeter.net/">RainMeter</a>, which is more of a tool overlay and requires that users use their programming language. The only <a href="https://www.makeuseof.com/tag/set-live-wallpapers-animated-desktop-backgrounds-windows/">video software I found</a> for the desktop accepts only video formats and seemed poorly made. None of these options satisfied me.
 

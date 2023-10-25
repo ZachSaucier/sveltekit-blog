@@ -27,7 +27,7 @@ Welcome to my series on learning web development! I created this crash course se
 
 If you want to follow around messing with code on your own, sites like <a href="https://jsfiddle.net/">JSFiddle</a> are great for tinkering.
 
-<!--more-->
+<span class="excerpt-marker"></span>
 
 <h2 id="html">HTML</h2>
 

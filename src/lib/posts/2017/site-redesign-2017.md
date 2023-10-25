@@ -19,7 +19,7 @@ One day in class in my final semester at UGA I got a bit of inspiration to use p
 
 <img src="https://i.imgur.com/fyhDPjK.png" alt="One of my early explorations for how to show off my projects">
 
-<!-- more -->
+<span class="excerpt-marker"></span>
 
 After talking with some designer friends of mine, I started <a href="https://i.stack.imgur.com/cAJYh.png">stripping it a bit</a> and then looked around at other sites for some inspiration. I really liked the feel of <a href="https://www.techstyle.com/">TechStyle’s website</a> (I straight stole a couple of their ideas) and some of the interactive features of <a href="https://bitesizeinc.com/home">Bite Size Entertainment’s site</a>. I also liked the look of <a href="https://www.mdmoch.com/index.php">Marcin Dmoch’s site</a> but wanted a bigger emphasis on projects than his. Then I focused more on the other content of my site and came up with a <a href="https://i.imgur.com/jUY8t4X.gifv">rough outline</a> of how I wanted it to feel. I then broke the parallelogram slider apart and made each project its own large parallelogram, <a href="https://i.imgur.com/i6tdt78.gifv">as seen here</a>.
 

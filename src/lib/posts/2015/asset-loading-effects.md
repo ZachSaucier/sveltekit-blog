@@ -20,7 +20,7 @@ Today I will demonstrate how to show the loading of large image and video assets
 
 In order to show the asset loading process, we will have to make <a href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest">XHR requests</a> for them instead of loading them the conventional way. I will also be using <a href="https://github.com/kimmobrunfeldt/progressbar.js">ProgressBar.js</a> to make creating and animating the loaders easier.
 
-<!-- more -->
+<span class="excerpt-marker"></span>
 
 <div class="aside">
     **Attention:** Please keep in mind some of these animated reveals are **highly experimental** and only supported by some modern browsers. I use a fade fallback in Internet Explorer for some of the demos.

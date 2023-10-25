@@ -13,7 +13,7 @@ description: An exploration into how to make CSS-only shapes with gradients and 
 
 It’s easy to make CSS shapes with solid colors by using borders, but it’s more difficult to make them with gradient backgrounds. The main trick is to use pseudo elements and `overflow: hidden`` to cut out the desired shape. There are many more shapes that this technique could be applied to, include <a href="https://css-tricks.com/examples/ShapesOfCSS/">many listed here</a>, but I didn’t include them for brevity. <a href="https://codepen.io/ZachSaucier/pen/rvLsB">See them on CodePen</a>.
 
-<!-- more -->
+<span class="excerpt-marker"></span>
 
 Special thanks to <a href="https://codepen.io/thebabydino/">Ana Tudor</a> because I took several of these shapes directly from her.
 

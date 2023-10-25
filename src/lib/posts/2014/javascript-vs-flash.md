@@ -23,7 +23,7 @@ Nowadays I see that the majority of websites are using JavaScript for their anim
 - Web developers could use JavaScripts at that point in time, why did they choose Flash anyway?
 </ol>
 
-<!--more-->
+<span class="excerpt-marker"></span>
 
 <hr>
 

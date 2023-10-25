@@ -20,7 +20,7 @@ Welcome to my series on learning web development! I created this crash course se
 
 Regardless of what you do professionally or are studying, the two main things that I want you to get from this whole course is a better understanding of what it means to program and what is possible using code (but specifically using web technology with an emphasis on the front-end).
 
-<!--more-->
+<span class="excerpt-marker"></span>
 
 <a href="https://slides.com/zachsaucier/front-end-dev-talk-one/live#/0/1"><img src="/blog/images/cc1/my-work.gif" alt="My creations"></a>
 

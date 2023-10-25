@@ -18,7 +18,7 @@ Some people ask me how I create the things that I do, what inspires me, and why 
 
 First I’ll start with the **creative process**.
 
-<!-- more -->
+<span class="excerpt-marker"></span>
 
 <h2>Step 1: Get inspired</h2>
 
