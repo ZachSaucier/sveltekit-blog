@@ -59,7 +59,7 @@
 		padding-left: 110px;
 		margin: 0 auto;
 		display: grid;
-		grid-template-columns: 1fr 300px;
+		grid-template-columns: minmax(0, 1fr) 300px;
 		grid-template-rows: auto 1fr;
 		grid-template-areas:
 			'Header Header'

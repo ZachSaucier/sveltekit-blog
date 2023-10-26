@@ -146,6 +146,8 @@ summary {
 
 	--nav-gap: 25px;
 	--content-gutter: 55px;
+
+	--button-dark-background: #4d4d4d;
 }
 
 body {
@@ -188,4 +190,8 @@ h4 {
 	font-family: 'Lato', 'Helvetica Neue', Arial, sans-serif;
 	font-weight: 700;
 	line-height: 1.2;
+}
+
+img {
+	max-width: 100%;
 }

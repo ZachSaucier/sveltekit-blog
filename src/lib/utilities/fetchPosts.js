@@ -2,19 +2,15 @@ import { postsPerPage } from '$lib/config';
 
 const SEPARATOR = '<span class="excerpt-marker"></span>';
 
-let first = true;
 const fetchPosts = async ({ offset = 0, limit = postsPerPage, category = '' } = {}) => {
 	const posts = await Promise.all(
 		Object.entries(import.meta.glob('/src/lib/posts/**/*.md')).map(async ([path, resolver]) => {
 			const { metadata, ...rest } = await resolver();
 			const slug = path.split('/').pop().slice(0, -3);
 			const html = rest.default.render().html;
-			if (first) {
-				first = false;
-				console.log({ html });
-			}
-			const excerpt = html.indexOf(SEPARATOR) >= 0 ? html.split(SEPARATOR)[0] : html;
-			return { ...metadata, slug, excerpt };
+			const has_excerpt = html.indexOf(SEPARATOR) === 0;
+			const excerpt = has_excerpt ? html : html.split(SEPARATOR)[0];
+			return { ...metadata, slug, excerpt, has_excerpt };
 		})
 	);
 
@@ -37,6 +33,7 @@ const fetchPosts = async ({ offset = 0, limit = postsPerPage, category = '' } = 
 		slug: post.slug,
 		description: post.description,
 		excerpt: post.excerpt,
+		has_excerpt: post.has_excerpt,
 		coverImage: post.coverImage,
 		coverWidth: post.coverWidth,
 		coverHeight: post.coverHeight,
