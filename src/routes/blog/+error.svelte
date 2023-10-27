@@ -4,7 +4,7 @@
 
 <p>I'm not sure how you got here. But here's where I think you should go!</p>
 <ul>
-	<li><a href="/">Home</a></li>
+	- <a href="/">Home</a>
 </ul>
 
 <sub>

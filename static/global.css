@@ -57,6 +57,8 @@ h6 {
 
 	--nav-gap: 25px;
 	--content-gutter: 55px;
+
+	--button-dark-background: #4d4d4d;
 }
 
 body {
@@ -97,4 +99,8 @@ h3,
 h4 {
 	font-family: 'Lato', 'Helvetica Neue', Arial, sans-serif;
 	line-height: 1.2;
+}
+
+img {
+	max-width: 100%;
 }

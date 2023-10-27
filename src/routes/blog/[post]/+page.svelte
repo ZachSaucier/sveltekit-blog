@@ -50,11 +50,10 @@
 			<h2>Posted in:</h2>
 			<ul>
 				{#each categories as category}
-					<li>
-						<a href="/blog/category/{category}/">
-							{category}
-						</a>
-					</li>
+					-
+					<a href="/blog/category/{category}/">
+						{category}
+					</a>
 				{/each}
 			</ul>
 		</aside>

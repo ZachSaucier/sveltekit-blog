@@ -18,8 +18,8 @@
 				  })}
 		<li>
 			<article>
-				<a href="/blog/{post.slug}">
-					{#if post.coverImage}
+				{#if post.coverImage}
+					<a href="/blog/{post.slug}" rel="full-article">
 						<img
 							src={post.coverImage}
 							alt=""
@@ -27,16 +27,22 @@
 							height={post.coverHeight}
 							style="ratio: {post.coverWidth} / {post.coverHeight}"
 						/>
-					{/if}
-					<header>
+					</a>
+				{/if}
+				<header>
+					<a href="/blog/{post.slug}" rel="full-article">
 						<h2>
 							{post.title}
 						</h2>
-						<time datetime={post.date}>{dateString}</time>
-					</header>
+					</a>
+					<time datetime={post.date}>{dateString}</time>
+				</header>
 
-					<p>{post.description}</p>
-				</a>
+				{@html post.excerpt}
+
+				{#if !post.has_excerpt}
+					<a href="/blog/{post.slug}" class="read-on" rel="full-article">Read on</a>
+				{/if}
 			</article>
 		</li>
 	{/each}
@@ -50,6 +56,7 @@
 
 	header {
 		position: relative;
+		display: flex;
 		padding-top: 36px;
 		margin-bottom: 28px;
 	}
@@ -73,5 +80,29 @@
 		position: absolute;
 		top: 0;
 		color: var(--grayed-text);
+	}
+
+	.read-on {
+		background-color: var(--button-dark-background);
+		display: inline-block;
+		padding: 0.4em 0.8em;
+		margin-right: 0.5em;
+		text-decoration: none;
+		color: #fff;
+		transition: 0.15s;
+	}
+
+	.read-on:hover {
+		background-color: var(--link-color-hover);
+	}
+
+	.read-on::after {
+		content: '\2192';
+		display: inline-block;
+		transform: translateX(4px);
+		transition: 0.15s;
+	}
+	.read-on:hover::after {
+		transform: translateX(6px);
 	}
 </style>
