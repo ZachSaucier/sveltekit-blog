@@ -6,31 +6,28 @@
 * {
 	margin: 0;
 }
-body {
-	-webkit-font-smoothing: antialiased;
-}
-img,
-picture,
-video,
-canvas,
-svg {
-	display: block;
-	max-width: 100%;
-}
-input,
-button,
-textarea,
-select {
-	font: inherit;
-}
-p,
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-	overflow-wrap: break-word;
+	font: inherit;
+}
+fieldset {
+	border: 0;
+}
+ol,
+ul {
+	list-style: none;
+	padding: 0;
+}
+article :is(ol, ul) {
+	list-style: disc;
+	padding-inline-start: 40px;
+}
+img {
+	max-width: 100%;
 }
 
 .sr-only {
@@ -58,29 +55,36 @@ h6 {
 	--nav-gap: 25px;
 	--content-gutter: 55px;
 
-	--button-dark-background: #4d4d4d;
+	--font-serif: 'Merriweather', serif;
+	--font-sans-serif: 'Lato', 'Helvetica Neue', Arial, sans-serif;
+	--font-code: Menlo, Monaco, 'Andale Mono', 'lucida console', 'Courier New', monospace;
 }
 
 body {
-	font-family: 'Lato', 'Helvetica Neue', Arial, sans-serif;
+	font-family: var(--font-sans-serif);
 	font-size: 18px;
 	line-height: 1.7em;
 	background: #fff url('/images/noise.png') top left;
 	color: #222;
 }
-
 main {
-	font-family: 'Merriweather', serif;
+	font-family: var(--font-serif);
 }
-
+h1,
+h2,
+h3,
+h4 {
+	font-family: var(--font-sans-serif);
+	line-height: 1.2;
+}
 pre,
 code {
-	font-family: Menlo, Monaco, 'Andale Mono', 'lucida console', 'Courier New', monospace;
+	font-family: var(--font-code);
 }
 
 a {
 	color: var(--link-color);
-	transition: color 0.2s;
+	transition: color 0.1s;
 }
 a:visited {
 	color: var(--link-color-visited);
@@ -90,17 +94,5 @@ a:hover {
 	color: var(--link-color-hover);
 }
 a:active {
-	color: #008af9;
-}
-
-h1,
-h2,
-h3,
-h4 {
-	font-family: 'Lato', 'Helvetica Neue', Arial, sans-serif;
-	line-height: 1.2;
-}
-
-img {
-	max-width: 100%;
+	color: var(--link-color-active);
 }
