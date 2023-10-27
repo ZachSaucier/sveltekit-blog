@@ -5,7 +5,7 @@ import fetchPosts from '$lib/utilities/fetchPosts';
 export const load = async ({ url, params, fetch }) => {
 	const page = parseInt(params.page) || 1;
 
-	// Keeps from duplicationg the blog index route as page 1
+	// Keeps from duplicating the blog index route as page 1
 	if (page <= 1) {
 		throw redirect(301, '/blog');
 	}

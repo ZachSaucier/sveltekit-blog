@@ -10,7 +10,7 @@
 </script>
 
 <header {style}>
-	<a on:click|preventDefault={focusMain} class="skip-to-content-link" href="#main">
+	<a on:click|preventDefault={focusMain} class="skip_to_content" href="#main">
 		Skip to main content
 	</a>
 
@@ -25,7 +25,7 @@
 </header>
 
 <style>
-	.skip-to-content-link {
+	.skip_to_content {
 		position: absolute;
 		top: -6rem;
 		left: 0;
@@ -38,7 +38,7 @@
 		background-color: var(--accent-dark);
 		color: white;
 	}
-	.skip-to-content-link:focus {
+	.skip_to_content:focus {
 		transform: translateY(6rem);
 		opacity: 1;
 		z-index: 2;
@@ -46,7 +46,7 @@
 
 	header {
 		height: 210px;
-		padding-right: 55px;
+		padding-right: 25px;
 	}
 
 	.site_title_wrapper {

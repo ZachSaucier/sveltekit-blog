@@ -23,7 +23,7 @@
 				</a>
 			</li>
 		{/each}
-		<li class="search-item">
+		<li class="search_item">
 			<form action="https://www.google.com/search" method="get">
 				<fieldset role="search">
 					<input type="hidden" name="q" value="site:zachsaucier.com/blog" />
@@ -32,7 +32,7 @@
 			</form>
 		</li>
 		<li>
-			<a class="rss-link" href="/blog/api/rss.xml">
+			<a class="rss_link" href="/blog/api/rss.xml">
 				<Icon type="RSS Feed" width={29} fill="white" />
 			</a>
 		</li>
@@ -58,7 +58,7 @@
 		justify-content: right;
 	}
 
-	.search-item {
+	.search_item {
 		margin-right: -5px;
 	}
 
@@ -72,7 +72,7 @@
 		text-decoration: underline;
 	}
 
-	.rss-link {
+	.rss_link {
 		display: flex;
 	}
 </style>

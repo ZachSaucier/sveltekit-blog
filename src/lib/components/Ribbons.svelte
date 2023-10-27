@@ -30,7 +30,7 @@
 		background-color: var(--accent-dark);
 		left: 30px;
 		top: 171px;
-		height: calc(100% - 172px);
+		height: calc(100% - 171px);
 		width: 80px;
 	}
 	.ribbon__vert::before {
@@ -38,7 +38,7 @@
 		width: 95%;
 		height: 500px;
 		top: -438px;
-		left: -33px;
+		left: -32px;
 		transform: rotate(55deg);
 	}
 	.ribbon__vert::after {

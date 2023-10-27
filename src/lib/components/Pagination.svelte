@@ -14,7 +14,7 @@
 <!-- For some reason, the pagination wasn't re-rendering properly during navigation without the #key block -->
 {#key currentPage}
 	{#if pagesAvailable > 1}
-		<nav aria-label="Pagination navigation" class="pagination">
+		<nav aria-label="Pagination navigation">
 			<ul>
 				{#each Array.from({ length: pagesAvailable }, (_, i) => i + 1) as page}
 					<li>

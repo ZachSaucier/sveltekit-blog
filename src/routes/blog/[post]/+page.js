@@ -9,6 +9,8 @@ export const load = async ({ params }) => {
 			meta: { ...post.metadata, slug: params.post }
 		};
 	} catch (err) {
-		throw error(404, err);
+		throw error(404, {
+			message: 'Article not found'
+		});
 	}
 };

@@ -1,12 +1,13 @@
-<!-- This page handles any error encountered by the site. -->
 <script>
 	import { page } from '$app/stores';
 </script>
 
-<h2>{$page.status}</h2>
-<p class="subhead">{$page.error.message}</p>
-
-<p><strong>Sorry!</strong> Maybe try one of these links?</p>
+<p>I'm not sure how you got here. But here's where I think you should go!</p>
 <ul>
 	<li><a href="/">Home</a></li>
 </ul>
+
+<sub>
+	<h2>{$page.status}</h2>
+	<p>{$page.error.message}</p>
+</sub>

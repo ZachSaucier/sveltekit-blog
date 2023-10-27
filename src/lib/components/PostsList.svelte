@@ -1,9 +1,8 @@
 <script>
 	export let posts = [];
-	console.log(posts);
 </script>
 
-<ul class="posts-list">
+<ul>
 	{#each posts as post}
 		{@const date = new Date(post.date)}
 		{@const dateString =
