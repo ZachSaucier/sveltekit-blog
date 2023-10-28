@@ -36,7 +36,7 @@
 	});
 </script>
 
-<div class="content">
+<div class="outer_container">
 	<Ribbons />
 
 	<Header style="grid-area: Header;" />
@@ -53,7 +53,7 @@
 </div>
 
 <style>
-	.content {
+	.outer_container {
 		position: relative;
 		max-width: 1200px;
 		padding-left: 110px;
@@ -73,7 +73,7 @@
 		padding-bottom: 85px;
 	}
 
-	:global(main article) {
+	:global(main section) {
 		padding: 37px var(--content-gutter);
 	}
 </style>

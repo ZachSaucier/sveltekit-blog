@@ -22,28 +22,32 @@
 	<!-- <meta name="twitter:image" content="https://yourdomain.com/image_path" /> -->
 </svelte:head>
 
-<article>
-	{#if coverImage}
-		<img
-			src={coverImage}
-			alt=""
-			style="aspect-ratio: {coverWidth} / {coverHeight};"
-			width={coverWidth}
-			height={coverHeight}
-		/>
-	{/if}
+<section>
+	<header>
+		{#if coverImage}
+			<img
+				src={coverImage}
+				alt=""
+				style="aspect-ratio: {coverWidth} / {coverHeight};"
+				width={coverWidth}
+				height={coverHeight}
+			/>
+		{/if}
 
-	<h1>{title}</h1>
+		<h1>{title}</h1>
 
-	<div class="meta">
-		<b>Published:</b>
-		{date}
-		<br />
-		<b>Updated:</b>
-		{updated}
-	</div>
+		<div class="meta">
+			<b>Published:</b>
+			{date}
+			<br />
+			<b>Updated:</b>
+			{updated}
+		</div>
+	</header>
 
-	<svelte:component this={PostContent} />
+	<article>
+		<svelte:component this={PostContent} />
+	</article>
 
 	{#if categories}
 		<aside>
@@ -58,4 +62,4 @@
 			</ul>
 		</aside>
 	{/if}
-</article>
+</section>

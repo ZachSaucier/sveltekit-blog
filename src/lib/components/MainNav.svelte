@@ -33,7 +33,7 @@
 		</li>
 		<li>
 			<a class="rss_link" href="/blog/api/rss.xml">
-				<Icon type="RSS Feed" width={29} fill="white" />
+				<Icon type="RSS Feed" width={29} fill="var(--background-color)" />
 			</a>
 		</li>
 	</ul>
@@ -50,6 +50,12 @@
 		border: none;
 	}
 
+	@media (prefers-color-scheme: dark) {
+		input {
+			border: 1px solid var(--background-color);
+		}
+	}
+
 	ul {
 		height: 80px;
 		display: flex;
@@ -63,7 +69,7 @@
 	}
 
 	a {
-		color: white;
+		color: var(--background-color);
 		text-decoration: none;
 	}
 

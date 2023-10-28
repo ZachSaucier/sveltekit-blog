@@ -22,10 +22,6 @@ ul {
 	list-style: none;
 	padding: 0;
 }
-article :is(ol, ul) {
-	list-style: disc;
-	padding-inline-start: 40px;
-}
 img {
 	max-width: 100%;
 }
@@ -44,11 +40,15 @@ img {
 :root {
 	--accent: #2095f2;
 	--accent-dark: #212121;
+	--background-color: #fff;
 
 	--link-color: var(--accent);
-	--link-color-hover: #46adff;
-	--link-color-active: #008af9;
-	--link-color-visited: #0e8cf0;
+	--link-color-hover: color-mix(
+		in srgb,
+		var(--link-color) 80%,
+		var(--background-color)
+	); /* Approx #46adff */
+	--link-color-visited: color-mix(in srgb, var(--link-color) 90%, #00f); /* Approx #0e5bf0 */
 
 	--grayed-text: #aaa;
 
@@ -58,18 +58,40 @@ img {
 	--font-serif: 'Merriweather', serif;
 	--font-sans-serif: 'Lato', 'Helvetica Neue', Arial, sans-serif;
 	--font-code: Menlo, Monaco, 'Andale Mono', 'lucida console', 'Courier New', monospace;
+
+	--button-dark-background: color-mix(
+		in srgb,
+		var(--accent-dark) 80%,
+		var(--background-color)
+	); /* Approx #4d4d4d */
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--accent: oklch(69.71% 0.195 236.12);
+		--accent-dark: #fff;
+		--background-color: #2c2c2c;
+
+		--link-color-hover: color-mix(
+			in srgb,
+			var(--link-color) 80%,
+			var(--background-color)
+		); /* Approx #46adff */
+		--link-color-visited: color-mix(in srgb, var(--link-color) 50%, #fff); /* Approx #0e5bf0 */
+	}
 }
 
 body {
 	font-family: var(--font-sans-serif);
-	font-size: 18px;
+	font-size: 18.4px;
 	line-height: 1.7em;
-	background: #fff url('/images/noise.png') top left;
-	color: #222;
+	background: var(--background-color) url('/images/noise.png') top left;
+	color: var(--accent-dark);
 }
 main {
 	font-family: var(--font-serif);
 }
+
 h1,
 h2,
 h3,
@@ -77,6 +99,7 @@ h4 {
 	font-family: var(--font-sans-serif);
 	line-height: 1.2;
 }
+
 pre,
 code {
 	font-family: var(--font-code);
@@ -85,14 +108,40 @@ code {
 a {
 	color: var(--link-color);
 	transition: color 0.1s;
+
+	&:focus,
+	&:hover {
+		color: var(--link-color-hover);
+	}
+
+	&:visited,
+	&:active {
+		color: var(--link-color-visited);
+	}
 }
-a:visited {
-	color: var(--link-color-visited);
-}
-a:focus,
-a:hover {
-	color: var(--link-color-hover);
-}
-a:active {
-	color: var(--link-color-active);
+
+article {
+	& :is(h1, h2, h3, h4, h5, h6) {
+		margin-bottom: 0.5em;
+	}
+
+	& :is(p, article blockquote, ul, ol):not(:last-child) {
+		margin-bottom: 1em;
+	}
+
+	& :is(ul, ol) {
+		list-style: disc;
+		margin-left: 0;
+		padding-inline-start: 20px;
+	}
+
+	& li:not(:last-child) {
+		margin-bottom: 0.5em;
+	}
+
+	& img {
+		border-radius: 0.3em;
+		border: #fff 0.5em solid;
+		box-shadow: rgba(0, 0, 0, 0.15) 0 1px 4px;
+	}
 }

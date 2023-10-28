@@ -8,7 +8,7 @@ const fetchPosts = async ({ offset = 0, limit = postsPerPage, category = '' } = 
 			const { metadata, ...rest } = await resolver();
 			const slug = path.split('/').pop().slice(0, -3);
 			const html = rest.default.render().html;
-			const has_excerpt = html.indexOf(SEPARATOR) === 0;
+			const has_excerpt = html.indexOf(SEPARATOR) === -1;
 			const excerpt = has_excerpt ? html : html.split(SEPARATOR)[0];
 			return { ...metadata, slug, excerpt, has_excerpt };
 		})

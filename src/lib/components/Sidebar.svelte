@@ -86,7 +86,7 @@
 
 	h1 {
 		font-size: 1.2rem;
-		margin: 1.5em 0 0;
+		margin: 1.5em 0 0.4em;
 		padding-bottom: 0.2em;
 		border-bottom: var(--border);
 	}
@@ -95,8 +95,17 @@
 		margin-bottom: 15px;
 	}
 
+	p {
+		font-size: 16px;
+		line-height: 1.6;
+	}
+
 	.socials {
 		display: flex;
 		gap: 5px;
+
+		& a {
+			display: contents;
+		}
 	}
 </style>

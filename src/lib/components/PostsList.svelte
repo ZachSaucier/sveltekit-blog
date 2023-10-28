@@ -17,19 +17,20 @@
 						day: 'numeric'
 				  })}
 		<li>
-			<article>
-				{#if post.coverImage}
-					<a href="/blog/{post.slug}" rel="full-article">
-						<img
-							src={post.coverImage}
-							alt=""
-							width={post.coverWidth}
-							height={post.coverHeight}
-							style="ratio: {post.coverWidth} / {post.coverHeight}"
-						/>
-					</a>
-				{/if}
+			<section>
 				<header>
+					{#if post.coverImage}
+						<a href="/blog/{post.slug}" rel="full-article">
+							<img
+								src={post.coverImage}
+								alt=""
+								width={post.coverWidth}
+								height={post.coverHeight}
+								style="ratio: {post.coverWidth} / {post.coverHeight}"
+							/>
+						</a>
+					{/if}
+
 					<a href="/blog/{post.slug}" rel="full-article">
 						<h2>
 							{post.title}
@@ -38,18 +39,22 @@
 					<time datetime={post.date}>{dateString}</time>
 				</header>
 
-				{@html post.excerpt}
+				<article>
+					{@html post.excerpt}
+				</article>
 
 				{#if !post.has_excerpt}
-					<a href="/blog/{post.slug}" class="read-on" rel="full-article">Read on</a>
+					<footer>
+						<a href="/blog/{post.slug}" class="read-on" rel="full-article">Read on</a>
+					</footer>
 				{/if}
-			</article>
+			</section>
 		</li>
 	{/each}
 </ul>
 
 <style>
-	article {
+	section {
 		background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAABCAYAAACsXeyTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAFUlEQVQIHWNIS0sr/v//PwMMDzY+ADqMahlW4J91AAAAAElFTkSuQmCC)
 			bottom left repeat-x;
 	}
@@ -64,22 +69,28 @@
 	a {
 		color: inherit;
 		text-decoration: none;
-	}
-	a:hover,
-	a:focus {
-		text-decoration: underline;
+
+		&:hover,
+		&:focus {
+			text-decoration: underline;
+		}
 	}
 
 	h2 {
 		font-size: 40px;
+		font-weight: bold;
 		text-wrap: pretty;
 	}
 
 	time {
-		text-transform: uppercase;
+		font-family: 'PT Sans', 'Helvetica Neue', Arial, sans-serif;
 		position: absolute;
 		top: 0;
 		color: var(--grayed-text);
+	}
+
+	footer {
+		margin-top: 1em;
 	}
 
 	.read-on {
@@ -88,21 +99,32 @@
 		padding: 0.4em 0.8em;
 		margin-right: 0.5em;
 		text-decoration: none;
-		color: #fff;
+		color: var(--background-color);
 		transition: 0.15s;
+
+		&:hover {
+			background-color: var(--link-color-hover);
+		}
+
+		&::after {
+			content: '\2192';
+			display: inline-block;
+			transform: translateX(4px);
+			transition: 0.15s;
+		}
+		&:hover::after {
+			transform: translateX(6px);
+		}
 	}
 
-	.read-on:hover {
-		background-color: var(--link-color-hover);
-	}
+	@media (prefers-color-scheme: dark) {
+		.read-on {
+			color: var(--accent-dark);
+			background-color: var(--link-color);
+		}
 
-	.read-on::after {
-		content: '\2192';
-		display: inline-block;
-		transform: translateX(4px);
-		transition: 0.15s;
-	}
-	.read-on:hover::after {
-		transform: translateX(6px);
+		.read-on:hover {
+			background-color: var(--link-color-hover);
+		}
 	}
 </style>

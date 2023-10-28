@@ -1,7 +1,20 @@
-<div class="ribbon ribbon__horiz" />
-<div class="ribbon ribbon__vert" />
+<div class="ribbons">
+	<div class="ribbon ribbon__horiz" />
+	<div class="ribbon ribbon__vert" />
+</div>
 
 <style>
+	.ribbons {
+		--color-horiz: var(--accent);
+		--color-vert: var(--accent-dark);
+	}
+	@media (prefers-color-scheme: dark) {
+		.ribbons {
+			--color-horiz: #fff;
+			--color-vert: var(--accent);
+		}
+	}
+
 	.ribbon {
 		position: absolute;
 		z-index: -1;
@@ -13,7 +26,7 @@
 		transform-origin: bottom right;
 	}
 	.ribbon__horiz {
-		background-color: var(--accent);
+		background-color: var(--color-horiz);
 		left: 300px;
 		top: 130px;
 		width: calc(100% - 300px);
@@ -27,7 +40,7 @@
 		transform: rotate(30deg);
 	}
 	.ribbon__vert {
-		background-color: var(--accent-dark);
+		background-color: var(--color-vert);
 		left: 30px;
 		top: 171px;
 		height: calc(100% - 171px);
@@ -42,7 +55,7 @@
 		transform: rotate(55deg);
 	}
 	.ribbon__vert::after {
-		background-color: var(--accent);
+		background-color: var(--color-horiz);
 		width: 100%;
 		height: 92px;
 		top: -68px;

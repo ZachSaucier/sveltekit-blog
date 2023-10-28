@@ -36,7 +36,7 @@
 		align-items: center;
 		height: 3rem;
 		background-color: var(--accent-dark);
-		color: white;
+		color: var(--background-color);
 	}
 	.skip_to_content:focus {
 		transform: translateY(6rem);
@@ -60,7 +60,7 @@
 	.site_title {
 		font-size: 52px;
 		text-decoration: none;
-		color: #4b4b4b;
+		color: var(--button-dark-background);
 	}
 
 	h2 {

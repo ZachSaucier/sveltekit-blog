@@ -1,4 +1,3 @@
-// IMPORTANT: update all these property values in src/lib/config.js
 import { siteTitle, siteDescription, siteLink } from '$lib/config';
 
 export const prerender = true;
@@ -25,7 +24,6 @@ export const GET = async () => {
 	});
 };
 
-//Be sure to review and replace any applicable content below!
 const render = (posts) => `<?xml version="1.0" encoding="UTF-8" ?>
 <rss version="2.0" xmlns:atom="https://www.w3.org/2005/Atom">
 <channel>
