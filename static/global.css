@@ -37,8 +37,10 @@ img {
 	border: 0;
 }
 
-:root {
-	--accent: #2095f2;
+html {
+	--bright-teal: oklch(69.71% 0.195 236.12);
+
+	--accent: var(--bright-teal);
 	--accent-dark: #212121;
 	--background-color: #fff;
 
@@ -66,19 +68,16 @@ img {
 	); /* Approx #4d4d4d */
 }
 
-@media (prefers-color-scheme: dark) {
-	:root {
-		--accent: oklch(69.71% 0.195 236.12);
-		--accent-dark: #fff;
-		--background-color: #2c2c2c;
+html.dark {
+	--accent-dark: #fff;
+	--background-color: #2c2c2c;
 
-		--link-color-hover: color-mix(
-			in srgb,
-			var(--link-color) 80%,
-			var(--background-color)
-		); /* Approx #46adff */
-		--link-color-visited: color-mix(in srgb, var(--link-color) 50%, #fff); /* Approx #0e5bf0 */
-	}
+	--link-color-hover: color-mix(
+		in srgb,
+		var(--link-color) 80%,
+		var(--background-color)
+	); /* Approx #46adff */
+	--link-color-visited: color-mix(in srgb, var(--link-color) 50%, #fff); /* Approx #0e5bf0 */
 }
 
 body {
@@ -107,16 +106,14 @@ code {
 
 a {
 	color: var(--link-color);
-	transition: color 0.1s;
+
+	&:visited {
+		color: var(--link-color-visited);
+	}
 
 	&:focus,
 	&:hover {
 		color: var(--link-color-hover);
-	}
-
-	&:visited,
-	&:active {
-		color: var(--link-color-visited);
 	}
 }
 
@@ -143,5 +140,24 @@ article {
 		border-radius: 0.3em;
 		border: #fff 0.5em solid;
 		box-shadow: rgba(0, 0, 0, 0.15) 0 1px 4px;
+	}
+}
+
+html.dark {
+	& main a {
+		color: var(--accent-dark);
+	}
+
+	& main article a {
+		color: var(--link-color-visited);
+
+		&:visited {
+			color: var(--link-color);
+		}
+
+		&:focus,
+		&:hover {
+			color: var(--link-color-hover);
+		}
 	}
 }

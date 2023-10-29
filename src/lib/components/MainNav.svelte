@@ -2,14 +2,7 @@
 	import { navItems } from '$lib/config';
 	import { currentPage } from '$lib/utilities/store';
 	import Icon from '$lib/components/Icon.svelte';
-
-	function handleSearch(e) {
-		const query = search_el.value;
-		if (query) {
-			window.location.href = `https://www.google.com/search?q=site%3Azachsaucier.com%2Fblog&q=${query}`;
-		}
-	}
-	// https://www.google.com/search?q=site%3Azachsaucier.com%2Fblog&q=remix
+	import ThemeToggle from '$lib/components/ThemeToggle.svelte';
 </script>
 
 <nav>
@@ -27,9 +20,12 @@
 			<form action="https://www.google.com/search" method="get">
 				<fieldset role="search">
 					<input type="hidden" name="q" value="site:zachsaucier.com/blog" />
-					<input type="text" name="q" results="0" placeholder="Search" />
+					<input class="search" type="text" name="q" results="0" placeholder="Search" />
 				</fieldset>
 			</form>
+		</li>
+		<li>
+			<ThemeToggle />
 		</li>
 		<li>
 			<a class="rss_link" href="/blog/api/rss.xml">
@@ -44,16 +40,14 @@
 		font-size: 18px;
 	}
 
-	input {
+	.search {
 		padding: 5px;
 		border-radius: 100px;
 		border: none;
 	}
 
-	@media (prefers-color-scheme: dark) {
-		input {
-			border: 1px solid var(--background-color);
-		}
+	:global(html.dark .search) {
+		border: 1px solid var(--background-color);
 	}
 
 	ul {

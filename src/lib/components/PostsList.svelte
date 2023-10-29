@@ -117,14 +117,12 @@
 		}
 	}
 
-	@media (prefers-color-scheme: dark) {
-		.read-on {
-			color: var(--accent-dark);
-			background-color: var(--link-color);
-		}
+	:global(html.dark .read-on) {
+		color: var(--accent-dark);
+		background-color: var(--link-color);
+	}
 
-		.read-on:hover {
-			background-color: var(--link-color-hover);
-		}
+	:global(html.dark .read-on:hover) {
+		background-color: var(--link-color-hover);
 	}
 </style>

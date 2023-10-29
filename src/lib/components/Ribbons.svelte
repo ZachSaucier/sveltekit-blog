@@ -8,11 +8,9 @@
 		--color-horiz: var(--accent);
 		--color-vert: var(--accent-dark);
 	}
-	@media (prefers-color-scheme: dark) {
-		.ribbons {
-			--color-horiz: #fff;
-			--color-vert: var(--accent);
-		}
+	:global(html.dark .ribbons) {
+		--color-horiz: #fff;
+		--color-vert: var(--accent);
 	}
 
 	.ribbon {

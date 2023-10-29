@@ -2,9 +2,10 @@
 	export let type;
 	export let width;
 	export let fill = 'var(--accent-dark, #000)';
+	export let state = {};
 </script>
 
-<svg viewBox="0 0 32 32" {width} xmlns="http://www.w3.org/2000/svg" fill="none">
+<svg class={type} viewBox="0 0 32 32" {width} xmlns="http://www.w3.org/2000/svg" fill="none">
 	<title>{type}</title>
 	{#if type === 'Twitter'}
 		<path
@@ -80,5 +81,7 @@
 			d="M4 8C6.62644 8 9.22716 8.51732 11.6537 9.52241C14.0802 10.5275 16.285 12.0007 18.1421 13.8579C19.9993 15.715 21.4725 17.9198 22.4776 20.3463C23.4827 22.7728 24 25.3736 24 28H28C28 21.6348 25.4714 15.5303 20.9706 11.0294C16.4697 6.52856 10.3652 4 4 4V8Z"
 			fill="var(--background-color)"
 		/>
+	{:else if type === 'ThemeToggle'}
+		{state.isDarkMode ? 'Go to light mode' : 'Go to dark mode'}
 	{/if}
 </svg>

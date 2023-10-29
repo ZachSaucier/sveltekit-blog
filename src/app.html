@@ -13,6 +13,16 @@
 		/>
 		<link href="/global.css" rel="stylesheet" type="text/css" />
 
+		<script>
+			if (localStorage.theme) {
+				if (localStorage.theme === 'dark') {
+					document.documentElement.classList.add('dark');
+				}
+			} else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+				document.documentElement.classList.add('dark');
+			}
+		</script>
+
 		%sveltekit.head%
 	</head>
 	<body>
