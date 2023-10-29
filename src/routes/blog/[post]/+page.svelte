@@ -1,8 +1,13 @@
 <!-- This file renders each individual blog post for reading. Be sure to update the svelte:head below -->
 <script>
-	import dateParser from '$lib/utilities/dateParser';
+	import { onMount } from 'svelte';
 	import { title_ending } from '$lib/config';
+	import dateParser from '$lib/utilities/dateParser';
+	import TwitterShare from '$lib/components/TwitterShare.svelte';
 	export let data;
+
+	let url = ``;
+	onMount(() => (url = window.location.href));
 
 	const {
 		title,
@@ -58,18 +63,64 @@
 	<article>
 		<svelte:component this={PostContent} />
 	</article>
+</section>
 
-	{#if categories}
-		<aside>
-			<h2>Posted in:</h2>
+{#if categories}
+	<aside>
+		<div class="tags">
+			<h2>Tags:</h2>
 			<ul>
 				{#each categories as category}
-					-
-					<a href="/blog/category/{category}/">
-						{category}
-					</a>
+					<li>
+						<a href="/blog/category/{category}/">
+							{category}
+						</a>
+					</li>
 				{/each}
 			</ul>
-		</aside>
-	{/if}
-</section>
+		</div>
+
+		<TwitterShare {url} />
+	</aside>
+{/if}
+
+<style>
+	aside {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 10px;
+		padding: 0 var(--content-gutter) 37px;
+
+		background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAABCAYAAACsXeyTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAFUlEQVQIHWNIS0sr/v//PwMMDzY+ADqMahlW4J91AAAAAElFTkSuQmCC)
+			bottom left repeat-x;
+	}
+
+	.tags {
+		--gap: 0.6ex;
+		display: flex;
+		gap: var(--gap);
+		align-items: center;
+
+		& h2 {
+			font-family: inherit;
+			line-height: inherit;
+		}
+
+		& h2,
+		& li {
+			margin: 0;
+		}
+
+		& ul {
+			display: flex;
+			gap: var(--gap);
+			list-style: none;
+		}
+
+		& li:not(:last-child)::after {
+			content: ', ';
+			margin-left: -5px;
+		}
+	}
+</style>

@@ -19,27 +19,27 @@
 
 	const socials = [
 		{
-			title: 'Twitter',
+			title: 'TwitterCircle',
 			link: 'https://twitter.com/ZachSaucier/'
 		},
 		{
-			title: 'GitHub',
+			title: 'GitHubCircle',
 			link: 'https://github.com/ZachSaucier/'
 		},
 		{
-			title: 'CodePen',
+			title: 'CodePenCircle',
 			link: 'https://codepen.io/ZachSaucier/'
 		},
 		{
-			title: 'LinkedIn',
+			title: 'LinkedInCircle',
 			link: 'https://www.linkedin.com/in/zach-saucier-051aa171/'
 		},
 		{
-			title: 'StackOverflow',
+			title: 'StackOverflowCircle',
 			link: 'https://stackoverflow.com/users/2065702/Zach-Saucier'
 		},
 		{
-			title: 'Email',
+			title: 'EmailCircle',
 			link: 'mailto:hello@zachsaucier.com'
 		}
 	];

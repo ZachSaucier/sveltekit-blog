@@ -3,6 +3,7 @@ export const title_ending = ` — ${site_title}`;
 export const site_description = "Zach Saucier's personal blog";
 export const site_link = 'https://zachsaucier.com/blog';
 export const site_author = 'Zach Saucier';
+export const twitter_handle = 'ZachSaucier';
 
 export const posts_per_page = 10;
 
