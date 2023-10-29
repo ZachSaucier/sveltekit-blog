@@ -1,30 +1,22 @@
 <script>
-	import PostsList from '$lib/components/PostsList.svelte';
-	import Pagination from '$lib/components/Pagination.svelte';
 	import { site_description, posts_per_page, title_ending } from '$lib/config';
+	import CategoryPostsList from '$lib/components/CategoryPostsList.svelte';
+	import Pagination from '$lib/components/Pagination.svelte';
 
 	export let data;
 	const { page, category, total_posts, posts } = data;
 
-	$: lowerBound = page * posts_per_page - (posts_per_page - 1) || 1;
-	$: upperBound = Math.min(page * posts_per_page, total_posts);
+	$: lower_bound = page * posts_per_page - (posts_per_page - 1) || 1;
+	$: upper_bound = Math.min(page * posts_per_page, total_posts);
 </script>
 
 <svelte:head>
-	<title>Blog category {category} - page {page}{title_ending}</title>
+	<title>Category: {category} - page {page}{title_ending}</title>
 	<meta data-key="description" name={site_description} />
 </svelte:head>
 
-<!-- TODO: this is duplicated across multiple `+page.svelte` files -->
 {#if posts && posts.length}
-	<h1>
-		Category: {category}
-		<br />
-		<small>Posts {lowerBound}–{upperBound} of {total_posts}</small>
-	</h1>
-	<Pagination current_page={page} {total_posts} path="/blog/category/{category}/page" />
-
-	<PostsList {posts} />
+	<CategoryPostsList {posts} {category} {lower_bound} {upper_bound} {total_posts} />
 
 	<Pagination current_page={page} {total_posts} path="/blog/category/{category}/page" />
 {:else}

@@ -195,6 +195,11 @@ html.dark {
 	color: var(--grayed-text);
 }
 
+.category_title {
+	font-size: 2em;
+	font-weight: bold;
+}
+
 figure {
 	margin-bottom: 1em;
 

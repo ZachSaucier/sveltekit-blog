@@ -13,7 +13,7 @@ description: The way that I think about how the learning process works.
 Most of the little time I spend on Tumblr is spent looking at awesome pictures of nature, seeing how math is found in nature, or analyzing animations from pros, but every so often I come across something that has a larger and more direct effect on my life. The most recent was caused by this image:
 
 <figure>
-  <img src="$lib/images/spiral.jpg" alt="An image of a spiral stair case with two children walking up and the text: 'The path isn't a straight line; it's a spiral. You continually come back to things you thought you understood and see deeper truths.'" loading="lazy" />
+  <img src="$lib/images/spiral.jpg" alt="A spiral stair case with two children walking up and the text: 'The path isn't a straight line; it's a spiral. You continually come back to things you thought you understood and see deeper truths.'" loading="lazy" />
 
   <figcaption>
     <sub>I have since found out the image was by an illustrator named <a href="https://www.budikwan.com/">Budi Kwan</a> and the quote is by <a href="https://www.barryhgillespie.com/">Barry Gillespie</a>. While I disagree with Gillespie’s outlook on life, I think the quote describes my thoughts on knowledge well.</sub>

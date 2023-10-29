@@ -7,8 +7,8 @@
 	export let data;
 	const { page, totalPosts, posts } = data;
 
-	$: lowerBound = page * postsPerPage - (postsPerPage - 1) || 1;
-	$: upperBound = Math.min(page * postsPerPage, totalPosts);
+	$: lower_bound = page * postsPerPage - (postsPerPage - 1) || 1;
+	$: upper_bound = Math.min(page * postsPerPage, totalPosts);
 </script>
 
 <svelte:head>
@@ -18,7 +18,7 @@
 
 <!-- TODO: this is duplicated across multiple `+page.svelte` files -->
 {#if posts.length}
-	<h1>Posts {lowerBound}–{upperBound} of {totalPosts}</h1>
+	<h1>Posts {lower_bound}–{upper_bound} of {totalPosts}</h1>
 	<Pagination currentPage={page} {totalPosts} />
 
 	<PostsList {posts} />

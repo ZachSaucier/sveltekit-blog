@@ -10,6 +10,6 @@ export const load = async ({ params }) => {
 		posts,
 		category,
 		page,
-		total: posts.length
+		total_posts: posts.length
 	};
 };
