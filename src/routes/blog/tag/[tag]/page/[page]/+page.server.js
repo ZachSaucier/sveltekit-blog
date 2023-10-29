@@ -4,11 +4,11 @@ import fetchPosts from '$lib/utilities/fetchPosts';
 
 export const load = async ({ url, params, fetch }) => {
 	const page = parseInt(params.page) || 1;
-	const { category } = params;
+	const { tag } = params;
 
 	// Prevents duplication of page 1 as the index page
 	if (page <= 1) {
-		throw redirect(301, `/blog/category/${category}`);
+		throw redirect(301, `/blog/tag/${tag}`);
 	}
 
 	let offset = page * posts_per_page - posts_per_page;
@@ -20,7 +20,7 @@ export const load = async ({ url, params, fetch }) => {
 	return {
 		posts,
 		page,
-		category,
+		tag,
 		total_posts: total
 	};
 };

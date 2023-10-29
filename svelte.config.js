@@ -29,9 +29,9 @@ const config = {
 				'/blog',
 				'/blog/*',
 				'/blog/api/posts/page/*',
-				'/blog/category/',
-				'/blog/category/*',
-				'/blog/category/*/page/*'
+				'/blog/tag/',
+				'/blog/tag/*',
+				'/blog/tag/*/page/*'
 			]
 		}
 	}

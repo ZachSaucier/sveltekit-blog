@@ -2,7 +2,7 @@ import { posts_per_page } from '$lib/config';
 
 const SEPARATOR = '<span class="excerpt-marker"></span>';
 
-const fetchPosts = async ({ offset = 0, limit = posts_per_page, category = '' } = {}) => {
+const fetchPosts = async ({ offset = 0, limit = posts_per_page, tag = '' } = {}) => {
 	const posts = await Promise.all(
 		Object.entries(import.meta.glob('/src/lib/posts/**/*.md')).map(async ([path, resolver]) => {
 			const { metadata, ...rest } = await resolver();
@@ -18,8 +18,8 @@ const fetchPosts = async ({ offset = 0, limit = posts_per_page, category = '' } 
 
 	let sorted_posts = posts.sort((a, b) => new Date(b.date) - new Date(a.date));
 
-	if (category) {
-		sorted_posts = sorted_posts.filter((post) => post.categories.includes(category));
+	if (tag) {
+		sorted_posts = sorted_posts.filter((post) => post.tags.includes(tag));
 	}
 
 	if (offset) {
@@ -40,7 +40,7 @@ const fetchPosts = async ({ offset = 0, limit = posts_per_page, category = '' } 
 		cover_width: post.cover_width,
 		cover_height: post.cover_height,
 		date: post.date,
-		categories: post.categories
+		tags: post.tags
 	}));
 
 	return {

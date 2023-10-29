@@ -1,7 +1,7 @@
 ---
 title: The ultimate wearable
 date: 2015-05-23
-categories:
+tags:
   - rambling
   - design
   - technology
@@ -45,7 +45,7 @@ Smart watches allow us to no longer pull out our phone to check something; inste
 
 Similarly, virtual reality, including <a href="https://vimeo.com/115082758#at=0">virtual projection</a>, is awesome and I greatly look forward to it becoming more mainstream, but the current constraints of headgear and the need for a particular environment make it unusable for the majority of uses I imagine. On a related note, while large displays and holograms will be helpful, if they require that we interact with only our hands then I don’t think they’d be especially successful, because constantly moving our bodies around is exhausting.
 
-Augmented reality, while similar to virtual reality in a technical sense, is actually based on a very different paradigm — instead of exploring a new world, you’re enhancing your experience of the current one. This is much more promising for our purposes, since it allows for more meaningful personal and digital interactions as well as seamless integration of social life and useful information. Well-made augmented reality instills a far broader sense of exploration and awareness than any opaque, rectangular screen can. Arguably, Jane and the jewel fall in this category as an exceptional example.
+Augmented reality, while similar to virtual reality in a technical sense, is actually based on a very different paradigm — instead of exploring a new world, you’re enhancing your experience of the current one. This is much more promising for our purposes, since it allows for more meaningful personal and digital interactions as well as seamless integration of social life and useful information. Well-made augmented reality instills a far broader sense of exploration and awareness than any opaque, rectangular screen can. Arguably, Jane and the jewel fall in this tag as an exceptional example.
 
 The ultimate wearable, then, is something as unobtrusive and natural as Ender’s jewel, with which we interact almost subconsciously, either with thought or with our bodies. Something like this is a long way away from reality, and there are many stepping stones to get there, but it is absolutely a goal worth chasing after.
 

@@ -1,7 +1,7 @@
 ---
 title: Definition vs Description
 date: 2015-04-20
-categories:
+tags:
   - rambling
   - life
 # cover_image: /images/linus-nylund-Q5QspluNZmM-unsplash.jpg

@@ -1,7 +1,7 @@
 ---
 title: Why do we use responsive units like em instead of px when designing responsive sites?
 date: 2014-09-30
-categories:
+tags:
   - code
   - css
 # cover_image: /images/linus-nylund-Q5QspluNZmM-unsplash.jpg

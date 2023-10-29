@@ -1,7 +1,7 @@
 ---
 title: Why JavaScript instead of Flash?
 date: 2014-09-30
-categories:
+tags:
   - code
   - javascript
 # cover_image: /images/linus-nylund-Q5QspluNZmM-unsplash.jpg

@@ -17,7 +17,7 @@
 		cover_image,
 		cover_width,
 		cover_height,
-		categories
+		tags
 	} = data.meta;
 	const { PostContent } = data;
 
@@ -65,15 +65,15 @@
 	</article>
 </section>
 
-{#if categories}
+{#if tags}
 	<aside>
 		<div class="tags">
 			<h2>Tags:</h2>
 			<ul>
-				{#each categories as category}
+				{#each tags as tag}
 					<li>
-						<a href="/blog/category/{category}/">
-							{category}
+						<a href="/blog/tag/{tag}/">
+							{tag}
 						</a>
 					</li>
 				{/each}

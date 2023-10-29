@@ -1,7 +1,7 @@
 ---
 title: Site redesign 2017
 date: 2017-07-14
-categories:
+tags:
   - code
   - projects
   - css

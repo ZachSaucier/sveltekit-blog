@@ -1,7 +1,7 @@
 ---
 title: Create useful things
 date: 2015-12-28
-categories:
+tags:
   - rambling
   - life
 # cover_image: /images/linus-nylund-Q5QspluNZmM-unsplash.jpg
@@ -14,7 +14,7 @@ There are a whole lot of people in the world. Everyone creates something, a lot 
 
 Now, our time in this world is limited. That means that we should make use of the time that we _do_ have. Which means that we all have some important questions to answer while we can, like “What is the purpose of life?”, “What happens after I die?”, “What is God like?”, and many others. If you want to discuss what I think about these feel free to message me.
 
-But our limited time also means that we should spend our time creating and doing things that are valuable. Now, there are a lot of things that fit in this category and it depends on the individual and the situation. This is a good thing that makes us unique and diverse. What we need to have is good judgement as to what is important and what is not.
+But our limited time also means that we should spend our time creating and doing things that are valuable. Now, there are a lot of things that fit in this tag and it depends on the individual and the situation. This is a good thing that makes us unique and diverse. What we need to have is good judgement as to what is important and what is not.
 
 The most important questions are the ones like those I posed above. Belief about spiritual, family, and life matters should always come first. In addition to this, we all work at one point or another and we should attempt to make our work meaningful. But sometimes we just need to work to get money to provide for what is most important so that doesn’t always happen.
 

@@ -1,7 +1,7 @@
 ---
 title: Spiral learning
 date: 2016-01-24
-categories:
+tags:
   - rambling
   - learning
 # cover_image: /images/linus-nylund-Q5QspluNZmM-unsplash.jpg

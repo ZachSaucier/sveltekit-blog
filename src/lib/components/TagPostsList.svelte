@@ -1,7 +1,7 @@
 <script>
 	import dateParser from '$lib/utilities/dateParser';
 	export let posts = [];
-	export let category = '';
+	export let tag = '';
 
 	export let lower_bound;
 	export let upper_bound;
@@ -9,7 +9,7 @@
 </script>
 
 <section>
-	<h1 class="category_title">Blog category: {category}</h1>
+	<h1 class="tag_title">Blog tag: {tag}</h1>
 	{#if total_posts}
 		<p>Posts {lower_bound}–{upper_bound} of {total_posts}</p>
 	{/if}

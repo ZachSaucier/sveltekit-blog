@@ -2,7 +2,7 @@
 title: The creative process
 date: 2014-06-20
 updated: 2023-10-22
-categories:
+tags:
   - code
   - css
   - meta

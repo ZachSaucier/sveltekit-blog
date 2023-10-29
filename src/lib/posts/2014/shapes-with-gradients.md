@@ -2,7 +2,7 @@
 title: Single element shapes with gradients
 date: 2014-05-14
 updated: 2023-10-22
-categories:
+tags:
   - code
   - css
 # cover_image: "/images/jefferson-santos-fCEJGBzAkrU-unsplash.jpg"

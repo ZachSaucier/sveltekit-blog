@@ -1,7 +1,7 @@
 ---
 title: Starting HTML and CSS
 date: 2015-10-05
-categories:
+tags:
   - code
   - crash-course
   - css

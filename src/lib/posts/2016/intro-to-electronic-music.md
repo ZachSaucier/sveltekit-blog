@@ -1,7 +1,7 @@
 ---
 title: A brief introduction to electronic music
 date: 2016-05-31
-categories:
+tags:
   - rambling
   - music
 # cover_image: /images/linus-nylund-Q5QspluNZmM-unsplash.jpg

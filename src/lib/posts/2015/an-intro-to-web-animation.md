@@ -1,7 +1,7 @@
 ---
 title: An introduction to web animation
 date: 2015-02-19
-categories:
+tags:
   - code
   - animation
   - css

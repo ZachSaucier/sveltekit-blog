@@ -1,7 +1,7 @@
 ---
 title: Lessons learned from a dining hall
 date: 2017-01-03
-categories:
+tags:
   - rambling
   - life-lessons
 # cover_image: /images/linus-nylund-Q5QspluNZmM-unsplash.jpg

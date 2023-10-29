@@ -1,7 +1,7 @@
 ---
 title: What is the most efficient way to modify DOM elements and limit reflow?
 date: 2014-09-30
-categories:
+tags:
   - code
   - css
   - javascript

@@ -1,7 +1,7 @@
 ---
 title: So you want to learn web development?
 date: 2016-07-31
-categories:
+tags:
   - code
   - learning
   - css

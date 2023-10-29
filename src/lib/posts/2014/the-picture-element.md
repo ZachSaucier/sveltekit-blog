@@ -1,7 +1,7 @@
 ---
 title: Proper usage of the picture element
 date: 2014-09-30
-categories:
+tags:
   - code
   - html
 # cover_image: /images/linus-nylund-Q5QspluNZmM-unsplash.jpg

@@ -1,7 +1,7 @@
 ---
 title: Why I still contribute to StackOverflow
 date: 2015-01-01
-categories:
+tags:
   - rambling
   - community
 # cover_image: /images/linus-nylund-Q5QspluNZmM-unsplash.jpg

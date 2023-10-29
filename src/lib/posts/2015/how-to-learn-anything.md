@@ -1,7 +1,7 @@
 ---
 title: How to learn anything
 date: 2015-02-16
-categories:
+tags:
   - rambling
   - community
   - learning

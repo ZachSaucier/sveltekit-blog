@@ -1,7 +1,7 @@
 ---
 title: The why and what behind web development
 date: 2015-09-26
-categories:
+tags:
   - code
   - crash-course
 # cover_image: /images/linus-nylund-Q5QspluNZmM-unsplash.jpg

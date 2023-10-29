@@ -17,7 +17,7 @@ const fetchRecentPosts = async () => {
 		slug: post.slug,
 		description: post.description,
 		date: post.date,
-		categories: post.categories
+		tags: post.tags
 	}));
 
 	return {

@@ -1,7 +1,7 @@
 ---
 title: Personal studies
 date: 2015-07-28
-categories:
+tags:
   - rambling
   - learning
 # cover_image: /images/linus-nylund-Q5QspluNZmM-unsplash.jpg

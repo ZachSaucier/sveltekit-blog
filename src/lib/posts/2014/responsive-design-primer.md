@@ -2,7 +2,7 @@
 title: The responsive design primer
 date: 2014-08-11
 updated: 2023-10-22
-categories:
+tags:
   - code
   - css
   - responsive
@@ -88,7 +88,7 @@ Using <a href="https://getbootstrap.com/css/#grid-media-queries">Bootstrap’s m
 
 <h2>Various responsive techniques</h2>
 
-<h3>Size Categories</h3>
+<h3>Size Tags</h3>
 
 As I mentioned before, with the smaller-first approach we get to start with what’s most important and add more content as we get to larger screen sizes. Let’s establish a guideline for what should be included for each breakpoint. Each section builds on the previous, following the smaller-first approach.
 

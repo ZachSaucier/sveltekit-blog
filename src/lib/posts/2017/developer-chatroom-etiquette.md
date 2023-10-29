@@ -1,7 +1,7 @@
 ---
 title: Developer chatroom etiquette
 date: 2017-04-16
-categories:
+tags:
   - rambling
 # cover_image: /images/linus-nylund-Q5QspluNZmM-unsplash.jpg
 # cover_width: 16

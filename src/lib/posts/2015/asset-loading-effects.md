@@ -1,7 +1,7 @@
 ---
 title: How to create asset loading effects
 date: 2015-05-26
-categories:
+tags:
   - code
   - css
   - javascript

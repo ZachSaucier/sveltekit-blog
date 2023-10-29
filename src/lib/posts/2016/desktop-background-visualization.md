@@ -1,7 +1,7 @@
 ---
 title: Creating an animated desktop background using a webpage
 date: 2016-06-30
-categories:
+tags:
   - code
   - animation
   - projects

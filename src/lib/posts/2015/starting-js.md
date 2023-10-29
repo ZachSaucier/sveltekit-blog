@@ -1,7 +1,7 @@
 ---
 title: Starting JavaScript (JS)
 date: 2015-10-17
-categories:
+tags:
   - code
   - crash-course
   - javascript

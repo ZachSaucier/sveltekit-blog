@@ -1,7 +1,7 @@
 ---
 title: An activity discovery app
 date: 2016-12-05
-categories:
+tags:
   - projects
   - design
 # cover_image: /images/linus-nylund-Q5QspluNZmM-unsplash.jpg
