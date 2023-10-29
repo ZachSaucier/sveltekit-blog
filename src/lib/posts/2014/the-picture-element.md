@@ -11,7 +11,7 @@ description: This post covers how you should use the picture element.
 ---
 
 <div class="aside">
-    **Aside:** This question was originally asked on WebDesign.StackExchange.com, a private beta that ended up being deleted on October 6th, 2014.
+	<strong>Aside:</strong> This question was originally asked on WebDesign.StackExchange.com, a private beta that ended up being deleted on October 6th, 2014.
 </div>
 
 I know how to use the `<img>` element, but I’ve been hearing things about the upcoming `<picture>` element to be used for responsive images. The articles I’ve read on the subject are kind of mixed up about the usage of the `<picture>` element and I’d like to get some clarification.
@@ -22,7 +22,7 @@ How is the `<picture>` element different from the `<img>` element? Should I alwa
 
 <hr>
 
-<blockquote>Should I always use it instead of the `<img>` element given that I want all of my sites to be responsive?</blockquote>
+> Should I always use it instead of the `<img>` element given that I want all of my sites to be responsive?
 
 No! The `<picture>` element is _not_ a replacement for the older `<img>` element. In fact, most of the time **_you should use the `<img>` element_**.
 
@@ -34,7 +34,7 @@ As Jason Grigsby says in <a href="https://blog.cloudfour.com/dont-use-picture-mo
 
 In essence, there are <a href="https://usecases.responsiveimages.org/">many use cases</a> for the picture specification<sup>**1**</sup>, but there are two primary ones: **resolution switching**, which is selecting a different source for the image when needed, and **art direction**, which is for most everything else like cropping, etc.
 
-<a href="https://blog.yoav.ws/2013/05/How-Big-Is-Art-Direction">Most of the time</a> we’ll just need **resolution switching**, in which case we should use the `<img>` element. _“How can this be? My `<img>`s aren’t responsive.”_ Well, <a href="https://caniuse.com/#feat=srcset">they might not yet be</a> but they should be soon, granted the following format (pulled from <a href="https://blog.cloudfour.com/dont-use-picture-most-of-the-time/">Jason Grigsby’s article</a>) is followed:
+[Most of the time](https://blog.yoav.ws/2013/05/How-Big-Is-Art-Direction) we’ll just need **resolution switching**, in which case we should use the `<img>` element. _“How can this be? My `<img>`s aren’t responsive.”_ Well, <a href="https://caniuse.com/#feat=srcset">they might not yet be</a> but they should be soon, granted the following format (pulled from <a href="https://blog.cloudfour.com/dont-use-picture-most-of-the-time/">Jason Grigsby’s article</a>) is followed:
 
 ```html
 <img
@@ -62,7 +62,7 @@ An example of using the picture element is as follows (again pulled from <a href
 </picture>
 ```
 
-<h3>*“So when should I use the `<picture>` element?”*</h3>
+### _“So when should I use the `<picture>` element?”_
 
 You should use the `<picture>` element when your use case is in an <a href="https://blog.cloudfour.com/a-framework-for-discussing-responsive-images-solutions/">**art direction**</a>, meaning when you need to crop the image at different viewports or do something similar, no other time.
 

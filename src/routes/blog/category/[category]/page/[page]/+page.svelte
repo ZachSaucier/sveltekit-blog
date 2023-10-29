@@ -1,8 +1,7 @@
-<!-- Renders posts listed by category -->
 <script>
 	import PostsList from '$lib/components/PostsList.svelte';
 	import Pagination from '$lib/components/Pagination.svelte';
-	import { site_description, posts_per_page } from '$lib/config';
+	import { site_description, posts_per_page, title_ending } from '$lib/config';
 
 	export let data;
 	const { page, category, total_posts, posts } = data;
@@ -12,7 +11,7 @@
 </script>
 
 <svelte:head>
-	<title>Blog category {category} - page {page}</title>
+	<title>Blog category {category} - page {page}{title_ending}</title>
 	<meta data-key="description" name={site_description} />
 </svelte:head>
 

@@ -1,7 +1,7 @@
-<!-- Renders any page at /blog/category/* -->
 <script>
 	import PostsList from '$lib/components/PostsList.svelte';
 	import Pagination from '$lib/components/Pagination.svelte';
+	import { title_ending } from '$lib/config';
 
 	export let data;
 
@@ -9,7 +9,7 @@
 </script>
 
 <svelte:head>
-	<title>Category: {category}</title>
+	<title>Category: {category}{title_ending}</title>
 </svelte:head>
 
 <h1>Blog category: {category}</h1>

@@ -1,6 +1,5 @@
-<!-- Renders posts listed by category -->
 <script>
-	import { site_description } from '$lib/config';
+	import { site_description, title_ending } from '$lib/config';
 	import PostsList from '$lib/components/PostsList.svelte';
 	import Pagination from '$lib/components/Pagination.svelte';
 
@@ -12,7 +11,7 @@
 </script>
 
 <svelte:head>
-	<title>Blog category - page {page}</title>
+	<title>Blog category - page {page}{title_ending}</title>
 	<meta data-key="description" name={site_description} />
 </svelte:head>
 

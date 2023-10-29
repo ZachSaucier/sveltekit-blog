@@ -11,7 +11,7 @@ description: This post covers some of the advantages that JavaScript has over Fl
 ---
 
 <div class="aside">
-  **Aside:** This question was originally asked on WebDesign.StackExchange.com, a private beta that ended up being deleted on October 6th, 2014.
+  <strong>Aside:</strong> This question was originally asked on WebDesign.StackExchange.com, a private beta that ended up being deleted on October 6th, 2014.
 </div>
 
 Nowadays I see that the majority of websites are using JavaScript for their animations. I remember the days when Flash was usually used to fulfill those tasks.

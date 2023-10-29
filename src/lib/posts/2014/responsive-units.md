@@ -11,7 +11,7 @@ description: This post covers some of the benefits of using units other than pix
 ---
 
 <div class="aside">
-    **Aside:** This question was originally asked on WebDesign.StackExchange.com, a private beta that ended up being deleted on October 6th, 2014.
+  <strong>Aside:</strong> This question was originally asked on WebDesign.StackExchange.com, a private beta that ended up being deleted on October 6th, 2014.
 </div>
 
 I understand that the overall goal is to stay responsive, but what is the purpose of avoiding pixels?
@@ -58,7 +58,9 @@ Using relative units also allows us to make changes to the content more easily i
     <sub id="two">2. Some people may talk about a `ch` unit which is like `ex` but based on the width of the 0 character. It is not in the W3 spec and is not well supported.</sub>
     <sub id="three">3. An element can be taken out of its parent’s stacking context by positioning it absolutely while statically positioning its parent.</sub>
 
-<div class="aside">The next section was written by <a href="https://jordan.matelsky.com/">Jordan Matelsky</a></div>
+<div class="aside">
+  The next section was written by <a href="https://jordan.matelsky.com/">Jordan Matelsky</a>
+</div>
 
 **`em` units are responsive by design.**
 

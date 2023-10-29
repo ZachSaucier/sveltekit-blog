@@ -75,7 +75,7 @@ And that about wraps up what I have to offer on the subject. If you liked this y
   /* .8666 = cos(30deg) */
 }
 
-.triangle, .octagon {
+.triangle {
   background: transparent;
   /* comment to see rectangle */
   overflow: hidden;
@@ -88,7 +88,7 @@ And that about wraps up what I have to offer on the subject. If you liked this y
   transform: rotate(-90deg) skewy(30deg);
 }
 
-.triangle::before, .octagon::before, .octagon.border::after {
+.triangle::before {
   display: block;
   /* to be able to apply width/ height/ transform */
   width: inherit;
@@ -101,10 +101,6 @@ And that about wraps up what I have to offer on the subject. If you liked this y
 
 .triangle {
   transform: translatex(-50px) rotate(-90deg) skewy(30deg);
-}
-
-.octagon::before {
-  transform: skewy(-30deg) rotate(60deg) translate(0);
 }
 
 .hexagon {
