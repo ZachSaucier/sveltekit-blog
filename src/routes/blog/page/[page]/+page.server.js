@@ -1,8 +1,9 @@
 import { redirect } from '@sveltejs/kit';
-import { postsPerPage } from '$lib/config';
+import { posts_per_page } from '$lib/config';
 import fetchPosts from '$lib/utilities/fetchPosts';
 
 export const load = async ({ url, params, fetch }) => {
+	console.log(url, params);
 	const page = parseInt(params.page) || 1;
 
 	// Keeps from duplicating the blog index route as page 1
@@ -10,7 +11,7 @@ export const load = async ({ url, params, fetch }) => {
 		throw redirect(301, '/blog');
 	}
 
-	let offset = page * postsPerPage - postsPerPage;
+	let offset = page * posts_per_page - posts_per_page;
 
 	const totalPostsRes = await fetch(`${url.origin}/blog/api/posts/count`);
 	const total = await totalPostsRes.json();

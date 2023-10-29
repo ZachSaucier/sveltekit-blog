@@ -1,5 +1,5 @@
 <script>
-	import { siteAuthor } from '$lib/config';
+	import { site_author } from '$lib/config';
 
 	export let style = '';
 </script>
@@ -8,7 +8,7 @@
 	<nav>
 		<ul>
 			<li>
-				<p>&copy;{new Date().getFullYear()} {siteAuthor}</p>
+				<p>&copy;{new Date().getFullYear()} {site_author}</p>
 			</li>
 			<li>
 				<a href="/blog/api/rss.xml" data-sveltekit-reload>RSS</a>

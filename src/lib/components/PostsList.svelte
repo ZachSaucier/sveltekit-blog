@@ -16,11 +16,12 @@
 						month: 'short',
 						day: 'numeric'
 				  })}
+		{@const path = `/blog/${post.slug}`}
 		<li>
 			<section>
 				<header>
 					{#if post.coverImage}
-						<a href="/blog/{post.slug}" rel="full-article">
+						<a href={path} rel="full-article">
 							<img
 								src={post.coverImage}
 								alt=""
@@ -31,7 +32,7 @@
 						</a>
 					{/if}
 
-					<a href="/blog/{post.slug}" rel="full-article">
+					<a href={path} rel="full-article">
 						<h2>
 							{post.title}
 						</h2>
@@ -45,7 +46,7 @@
 
 				{#if !post.has_excerpt}
 					<footer>
-						<a href="/blog/{post.slug}" class="read-on" rel="full-article">Read on</a>
+						<a href={path} class="read-on" rel="full-article">Read on</a>
 					</footer>
 				{/if}
 			</section>

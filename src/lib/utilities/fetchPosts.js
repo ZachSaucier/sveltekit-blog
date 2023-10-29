@@ -1,12 +1,14 @@
-import { postsPerPage } from '$lib/config';
+import { posts_per_page } from '$lib/config';
 
 const SEPARATOR = '<span class="excerpt-marker"></span>';
 
-const fetchPosts = async ({ offset = 0, limit = postsPerPage, category = '' } = {}) => {
+const fetchPosts = async ({ offset = 0, limit = posts_per_page, category = '' } = {}) => {
 	const posts = await Promise.all(
 		Object.entries(import.meta.glob('/src/lib/posts/**/*.md')).map(async ([path, resolver]) => {
 			const { metadata, ...rest } = await resolver();
-			const slug = path.split('/').pop().slice(0, -3);
+			const path_pieces = path.split('/');
+			// const year = path_pieces[4];
+			const slug = path_pieces.pop().slice(0, -3);
 			const html = rest.default.render().html;
 			const has_excerpt = html.indexOf(SEPARATOR) === -1;
 			const excerpt = has_excerpt ? html : html.split(SEPARATOR)[0];

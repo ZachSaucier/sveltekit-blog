@@ -1,4 +1,4 @@
-import { siteTitle, siteDescription, siteLink } from '$lib/config';
+import { site_title, site_description, site_link } from '$lib/config';
 
 export const prerender = true;
 
@@ -27,16 +27,16 @@ export const GET = async () => {
 const render = (posts) => `<?xml version="1.0" encoding="UTF-8" ?>
 <rss version="2.0" xmlns:atom="https://www.w3.org/2005/Atom">
 <channel>
-<title>${siteTitle}</title>
-<description>${siteDescription}</description>
-<link>${siteLink}/</link>
-<atom:link href="${siteLink}/api/rss.xml" rel="self" type="application/rss+xml"/>
+<title>${site_title}</title>
+<description>${site_description}</description>
+<link>${site_link}/</link>
+<atom:link href="${site_link}/api/rss.xml" rel="self" type="application/rss+xml"/>
 ${posts
 	.map(
 		(post) => `<item>
-<guid isPermaLink="true">${siteLink}/${post.slug}</guid>
+<guid isPermaLink="true">${site_link}/${post.slug}</guid>
 <title>${post.title}</title>
-<link>${siteLink}/${post.slug}</link>
+<link>${site_link}/${post.slug}</link>
 <description>${post.description}</description>
 <pubDate>${new Date(post.date).toUTCString()}</pubDate>
 </item>`

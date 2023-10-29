@@ -4,7 +4,7 @@
 	import { fade } from 'svelte/transition';
 
 	import { currentPage } from '$lib/utilities/store';
-	import { navItems } from '$lib/config';
+	import { nav_items } from '$lib/config';
 
 	import Ribbons from '$lib/components/Ribbons.svelte';
 	import Header from '$lib/components/Header.svelte';
@@ -31,7 +31,7 @@
 	 **/
 
 	onMount(() => {
-		const navRoutes = navItems.map((item) => item.route);
+		const navRoutes = nav_items.map((item) => item.route);
 		preloadCode(...navRoutes);
 	});
 </script>

@@ -1,5 +1,5 @@
 <script>
-	import { navItems } from '$lib/config';
+	import { nav_items } from '$lib/config';
 	import { currentPage } from '$lib/utilities/store';
 	import Icon from '$lib/components/Icon.svelte';
 	import ThemeToggle from '$lib/components/ThemeToggle.svelte';
@@ -7,7 +7,7 @@
 
 <nav>
 	<ul>
-		{#each navItems as page}
+		{#each nav_items as page}
 			{@const href = page.route}
 			{@const isCurrentPage = $currentPage.startsWith(href)}
 			<li>
@@ -24,7 +24,7 @@
 				</fieldset>
 			</form>
 		</li>
-		<li>
+		<li class="theme_toggle_item">
 			<ThemeToggle />
 		</li>
 		<li>
@@ -59,6 +59,10 @@
 	}
 
 	.search_item {
+		margin-right: -10px;
+	}
+
+	.theme_toggle_item {
 		margin-right: -5px;
 	}
 

@@ -1,11 +1,11 @@
-export const siteTitle = "Zach Saucier's Blog";
-export const siteDescription = "Zach Saucier's personal blog";
-export const siteLink = 'https://zachsaucier.com/blog';
-export const siteAuthor = 'Zach Saucier';
+export const site_title = "Zach Saucier's Blog";
+export const site_description = "Zach Saucier's personal blog";
+export const site_link = 'https://zachsaucier.com/blog';
+export const site_author = 'Zach Saucier';
 
-export const postsPerPage = 10;
+export const posts_per_page = 10;
 
-export const navItems = [
+export const nav_items = [
 	{
 		title: 'Blog',
 		route: '/blog'
@@ -15,3 +15,5 @@ export const navItems = [
 		route: '/'
 	}
 ];
+
+export const start_year = 2014;

@@ -45,7 +45,7 @@
 	}
 
 	label {
-		display: block;
+		display: flex;
 		cursor: pointer;
 	}
 </style>

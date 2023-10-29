@@ -1,5 +1,5 @@
 <script>
-	import { siteDescription } from '$lib/config';
+	import { site_description } from '$lib/config';
 	import PostsList from '$lib/components/PostsList.svelte';
 	import Pagination from '$lib/components/Pagination.svelte';
 
@@ -8,7 +8,7 @@
 
 <svelte:head>
 	<title>Musings - Zach Saucier's blog</title>
-	<meta data-key="description" name="description" content={siteDescription} />
+	<meta data-key="description" name="description" content={site_description} />
 </svelte:head>
 
 <PostsList posts={data.posts} />

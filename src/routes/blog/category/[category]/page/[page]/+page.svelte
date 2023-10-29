@@ -2,18 +2,18 @@
 <script>
 	import PostsList from '$lib/components/PostsList.svelte';
 	import Pagination from '$lib/components/Pagination.svelte';
-	import { siteDescription, postsPerPage } from '$lib/config';
+	import { site_description, posts_per_page } from '$lib/config';
 
 	export let data;
 	const { page, category, totalPosts, posts } = data;
 
-	$: lowerBound = page * postsPerPage - (postsPerPage - 1) || 1;
-	$: upperBound = Math.min(page * postsPerPage, totalPosts);
+	$: lowerBound = page * posts_per_page - (posts_per_page - 1) || 1;
+	$: upperBound = Math.min(page * posts_per_page, totalPosts);
 </script>
 
 <svelte:head>
 	<title>Blog category {category} - page {page}</title>
-	<meta data-key="description" name={siteDescription} />
+	<meta data-key="description" name={site_description} />
 </svelte:head>
 
 <!-- TODO: this is duplicated across multiple `+page.svelte` files -->
