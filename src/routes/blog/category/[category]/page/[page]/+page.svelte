@@ -5,10 +5,10 @@
 	import { site_description, posts_per_page } from '$lib/config';
 
 	export let data;
-	const { page, category, totalPosts, posts } = data;
+	const { page, category, total_posts, posts } = data;
 
 	$: lowerBound = page * posts_per_page - (posts_per_page - 1) || 1;
-	$: upperBound = Math.min(page * posts_per_page, totalPosts);
+	$: upperBound = Math.min(page * posts_per_page, total_posts);
 </script>
 
 <svelte:head>
@@ -21,13 +21,13 @@
 	<h1>
 		Category: {category}
 		<br />
-		<small>Posts {lowerBound}–{upperBound} of {totalPosts}</small>
+		<small>Posts {lowerBound}–{upperBound} of {total_posts}</small>
 	</h1>
-	<Pagination currentPage={page} {totalPosts} path="/blog/category/{category}/page" />
+	<Pagination current_page={page} {total_posts} path="/blog/category/{category}/page" />
 
 	<PostsList {posts} />
 
-	<Pagination currentPage={page} {totalPosts} path="/blog/category/{category}/page" />
+	<Pagination current_page={page} {total_posts} path="/blog/category/{category}/page" />
 {:else}
 	<h1>Oops!</h1>
 

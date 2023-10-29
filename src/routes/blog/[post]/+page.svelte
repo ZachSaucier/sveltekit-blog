@@ -14,9 +14,9 @@
 		description,
 		date: input_date,
 		updated,
-		coverImage,
-		coverWidth,
-		coverHeight,
+		cover_image,
+		cover_width,
+		cover_height,
 		categories
 	} = data.meta;
 	const { PostContent } = data;
@@ -34,20 +34,20 @@
 	<meta property="og:description" content={description} />
 	<meta name="twitter:description" content={description} />
 	<!-- <meta property="og:image" content="https://yourdomain.com/image_path" /> -->
-	<meta property="og:image:width" content={coverWidth} />
-	<meta property="og:image:height" content={coverHeight} />
+	<meta property="og:image:width" content={cover_width} />
+	<meta property="og:image:height" content={cover_height} />
 	<!-- <meta name="twitter:image" content="https://yourdomain.com/image_path" /> -->
 </svelte:head>
 
 <section>
 	<header class="post_header">
-		{#if coverImage}
+		{#if cover_image}
 			<img
-				src={coverImage}
+				src={cover_image}
 				alt=""
-				width={coverWidth}
-				height={coverHeight}
-				style="ratio: {coverWidth} / {coverHeight}"
+				width={cover_width}
+				height={cover_height}
+				style="ratio: {cover_width} / {cover_height}"
 			/>
 		{/if}
 

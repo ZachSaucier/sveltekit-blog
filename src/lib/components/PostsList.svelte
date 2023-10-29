@@ -10,14 +10,14 @@
 		<li>
 			<section>
 				<header class="post_header">
-					{#if post.coverImage}
+					{#if post.cover_image}
 						<a href={path} rel="full-article">
 							<img
-								src={post.coverImage}
+								src={post.cover_image}
 								alt=""
-								width={post.coverWidth}
-								height={post.coverHeight}
-								style="ratio: {post.coverWidth} / {post.coverHeight}"
+								width={post.cover_width}
+								height={post.cover_height}
+								style="ratio: {post.cover_width} / {post.cover_height}"
 							/>
 						</a>
 					{/if}

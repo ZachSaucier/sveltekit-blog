@@ -7,9 +7,9 @@ categories:
   - css
   - html
   - js
-# coverImage: /images/linus-nylund-Q5QspluNZmM-unsplash.jpg
-# coverWidth: 16
-# coverHeight: 9
+# cover_image: /images/linus-nylund-Q5QspluNZmM-unsplash.jpg
+# cover_width: 16
+# cover_height: 9
 description: Some keys to keep in mind if you want to learn web programming.
 ---
 

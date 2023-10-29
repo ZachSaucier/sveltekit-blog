@@ -5,9 +5,9 @@ categories:
   - code
   - animation
   - projects
-# coverImage: /images/linus-nylund-Q5QspluNZmM-unsplash.jpg
-# coverWidth: 16
-# coverHeight: 9
+# cover_image: /images/linus-nylund-Q5QspluNZmM-unsplash.jpg
+# cover_width: 16
+# cover_height: 9
 description: How I managed to create an animated desktop background using a webpage.
 ---
 
@@ -31,11 +31,11 @@ There are tools that give more power to users of operating systems called macro-
 
 Let’s see how we can use them to use a webpage as a desktop background in 4 easy steps:
 
-1. **Download an automation software**.
+### 1. Download an automation software
 
 In this tutorial I will use Autohotkey (AHK), but you could likely use another similar software. So <a href="https://autohotkey.com/download/">go grab one</a>. If you’re really interested in using AHK more (it’s a really powerful tool), you should go through <a href="https://autohotkey.com/docs/Tutorial.htm">a tutorial</a> and the documentation, but I should explain everything you need for the project in this article.
 
-2. **Get some locations**.
+### 2. Get some locations
 
 We’re going to use a web browser as our means of running the visualization. I recommend using one that you don’t usually use so that you can run it alongside your normal browsing. Here I’m going to use <a href="https://www.opera.com/">Opera</a>, but you can use any of your choosing (or technically any program, but web browsers are the best choice in my opinion).
 
@@ -47,7 +47,7 @@ The other piece of information needed is the URL of the animation we want to use
 
 Keep in mind that the more intensive of a page you choose the more processing it will take, even running it in the background.
 
-3. **Write** (copy) **some code**.
+### 3. Write (copy) some code
 
 I’ll try to explain what’s happening using comments, which are the part that come after the semicolon (`;`). If you’re not interested in learning how it works, just take note of where the `<program location>`, `<page location>`, and `<program name>`s are so that you know where to replace them with your settings.
 
@@ -98,7 +98,7 @@ You can download this file without comments <a href="https://gist.github.com/Zac
 
 And then we save it as a `.ahk` file like `bubbles-background.ahk` and we’re done with it! Now we can run it and we should get a result like the following:
 
-<img src="https://i.imgur.com/mQLVLEi.png">
+<img src="https://i.imgur.com/mQLVLEi.png" alt="A blue cell background on the desktop with a browser window and code editor window on top of it." loading="lazy" />
 
 <aside class="aside">This is my first script using AHK, so if you know how ugly it is, please forgive me and let me know how it could be improved.</aside>
 
@@ -106,7 +106,7 @@ Also note that Autohotkey by default creates a tray icon that we can use to turn
 
 However, if we want this page to stay as our background location anytime we login we need to do one more step.
 
-4. **Create a shortcut in the Startup folder**.
+### 4. Create a shortcut in the Startup folder
 
 Windows has a folder to determine what programs should startup when a user logs in. The personal folder should be located in `C:\Users\<user name>\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup` while the shared folder should be in `C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Startup`. Keep in mind that to view these folders you need to <a href="https://windows.microsoft.com/en-us/windows/show-hidden-files">show hidden files and folders</a>.
 
@@ -116,17 +116,17 @@ Now we need to create an executable for our `.ahk` file by right clicking it and
 
 <aside class="aside">If you create a Mac veresion of this script, let me know and I will gladly credit you and link it in this post!</aside>
 
-<h3>Pros</h3>
+### Pros
 
 This approach has several positives. It lets users specify exactly what content they want to use, allows any type of web content, gives a lot of control as to how these pages are created, is easy to change, is **totally free**, is a miniscule file size, is only as performance intensive as we make it, and can even be made interactive just as easily as non-interactive!
 
-<h3>Cons</h3>
+### Cons
 
 This approach has some known negatives. The first is that icons are no longer accessible. This is because we are creating an overlay, not a true background, so this is unable to be fixed (as far as I know) unless we use a completely different method.
 
 The second is that there is some flickering and it shows the desktop when the page is only partially visible. If you know what’s causing this or how to fix it, I’d love to hear it!
 
-<h2>I’d love to hear feedback!</h2>
+## I’d love to hear feedback!
 
 I think there are a lot of ways to use this approach that I haven’t thought of yet and I’d love to hear about them. I’m also always looking for ways to improve that which I make, so please don’t hesitate to comment with an improvement.
 

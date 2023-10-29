@@ -5,9 +5,9 @@ updated: 2023-10-22
 categories:
   - code
   - css
-# coverImage: "/images/jefferson-santos-fCEJGBzAkrU-unsplash.jpg"
-# coverWidth: 16
-# coverHeight: 9
+# cover_image: "/images/jefferson-santos-fCEJGBzAkrU-unsplash.jpg"
+# cover_width: 16
+# cover_height: 9
 description: An exploration into how to make CSS-only shapes with gradients and outlines.
 ---
 

@@ -36,9 +36,9 @@ const fetchPosts = async ({ offset = 0, limit = posts_per_page, category = '' } 
 		description: post.description,
 		excerpt: post.excerpt,
 		has_excerpt: post.has_excerpt,
-		coverImage: post.coverImage,
-		coverWidth: post.coverWidth,
-		coverHeight: post.coverHeight,
+		cover_image: post.cover_image,
+		cover_width: post.cover_width,
+		cover_height: post.cover_height,
 		date: post.date,
 		categories: post.categories
 	}));

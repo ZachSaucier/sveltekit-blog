@@ -12,13 +12,13 @@ export const load = async ({ fetch, params }) => {
 
 	let offset = page * posts_per_page - posts_per_page;
 
-	const totalPostsRes = await fetch('/blog/api/posts/count');
-	const total = await totalPostsRes.json();
+	const total_postsRes = await fetch('/blog/api/posts/count');
+	const total = await total_postsRes.json();
 	const { posts } = await fetchPosts({ offset, page });
 
 	return {
 		posts,
 		page,
-		totalPosts: total
+		total_posts: total
 	};
 };

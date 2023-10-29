@@ -5,9 +5,9 @@ categories:
   - code
   - crash-course
   - javascript
-# coverImage: /images/linus-nylund-Q5QspluNZmM-unsplash.jpg
-# coverWidth: 16
-# coverHeight: 9
+# cover_image: /images/linus-nylund-Q5QspluNZmM-unsplash.jpg
+# cover_width: 16
+# cover_height: 9
 description: The third talk in my front-end development crash course for designers.
 ---
 
@@ -17,7 +17,7 @@ Part 3 of my front-end development crash course.
 - <a href="https://zachsaucier.com/blog/js-example.js">Slides JS code</a>
 - <a href="https://zachsaucier.com/blog/blog/2015/10/05/starting-html-and-css/">Go to part 2 (HTML &amp; CSS)</a>
 
-<img src="/blog/images/cc3/slide1.png" alt="Starting JavaScript (JS)">
+<img src="$lib/images/cc3/slide1.png" alt="Starting JavaScript (JS)" />
 
 Welcome to my series on learning web development! I created this crash course series to help teach a group of mostly designers at my school about web development, especially on the front-end. This is the third lesson but the first where we learn JS. If you want to start from the beginning, check out <a href="https://zachsaucier.com/blog/blog/2015/09/26/the-why-and-what-of-web-development/">the first post</a>.
 
@@ -31,7 +31,7 @@ When I was presenting this, one person asked a very good question: “Why JavaSc
 
 There are many answers to that, some of which are very opinion based, but in short my reasoning is because it works on a whole lot of devices, from my desktop to phone to some microcontrollers, and because it’s a pretty high level language that is a lot easier (in my opinion) to learn than lower level languages.
 
-<img src="/blog/images/cc3/slide2.png" alt="Variables, types, comments">
+<img src="$lib/images/cc3/slide2.png" alt="Variables, types, comments" loading="lazy" />
 
 To start out, we have to start with the very base of programming: variables. A _variable_ is simply an object that can hold a value. Every variable in JavaScript is 1 of 4 _types_: string (character(s)), integers (whole numbers), floats (numbers with a decimal), and booleans (true/false).
 
@@ -39,13 +39,13 @@ We can declare a new variable by saying `var` then the name we want and optional
 
 But variables alone aren’t all that helpful. We need some logic!
 
-<img src="/blog/images/cc3/slide3.png" alt="if, else, else if">
+<img src="$lib/images/cc3/slide3.png" alt="if, else, else if" loading="lazy" />
 
 This is where `if` and `else` statements come in. If we want something to happen only when a condition is true, we can put that code inside of an `if` statement. The format is as you see above, with the code that only runs based on the condition inside of the curly braces.
 
 We can also optionally use `else`s, which are required to have an `if` before them. They provide an alternative to the option inside of the `if` statement. If we only have an `if` followed by an `else`, one or the other will be guaranteed to run every time. However, if we combine the `else` with another `if` just after it (like in line 4 above), we can check multiple conditions, making sure only one of them is actually ran any given time.
 
-<img src="/blog/images/cc3/slide4.png" alt="if, else, else if">
+<img src="$lib/images/cc3/slide4.png" alt="if, else, else if" loading="lazy" />
 
 Here’s a made up way to use some `if` and `else` statements. The conditions that we’re checking in this example are comparisons. There are some different comparison operators that we should take note of:
 
@@ -79,7 +79,7 @@ But the computer already keeps track of what these values are. Isn’t there a w
 
 Absolutely!
 
-<img src="/blog/images/cc3/slide5.png" alt="Console">
+<img src="$lib/images/cc3/slide5.png" alt="Console" loading="lazy" />
 
 All browsers have something called a _console_ in them which we can interact with using JavaScript. By far the most common command we use in regards to the console is `console.log()` which prints out stuff for us. In this example, we are printing a formatted string that gives us the value of `a` and `b`. They are _concatenated_ with some text, which means they are made into a string and combined.
 
@@ -87,7 +87,7 @@ To see this console, you can use one of the methods shown in the image. An **imp
 
 Now with that base, we can get into some more interesting stuff.
 
-<img src="/blog/images/cc3/slide6.png" alt="While loops">
+<img src="$lib/images/cc3/slide6.png" alt="While loops" loading="lazy" />
 
 While loops are essentially the same thing as if statements with one addition. If the condition was true and they ran the code inside the braces, it loops back to check the condition and possibly run the code again. This allows us to iterate through a whole range or continually check a condition to see when it changes.
 
@@ -95,7 +95,7 @@ One thing that you have to be especially careful with `while` loops though is ma
 
 _do-while_ loops use a similar form but assure that the code will run at least one time. They are much more rarely used. For more information about it, check out <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/do...while">the Mozilla page</a>.
 
-<img src="/blog/images/cc3/slide7.png" alt="For loops">
+<img src="$lib/images/cc3/slide7.png" alt="For loops" loading="lazy" />
 
 A very similar way to loop with less risk is using a `for` loop. Most of the time `for` loops are used instead of `while` loops but they are pretty interchangeable. The format is as seen above but let’s investigate it.
 
@@ -105,23 +105,23 @@ The second section is after the semicolon and does the condition checking. It ef
 
 The third section is one just for changing the counter value. In this case the index is being incremented by 1 each time. By requiring a change of the counter value here, `for` loops make it more likely that we don’t forget to change the counter value later or remove it when changing around the way our code works.
 
-<img src="/blog/images/cc3/slide8.png" alt="That's the majority of programming logic!">
+<img src="$lib/images/cc3/slide8.png" alt="That's the majority of programming logic!" loading="lazy" />
 
 <hr>
 
 <h2 id="staying-generic">Staying Generic</h2>
 
-<img src="/blog/images/cc3/slide9.png" alt="Structures that help us stay generic (this is a good thing!">
+<img src="$lib/images/cc3/slide9.png" alt="Structures that help us stay generic (this is a good thing!" loading="lazy" />
 
 In addition to pure logic, we want to keep things generic so that we don’t have to do as much work.
 
-<img src="/blog/images/cc3/slide10.png" alt="Problem: duplicating code">
+<img src="$lib/images/cc3/slide10.png" alt="Problem: duplicating code" loading="lazy" />
 
 Take for example this code above. In both cases we want to perform a power operation, meaning raise one number by another number. The way shown works but it duplicates code with only variable names changed out.
 
 Think about how if you wanted to do this with 50 or 1000 numbers. With the knowledge we currently have, that’d mean repeating this code that many times! As such we have a problem we need to get around.
 
-<img src="/blog/images/cc3/slide11.png" alt="Functions">
+<img src="$lib/images/cc3/slide11.png" alt="Functions" loading="lazy" />
 
 JavaScript and other programming languages get around this by using _functions_ which allows blocks of code to be written once but run as many times we _call_, _instantiate_, or _invoke_ which all mean the same thing – that we start it by calling it’s _name_, in this case `pow()`.
 
@@ -129,7 +129,7 @@ In this example the function requires two _parameters_ or something that you _pa
 
 It then does the necessary operations to raise the base by the power number. As shown in the example, now we can then just say `pow(2, 6); pow(3, 5);` and it will do all of what we had on the previous slide. Yay for saving us time and effort!
 
-<img src="/blog/images/cc3/slide12.png" alt="Problem: repeated selecting">
+<img src="$lib/images/cc3/slide12.png" alt="Problem: repeated selecting" loading="lazy" />
 
 Here’s a similar problem. We are selecting 5 different buttons and keeping a reference to them with different variables, but this time it’s the same thing just with different indexes on them. To apply a click event listener we have to repeat code for each one again.
 
@@ -137,19 +137,19 @@ We’ll explain more about how to select elements and what events do more in the
 
 So how can we fix this problem of repeating code that just has different indexes?
 
-<img src="/blog/images/cc3/slide13.png" alt="Arrays">
+<img src="$lib/images/cc3/slide13.png" alt="Arrays" loading="lazy" />
 
 We can use a structure called an _array_. The code above puts all of the buttons in an array (again, we’ll talk more about the selection process in the next section) and then we can loop through them using a `for` loop to apply the click event listener. That makes so that regardless of how many buttons there are, 0 or 5000, our click listener will be applied to all of them.
 
 Notice that to access a certain element in the array we need to know its index.
 
-<img src="/blog/images/cc3/slide14.png" alt="Arrays">
+<img src="$lib/images/cc3/slide14.png" alt="Arrays" loading="lazy" />
 
 This section of code just shows that arrays can have mixed variable types of elements in them including more arrays, _nesting_ one in the other. Nested arrays are particularly helpful for things like grids when we want to keep track of what’s in what cell.
 
 The example is simply printing what the original contents of the array are, replacing those contents with the index of that location, then printing that index.
 
-<img src="/blog/images/cc3/slide15.png" alt="Problem: hard to access">
+<img src="$lib/images/cc3/slide15.png" alt="Problem: hard to access" loading="lazy" />
 
 But, what if we have data like what is shown in the above case? It’s all info about the Monty Python Holy Grail movie but what are those values for?
 
@@ -157,7 +157,7 @@ Using only arrays, we have to know exactly what we’re searching for and the in
 
 What if there were a way to organize it in a named fashion?
 
-<img src="/blog/images/cc3/slide16.png" alt="Objects">
+<img src="$lib/images/cc3/slide16.png" alt="Objects" loading="lazy" />
 
 There is!
 
@@ -169,7 +169,7 @@ On a side note, notice that I used double quotes `"` at one point and single quo
 
 Isn’t isn’t using an object much cleaner than what we tried to do with an array on the previous slide?
 
-<img src="/blog/images/cc3/slide17.png" alt="That's all the structures we need">
+<img src="$lib/images/cc3/slide17.png" alt="That's all the structures we need" loading="lazy" />
 
 And with that, we can handle most all types of data by combining these pieces in the way we need.
 
@@ -179,7 +179,7 @@ And with that, we can handle most all types of data by combining these pieces in
 
 Now we can do just about all that we want in terms of JavaScript interacting with each other, but how do we connect JS to other parts of our page? We’ll talk about that now.
 
-<img src="/blog/images/cc3/slide19.png" alt="Selecting/editing elements">
+<img src="$lib/images/cc3/slide19.png" alt="Selecting/editing elements" loading="lazy" />
 
 At the top we have some HTML. How can we select the different elements in JS?
 
@@ -193,7 +193,7 @@ Once we’ve selected the elements we want, we can listen for events like clicks
 
 The other things we do in the example are access the link’s href property, printing it to the console, and set the inner text (meaning the text content) of the second paragraph.
 
-<img src="/blog/images/cc3/slide20.png" alt="Events">
+<img src="$lib/images/cc3/slide20.png" alt="Events" loading="lazy" />
 
 As we’ve seen already, we can listen for events on our elements. In the example given, we listen for the click using `onclick` and we set that to an unnamed function we created on the spot. We also listen for the `onmouseover` event and fire our hover function when that occurs.
 
@@ -201,7 +201,7 @@ The point of using a named function over an unnamed one is that you can reuse na
 
 There are <a href="https://developer.mozilla.org/en-US/docs/Web/Events">many more events</a> but I’ll leave that up to you to investigate when you need them.
 
-<img src="/blog/images/cc3/slide20.png" alt="Editing the DOM">
+<img src="$lib/images/cc3/slide20.png" alt="Editing the DOM" loading="lazy" />
 
 As mentioned in the previous slide’s explanation, we use the `document` to refer to the elements we want. This is part of the _document object model (DOM)_ which is what our page is actually rendered as, based on the HTML we input. We can change the DOM around as much as we want and our HTML will update accordingly. If you want to know more about this distinction, check out this <a href="https://css-tricks.com/dom/">CSS-Tricks article</a>, especially the resources linked at the end.
 
@@ -209,7 +209,7 @@ In the example shown, we create a button, give it some text and event listener, 
 
 We can also remove elements (also called _nodes_) or move them around using some other commands.
 
-<img src="/blog/images/cc3/slide21.png" alt="That's about it for interacting with elements. Now what?">
+<img src="$lib/images/cc3/slide21.png" alt="That's about it for interacting with elements. Now what?" loading="lazy" />
 
 What else is there to cover?
 
@@ -219,7 +219,7 @@ Not too much for the purposes of this post, actually.
 
 <h2 id="misc">Some other things worth mentioning</h2>
 
-<img src="/blog/images/cc3/slide22.png" alt="Scoping">
+<img src="$lib/images/cc3/slide22.png" alt="Scoping" loading="lazy" />
 
 In programming, there are different contexts or _scopes_. The context that encompasses everything is called the _global_ context. As such, variables that are found within this context/scope are called _global variables_.
 
@@ -231,7 +231,7 @@ In the example, `localVar` is initialized inside of `myFunction` so when we try 
 
 However also note how `anotherVar` in the example is initialized. Since we didn’t use the `var` keyword to initialize it inside of the function, the processor assumes that it is in the global scope even though it’s inside of the function. As such, we can access from outside of the function like we do on line 20 in the example. However this practice is not recommended because it makes debugging harder.
 
-<img src="/blog/images/cc3/slide23.png" alt="Error handling">
+<img src="$lib/images/cc3/slide23.png" alt="Error handling" loading="lazy" />
 
 As programmers, we should never want our programs to error out. But, as the world is not perfect, it inevitably happens sometimes. At times we know that something will never error out because it all deals with what we’ve already implemented just before. A lot of the time though we don’t know what type of data may be passed into our function, a variable might not have been initialized, or we may not know what type of variable something may be. At these locations, we can predict that it may error at times and prepare for that.
 
@@ -239,7 +239,7 @@ We do this in part by using _try-catch_ blocks. The format is as you see above. 
 
 One thing to note is that by default the first argument in the `catch` block is the error that occurred. If we want to do anything with that error, we should list it as the first parameter like I did in the example.
 
-<img src="/blog/images/cc3/slide24.png" alt="More complex condition checking">
+<img src="$lib/images/cc3/slide24.png" alt="More complex condition checking" loading="lazy" />
 
 There are also more ways to combine condition checking.
 
@@ -249,7 +249,7 @@ By chaining condition checks with these operators, we can do things like the exa
 
 If you’re still confused about this I encourage you to try making up some examples and perhaps looking at <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_Operators">this Mozilla page</a> on logical operators.
 
-<img src="/blog/images/cc3/slide25.png" alt="Alternative values">
+<img src="$lib/images/cc3/slide25.png" alt="Alternative values" loading="lazy" />
 
 Another useful technique is to provide default values for variables, particularly inside of functions that we create. In the example, `myFunc` allows for three variables to be passed as parameters but also makes sure that those variables have a default value if no variable is passed. That allows users to pass in anywhere from 0-3 parameters and our function will still work properly.
 
@@ -262,11 +262,11 @@ else first = 'One';
 
 And that’s about it :)
 
-<img src="/blog/images/cc3/slide26.png" alt="Next time we'll get things moving! Animations!">
+<img src="$lib/images/cc3/slide26.png" alt="Next time we'll get things moving! Animations!" loading="lazy" />
 
 But before you go, I have something that I’d like you to do:
 
-<img src="/blog/images/cc3/slide27.png" alt="Project time! Create your own lock mechanism">
+<img src="$lib/images/cc3/slide27.png" alt="Project time! Create your own lock mechanism" loading="lazy" />
 
 Now you have the knowledge to create a sweet locking mechanism. I don’t care what it is for nor do I care if you use buttons, switches, text input, images, or something else, I just want you to create a project that uses what you’ve learned! The only way to really learn is to practice.
 

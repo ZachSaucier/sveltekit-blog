@@ -6,13 +6,13 @@ export const prerender = true;
 export const csr = true;
 
 export const load = async ({ url }) => {
-	const recentPostsRes = await fetch(`${url.origin}/blog/api/recent-posts.json`);
-	const recentPosts = await recentPostsRes.json();
+	const recent_postsRes = await fetch(`${url.origin}/blog/api/recent-posts.json`);
+	const recent_posts = await recent_postsRes.json();
 
 	try {
 		return {
 			path: url.pathname,
-			recentPosts: recentPosts
+			recent_posts: recent_posts
 		};
 	} catch (err) {
 		throw error(500, {

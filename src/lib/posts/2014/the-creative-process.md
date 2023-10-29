@@ -6,9 +6,9 @@ categories:
   - code
   - css
   - meta
-# coverImage: /images/jerry-zhang-ePpaQC2c1xA-unsplash.jpg
-# coverWidth: 16
-# coverHeight: 9
+# cover_image: /images/jerry-zhang-ePpaQC2c1xA-unsplash.jpg
+# cover_width: 16
+# cover_height: 9
 description: How my creative process works.
 ---
 

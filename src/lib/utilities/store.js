@@ -1,4 +1,4 @@
 import { writable } from 'svelte/store';
 
-export const currentPage = writable('');
-export const recentPosts = writable([]);
+export const current_page = writable('');
+export const recent_posts = writable([]);

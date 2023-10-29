@@ -3,6 +3,7 @@ import { mdsvex } from 'mdsvex';
 import preprocess from 'svelte-preprocess';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeSlug from 'rehype-slug';
+import { importAssets } from 'svelte-preprocess-import-assets';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -17,6 +18,7 @@ const config = {
 			// Adds IDs to headings, and anchor links to those IDs. Note: must stay in this order to work.
 			rehypePlugins: [rehypeSlug, rehypeAutolinkHeadings]
 		}),
+		importAssets(),
 		preprocess()
 	],
 

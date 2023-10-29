@@ -3,7 +3,7 @@
 	import { onMount } from 'svelte';
 	import { fade } from 'svelte/transition';
 
-	import { currentPage, recentPosts } from '$lib/utilities/store';
+	import { current_page, recent_posts } from '$lib/utilities/store';
 	import { nav_items } from '$lib/config';
 
 	import Ribbons from '$lib/components/Ribbons.svelte';
@@ -13,7 +13,7 @@
 
 	export let data;
 
-	recentPosts.set(data.recentPosts);
+	recent_posts.set(data.recent_posts);
 
 	const transitionIn = { delay: 150, duration: 150 };
 	const transitionOut = { duration: 100 };
@@ -22,7 +22,7 @@
 	 * Updates the global store with the current path. (Used for highlighting
 	 * the current page in the nav, but could be useful for other purposes.)
 	 **/
-	$: currentPage.set(data.path);
+	$: current_page.set(data.path);
 
 	/**
 	 * This pre-fetches all top-level routes on the site in the background for faster loading.

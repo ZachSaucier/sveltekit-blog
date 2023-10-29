@@ -2,14 +2,10 @@
 <script>
 	import PostsList from '$lib/components/PostsList.svelte';
 	import Pagination from '$lib/components/Pagination.svelte';
-	import { posts_per_page } from '$lib/config';
 
 	export let data;
 
 	const { page, posts, category, total } = data;
-
-	$: lowerBound = page * posts_per_page - (posts_per_page - 1) || 1;
-	$: upperBound = Math.min(page * posts_per_page, total);
 </script>
 
 <svelte:head>
@@ -20,7 +16,7 @@
 
 {#if posts.length}
 	<PostsList {posts} />
-	<Pagination currentPage={page} totalPosts={total} path="/blog/category/{category}/page" />
+	<Pagination current_page={page} total_posts={total} path="/blog/category/{category}/page" />
 {:else}
 	<p><strong>Ope!</strong> Sorry, couldn't find any posts in the category "{category}".</p>
 

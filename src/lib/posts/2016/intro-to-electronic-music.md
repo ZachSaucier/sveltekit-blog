@@ -4,9 +4,9 @@ date: 2016-05-31
 categories:
   - rambling
   - music
-# coverImage: /images/linus-nylund-Q5QspluNZmM-unsplash.jpg
-# coverWidth: 16
-# coverHeight: 9
+# cover_image: /images/linus-nylund-Q5QspluNZmM-unsplash.jpg
+# cover_width: 16
+# cover_height: 9
 description: A short introduction to electronic music for those who don't know much about it.
 ---
 

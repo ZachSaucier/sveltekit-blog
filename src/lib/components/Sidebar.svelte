@@ -1,6 +1,6 @@
 <script>
 	import Icon from '$lib/components/Icon.svelte';
-	import { recentPosts } from '$lib/utilities/store';
+	import { recent_posts } from '$lib/utilities/store';
 
 	export let style = '';
 
@@ -54,11 +54,11 @@
 		</p>
 	</section>
 
-	{#if $recentPosts.length}
+	{#if $recent_posts.length}
 		<h1>Recent posts</h1>
 		<section>
 			<ol>
-				{#each $recentPosts as post}
+				{#each $recent_posts as post}
 					<li>
 						<a href={post.slug}>
 							<h2>{post.title}</h2>

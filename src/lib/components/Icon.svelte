@@ -6,7 +6,7 @@
 
 	$: title =
 		type === 'ThemeToggle'
-			? state.isDarkMode
+			? state.is_dark_mode
 				? 'Switch to light theme'
 				: 'Switch to dark theme'
 			: type;
@@ -96,7 +96,7 @@
 			style="stroke-width:.128"
 		/>
 	{:else if type === 'ThemeToggle'}
-		{#if state.isDarkMode}
+		{#if state.is_dark_mode}
 			<circle
 				cx="16"
 				cy="16"

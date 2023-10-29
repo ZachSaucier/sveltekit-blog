@@ -1,6 +1,6 @@
 <script>
 	import { nav_items } from '$lib/config';
-	import { currentPage } from '$lib/utilities/store';
+	import { current_page } from '$lib/utilities/store';
 	import Icon from '$lib/components/Icon.svelte';
 	import ThemeToggle from '$lib/components/ThemeToggle.svelte';
 </script>
@@ -9,9 +9,9 @@
 	<ul>
 		{#each nav_items as page}
 			{@const href = page.route}
-			{@const isCurrentPage = $currentPage.startsWith(href)}
+			{@const is_current_page = $current_page.startsWith(href)}
 			<li>
-				<a {href} class:active={isCurrentPage} aria-current={isCurrentPage ? 'page' : false}>
+				<a {href} class:active={is_current_page} aria-current={is_current_page ? 'page' : false}>
 					{page.title}
 				</a>
 			</li>

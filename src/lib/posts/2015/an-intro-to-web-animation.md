@@ -6,9 +6,9 @@ categories:
   - animation
   - css
   - javascript
-# coverImage: /images/linus-nylund-Q5QspluNZmM-unsplash.jpg
-# coverWidth: 16
-# coverHeight: 9
+# cover_image: /images/linus-nylund-Q5QspluNZmM-unsplash.jpg
+# cover_width: 16
+# cover_height: 9
 description: An overview of basic CSS and JavaScript animation of DOM elements.
 ---
 
@@ -48,7 +48,7 @@ Let’s add some things to the CSS section in the top right, which is equivalent
 
 Make sure to click “Run” after you finish writing your code each time.
 
-<img src="https://i.imgur.com/0ataeO3.png" alt="a box being rendered">
+<img src="https://i.imgur.com/0ataeO3.png" alt="a box being rendered" loading="lazy">
 
 Awesome! We can tell exactly where our element is now. The font size units may have thrown you off a bit, for more about that <a href="https://zachsaucier.com/blog/blog/2014/09/30/responsive-units/">check this post</a>.
 

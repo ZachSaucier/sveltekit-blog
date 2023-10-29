@@ -4,9 +4,9 @@ date: 2017-01-03
 categories:
   - rambling
   - life-lessons
-# coverImage: /images/linus-nylund-Q5QspluNZmM-unsplash.jpg
-# coverWidth: 16
-# coverHeight: 9
+# cover_image: /images/linus-nylund-Q5QspluNZmM-unsplash.jpg
+# cover_width: 16
+# cover_height: 9
 description: Some things I learned by regularly going to a college dining hall.
 ---
 

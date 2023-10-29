@@ -6,9 +6,9 @@ categories:
   - code
   - css
   - responsive
-# coverImage: /images/linus-nylund-Q5QspluNZmM-unsplash.jpg
-# coverWidth: 16
-# coverHeight: 9
+# cover_image: /images/linus-nylund-Q5QspluNZmM-unsplash.jpg
+# cover_width: 16
+# cover_height: 9
 description: A primer on responsive web design, including how to use media queries, a mobile-first approach, and other techniques.
 ---
 

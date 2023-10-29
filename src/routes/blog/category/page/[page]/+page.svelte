@@ -5,10 +5,10 @@
 	import Pagination from '$lib/components/Pagination.svelte';
 
 	export let data;
-	const { page, totalPosts, posts } = data;
+	const { page, total_posts, posts } = data;
 
 	$: lowerBound = page * posts_per_page - (posts_per_page - 1) || 1;
-	$: upperBound = Math.min(page * posts_per_page, totalPosts);
+	$: upperBound = Math.min(page * posts_per_page, total_posts);
 </script>
 
 <svelte:head>
@@ -18,12 +18,12 @@
 
 <!-- TODO: this is duplicated across multiple `+page.svelte` files -->
 {#if posts.length}
-	<h1>Posts {lowerBound}–{upperBound} of {totalPosts}</h1>
-	<Pagination currentPage={page} {totalPosts} />
+	<h1>Posts {lowerBound}–{upperBound} of {total_posts}</h1>
+	<Pagination current_page={page} {total_posts} />
 
 	<PostsList {posts} />
 
-	<Pagination currentPage={page} {totalPosts} />
+	<Pagination current_page={page} {total_posts} />
 {:else}
 	<h1>Oops!</h1>
 

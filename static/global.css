@@ -25,6 +25,9 @@ ul {
 img {
 	max-width: 100%;
 }
+hr {
+	margin-bottom: 0.3em;
+}
 
 .sr-only {
 	position: absolute;
@@ -123,6 +126,14 @@ article {
 		margin-bottom: 0.5em;
 	}
 
+	& h2 {
+		font-size: 1.5em;
+	}
+
+	& h3 {
+		font-size: 1.2em;
+	}
+
 	& :is(p, article blockquote, ul, ol):not(:last-child) {
 		margin-bottom: 1em;
 	}
@@ -182,4 +193,40 @@ html.dark {
 	position: absolute;
 	top: 0;
 	color: var(--grayed-text);
+}
+
+figure {
+	margin-bottom: 1em;
+
+	& img {
+		margin-bottom: 0;
+	}
+}
+
+code {
+	display: inline-block;
+	background-color: var(--background-color);
+	font-size: 0.8em;
+	line-height: 1.5em;
+	color: var(--accent-dark);
+	border-radius: 0.4em;
+	border: 1px solid #ddd;
+	padding: 0 0.3em;
+}
+
+pre {
+	overflow: auto;
+	padding: 0.4em 0.7em;
+	border: 1px solid #ddd;
+	margin-bottom: 0.5em;
+
+	& code {
+		padding: 0;
+		border: 0;
+	}
+}
+
+sub {
+	line-height: 1.7;
+	display: inline-block;
 }

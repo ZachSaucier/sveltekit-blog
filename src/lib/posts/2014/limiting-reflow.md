@@ -6,9 +6,9 @@ categories:
   - css
   - javascript
   - performance
-# coverImage: /images/linus-nylund-Q5QspluNZmM-unsplash.jpg
-# coverWidth: 16
-# coverHeight: 9
+# cover_image: /images/linus-nylund-Q5QspluNZmM-unsplash.jpg
+# cover_width: 16
+# cover_height: 9
 description: Some tips to efficiently modify DOM elements while limiting reflow.
 ---
 
