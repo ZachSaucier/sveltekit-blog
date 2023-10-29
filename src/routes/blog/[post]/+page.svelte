@@ -1,15 +1,27 @@
 <!-- This file renders each individual blog post for reading. Be sure to update the svelte:head below -->
 <script>
+	import dateParser from '$lib/utilities/dateParser';
+	import { title_ending } from '$lib/config';
 	export let data;
 
-	const { title, description, date, updated, coverImage, coverWidth, coverHeight, categories } =
-		data.meta;
+	const {
+		title,
+		description,
+		date: input_date,
+		updated,
+		coverImage,
+		coverWidth,
+		coverHeight,
+		categories
+	} = data.meta;
 	const { PostContent } = data;
+
+	const { date, date_string } = dateParser(input_date);
 </script>
 
 <svelte:head>
 	<!-- Be sure to add your image files and un-comment the lines below -->
-	<title>{title}</title>
+	<title>{title}{title_ending}</title>
 	<meta data-key="description" name="description" content={description} />
 	<meta property="og:type" content="article" />
 	<meta property="og:title" content={title} />
@@ -23,26 +35,24 @@
 </svelte:head>
 
 <section>
-	<header>
+	<header class="post_header">
 		{#if coverImage}
 			<img
 				src={coverImage}
 				alt=""
-				style="aspect-ratio: {coverWidth} / {coverHeight};"
 				width={coverWidth}
 				height={coverHeight}
+				style="ratio: {coverWidth} / {coverHeight}"
 			/>
 		{/if}
 
-		<h1>{title}</h1>
+		<h2 class="post_title">
+			{title}
+		</h2>
 
-		<div class="meta">
-			<b>Published:</b>
-			{date}
-			<br />
-			<b>Updated:</b>
-			{updated}
-		</div>
+		<time class="post_date" datetime={date}>
+			{date_string}{#if updated} updated at {updated}{/if}
+		</time>
 	</header>
 
 	<article>

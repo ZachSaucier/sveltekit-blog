@@ -1,25 +1,15 @@
 <script>
+	import dateParser from '$lib/utilities/dateParser';
 	export let posts = [];
 </script>
 
 <ul>
 	{#each posts as post}
-		{@const date = new Date(post.date)}
-		{@const dateString =
-			date.getFullYear() === new Date().getFullYear()
-				? date.toLocaleDateString(undefined, {
-						month: 'short',
-						day: 'numeric'
-				  })
-				: date.toLocaleDateString(undefined, {
-						year: 'numeric',
-						month: 'short',
-						day: 'numeric'
-				  })}
+		{@const { date, date_string } = dateParser(post.date)}
 		{@const path = `/blog/${post.slug}`}
 		<li>
 			<section>
-				<header>
+				<header class="post_header">
 					{#if post.coverImage}
 						<a href={path} rel="full-article">
 							<img
@@ -33,11 +23,12 @@
 					{/if}
 
 					<a href={path} rel="full-article">
-						<h2>
+						<h2 class="post_title">
 							{post.title}
 						</h2>
 					</a>
-					<time datetime={post.date}>{dateString}</time>
+
+					<time class="post_date" datetime={date}>{date_string}</time>
 				</header>
 
 				<article>
@@ -46,7 +37,7 @@
 
 				{#if !post.has_excerpt}
 					<footer>
-						<a href={path} class="read-on" rel="full-article">Read on</a>
+						<a href={path} class="read_on" rel="full-article">Read on</a>
 					</footer>
 				{/if}
 			</section>
@@ -60,41 +51,15 @@
 			bottom left repeat-x;
 	}
 
-	header {
-		position: relative;
-		display: flex;
-		padding-top: 36px;
-		margin-bottom: 28px;
-	}
-
 	a {
 		color: inherit;
-		text-decoration: none;
-
-		&:hover,
-		&:focus {
-			text-decoration: underline;
-		}
-	}
-
-	h2 {
-		font-size: 40px;
-		font-weight: bold;
-		text-wrap: pretty;
-	}
-
-	time {
-		font-family: 'PT Sans', 'Helvetica Neue', Arial, sans-serif;
-		position: absolute;
-		top: 0;
-		color: var(--grayed-text);
 	}
 
 	footer {
 		margin-top: 1em;
 	}
 
-	.read-on {
+	.read_on {
 		background-color: var(--button-dark-background);
 		display: inline-block;
 		padding: 0.4em 0.8em;
@@ -118,12 +83,12 @@
 		}
 	}
 
-	:global(html.dark .read-on) {
+	:global(html.dark .read_on) {
 		color: var(--accent-dark);
 		background-color: var(--link-color);
 	}
 
-	:global(html.dark .read-on:hover) {
+	:global(html.dark .read_on:hover) {
 		background-color: var(--link-color-hover);
 	}
 </style>
