@@ -3,10 +3,17 @@
 	export let width;
 	export let fill = 'var(--accent-dark, #000)';
 	export let state = {};
+
+	$: title =
+		type === 'ThemeToggle'
+			? state.isDarkMode
+				? 'Switch to light theme'
+				: 'Switch to dark theme'
+			: type;
 </script>
 
 <svg class={type} viewBox="0 0 32 32" {width} xmlns="http://www.w3.org/2000/svg" fill="none">
-	<title>{type}</title>
+	<title>{title}</title>
 	{#if type === 'Twitter'}
 		<path
 			fill-rule="evenodd"
@@ -82,6 +89,24 @@
 			fill="var(--background-color)"
 		/>
 	{:else if type === 'ThemeToggle'}
-		{state.isDarkMode ? 'Go to light mode' : 'Go to dark mode'}
+		{#if state.isDarkMode}
+			<circle
+				cx="16"
+				cy="16"
+				r="6.6666665"
+				style="stroke-width:2.66667"
+				stroke="var(--background-color)"
+			/>
+			<path
+				d="M16 1.333V4m0 24v2.667M5.627 5.627 7.52 7.52m16.96 16.96 1.893 1.893M1.333 16H4m24 0h2.667M5.627 26.373 7.52 24.48M24.48 7.52l1.893-1.893"
+				style="stroke-width:2.66667"
+				stroke="var(--background-color)"
+			/>
+		{:else}
+			<path
+				d="M30.395 17.318A14.445 14.445 0 1 1 14.682 1.605a11.235 11.235 0 0 0 15.713 15.713Z"
+				style="fill:var(--background-color);stroke-width:3.21001"
+			/>
+		{/if}
 	{/if}
 </svg>

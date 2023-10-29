@@ -29,18 +29,23 @@
 </script>
 
 <input
-	id="theme-toggle"
-	class="sr-only"
+	id="theme_toggle"
+	name="Theme toggle"
 	checked={isDarkMode}
 	on:click={handleSwitchDarkMode}
 	type="checkbox"
 />
-<label for="theme-toggle">
-	<Icon type="ThemeToggle" width={29} fill="var(--background-color)" state={{ isDarkMode }} />
+<label for="theme_toggle">
+	<Icon type="ThemeToggle" state={{ isDarkMode }} width={29} />
 </label>
 
 <style>
+	input {
+		display: none;
+	}
+
 	label {
+		display: block;
 		cursor: pointer;
 	}
 </style>
