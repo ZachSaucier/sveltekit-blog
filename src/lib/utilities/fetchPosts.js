@@ -16,21 +16,21 @@ const fetchPosts = async ({ offset = 0, limit = posts_per_page, category = '' } 
 		})
 	);
 
-	let sortedPosts = posts.sort((a, b) => new Date(b.date) - new Date(a.date));
+	let sorted_posts = posts.sort((a, b) => new Date(b.date) - new Date(a.date));
 
 	if (category) {
-		sortedPosts = sortedPosts.filter((post) => post.categories.includes(category));
+		sorted_posts = sorted_posts.filter((post) => post.categories.includes(category));
 	}
 
 	if (offset) {
-		sortedPosts = sortedPosts.slice(offset);
+		sorted_posts = sorted_posts.slice(offset);
 	}
 
-	if (limit && limit < sortedPosts.length && limit != -1) {
-		sortedPosts = sortedPosts.slice(0, limit);
+	if (limit && limit < sorted_posts.length && limit != -1) {
+		sorted_posts = sorted_posts.slice(0, limit);
 	}
 
-	sortedPosts = sortedPosts.map((post) => ({
+	sorted_posts = sorted_posts.map((post) => ({
 		title: post.title,
 		slug: post.slug,
 		description: post.description,
@@ -44,7 +44,7 @@ const fetchPosts = async ({ offset = 0, limit = posts_per_page, category = '' } 
 	}));
 
 	return {
-		posts: sortedPosts
+		posts: sorted_posts
 	};
 };
 

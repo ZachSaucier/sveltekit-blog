@@ -1,5 +1,6 @@
 <script>
 	import Icon from '$lib/components/Icon.svelte';
+	import { recentPosts } from '$lib/utilities/store';
 
 	export let style = '';
 
@@ -8,6 +9,11 @@
 			title: 'Just Read',
 			description: 'A customizable read mode web extension.',
 			link: 'https://justread.link/'
+		},
+		{
+			title: 'Disentegrate.js',
+			description: 'Break DOM elements into animated particles.',
+			link: 'https://github.com/ZachSaucier/Disintegrate'
 		}
 	];
 
@@ -43,15 +49,28 @@
 	<section>
 		<h1>About me</h1>
 		<p>
-			Welcome to my blog! I'm a product, design, and animation minded engineer. I love creating
+			Welcome to my blog! I'm a product, design, and animation minded engineer.<br />I love creating
 			useful tools as much as I do new animation techniques.
 		</p>
 	</section>
 
-	<!-- TODO recent posts -->
+	{#if $recentPosts.length}
+		<h1>Recent posts</h1>
+		<section>
+			<ol>
+				{#each $recentPosts as post}
+					<li>
+						<a href={post.slug}>
+							<h2>{post.title}</h2>
+						</a>
+					</li>
+				{/each}
+			</ol>
+		</section>
+	{/if}
 
 	<section>
-		<h1>Major side projects</h1>
+		<h1>Favorite side projects</h1>
 		<ul>
 			{#each projects as project}
 				<li>
@@ -96,8 +115,20 @@
 	}
 
 	p {
-		font-size: 16px;
+		font-size: 0.9rem;
 		line-height: 1.6;
+	}
+
+	ul,
+	ol {
+		padding-inline-start: 20px;
+		font-size: 0.9rem;
+	}
+
+	li {
+		padding: 0.5em 0;
+		border-bottom: 1px solid #ededed;
+		margin-bottom: 0.4em;
 	}
 
 	.socials {
@@ -106,6 +137,12 @@
 
 		& a {
 			display: contents;
+		}
+
+		& li {
+			padding: 0;
+			border-bottom: 0;
+			margin-bottom: 0;
 		}
 	}
 </style>

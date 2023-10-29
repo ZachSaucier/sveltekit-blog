@@ -3,7 +3,7 @@
 	import { onMount } from 'svelte';
 	import { fade } from 'svelte/transition';
 
-	import { currentPage } from '$lib/utilities/store';
+	import { currentPage, recentPosts } from '$lib/utilities/store';
 	import { nav_items } from '$lib/config';
 
 	import Ribbons from '$lib/components/Ribbons.svelte';
@@ -12,6 +12,8 @@
 	import Footer from '$lib/components/Footer.svelte';
 
 	export let data;
+
+	recentPosts.set(data.recentPosts);
 
 	const transitionIn = { delay: 150, duration: 150 };
 	const transitionOut = { duration: 100 };

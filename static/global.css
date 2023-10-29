@@ -106,6 +106,7 @@ code {
 
 a {
 	color: var(--link-color);
+	text-decoration: none;
 
 	&:visited {
 		color: var(--link-color-visited);
