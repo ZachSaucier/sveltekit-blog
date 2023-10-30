@@ -1,5 +1,5 @@
 <script>
-	import dateParser from '$lib/utilities/dateParser';
+	import Date from '$lib/components/Date.svelte';
 	export let posts = [];
 	export let tag = '';
 
@@ -9,7 +9,7 @@
 </script>
 
 <section>
-	<h1 class="tag_title">Blog tag: {tag}</h1>
+	<h1 class="page_title">Blog tag: {tag}</h1>
 	{#if total_posts}
 		<p>Posts {lower_bound}–{upper_bound} of {total_posts}</p>
 	{/if}
@@ -17,7 +17,6 @@
 
 <ul>
 	{#each posts as post}
-		{@const { date, date_string } = dateParser(post.date)}
 		{@const path = `/blog/${post.slug}`}
 		<li>
 			<section>
@@ -28,7 +27,7 @@
 						</h2>
 					</a>
 
-					<time class="post_date" datetime={date}>{date_string}</time>
+					<Date input_date={post.date} />
 				</header>
 
 				<article>

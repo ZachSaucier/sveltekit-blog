@@ -2,26 +2,16 @@
 <script>
 	import { onMount } from 'svelte';
 	import { title_ending } from '$lib/config';
-	import dateParser from '$lib/utilities/dateParser';
+	import Date from '$lib/components/Date.svelte';
 	import TwitterShare from '$lib/components/TwitterShare.svelte';
 	export let data;
 
 	let url = ``;
 	onMount(() => (url = window.location.href));
 
-	const {
-		title,
-		description,
-		date: input_date,
-		updated,
-		cover_image,
-		cover_width,
-		cover_height,
-		tags
-	} = data.meta;
+	const { title, description, date, updated, cover_image, cover_width, cover_height, tags } =
+		data.meta;
 	const { PostContent } = data;
-
-	const { date, date_string } = dateParser(input_date);
 </script>
 
 <svelte:head>
@@ -55,9 +45,7 @@
 			{title}
 		</h2>
 
-		<time class="post_date" datetime={date}>
-			{date_string}{#if updated} updated at {updated}{/if}
-		</time>
+		<Date input_date={date} {updated} />
 	</header>
 
 	<article>

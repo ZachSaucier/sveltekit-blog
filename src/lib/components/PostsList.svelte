@@ -1,11 +1,10 @@
 <script>
-	import dateParser from '$lib/utilities/dateParser';
+	import Date from '$lib/components/Date.svelte';
 	export let posts = [];
 </script>
 
 <ul>
 	{#each posts as post}
-		{@const { date, date_string } = dateParser(post.date)}
 		{@const path = `/blog/${post.slug}`}
 		<li>
 			<section>
@@ -28,7 +27,7 @@
 						</h2>
 					</a>
 
-					<time class="post_date" datetime={date}>{date_string}</time>
+					<Date input_date={post.date} />
 				</header>
 
 				<article>

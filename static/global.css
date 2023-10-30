@@ -208,14 +208,7 @@ html.dark {
 	text-wrap: pretty;
 }
 
-.post_date {
-	font-family: 'PT Sans', 'Helvetica Neue', Arial, sans-serif;
-	position: absolute;
-	top: 0;
-	color: var(--grayed-text);
-}
-
-.tag_title {
+.page_title {
 	font-size: 2em;
 	font-weight: bold;
 }
