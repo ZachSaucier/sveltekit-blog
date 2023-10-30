@@ -10,9 +10,9 @@ tags:
 description: This post covers some of the advantages that JavaScript has over Flash.
 ---
 
-<div class="aside">
+<aside class="aside">
   <strong>Aside:</strong> This question was originally asked on WebDesign.StackExchange.com, a private beta that ended up being deleted on October 6th, 2014.
-</div>
+</aside>
 
 Nowadays I see that the majority of websites are using JavaScript for their animations. I remember the days when Flash was usually used to fulfill those tasks.
 

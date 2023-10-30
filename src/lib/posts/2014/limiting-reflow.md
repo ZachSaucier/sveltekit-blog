@@ -12,9 +12,9 @@ tags:
 description: Some tips to efficiently modify DOM elements while limiting reflow.
 ---
 
-<div class="aside">
+<aside class="aside">
   <strong>Aside:</strong> This question was originally asked on WebDesign.StackExchange.com, a private beta that ended up being deleted on October 6th, 2014.
-</div>
+</aside>
 
 When working with a very dynamic UI (think Single Page App) with potentially large JS libraries, view templates, validation, ajax, animations, etc… what are some strategies that will help minimize or reduce the time the browser spends on reflow?
 

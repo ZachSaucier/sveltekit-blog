@@ -12,9 +12,9 @@ tags:
 description: A primer on responsive web design, including how to use media queries, a mobile-first approach, and other techniques.
 ---
 
-<div class="aside">
+<aside class="aside">
   <strong>Aside:</strong> In the editing phases of this post, Brad Frost posted a great, resources driven <a href="https://bradfrost.com/blog/post/the-principles-of-adaptive-design/">article</a> on the same issue. I recommend reading it and using the resources provided as they give more detail to certain areas which this post doesn’t talk much about. 
-</div>
+</aside>
 
 Countless articles, many quite useful, have been written on the subject of responsive design since Ethan Marcotte’s <a href="https://alistapart.com/article/responsive-web-design/">post that started it all</a>, but finding one that directly helps people understand some specific techniques while also explaining the _why_ behind each action and decision is exceedingly hard. I’ll try my best to do so concisely here.
 

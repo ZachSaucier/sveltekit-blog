@@ -18,7 +18,7 @@ export const load = async ({ url, fetch }) => {
 	});
 
 	const sortedUniqueTags = Object.values(uniqueTags).sort((a, b) => {
-		return a.count === b.count ? a.title.localeCompare(b.title) : a.count > b.count;
+		return a.count === b.count ? a.title.localeCompare(b.title) : a.count > b.count ? -1 : 1;
 	});
 
 	return {

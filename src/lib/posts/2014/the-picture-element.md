@@ -10,9 +10,9 @@ tags:
 description: This post covers how you should use the picture element.
 ---
 
-<div class="aside">
+<aside class="aside">
 	<strong>Aside:</strong> This question was originally asked on WebDesign.StackExchange.com, a private beta that ended up being deleted on October 6th, 2014.
-</div>
+</aside>
 
 I know how to use the `<img>` element, but I’ve been hearing things about the upcoming `<picture>` element to be used for responsive images. The articles I’ve read on the subject are kind of mixed up about the usage of the `<picture>` element and I’d like to get some clarification.
 

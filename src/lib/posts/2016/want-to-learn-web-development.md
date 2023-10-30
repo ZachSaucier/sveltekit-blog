@@ -6,7 +6,7 @@ tags:
   - learning
   - css
   - html
-  - js
+  - javascript
 # cover_image: /images/linus-nylund-Q5QspluNZmM-unsplash.jpg
 # cover_width: 16
 # cover_height: 9
