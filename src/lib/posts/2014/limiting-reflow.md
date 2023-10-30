@@ -12,7 +12,7 @@ tags:
 description: Some tips to efficiently modify DOM elements while limiting reflow.
 ---
 
-<aside class="aside">
+<aside class="content_aside">
   <strong>Aside:</strong> This question was originally asked on WebDesign.StackExchange.com, a private beta that ended up being deleted on October 6th, 2014.
 </aside>
 

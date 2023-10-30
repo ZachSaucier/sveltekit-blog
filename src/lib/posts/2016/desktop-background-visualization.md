@@ -100,7 +100,7 @@ And then we save it as a `.ahk` file like `bubbles-background.ahk` and we’re d
 
 <img src="https://i.imgur.com/mQLVLEi.png" alt="A blue cell background on the desktop with a browser window and code editor window on top of it." loading="lazy" />
 
-<aside class="aside">
+<aside class="content_aside">
   This is my first script using AHK, so if you know how ugly it is, please forgive me and let me know how it could be improved.
 </aside>
 
@@ -116,7 +116,7 @@ Now we need to create an executable for our `.ahk` file by right clicking it and
 
 **We’re done!** Now we have a working webpage as our desktop background that will start every time we login!
 
-<aside class="aside">
+<aside class="content_aside">
   If you create a Mac veresion of this script, let me know and I will gladly credit you and link it in this post!
 </aside>
 

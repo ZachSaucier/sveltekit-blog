@@ -10,7 +10,7 @@ tags:
 description: Reasons why you should not use HTML tables for layout.
 ---
 
-<aside class="aside">
+<aside class="content_aside">
   <strong>Aside:</strong> This question was originally asked on WebDesign.StackExchange.com, a private beta that ended up being deleted on October 6th, 2014.
 </aside>
 

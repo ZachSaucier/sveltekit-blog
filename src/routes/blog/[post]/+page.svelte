@@ -101,6 +101,7 @@
 		display: flex;
 		gap: var(--gap);
 		align-items: center;
+		font-size: 14px;
 
 		& h2 {
 			font-family: inherit;

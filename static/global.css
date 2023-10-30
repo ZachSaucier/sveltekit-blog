@@ -144,6 +144,10 @@ article {
 		padding-inline-start: 20px;
 	}
 
+	& ol {
+		list-style: decimal;
+	}
+
 	& li:not(:last-child) {
 		margin-bottom: 0.5em;
 	}
@@ -153,6 +157,17 @@ article {
 		border: #fff 0.5em solid;
 		box-shadow: rgba(0, 0, 0, 0.15) 0 1px 4px;
 		margin-bottom: 0.5em;
+	}
+
+	& .content_aside {
+		font-size: 13px;
+		line-height: 1.65;
+		padding: 10px;
+		background-color: #ebebeb;
+		border: 1px dashed #141414;
+	}
+	& .content_aside:not(:last-child) {
+		margin-bottom: 1em;
 	}
 }
 
@@ -172,6 +187,11 @@ html.dark {
 		&:hover {
 			color: var(--link-color-hover);
 		}
+	}
+
+	& .content_aside {
+		background-color: #434343;
+		border: 1px dashed var(--accent-dark);
 	}
 }
 

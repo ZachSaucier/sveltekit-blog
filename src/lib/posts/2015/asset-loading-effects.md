@@ -22,7 +22,7 @@ In order to show the asset loading process, we will have to make <a href="https:
 
 <span class="excerpt-marker"></span>
 
-<aside class="aside">
+<aside class="content_aside">
 	<strong>Aside:</strong> Please keep in mind some of these animated reveals are **highly experimental** and only supported by some modern browsers. I use a fade fallback in Internet Explorer for some of the demos.
 </aside>
 

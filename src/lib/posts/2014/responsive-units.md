@@ -10,7 +10,7 @@ tags:
 description: This post covers some of the benefits of using units other than pixels when designing responsive sites.
 ---
 
-<aside class="aside">
+<aside class="content_aside">
   <strong>Aside:</strong> This question was originally asked on WebDesign.StackExchange.com, a private beta that ended up being deleted on October 6th, 2014.
 </aside>
 
@@ -58,7 +58,7 @@ Using relative units also allows us to make changes to the content more easily i
     <sub id="two">2. Some people may talk about a `ch` unit which is like `ex` but based on the width of the 0 character. It is not in the W3 spec and is not well supported.</sub>
     <sub id="three">3. An element can be taken out of its parent’s stacking context by positioning it absolutely while statically positioning its parent.</sub>
 
-<aside class="aside">
+<aside class="content_aside">
   The next section was written by <a href="https://jordan.matelsky.com/">Jordan Matelsky</a>
 </aside>
 

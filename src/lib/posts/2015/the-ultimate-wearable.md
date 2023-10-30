@@ -19,7 +19,7 @@ Today I’ll focus on what I’m most excited about in this new world that is so
 
 Many of you may know her already, but let me introduce Jane, an artificial sentient being from Orson Scott Card’s Ender series<sup>[1]</sup>. Essentially, Jane is what Siri dreams of being — a computer program capable of doing millions of things at once with a near perfect ability to interact with humans like humans interact with each other through devices. Although I love the character (all of my devices are named Jane partially because of a hope that one day they will be connected through a similar system<sup>[2]</sup>), she’s not my topic for today.
 
-<aside class="aside">
+<aside class="content_aside">
   <ol>
     <li>If you haven’t read the Ender series, I’d highly recommend it; it’s the one fictional series I’ve liked enough to reread multiple times. Please don’t read the Wikipedia article on Jane or anything similar if you plan to read them because that’d spoil some of the story!</li>
     <li>Fun fact, Apple actually prevents you from changing Siri’s name to Jane.</li>
@@ -29,7 +29,7 @@ Many of you may know her already, but let me introduce Jane, an artificial senti
 
 Instead, I will be focusing on the primary devices that Ender uses to interact with Jane — a device called a _jewel_. The jewel is a very small device placed in Ender’s inner ear which lets Ender audibly hear Jane speak and which Ender can use to <a href="https://en.wikipedia.org/wiki/Subvocalization">subvocalize</a> thoughts and commands back to her. This enables him to be connected to the web and any attached technology without disrupting his regular senses and physical activities.
 
-<aside class="aside">
+<aside class="content_aside">
   <ol start="4">
     <li>AI’s ability to understand and respond to human speech must improve drastically for something like this to be feasible.</li>
   </ol>
@@ -53,7 +53,7 @@ Wouldn’t it be sensational if we could turn off the lights or put on music jus
 
 Pushing our world towards that better future is a priority for me. That leads me to build designs with these principles in mind which in turn create pleasant and useful interactions. Your path to making the world a better place in this way may be completely different, but I encourage you to contribute wherever you can.
 
-<aside class="aside">
+<aside class="content_aside">
   <ol start="5">
     <li>There are some really cool things happening in the wearables world, like <a href="https://www.ted.com/talks/david_eagleman_can_we_create_new_senses_for_humans">David Eagleman’s work</a>.</li>
     <li>You can hear more of my thoughts on creating a pleasant user experience, in particular in regards to animation, at <a href="https://2015.front-trends.com/">Front-Trends</a> where I’ll be speaking in May or on <a href="https://zachsaucier.com/blog/">my blog</a>.</li>
