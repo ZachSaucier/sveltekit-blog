@@ -69,6 +69,9 @@ html {
 		var(--accent-dark) 80%,
 		var(--background-color)
 	); /* Approx #4d4d4d */
+
+	--border-dashed: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAABCAYAAACsXeyTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAFUlEQVQIHWNIS0sr/v//PwMMDzY+ADqMahlW4J91AAAAAElFTkSuQmCC)
+		bottom left repeat-x;
 }
 
 html.dark {
@@ -206,11 +209,6 @@ html.dark {
 	font-size: 40px;
 	font-weight: bold;
 	text-wrap: pretty;
-}
-
-.page_title {
-	font-size: 2em;
-	font-weight: bold;
 }
 
 figure {

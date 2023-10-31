@@ -1,25 +1,23 @@
 <script>
+	import Section from '$lib/components/Section.svelte';
+	import PageTitle from '$lib/components/PageTitle.svelte';
 	import Date from '$lib/components/Date.svelte';
+
 	export let posts = [];
 	export let tag = '';
-
-	export let lower_bound;
-	export let upper_bound;
-	export let total_posts;
 </script>
 
-<section>
-	<h1 class="page_title">Blog tag: {tag}</h1>
-	{#if total_posts}
-		<p>Posts {lower_bound}–{upper_bound} of {total_posts}</p>
-	{/if}
-</section>
+<Section no_border={true}>
+	<PageTitle title="Tag: {tag}">
+		<slot />
+	</PageTitle>
+</Section>
 
 <ul>
 	{#each posts as post}
 		{@const path = `/blog/${post.slug}`}
 		<li>
-			<section>
+			<Section>
 				<header class="post_header">
 					<a href={path} rel="full-article">
 						<h2 class="post_title">
@@ -33,17 +31,12 @@
 				<article>
 					{@html post.description}
 				</article>
-			</section>
+			</Section>
 		</li>
 	{/each}
 </ul>
 
 <style>
-	section {
-		background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAABCAYAAACsXeyTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAFUlEQVQIHWNIS0sr/v//PwMMDzY+ADqMahlW4J91AAAAAElFTkSuQmCC)
-			bottom left repeat-x;
-	}
-
 	a {
 		color: inherit;
 	}

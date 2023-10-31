@@ -2,6 +2,7 @@
 	export let input_date;
 	export let updated;
 	export let short = false;
+	export let style;
 
 	const date = new Date(input_date);
 	const date_string =
@@ -17,15 +18,16 @@
 			  });
 </script>
 
-<time datetime={date}>
+<time datetime={date} {style}>
 	{date_string}{#if updated} updated at {updated}{/if}
 </time>
 
 <style>
 	time {
 		font-family: 'PT Sans', 'Helvetica Neue', Arial, sans-serif;
+		color: var(--grayed-text);
 		position: absolute;
 		top: 0;
-		color: var(--grayed-text);
+		text-transform: uppercase;
 	}
 </style>

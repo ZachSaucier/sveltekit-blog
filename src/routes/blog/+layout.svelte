@@ -74,8 +74,4 @@
 		grid-area: Main;
 		padding-bottom: 85px;
 	}
-
-	:global(main section) {
-		padding: 37px var(--content-gutter);
-	}
 </style>

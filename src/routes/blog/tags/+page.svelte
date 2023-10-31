@@ -1,15 +1,16 @@
 <script>
 	import { title_ending } from '$lib/config';
+	import PageTitle from '$lib/components/PageTitle.svelte';
 	export let data;
 	const { unique_tags } = data;
 </script>
 
 <svelte:head>
-	<title>Tags{title_ending}</title>
+	<title>All tags{title_ending}</title>
 </svelte:head>
 
 <section>
-	<h1 class="page_title">All blog tags</h1>
+	<PageTitle title="All tags" />
 
 	<ol>
 		{#each unique_tags as tag}

@@ -1,4 +1,5 @@
 <script>
+	import Section from '$lib/components/Section.svelte';
 	import Date from '$lib/components/Date.svelte';
 	export let posts = [];
 </script>
@@ -7,7 +8,7 @@
 	{#each posts as post}
 		{@const path = `/blog/${post.slug}`}
 		<li>
-			<section>
+			<Section>
 				<header class="post_header">
 					{#if post.cover_image}
 						<a href={path} rel="full-article">
@@ -39,17 +40,12 @@
 						<a href={path} class="read_on" rel="full-article">Read on</a>
 					</footer>
 				{/if}
-			</section>
+			</Section>
 		</li>
 	{/each}
 </ul>
 
 <style>
-	section {
-		background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAABCAYAAACsXeyTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAFUlEQVQIHWNIS0sr/v//PwMMDzY+ADqMahlW4J91AAAAAElFTkSuQmCC)
-			bottom left repeat-x;
-	}
-
 	a {
 		color: inherit;
 	}

@@ -80,8 +80,7 @@
 		gap: 10px;
 		padding: 0 var(--content-gutter) 37px;
 
-		background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAABCAYAAACsXeyTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAFUlEQVQIHWNIS0sr/v//PwMMDzY+ADqMahlW4J91AAAAAElFTkSuQmCC)
-			bottom left repeat-x;
+		background: var(--border-dashed);
 	}
 
 	.tags {
