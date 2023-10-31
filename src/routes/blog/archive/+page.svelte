@@ -6,7 +6,7 @@
 	export let data;
 	const { archive_data } = data;
 
-	const date_styles = 'left: 0; font-size: 0.9em; line-height: 1.5;';
+	const date_styles = 'top: 1.35em; left: 0; font-size: 0.9em; line-height: 1.5;';
 </script>
 
 <svelte:head>
@@ -27,8 +27,8 @@
 						<footer>
 							<span class="categories">posted in </span>
 							{#each post_data.tags as tag, i}
-								<a class="tag" href="/blog/tags/{tag}/">{tag}</a>
-								{#if i !== post_data.tags.length - 1},{/if}
+								<a class="tag" href="/blog/tags/{tag}/">{tag}</a
+								>{#if i !== post_data.tags.length - 1},&thinsp;{/if}
 							{/each}
 						</footer>
 					</article>
@@ -55,18 +55,35 @@
 		}
 	}
 
+	li {
+		padding-left: 1.5em;
+	}
+
 	article {
 		position: relative;
-		padding-left: 4.5em;
-		padding-bottom: 0.7em;
+		padding: 0.7em 0 0.7em 4.5em;
 		background: var(--border-dashed);
+	}
+
+	ol > li:last-child article:last-child {
+		background: transparent;
 	}
 
 	a {
 		color: inherit;
+
+		&:hover {
+			color: var(--link-color-hover);
+		}
+	}
+
+	h1 {
+		font-size: 1.5em;
 	}
 
 	footer {
 		color: var(--grayed-text);
+		font-family: var(--font-sans-serif);
+		margin-bottom: 0.1em;
 	}
 </style>
