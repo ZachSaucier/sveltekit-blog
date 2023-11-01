@@ -1,14 +1,17 @@
 <script>
-	import { posts_per_page } from '$lib/config';
+	import { posts_per_page, tags_per_page } from '$lib/config';
 
 	export let current_page;
 	export let path = '/blog/page';
 	export let total_posts;
 	export let lower_bound;
 	export let upper_bound;
+	export let is_tag_pagination = false;
+
+	const per_page = is_tag_pagination ? tags_per_page : posts_per_page;
 
 	let pages_available;
-	$: pages_available = Math.ceil(total_posts / posts_per_page);
+	$: pages_available = Math.ceil(total_posts / per_page);
 
 	const is_current_page = (page) => (page === current_page ? 'page' : false);
 </script>

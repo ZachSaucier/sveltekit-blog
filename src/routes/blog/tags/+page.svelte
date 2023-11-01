@@ -1,5 +1,6 @@
 <script>
 	import { title_ending } from '$lib/config';
+	import Section from '$lib/components/Section.svelte';
 	import PageTitle from '$lib/components/PageTitle.svelte';
 	export let data;
 	const { unique_tags } = data;
@@ -9,7 +10,7 @@
 	<title>All tags{title_ending}</title>
 </svelte:head>
 
-<section>
+<Section>
 	<PageTitle title="All tags" />
 
 	<ol>
@@ -22,4 +23,4 @@
 			</li>
 		{/each}
 	</ol>
-</section>
+</Section>

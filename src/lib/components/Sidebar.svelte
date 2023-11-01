@@ -46,61 +46,61 @@
 </script>
 
 <aside {style}>
-	<section>
-		<h1>About me</h1>
-		<p>
-			Welcome to my blog! I'm a product, design, and animation minded engineer.<br />I love creating
-			useful tools as much as I do new animation techniques.
-		</p>
-	</section>
-
-	{#if $recent_posts.length}
-		<h1>Recent posts</h1>
+	<div class="aside_content">
 		<section>
-			<ol>
-				{#each $recent_posts as post}
+			<h1>Welcome!</h1>
+			<p>I hope you find what you're looking for, whether its information or something more.</p>
+		</section>
+
+		{#if $recent_posts.length}
+			<h1>Recent posts</h1>
+			<section>
+				<ol>
+					{#each $recent_posts as post}
+						<li>
+							<a href={post.slug}>
+								<h2>{post.title}</h2>
+							</a>
+						</li>
+					{/each}
+				</ol>
+			</section>
+		{/if}
+
+		<section>
+			<h1>Favorite side projects</h1>
+			<ul>
+				{#each projects as project}
 					<li>
-						<a href={post.slug}>
-							<h2>{post.title}</h2>
+						<a href={project.link}>
+							<h2>{project.title}</h2>
+						</a>
+						<p>{project.description}</p>
+					</li>
+				{/each}
+			</ul>
+		</section>
+
+		<section>
+			<ul class="socials">
+				{#each socials as social}
+					<li>
+						<a href={social.link}>
+							<Icon type={social.title} width={32} />
 						</a>
 					</li>
 				{/each}
-			</ol>
+			</ul>
 		</section>
-	{/if}
-
-	<section>
-		<h1>Favorite side projects</h1>
-		<ul>
-			{#each projects as project}
-				<li>
-					<a href={project.link}>
-						<h2>{project.title}</h2>
-					</a>
-					<p>{project.description}</p>
-				</li>
-			{/each}
-		</ul>
-	</section>
-
-	<section>
-		<ul class="socials">
-			{#each socials as social}
-				<li>
-					<a href={social.link}>
-						<Icon type={social.title} width={32} />
-					</a>
-				</li>
-			{/each}
-		</ul>
-	</section>
+	</div>
 </aside>
 
 <style>
 	aside {
 		--border: 1px solid #ededed;
 		padding: 20px;
-		border: var(--border);
+		border-left: var(--border);
+		border-right: var(--border);
 	}
 
 	h1 {
@@ -143,6 +143,25 @@
 			padding: 0;
 			border-bottom: 0;
 			margin-bottom: 0;
+		}
+	}
+
+	@media (max-width: 999px) {
+		aside {
+			padding: 0 var(--content-gutter) var(--footer-height);
+		}
+	}
+
+	@media (min-height: 700px) {
+		aside {
+			border-top: var(--border);
+			border-left: none;
+			border-right: none;
+		}
+
+		.aside_content {
+			position: sticky;
+			top: 20px;
 		}
 	}
 </style>

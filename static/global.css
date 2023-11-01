@@ -16,6 +16,7 @@ h6 {
 }
 fieldset {
 	border: 0;
+	padding: 0;
 }
 ol,
 ul {
@@ -59,10 +60,13 @@ html {
 
 	--nav-gap: 25px;
 	--content-gutter: 55px;
+	--footer-height: 85px;
 
 	--font-serif: 'Merriweather', serif;
 	--font-sans-serif: 'Lato', 'Helvetica Neue', Arial, sans-serif;
 	--font-code: Menlo, Monaco, 'Andale Mono', 'lucida console', 'Courier New', monospace;
+
+	font-size: 18.4px;
 
 	--button-dark-background: color-mix(
 		in srgb,
@@ -72,6 +76,19 @@ html {
 
 	--border-dashed: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAABCAYAAACsXeyTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAFUlEQVQIHWNIS0sr/v//PwMMDzY+ADqMahlW4J91AAAAAElFTkSuQmCC)
 		bottom left repeat-x;
+
+	/* Breakpoints:
+	/* Note that these variables can't be used inside media queries,
+	 * listing them here is for documentation purposes */
+
+	--ribbon-breakpoint: 749px;
+	--aside-balow: 999px;
+}
+
+@media (max-width: 749px) {
+	html {
+		--content-gutter: 25px;
+	}
 }
 
 html.dark {
@@ -88,7 +105,6 @@ html.dark {
 
 body {
 	font-family: var(--font-sans-serif);
-	font-size: 18.4px;
 	line-height: 1.7em;
 	background: var(--background-color) url('/images/noise.png') top left;
 	color: var(--accent-dark);

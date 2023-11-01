@@ -3,7 +3,7 @@ export const load = async ({ url, fetch }) => {
 	const posts = await post_res.json();
 
 	const total_res = await fetch(`${url.origin}/blog/api/posts/count`);
-	const total = await total_res.json();
+	const total_posts = await total_res.json();
 
-	return { posts, total };
+	return { posts, total_posts };
 };

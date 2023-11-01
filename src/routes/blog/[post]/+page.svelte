@@ -2,6 +2,7 @@
 <script>
 	import { onMount } from 'svelte';
 	import { title_ending } from '$lib/config';
+	import Section from '$lib/components/Section.svelte';
 	import Date from '$lib/components/Date.svelte';
 	import TwitterShare from '$lib/components/TwitterShare.svelte';
 	export let data;
@@ -29,7 +30,7 @@
 	<!-- <meta name="twitter:image" content="https://yourdomain.com/image_path" /> -->
 </svelte:head>
 
-<section>
+<Section>
 	<header class="post_header">
 		{#if cover_image}
 			<img
@@ -51,7 +52,7 @@
 	<article>
 		<svelte:component this={PostContent} />
 	</article>
-</section>
+</Section>
 
 {#if tags}
 	<aside>

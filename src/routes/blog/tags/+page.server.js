@@ -1,5 +1,5 @@
 export const load = async ({ url, fetch }) => {
-	const res = await fetch(`${url.origin}/blog/api/posts.json`);
+	const res = await fetch(`${url.origin}/blog/api/posts_for_tags.json`);
 	let posts = await res.json();
 
 	let unique_tags = {};

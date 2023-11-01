@@ -46,12 +46,12 @@
 	{#key data.path}
 		<main id="main" tabindex="-1" in:fade={transitionIn} out:fade={transitionOut}>
 			<slot />
-
-			<Footer />
 		</main>
 	{/key}
 
 	<Sidebar style="grid-area: Aside;" />
+
+	<Footer style="grid-area: Footer" />
 </div>
 
 <style>
@@ -65,13 +65,34 @@
 		grid-template-rows: auto 1fr;
 		grid-template-areas:
 			'Header Header'
-			'Main Aside';
+			'Main Aside'
+			'Footer Aside';
 		min-height: 100vh;
 	}
 
 	main {
 		position: relative;
 		grid-area: Main;
-		padding-bottom: 85px;
+		padding-bottom: var(--footer-height);
+	}
+
+	@media (max-width: 999px) {
+		.outer_container {
+			grid-template-areas:
+				'Header Header'
+				'Main Main'
+				'Aside Aside'
+				'Footer Footer';
+		}
+
+		main {
+			padding-bottom: 0;
+		}
+	}
+
+	@media (max-width: 749px) {
+		.outer_container {
+			padding-left: 40px;
+		}
 	}
 </style>

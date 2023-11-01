@@ -60,36 +60,7 @@
 		left: 164px;
 		transform: skewY(30deg);
 	}
-	@media only screen and (max-width: 991px) {
-		.ribbon__horiz {
-			left: 300px;
-			top: 110px;
-			height: 55px;
-		}
-		.ribbon__vert {
-			width: 55px;
-			top: 171px;
-		}
-		.ribbon__vert::before {
-			top: -458px;
-			left: -22px;
-		}
-		.ribbon__vert::after {
-			height: 62px;
-			top: -92px;
-			left: 175px;
-		}
-	}
-	@media only screen and (max-width: 767px) {
-		.ribbon__horiz {
-			top: 97px;
-		}
-		.ribbon__vert {
-			top: 158px;
-			height: calc(100% - 185px);
-		}
-	}
-	@media only screen and (max-width: 680px) {
+	@media (max-width: 749px) {
 		.ribbon__horiz {
 			height: 35px;
 			left: 100px;

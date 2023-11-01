@@ -5,7 +5,8 @@ export const site_link = 'https://zachsaucier.com/blog';
 export const site_author = 'Zach Saucier';
 export const twitter_handle = 'ZachSaucier';
 
-export const posts_per_page = 10;
+export const posts_per_page = 5;
+export const tags_per_page = 20;
 
 export const nav_items = [
 	{
@@ -13,7 +14,7 @@ export const nav_items = [
 		route: '/blog'
 	},
 	{
-		title: 'Personal website',
+		title: 'About me',
 		route: '/'
 	}
 ];

@@ -1,6 +1,6 @@
 <script>
-	import { nav_items } from '$lib/config';
 	import { current_page } from '$lib/utilities/store';
+	import { nav_items } from '$lib/config';
 	import Icon from '$lib/components/Icon.svelte';
 	import ThemeToggle from '$lib/components/ThemeToggle.svelte';
 </script>
@@ -28,7 +28,7 @@
 			<ThemeToggle />
 		</li>
 		<li>
-			<a class="rss_link" href="/blog/api/rss.xml">
+			<a class="rss_link" href="/blog/api/rss.xml" data-sveltekit-reload>
 				<Icon type="RSS Feed" width={29} fill="var(--background-color)" />
 			</a>
 		</li>
@@ -78,5 +78,19 @@
 
 	.rss_link {
 		display: flex;
+	}
+
+	@media (max-width: 749px) {
+		nav {
+			font-size: 16px;
+		}
+
+		ul {
+			height: auto;
+		}
+
+		.search {
+			width: 55px;
+		}
 	}
 </style>

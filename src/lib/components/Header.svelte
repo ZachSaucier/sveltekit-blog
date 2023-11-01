@@ -15,7 +15,7 @@
 	</a>
 
 	<div class="site_title_wrapper">
-		<a href="/blog" class="site_title">
+		<a href="/blog">
 			<h1>Musings</h1>
 		</a>
 		<h2>Zach Saucier's thoughts</h2>
@@ -45,7 +45,6 @@
 	}
 
 	header {
-		height: 210px;
 		padding-right: 25px;
 	}
 
@@ -57,14 +56,29 @@
 		align-items: flex-end;
 	}
 
-	.site_title {
-		font-size: 52px;
+	h1 {
+		font-size: 2.826rem;
 		text-decoration: none;
 		color: var(--button-dark-background);
 	}
 
 	h2 {
-		font-size: 24px;
+		font-size: 1.3rem;
 		color: var(--grayed-text);
+	}
+
+	@media (max-width: 749px) {
+		.site_title_wrapper {
+			gap: 3px;
+			padding-top: 10px;
+		}
+
+		h1 {
+			font-size: 1.91rem;
+		}
+
+		h2 {
+			font-size: 0.87rem;
+		}
 	}
 </style>
