@@ -9,40 +9,69 @@
 	export let is_tag_pagination = false;
 
 	const per_page = is_tag_pagination ? tags_per_page : posts_per_page;
-
-	let pages_available;
-	$: pages_available = Math.ceil(total_posts / per_page);
+	const pages_available = Math.ceil(total_posts / per_page);
 
 	const is_current_page = (page) => (page === current_page ? 'page' : false);
+
+	const is_small_num_pages = pages_available <= 5;
+
+	const pages_to_show = [];
+	if (is_small_num_pages) {
+		for (let i = 1; i <= pages_available; i++) {
+			pages_to_show.push(i);
+		}
+	} else {
+		for (let i = current_page - 2; i < current_page + 3; i++) {
+			if (i > 0 && i <= pages_available) {
+				pages_to_show.push(i);
+			}
+		}
+	}
 </script>
 
-<!-- For some reason, the pagination wasn't re-rendering properly during navigation without the #key block -->
-{#key current_page}
-	{#if pages_available > 1}
-		<nav aria-label="Pagination navigation">
-			{#if total_posts}
-				<p>Posts {lower_bound}–{upper_bound} of {total_posts}</p>
+{#if pages_available > 1}
+	<nav aria-label="Pagination navigation">
+		<p>Posts {lower_bound}–{upper_bound} of {total_posts}</p>
+
+		<ul>
+			{#if !is_small_num_pages && current_page > 3}
+				<li>
+					<a href="{path}/1" aria-label="Go to first page">&lt;&lt;</a>
+				</li>
 			{/if}
 
-			<ul>
-				{#each Array.from({ length: pages_available }, (_, i) => i + 1) as page}
+			<!-- {#if current_page > 1}
 					<li>
-						<a href="{path}/{page}" aria-current={is_current_page(page)}>
-							<span class="sr-only">
-								{#if is_current_page(page)}
-									Current page
-								{:else}
-									Go to page
-								{/if}
-							</span>
-							{page}
-						</a>
+						<a href="{path}/{current_page - 1}" aria-label="Go to previous page">&lt;</a>
 					</li>
-				{/each}
-			</ul>
-		</nav>
-	{/if}
-{/key}
+				{/if} -->
+
+			{#each pages_to_show as page}
+				<li>
+					<a
+						href="{path}/{page}"
+						aria-current={is_current_page(page)}
+						aria-label="Go to page {page}"
+					>
+						{page}
+					</a>
+				</li>
+			{/each}
+
+			<!-- {#if current_page < pages_available}
+					<li>
+						<a href="{path}/{current_page + 1}" aria-label="Go to next page">&gt;</a>
+					</li>
+				{/if} -->
+
+			{#if !is_small_num_pages && current_page < pages_available - 3}
+				<li>
+					<a href="{path}/{pages_available}" aria-label="Go to last page">&gt;&gt;</a>
+				</li>
+			{/if}
+		</ul>
+	</nav>
+{/if}
 
 <style>
 	nav {
