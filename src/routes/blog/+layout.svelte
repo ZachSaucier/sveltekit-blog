@@ -58,6 +58,7 @@
 	.outer_container {
 		position: relative;
 		max-width: 1200px;
+		overflow: hidden;
 		padding-left: 110px;
 		margin: 0 auto;
 		display: grid;

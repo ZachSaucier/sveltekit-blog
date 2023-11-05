@@ -56,7 +56,7 @@
 	}
 
 	li {
-		padding-left: 1.5em;
+		padding-inline-start: 1.5em;
 	}
 
 	article {
@@ -85,5 +85,22 @@
 		color: var(--grayed-text);
 		font-family: var(--font-sans-serif);
 		margin-bottom: 0.1em;
+	}
+
+	@media (max-width: 530px) {
+		ol {
+			padding-inline-start: 0;
+			list-style-position: inside;
+		}
+
+		li {
+			position: relative;
+			padding-inline-start: 0;
+			padding-block-start: 3em;
+		}
+
+		article {
+			padding: 2.7em 0 0.7em 0;
+		}
 	}
 </style>
