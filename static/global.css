@@ -140,6 +140,29 @@ a {
 	}
 }
 
+button,
+.read_on.read_on {
+	background-color: var(--button-dark-background);
+	color: var(--background-color);
+	transition: 0.15s;
+	cursor: pointer;
+	border: none;
+	padding: 3px 10px;
+
+	&:hover {
+		background-color: var(--link-color-hover);
+	}
+}
+
+html.dark :where(button, .read_on.read_on) {
+	color: var(--accent-dark);
+	background-color: var(--link-color);
+}
+
+html.dark :where(button:hover, .read_on.read_on:hover) {
+	background-color: var(--link-color-hover);
+}
+
 article {
 	& :is(h1, h2, h3, h4, h5, h6) {
 		margin-bottom: 0.5em;

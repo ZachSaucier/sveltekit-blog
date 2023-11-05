@@ -47,11 +47,6 @@
 
 <aside {style}>
 	<div class="aside_content">
-		<section>
-			<h1>Welcome!</h1>
-			<p>I hope you find what you're looking for, whether its information or something more.</p>
-		</section>
-
 		{#if $recent_posts.length}
 			<h1>Recent posts</h1>
 			<section>
@@ -66,6 +61,22 @@
 				</ol>
 			</section>
 		{/if}
+
+		<!-- <section>
+			<h1>Blog highlights newsletter</h1>
+			<div class="sidebar_content">
+				<p>Get email notifications for the top blog posts every once in a while.</p>
+				<form
+					method="POST"
+					action="//manage.kmail-lists.com/subscriptions/subscribe"
+					novalidate="novalidate"
+				>
+					<input type="hidden" name="g" value="VaU3PM" />
+					<input type="email" value="" id="k_id_email" placeholder="Your email" />
+					<button type="submit">Subscribe</button>
+				</form>
+			</div>
+		</section> -->
 
 		<section>
 			<h1>Favorite side projects</h1>
@@ -115,12 +126,13 @@
 	}
 
 	p {
-		font-size: 0.9rem;
-		line-height: 1.6;
+		font-size: 0.8rem;
+		line-height: 1.4;
 	}
 
 	ul,
-	ol {
+	ol,
+	.sidebar_content {
 		padding-inline-start: 20px;
 		font-size: 0.9rem;
 	}
@@ -131,9 +143,14 @@
 		margin-bottom: 0.4em;
 	}
 
+	form {
+		margin-top: 0.3em;
+	}
+
 	.socials {
 		display: flex;
 		gap: 5px;
+		padding-inline-start: 0;
 
 		& a {
 			display: contents;

@@ -55,17 +55,10 @@
 	}
 
 	.read_on {
-		background-color: var(--button-dark-background);
 		display: inline-block;
 		padding: 0.4em 0.8em;
 		margin-right: 0.5em;
 		text-decoration: none;
-		color: var(--background-color);
-		transition: 0.15s;
-
-		&:hover {
-			background-color: var(--link-color-hover);
-		}
 
 		&::after {
 			content: '\2192';
@@ -76,14 +69,5 @@
 		&:hover::after {
 			transform: translateX(6px);
 		}
-	}
-
-	:global(html.dark .read_on) {
-		color: var(--accent-dark);
-		background-color: var(--link-color);
-	}
-
-	:global(html.dark .read_on:hover) {
-		background-color: var(--link-color-hover);
 	}
 </style>
