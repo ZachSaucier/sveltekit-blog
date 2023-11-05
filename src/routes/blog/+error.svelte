@@ -1,8 +1,9 @@
 <script>
 	import { page } from '$app/stores';
+	import Section from '$lib/components/Section.svelte';
 </script>
 
-<section>
+<Section>
 	<p>I'm not sure how you got here. But here's some options of where to go!</p>
 	<ul>
 		<li><a href="/blog">Blog home</a></li>
@@ -16,7 +17,7 @@
 			<p>{$page.status}: {$page.error.message}</p>
 		</sub>
 	</footer>
-</section>
+</Section>
 
 <style>
 	footer {

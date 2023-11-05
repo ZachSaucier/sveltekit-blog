@@ -11,9 +11,6 @@
 			<li>
 				<p>&copy;{new Date().getFullYear()} {site_author}</p>
 			</li>
-			<li>
-				<a href="/blog/api/rss.xml" data-sveltekit-reload>RSS</a>
-			</li>
 			{#each nav_items as page}
 				{@const href = page.route}
 				{@const is_current_page = $current_page.startsWith(href)}

@@ -1,8 +1,8 @@
 <script>
 	export let input_date;
-	export let updated;
+	export let updated = false;
 	export let short = false;
-	export let style;
+	export let style = false;
 
 	const date = new Date(input_date);
 	const date_string =

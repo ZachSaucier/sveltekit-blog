@@ -3,7 +3,7 @@ import { site_title, site_description, site_link } from '$lib/config';
 export const prerender = true;
 
 export const GET = async () => {
-	const data = await Promise.all(
+	let data = await Promise.all(
 		Object.entries(import.meta.glob('$lib/posts/**/*.md')).map(async ([path, page]) => {
 			const { metadata } = await page();
 			const slug = path.split('/').pop().split('.').shift();
@@ -12,6 +12,8 @@ export const GET = async () => {
 	).then((posts) => {
 		return posts.sort((a, b) => new Date(b.date) - new Date(a.date));
 	});
+
+	data = data.filter((post) => !post.draft);
 
 	const body = render(data);
 	const headers = {

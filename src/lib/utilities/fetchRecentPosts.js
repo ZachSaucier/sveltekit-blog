@@ -1,5 +1,7 @@
+export const prerender = true;
+
 const fetchRecentPosts = async () => {
-	const posts = await Promise.all(
+	let posts = await Promise.all(
 		Object.entries(import.meta.glob('/src/lib/posts/**/*.md')).map(async ([path, resolver]) => {
 			const { metadata } = await resolver();
 			const path_pieces = path.split('/');
@@ -9,8 +11,10 @@ const fetchRecentPosts = async () => {
 		})
 	);
 
+	posts = posts.filter((post) => !post.draft);
+
 	let sorted_posts = posts.sort((a, b) => new Date(b.date) - new Date(a.date));
-	sorted_posts = sorted_posts.slice(0, 3);
+	sorted_posts = sorted_posts.slice(0, 3).filter(Boolean);
 
 	sorted_posts = sorted_posts.map((post) => ({
 		title: post.title,
