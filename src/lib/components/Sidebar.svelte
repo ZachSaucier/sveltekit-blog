@@ -1,6 +1,7 @@
 <script>
-	import Icon from '$lib/components/Icon.svelte';
+	import { email_list_id } from '$lib/config';
 	import { recent_posts } from '$lib/utilities/store';
+	import Icon from '$lib/components/Icon.svelte';
 
 	export let style = '';
 
@@ -62,21 +63,23 @@
 			</section>
 		{/if}
 
-		<!-- <section>
-			<h1>Blog highlights newsletter</h1>
-			<div class="sidebar_content">
-				<p>Get email notifications for the top blog posts every once in a while.</p>
-				<form
-					method="POST"
-					action="//manage.kmail-lists.com/subscriptions/subscribe"
-					novalidate="novalidate"
-				>
-					<input type="hidden" name="g" value="VaU3PM" />
-					<input type="email" value="" id="k_id_email" placeholder="Your email" />
-					<button type="submit">Subscribe</button>
-				</form>
-			</div>
-		</section> -->
+		<!-- {#if email_list_id}
+			<section>
+				<h1>Blog highlights newsletter</h1>
+				<div class="sidebar_content">
+					<p>Get email notifications for the top blog posts every once in a while.</p>
+					<form
+						method="POST"
+						action="//manage.kmail-lists.com/subscriptions/subscribe"
+						novalidate="novalidate"
+					>
+						<input type="hidden" name="g" value={email_list_id} />
+						<input type="email" value="" id="k_id_email" placeholder="Your email" />
+						<button type="submit">Subscribe</button>
+					</form>
+				</div>
+			</section>
+		{/if} -->
 
 		<section>
 			<h1>Favorite side projects</h1>

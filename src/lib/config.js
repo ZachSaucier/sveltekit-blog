@@ -5,8 +5,7 @@ export const site_link = 'https://zachsaucier.com/blog';
 export const site_author = 'Zach Saucier';
 export const twitter_handle = 'ZachSaucier';
 
-export const posts_per_page = 5;
-export const tags_per_page = 20;
+export const email_list_id = 'VaU3PM';
 
 export const nav_items = [
 	{
@@ -18,5 +17,8 @@ export const nav_items = [
 		route: '/'
 	}
 ];
+
+export const posts_per_page = 5;
+export const tags_per_page = 20;
 
 export const start_year = 2014;
