@@ -65,7 +65,7 @@ As a bonus, SvelteKit comes with content transitions between pages out of the bo
 
 ## Cool new CSS features
 
-Building the site from scratch also provided a time to shaved a lot of CSS (bye bye browser prefixes) and try out new CSS tools.
+Building the site from scratch also provided a time to touch up some bits, shave a lot of CSS (bye bye browser prefixes), and try out new CSS tools.
 
 Perhaps my favorite change related to styles comes from using Svelte: components automatically [come with scoped CSS](https://svelte.dev/docs/svelte-components) to that component 😮 So you don't need CSS modules, Tailwind, or even [cascade layers](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Cascade_layers).
 
@@ -75,3 +75,7 @@ Perhaps my favorite change related to styles comes from using Svelte: components
 - dark theme with CSS variables
 - Media query range, logical or (,)
 - Sticky aside
+
+## Where my blog is going from here
+
+I plan on writing short posts anytime that I make a little side project. I also plan on posting a few longer, more in-depth articles about some new technology. If that interests you, please make use of [the RSS feed](/blog/api/rss.xml), the email signup in the sidebar, or following me [on Twitter](https://twitter.com/ZachSaucier) or [Bluesky](https://bsky.app/profile/zachsaucier.bsky.social)!
