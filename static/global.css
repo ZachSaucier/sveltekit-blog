@@ -213,6 +213,17 @@ article {
   }
 }
 
+.posts_list {
+  & .toc,
+  & .section_heading::after {
+    display: none !important;
+  }
+
+  & .section_heading {
+    pointer-events: none;
+  }
+}
+
 .post_header {
   position: relative;
   display: flex;

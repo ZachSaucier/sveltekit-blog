@@ -4,46 +4,48 @@
   export let posts = [];
 </script>
 
-<ul>
-  {#each posts as post}
-    {@const path = `/blog/${post.slug}`}
-    <li>
-      <Section>
-        <header class="post_header">
-          {#if post.cover_image}
+<div class="posts_list">
+  <ul>
+    {#each posts as post}
+      {@const path = `/blog/${post.slug}`}
+      <li>
+        <Section>
+          <header class="post_header">
+            {#if post.cover_image}
+              <a href={path} rel="full-article">
+                <img
+                  src={post.cover_image}
+                  alt=""
+                  width={post.cover_width}
+                  height={post.cover_height}
+                  style="ratio: {post.cover_width} / {post.cover_height}"
+                />
+              </a>
+            {/if}
+
             <a href={path} rel="full-article">
-              <img
-                src={post.cover_image}
-                alt=""
-                width={post.cover_width}
-                height={post.cover_height}
-                style="ratio: {post.cover_width} / {post.cover_height}"
-              />
+              <h2 class="post_title">
+                {post.title}
+              </h2>
             </a>
+
+            <Date input_date={post.date} />
+          </header>
+
+          <article>
+            {@html post.excerpt}
+          </article>
+
+          {#if !post.has_excerpt}
+            <footer>
+              <a href={path} class="read_on" rel="full-article">Read on</a>
+            </footer>
           {/if}
-
-          <a href={path} rel="full-article">
-            <h2 class="post_title">
-              {post.title}
-            </h2>
-          </a>
-
-          <Date input_date={post.date} />
-        </header>
-
-        <article>
-          {@html post.excerpt}
-        </article>
-
-        {#if !post.has_excerpt}
-          <footer>
-            <a href={path} class="read_on" rel="full-article">Read on</a>
-          </footer>
-        {/if}
-      </Section>
-    </li>
-  {/each}
-</ul>
+        </Section>
+      </li>
+    {/each}
+  </ul>
+</div>
 
 <style>
   a {

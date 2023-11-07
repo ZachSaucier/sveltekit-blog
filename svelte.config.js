@@ -31,7 +31,17 @@ const config = {
             },
           },
         ],
-        rehypeToc,
+        [
+          rehypeToc,
+          {
+            customizeTOC: (toc) => {
+              if (toc.children[0].children.length > 0) {
+                return toc;
+              }
+              return false;
+            },
+          },
+        ],
         rehypeAccessibleEmojis,
         rehypeWidont,
       ],
