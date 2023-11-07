@@ -37,7 +37,7 @@ Exactly the same as above, but with the translate(50%) taken out. For a parralle
 
 The same technique, but using a hexagon.
 
-<h2>Shape outlines</h2>
+## Shape outlines
 
 Even harder than that is it to make shapes with outlines. This is because gradients don’t like to for to their shape and we cannot really use
 

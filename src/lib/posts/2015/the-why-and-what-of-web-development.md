@@ -30,7 +30,7 @@ Who am I? I’m currently a third year student at the University of Georgia who 
 
 But before we get to any programming, we should know why it’s important to learn it.
 
-<h2 id="why">Why should I learn some front-end development?</h2>
+## Why should I learn some front-end development?
 
 <img src="$lib/images/cc1/slide1.png" alt="The web is awesome" loading="lazy" />
 
@@ -78,7 +78,7 @@ At the same time you also need me :) Without someone with good technical knowled
 
 <hr>
 
-<h2 id="possible">So what is possible?</h2>
+## So what is possible?
 
 Here are some of my favorite websites, mostly for agencies that make other people’s sites: <a href="https://www.jam3.com/work/#hackdays">Jam3</a>, <a href="https://hellohikimori.com/#!/home">Hellohikimori</a>, <a href="https://aerotwist.com/blog/react-plus-performance-equals-what/">Aerotwist</a>, <a href="https://www.codeandtheory.com/">Code And Theory</a>, <a href="https://www.dogstudio.be/">Dog Studio</a>, <a href="https://www.nivas.hr/">Nivas</a>, <a href="https://weareroyale.com/#/">Royale</a>.
 

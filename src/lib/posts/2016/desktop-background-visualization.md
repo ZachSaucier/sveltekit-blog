@@ -25,7 +25,7 @@ To be clear, I wanted something that 1) allowed a lot of customization, includin
 
 Today I spent some time and came up with this free, fully customizable, and optionally interactive alternative (Windows only as of now – I <a href="https://apple.stackexchange.com/q/243578/189367">couldn’t figure out</a> how to do it in Applescript):
 
-<h2>Using a webpage as a desktop background</h2>
+## Using a webpage as a desktop background
 
 There are tools that give more power to users of operating systems called macro-creation and automation tools. The most common ones for Windows are <a href="https://autohotkey.com/">Autohotkey</a> and <a href="https://www.autoitscript.com/site/autoit/">Autoit</a>. These tools can give us users easy access to parts of Windows that we don’t usually have access to.
 

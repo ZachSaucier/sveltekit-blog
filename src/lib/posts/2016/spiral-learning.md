@@ -32,7 +32,7 @@ A spiral way of looking at learning to read is much more fluid: we gather the ge
 
 Looking at knowledge in this way also means that when we try to convey something to others, they may not receive it in a little nugget like we want them to. It may take reiterating, changing the phrasing, or showing it in some other way because their entire knowledge on the subject is being changed, not solely added to.
 
-<h3>What implications does this way of thinking about knowledge have?</h3>
+### What implications does this way of thinking about knowledge have?
 
 Working to learn something is beneficial even when no new thoughts form.
 Teaching the same thing in different ways can be very beneficial.

@@ -18,19 +18,14 @@ Nowadays I see that the majority of websites are using JavaScript for their anim
 
 **Questions:**
 
-<ol>
-- What are the advantages of using JavaScript instead of Flash? Yes I know about the performance, but are the other advantages?
-- Web developers could use JavaScripts at that point in time, why did they choose Flash anyway?
-</ol>
+1. What are the advantages of using JavaScript instead of Flash? Yes I know about the performance, but are the other advantages?
+2. Web developers could use JavaScripts at that point in time, why did they choose Flash anyway?
 
 <span class="excerpt-marker"></span>
 
 <hr>
 
-<blockquote><ol>
-- What are the advantages of using JavaScript instead of Flash? Yes I know about the performance, but are the other advantages?
-</ol>
-</blockquote>
+> 1. What are the advantages of using JavaScript instead of Flash? Yes I know about the performance, but are the other advantages?
 
 Javascript performs better, is more dynamic, is more easily edited, doesn’t require any downloads, works across more platforms, and is more responsive than bulky old flash.
 
@@ -48,10 +43,7 @@ Another one is search engines. This is related to the above issue in that crawle
 
 Granted, Flash still has its uses for presenting videos, animations, or interactive activities. JavaScript has closed the gap for certain uses such as interactive components.
 
-<blockquote><ol>
-- Web developers could use JavaScripts at that point in time, why did they choose Flash anyway?
-</ol>
-</blockquote>
+> 1. Web developers could use JavaScripts at that point in time, why did they choose Flash anyway?
 
 Javascript didn’t have the capabilities that it does now. It wasn’t supported as well and didn’t have the same functionality that modern day Javascript has. Flash was more capable because it required an additional download in which it could load things necessary to make it a better product than JavaScript
 

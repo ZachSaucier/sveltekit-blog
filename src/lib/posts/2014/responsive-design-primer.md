@@ -13,14 +13,14 @@ description: A primer on responsive web design, including how to use media queri
 ---
 
 <aside class="content_aside">
-  <strong>Aside:</strong> In the editing phases of this post, Brad Frost posted a great, resources driven <a href="https://bradfrost.com/blog/post/the-principles-of-adaptive-design/">article</a> on the same issue. I recommend reading it and using the resources provided as they give more detail to certain areas which this post doesn’t talk much about. 
+  <strong>Aside:</strong> In the editing phases of this post, Brad Frost posted a great, resources driven <a href="https://bradfrost.com/blog/post/the-principles-of-adaptive-design/">article</a> on the same issue. I recommend reading it and using the resources provided as they give more detail to certain areas which this post doesn’t talk much about.
 </aside>
 
 Countless articles, many quite useful, have been written on the subject of responsive design since Ethan Marcotte’s <a href="https://alistapart.com/article/responsive-web-design/">post that started it all</a>, but finding one that directly helps people understand some specific techniques while also explaining the _why_ behind each action and decision is exceedingly hard. I’ll try my best to do so concisely here.
 
 <hr>
 
-<h2>First things first. What is “responsive design”?</h2>
+## First things first. What is “responsive design”?
 
 _Design:_ making plans and decisions about how something will be created [<a href="https://www.merriam-webster.com/dictionary/design">1</a>].
 
@@ -30,7 +30,7 @@ _Responsive:_ reacting in a desired or positive way, or quick to react [<a href=
 
 Responsive design, therefore, is simply the mix of the two: crafting our applications and websites in such a way that the user’s experience is tailored to him regardless of the device he is viewing it on.
 
-<h2>Yeah, great, but how do I do that?</h2>
+## Yeah, great, but how do I do that?
 
 Well, the easiest way to get the best results is to start with the essentials. We must start the design process with a **mobile-first** (that is, in order, not in importance) mindset. By beginning with the smallest screen size that we plan to support, we know we’re giving attention to the most vital aspects of our site or app, and the rest is gravy.
 
@@ -44,7 +44,7 @@ Additionally, while we should plan first for smaller screens, the exact dimensio
 
 But in practice, how can we tell our computers to do a certain layout at a medium-ish screen size? We’ll need to add something to our toolbox to do that well.
 
-<h3>Media queries in practice</h3>
+### Media queries in practice
 
 Let’s face it, there are countless screen sizes and more are being developed every day. We can’t possibly serve everyone’s individual device dimensions efficiently. But the great thing is that for a few years now we don’t have to!
 
@@ -86,20 +86,20 @@ Furthermore, within each project, make a determined effort to stick with the med
 
 Using <a href="https://getbootstrap.com/css/#grid-media-queries">Bootstrap’s media queries</a> is a good starting point, but feel free to branch out, depending on the site’s needs.
 
-<h2>Various responsive techniques</h2>
+## Various responsive techniques
 
-<h3>Size Tags</h3>
+### Size Tags
 
 As I mentioned before, with the smaller-first approach we get to start with what’s most important and add more content as we get to larger screen sizes. Let’s establish a guideline for what should be included for each breakpoint. Each section builds on the previous, following the smaller-first approach.
 
-<h4>Small-ish:</h4>
+#### Small-ish:
 
 - Text content essentials targeted towards your user-goal for the page (you _do_ have a defined purpose for each page, right?)
 - Minimalist navigation (if necessary at all), such as a drop-down or off-canvas menu, to maximize usable screen real-estate
 - Usage of only essential images, video, and other complex media
 - Only one to two columns of copy per page
 
-<h4>Medium-ish:</h4>
+#### Medium-ish:
 
 - More text is allowed, and items that are lower on the importance scale begin to appear
 - Either a full menu or a mobile-targeted menu is acceptable
@@ -108,22 +108,22 @@ As I mentioned before, with the smaller-first approach we get to start with what
 - Greater use of images, video, and other intense media
 - Up to 4 columns per page
 
-<h4>Large-ish:</h4>
+#### Large-ish:
 
 - Full text can be shown for important sections, with concise, useful aside content also available
 - Offer a full menu, but have sub-menus _only_ if you must display a large number of links
 - **Full** use of images, video, and other intense media
 - Up to 6 content columns, though negative space is still as vital as ever
 
-<h3>Containers</h3>
+### Containers
 
 Containers are elements that contain other content-filled elements and extend to the full width of the browser (or a percentage width other than 100% if you have a sidebar). Often, they also have a `max-width` value of 960px, 1000px, or something similar. After that max is reached, center the container or align it to the side, depending on your design.
 
-<h3>Grid system</h3>
+### Grid system
 
 My recommendation: don’t build your own grid system. There are a lot of good ones out there that are quite responsive, allowing for various sizes, and (best of all) already built! The best ones make use of a preprocessor to allow the values to be changed easily. The big frameworks like Bootstrap and Foundation have good ones, but if you’re looking to only get the grid system part you can get theirs from the source or use <a href="https://www.google.com/search?q=responsive+grid+system&amp;rlz=1C1CHFX_enUS576US576&amp;oq=responsive+grid+system&amp;aqs=chrome..69i57j69i65l3j0l2.3484j0j4&amp;sourceid=chrome&amp;es_sm=122&amp;ie=UTF-8">one of many</a> stand alone grid systems (_Note: I have not tested most of these_).
 
-<h3>Text sections</h3>
+### Text sections
 
 There are a couple of good ways to layout text sections in a responsive way.
 
@@ -131,7 +131,7 @@ The first is to **assign them a percentage width** of their parent. This works i
 
 The second way is to use a set of pixel widths that are dependent on the screen’s width. This method is valid but less common. In implementation, this looks similar to the media query example but uses pixel widths instead. It is beneficial in cases where you need to be able to plan exactly how it looks at any time since it can be only one of a few options.
 
-<h3>Fonts</h3>
+### Fonts
 
 There is no need to change fonts much for responsive design. Try to keep font size at around 16px (or the equivalent in `em`, `rem`, etc.) with a minimum of 14px for body text. You’ll likely want to resize headings to be smaller on smaller screens and slightly larger on larger screens. Ensure that your `line-height` setting is unit-less, so that it scales with the font-size (i.e. `line-height: 1.4`).
 
@@ -141,7 +141,7 @@ Also note that the following meta tag should be used to render the page at the w
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 ```
 
-<h2>Other notes</h2>
+## Other notes
 
 **Test on actual devices.** Simply resizing your desktop browser does _not_ adequately simulate using your site on a mobile device. There are countless quirks of iOS, Android, and other browsers of all versions, so make sure you see what most users will see.
 
@@ -153,7 +153,7 @@ Also note that the following meta tag should be used to render the page at the w
 
 <hr>
 
-<h2>How to be *fully* responsive</h2>
+## How to be _fully_ responsive
 
 All that I’ve covered so far only covers which content will be displayed at what point. This is a great start, but in order to reach all platforms we may have to _change_ our content depending on the context of the user’s device. This means that at times we need to learn how to use new technologies for old browsers, but have a fallback for browsers that don’t support our feature; serve differently sized images on a per-device basis; how to serve content for disabled persons; or even go as far as catering to a user’s background or location in order to give them the best experience possible.
 

@@ -17,12 +17,19 @@
 		"mdsvex": "^0.10.6",
 		"prettier": "^2.8.1",
 		"prettier-plugin-svelte": "^2.9.0",
+		"rehype-accessible-emojis": "^0.3.2",
 		"rehype-autolink-headings": "^6.1.1",
 		"rehype-slug": "^5.1.0",
+		"rehype-toc": "^3.0.2",
+		"rehype-widont": "^0.1.1",
+		"remark-gfm": "^4.0.0",
 		"svelte": "^3.55.0",
 		"svelte-preprocess": "^5.0.4",
 		"svelte-preprocess-import-assets": "^1.0.1",
 		"vite": "^4.0.4"
 	},
-	"type": "module"
+	"type": "module",
+	"dependencies": {
+		"@microflash/rehype-toc": "^1.0.2"
+	}
 }

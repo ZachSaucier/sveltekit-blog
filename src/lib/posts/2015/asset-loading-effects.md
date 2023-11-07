@@ -26,7 +26,7 @@ In order to show the asset loading process, we will have to make <a href="https:
 	<strong>Aside:</strong> Please keep in mind some of these animated reveals are **highly experimental** and only supported by some modern browsers. I use a fade fallback in Internet Explorer for some of the demos.
 </aside>
 
-<h2>Basic structure</h2>
+## Basic structure
 
 The basic structure of the code is simple. We need to create some elements, style them however we want, give them a common class, and then use some custom <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Using_data_attributes">data-attributes</a> to specify which type each one is.
 
@@ -54,8 +54,8 @@ Note that I’m using <a href="https://sass-lang.com/documentation/file.SCSS_FOR
 $transDur: 0.5s;
 
 .ale {
-	/* This sizes each asset element so that the width is 1.5 times bigger than the height. 
-     If changed, the positioning some sub elements will need to be changed as 
+	/* This sizes each asset element so that the width is 1.5 times bigger than the height.
+     If changed, the positioning some sub elements will need to be changed as
      well. */
 	height: 0;
 	padding-bottom: 66%;
@@ -166,7 +166,7 @@ The code above, plus some a tiny bit more to get the diagonal loader looking the
 
 Now to add more effects, we simply add a little bit more detection in JavaScript and style them differently in our CSS.
 
-<h2>Creating the first demo loader</h2>
+## Creating the first demo loader
 
 The first demo is based on <a href="https://twitter.com/michaelvillar">Michaël Villar’s</a> work that can be <a href="https://michaelvillar.s3.amazonaws.com/motion/08-photo-loading/photo-loading.mp4">seen here</a>.
 
@@ -286,7 +286,7 @@ And that’s about it! Using this method we can get the effect working in browse
 
 This same type of approach can be used for an SVG loader of relatively arbitrary shape. We just have to make sure that the clip path matches the shape we want and we are careful with how we animate it. In the second demo, this same approach is used with a square instead.
 
-<h2>Other notes</h2>
+## Other notes
 
 If we want to add a background color or other styling to elements with the clip path effect, we have to add a container for the clip path element like I did in the demo. If we try to style the element directly instead, whatever we add will not show until the end of the animation due to the clip path.
 

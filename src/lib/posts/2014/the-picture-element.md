@@ -28,9 +28,7 @@ No! The `<picture>` element is _not_ a replacement for the older `<img>` element
 
 As Jason Grigsby says in <a href="https://blog.cloudfour.com/dont-use-picture-most-of-the-time/">his article on the subject</a>,
 
-<blockquote>
-	The ‘picture’ [specification]  contains much more than the `<picture>` element. The picture specification includes `srcset` and `sizes` and you can use those attributes without using the `<picture>` element.
-</blockquote>
+> The ‘picture’ specification contains much more than the `<picture>` element. The picture specification includes `srcset` and `sizes` and you can use those attributes without using the `<picture>` element.
 
 In essence, there are <a href="https://usecases.responsiveimages.org/">many use cases</a> for the picture specification<sup>**1**</sup>, but there are two primary ones: **resolution switching**, which is selecting a different source for the image when needed, and **art direction**, which is for most everything else like cropping, etc.
 

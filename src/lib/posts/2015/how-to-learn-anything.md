@@ -13,7 +13,7 @@ description: My philosophy around learning new subjects.
 
 I’ve learned there is one surefire way to become good at practically anything:
 
-<blockquote class="quote-centered">Surround yourself with people who are better than you and material that is beyond your understanding — the more advanced the better.</blockquote>
+> Surround yourself with people who are better than you and material that is beyond your understanding — the more advanced the better.
 
 This is not something new to you; you know it well, even if you don’t think so. We all know how to become better at something, but we’re lazy. So, today I hope to provide reasons to not be lazy about it.
 
@@ -39,7 +39,7 @@ The second excuse is probably the most common excuse for not doing anything – 
 
 The key to this being effective is encouragement. Encouragement is not so much saying kind words to a person, but rather an action towards or treatment of that person in a way that builds them up. The best ways to encourage vary depending on the situation, but in each case it’s about helping the other person in some way. Encouragement is certainly not about making the other person feel worried or threatened, but sometimes pressure as a motivator isn’t a bad thing. A big reason why I’m writing this is to encourage you. Healthy communities are communities that encourage regularly.
 
-<blockquote class="quote-centered">Encouragement is not so much saying kind words to a person, but rather an action towards or treatment of that person in a way that builds them up.</blockquote>
+> Encouragement is not so much saying kind words to a person, but rather an action towards or treatment of that person in a way that builds them up.
 
 Intelligence is defined in many ways. One of my favorite definitions is by Bertolt Brecht: “Intelligence is not to make no mistakes, but quickly to see how to make them good.” Using this definition, surrounding yourself with people that outclass you not only helps the skills they’re better than you at, _it actually makes you more intelligent_ by increasing your capacity to think about the situation at hand and improve it. And this is especially useful these days, because knowing is becoming obsolete, while thinking critically and efficiently is the way to excel.
 

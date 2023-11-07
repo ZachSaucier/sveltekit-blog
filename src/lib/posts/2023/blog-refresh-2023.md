@@ -21,8 +21,6 @@ In this post I'll cover some of the key changes and cool new tech that I got to 
 
 <span class="excerpt-marker"></span>
 
-[Skip to where I talk about new web features]().
-
 ## My history with frameworks
 
 I started programming for the web when jQuery was _the tool_ to use. However, native JavaScript was quickly improving and I started using straight HTML + CSS + JS for everything that I built.
@@ -55,11 +53,14 @@ Going back to the subject of this blog, I built it from scratch using Svelte + S
 - Adding excerpt functionality
 - Adding the [archive](/blog/archive) functionality
 - Adding the search functionality
+- Adding a table of contents to blog posts
+- Adding section link click functionality
 - Adding a tweet button to blog posts
 - Adding blog post "draft" functionality
 - Making fairly big additions to the pagination functionality
 - Fixing the category (I renamed them to [tags](/blog/tags)) counts
 - Making the site titles across pages more consistent
+- Improving some Markdown handling to add footnotes, accessibility for emojis, and preventing widows
 
 As a bonus, SvelteKit comes with content transitions between pages out of the box! Yay for not having to use something like Barba.js to do this.
 

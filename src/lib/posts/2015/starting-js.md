@@ -25,7 +25,7 @@ If you want to play around with the JS snippets as you see them on the slides, y
 
 <span class="excerpt-marker"></span>
 
-<h2 id="basics">The very basics</h2>
+## The very basics
 
 When I was presenting this, one person asked a very good question: “Why JavaScript?”
 
@@ -109,7 +109,7 @@ The third section is one just for changing the counter value. In this case the i
 
 <hr>
 
-<h2 id="staying-generic">Staying Generic</h2>
+## Staying Generic
 
 <img src="$lib/images/cc3/slide9.png" alt="Structures that help us stay generic (this is a good thing!" loading="lazy" />
 
@@ -175,7 +175,7 @@ And with that, we can handle most all types of data by combining these pieces in
 
 <hr>
 
-<h2 id="interaction">Interacting with other things on our page</h2>
+## Interacting with other things on our page
 
 Now we can do just about all that we want in terms of JavaScript interacting with each other, but how do we connect JS to other parts of our page? We’ll talk about that now.
 
@@ -217,7 +217,7 @@ Not too much for the purposes of this post, actually.
 
 <hr>
 
-<h2 id="misc">Some other things worth mentioning</h2>
+## Some other things worth mentioning
 
 <img src="$lib/images/cc3/slide22.png" alt="Scoping" loading="lazy" />
 
@@ -260,7 +260,7 @@ if (first) first = first;
 else first = 'One';
 ```
 
-And that’s about it :)
+And that’s about it!
 
 <img src="$lib/images/cc3/slide26.png" alt="Next time we'll get things moving! Animations!" loading="lazy" />
 
@@ -272,4 +272,4 @@ Now you have the knowledge to create a sweet locking mechanism. I don’t care w
 
 If you’re looking for additional resources on learning JS, check out <a href="https://javascript30.com/">JavaScript30</a> so that you can get more practice because that’s really the best way to learn!
 
-And that’s it for now! I’ll see you next time :)
+And that’s it for now! I’ll see you next time 🙂

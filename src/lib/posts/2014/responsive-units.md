@@ -18,23 +18,23 @@ I understand that the overall goal is to stay responsive, but what is the purpos
 
 <hr>
 
-The purpose of avoiding any **absolutely**<sup class="footnote"><a href="#one">1</a></sup> **sized units** like `px` (includes `in`, `mm`, and `cm`) is to allow our content to be as responsive as possible with the least amount of work. Absolutely sized units are only one type of unit. In this post I’ll go into more detail about the others.
+The purpose of avoiding any **absolutely**[^1] **sized units** like `px` (includes `in`, `mm`, and `cm`) is to allow our content to be as responsive as possible with the least amount of work. Absolutely sized units are only one type of unit. In this post I’ll go into more detail about the others.
 
 <span class="excerpt-marker"></span>
 
-<h3>Font-relative units</h3>
+### Font-relative units
 
-As j6m8 covered in depth already (_see bottom of this post_) we can size things based on the font size. This includes relative to the current font size (`em`, `ex`<sup class="footnote"><a href="#two">2</a></sup>), relative to the root font size (`rem`), and absolutely sized based on the font (`pt`, `pc`). Since the most common and useful of these have already been covered, I recommend to read <a href="https://learn.scannerlicker.net/2014/07/31/so-how-much-is-an-em/">this article</a> to find out more about ems and I’ll skip ahead to the next type.
+As j6m8 covered in depth already (_see bottom of this post_) we can size things based on the font size. This includes relative to the current font size (`em`, `ex`[^2]), relative to the root font size (`rem`), and absolutely sized based on the font (`pt`, `pc`). Since the most common and useful of these have already been covered, I recommend to read <a href="https://learn.scannerlicker.net/2014/07/31/so-how-much-is-an-em/">this article</a> to find out more about ems and I’ll skip ahead to the next type.
 
-<h3>Viewport-relative units</h3>
+### Viewport-relative units
 
 These units are relative to the _viewport_ – meaning the size of the window that the element is being rendered in. They include `vw` (viewport width), `vh` (viewport height), `vmax` (the max of `vh` or `vw`), and `vmin` (the min of `vw` and `vh`).
 
 They are sized by using a percent of the viewport. For example `1vw` is equivalent to 1% of the viewport’s width. This is the same regardless of how nested the element is. In other words it ignores the size of its parent(s).
 
-<h3>Relative to the parent</h3>
+### Relative to the parent
 
-The `%` unit is relative to the element’s parent, given it’s in the same stacking context<sup class="footnote">3<a href="#three">3</a></sup>. This means that if a parent has `width:500px` and the child has `width:50%`, the child’s width will be equivalent to `width:250px`.
+The `%` unit is relative to the element’s parent, given it’s in the same stacking context[^3]. This means that if a parent has `width:500px` and the child has `width:50%`, the child’s width will be equivalent to `width:250px`.
 
 <hr>
 
@@ -46,7 +46,7 @@ For more reading, you can take a look at the <a href="https://www.w3.org/TR/css3
 
 <hr>
 
-<h2>So what’s the purpose?</h2>
+## So what’s the purpose?
 
 Well, as I stated earlier, the purpose is to make our content as responsive as possible with the least amount of effort on our part. By having multiple unit types, it gives us more freedom to create layouts and size our elements the way that we want to. This will save us time and effort.
 
@@ -54,9 +54,14 @@ Instead of sizing our elements absolutely, requiring several media queries to re
 
 Using relative units also allows us to make changes to the content more easily in the future. Instead of having to rethink all of our layout because a new element is slightly larger than the previous, we can let our sizing and positioning be more malleable. This give us more breathing room as to what’s acceptable. Having relative sizing also goes hand in hand with how we position our elements which is for another post.
 
-    <sub id="one">1. Units like pixels are arguably not “absolute” because pixels are rendered differently across different devices, but that’s a separate issue.</sub>
-    <sub id="two">2. Some people may talk about a `ch` unit which is like `ex` but based on the width of the 0 character. It is not in the W3 spec and is not well supported.</sub>
-    <sub id="three">3. An element can be taken out of its parent’s stacking context by positioning it absolutely while statically positioning its parent.</sub>
+[^1]:
+    1. Units like pixels are arguably not “absolute” because pixels are rendered differently across different devices, but that’s a separate issue.
+
+[^2]:
+    2. Some people may talk about a `ch` unit which is like `ex` but based on the width of the 0 character. It is not in the W3 spec and is not well supported.
+
+[^3]:
+    3. An element can be taken out of its parent’s stacking context by positioning it absolutely while statically positioning its parent.
 
 <aside class="content_aside">
   The next section was written by <a href="https://jordan.matelsky.com/">Jordan Matelsky</a>
@@ -64,13 +69,13 @@ Using relative units also allows us to make changes to the content more easily i
 
 **`em` units are responsive by design.**
 
-<h2>What is an em?</h2>
+## What is an em?
 
-The term ‘em’ comes from old typographical calculations, where ‘em’ actually refers to the letter **M**. One ’M’ unit was once the width of the uppercase letter **M**, which was, at least on early printing presses, the same size width-wise as it was height-wise. A useful byproduct of this was that typographers could equate 1em to the same measurements as the point-size; that is, 12pt fonts were 12pt tall, and so 1em = 12pt.<sup><a href="https://en.wikipedia.org/wiki/Em_(typography">Wikipedia</a>)</sup>. This came in handy for other typographical marks, like the em-dash (or _M_-dash), [**—**], which is one em wide (the same width as an M) or an _M_-space (guess how big it is.)
+The term ‘em’ comes from old typographical calculations, where ‘em’ actually refers to the letter **M**. One ’M’ unit was once the width of the uppercase letter **M**, which was, at least on early printing presses, the same size width-wise as it was height-wise. A useful byproduct of this was that typographers could equate 1em to the same measurements as the point-size; that is, 12pt fonts were 12pt tall, and so 1em = 12pt.<sup><a href="https://en.wikipedia.org/wiki/Em_(typography)">Wikipedia</a></sup>. This came in handy for other typographical marks, like the em-dash (or _M_-dash), [**—**], which is one em wide (the same width as an M) or an _M_-space (guess how big it is.)
 
 (Nowadays, fonts vary so dramatically that **M** is rarely 1em wide _or_ tall; but that’s <a href="https://www.fastcodesign.com/3028436/why-garamond-wont-save-the-government-467-million-a-year">another discussion<sup> (Co.Design)</sup></a> altogether.)
 
-<h2>So why is it useful?</h2>
+## So why is it useful?
 
 Web design actually has _two_ units based on the `em` unit; one called `em` (which is, go figure, one em) and one called `rem`, which stands for ‘root-em’ and really means, ‘the font-size of the root element’. These are incredibly useful for responsive web-design, and we’re about to see why.
 

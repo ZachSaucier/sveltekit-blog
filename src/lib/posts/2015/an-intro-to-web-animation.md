@@ -20,7 +20,7 @@ Throughout this tutorial I’ll be writing code in the post itself, but I am als
 
 Please branch off from the tutorial to test out things! That’s a great way to learn exactly what’s going on.
 
-<h3>Let’s get started!</h3>
+### Let’s get started!
 
 <span class="excerpt-marker"></span>
 

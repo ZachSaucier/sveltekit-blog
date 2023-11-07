@@ -12,7 +12,7 @@ tags:
 description: How my creative process works.
 ---
 
-<h5>Note: In this post I am primarily talking about creative personal projects, but also some about programming and creativity in general.</h5>
+##### Note: In this post I am primarily talking about creative personal projects, but also some about programming and creativity in general.
 
 Some people ask me how I create the things that I do, what inspires me, and why I do what I do. This post is to give infomation as to some of that.
 
@@ -20,15 +20,15 @@ First I’ll start with the **creative process**.
 
 <span class="excerpt-marker"></span>
 
-<h2>Step 1: Get inspired</h2>
+## Step 1: Get inspired
 
-<h4>You need to have something to create!</h4>
+#### You need to have something to create!
 
 Most of my inspiration comes from something I see during the day, whether I recreate something I see exactly (using code) or take a spin off of it thinking, “This may be cool” or “It’d be even better if it did this”. Things that I may recreate offline are posters, objects laying around, or 3D environments. Some online sources I use for my CSS projects in particular are Tumblr, other websites, and on occasion something more artsy like a logo site or Dribble. It’s important to find more inspiration than you can make so that you have more perspective and can choose from among several what you want to do in addition to judging the usefulness of each.
 
-<h2>Step 2: Make reasonable choices</h2>
+## Step 2: Make reasonable choices
 
-<h4>Push your limits while keeping it simple.</h4>
+#### Push your limits while keeping it simple.
 
 When I first got into making CSS projects I naturally made simple projects – focusing on <a href="https://codepen.io/collection/XGORrX">illusions</a> and other basic things. I thought outputting content over difficulty would help get me noticed and would be more useful for me – the more the better, right?
 
@@ -36,13 +36,13 @@ When I first got into making CSS projects I naturally made simple projects – f
 
 With that being said we can’t ever create something wholly new, we have to have something to base it off of. <a href="https://www.youtube.com/watch?v=nJPERZDfyWc">Everything is a remix</a> of sorts. And that’s great! What I mean by doing something innovative is combining things in a way that hasn’t been done before or at least not done well.
 
-<h5>Side note: For new creators recreating something exactly *is* good practice so long as they don’t look how it’s done in the first place.</h5>
+##### Side note: For new creators recreating something exactly _is_ good practice so long as they don’t look how it’s done in the first place.
 
 Lastly in reference to reasonable choices, break the project down into chunks. Something worth doing can often seem overwhelming. Working on a small portion of said project really does make it managable.
 
-<h2>Step 3: Start coding!</h2>
+## Step 3: Start coding!
 
-<h4>There’s good reason why “Just do it” is Nike’s slogan.</h4>
+#### There’s good reason why “Just do it” is Nike’s slogan.
 
 It’s quite obvious, but the only way to get something done is to start in the first place. I’ve known too many people, including myself, that have had time and ability to get a project done or learn a new skill that they wouldn’t have later, but they wasted it thinking about what they want to do and laziness.
 
@@ -58,9 +58,9 @@ Also, development tools are your friend. At the start of my web career I had no 
 
 By far the biggest piece of advice I can give here is to not stop. Breaks are great, some of my greatest thoughts about programming have been when I’m eating, taking a shower, or doing something like running, but stopping a project is not. However, if you completely stop working on a project then most of the time you won’t pick it up again which means it won’t get finished. If you need help then there are communities like StackOverflow which can help, but I encourage you to spend a couple of days working at it and thinking before asking. Figuring things out and doing them yourself always help you become a better programmer and thinker in general.
 
-<h2>Step 4: Everybody profits</h2>
+## Step 4: Everybody profits
 
-<h4>And everybody loves to profit.</h4>
+#### And everybody loves to profit.
 
 Every project, whether it’s building a table, reading a book, or making the next language to be used widely on the web, gives you experience. You become better at the skill and using the tools available. You add another thing to your resume, or it at least prepares you how to better do so. More than any of that, you make something new, something that you have made yourself which is awesome, even if it isn’t to others. As humans we find our lives much more valuable when we create.
 
@@ -68,7 +68,7 @@ Plus, since everything is a remix, someone can take what you’ve made and mix i
 
 <hr>
 
-<h2>Walkthrough</h2>
+## Walkthrough
 
 Now I’m going to walk through my most recent project, the <a href="https://codepen.io/ZachSaucier/pen/RwZWLv">yin-yang image animation</a> step by step to show the creative process in practice.
 

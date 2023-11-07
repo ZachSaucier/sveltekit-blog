@@ -10,7 +10,7 @@ tags:
 description: Some things I learned by regularly going to a college dining hall.
 ---
 
-<h2>About business</h2>
+## About business
 
 - Efficiency > exact precision for most things
 - Good interaction between co-workers is one of the most important things for employee retainment and satisfaction
@@ -26,7 +26,7 @@ description: Some things I learned by regularly going to a college dining hall.
 - Making things look pretty is not of much concern, though it does play a factor
 - Group buy in helps immensely
 
-<h2>About life</h2>
+## About life
 
 - Meet people where they’re at
 - People love and bond over food

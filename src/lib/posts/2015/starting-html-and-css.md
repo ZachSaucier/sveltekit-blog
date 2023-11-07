@@ -29,7 +29,7 @@ If you want to follow around messing with code on your own, sites like <a href="
 
 <span class="excerpt-marker"></span>
 
-<h2 id="html">HTML</h2>
+## HTML
 
 <img src="$lib/images/cc2/slide2a.png" alt="What is a web page?" loading="lazy" />
 
@@ -109,7 +109,7 @@ And now you know HTML! At least enough to start creating things and have a basic
 
 Following the analogy I made <a href="https://zachsaucier.com/blog/blog/2015/09/26/the-why-and-what-of-web-development/">last lesson</a>, we’re now moving from the bones (HTML) to the flesh (CSS) of our web-body.
 
-<h2 id="css">CSS</h2>
+## CSS
 
 <img src="$lib/images/cc2/slide8.png" alt="CSS example" loading="lazy" />
 
@@ -161,7 +161,7 @@ Another key term in CSS is **specificity**, which is what determines which prope
 
 And that’s it for CSS! Now you should be able to come across any CSS document and have a good idea of what is going on. Of course there’s a lot we didn’t cover, but google is your friend. If you feel like CSS should have a way of doing something, there probably is a way to do it.
 
-<h2 id="positioning">Positioning in CSS</h2>
+## Positioning in CSS
 
 <img src="$lib/images/cc2/slide13.png" alt="Positioning in CSS" loading="lazy" />
 
@@ -216,7 +216,7 @@ You should also beware of values _stacking_ meaning if you apply something like 
 
 Wow. We’ve covered a whole lot in a short time. It’s okay to be a bit overwhelmed at this point. Once you get started creating some projects you’ll start to get a lot better of a grasp of this.
 
-<h2 id="notes">Other notes</h2>
+## Other notes
 
 <img src="$lib/images/cc2/slide23.png" alt="And now for something completely different" loading="lazy" />
 
