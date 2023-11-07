@@ -8,14 +8,14 @@ export const twitter_handle = 'ZachSaucier';
 export const email_list_id = 'VaU3PM';
 
 export const nav_items = [
-	{
-		title: 'Blog',
-		route: '/blog'
-	},
-	{
-		title: 'About me',
-		route: '/'
-	}
+  {
+    title: 'Blog',
+    route: '/blog',
+  },
+  {
+    title: 'About me',
+    route: '/',
+  },
 ];
 
 export const posts_per_page = 5;

@@ -38,11 +38,11 @@ Let’s add some things to the CSS section in the top right, which is equivalent
 
 ```css
 .rocky {
-	width: 300px;
-	height: 300px;
-	background: #b41b04; /* See what I did there? :D */
-	padding: 20px;
-	font-size: 2rem;
+  width: 300px;
+  height: 300px;
+  background: #b41b04; /* See what I did there? :D */
+  padding: 20px;
+  font-size: 2rem;
 }
 ```
 
@@ -60,8 +60,8 @@ Feel free to take a look at the specs regarding anything I use to get insight on
 
 ```css
 .rocky:hover {
-	color: white;
-	transform: translate(50%, 50%);
+  color: white;
+  transform: translate(50%, 50%);
 }
 ```
 
@@ -71,8 +71,8 @@ But both of these things can be fixed by adding a property called a <a href="htt
 
 ```css
 .rocky {
-	/* CSS from before... */
-	transition: 1s;
+  /* CSS from before... */
+  transition: 1s;
 }
 ```
 
@@ -82,8 +82,8 @@ We can also make individual properties transition in at different speeds. _How_ 
 
 ```css
 .rocky {
-	/* CSS from before... */
-	transition: 0.3s, transform 1s; /* Always put the more general before the less general */
+  /* CSS from before... */
+  transition: 0.3s, transform 1s; /* Always put the more general before the less general */
 }
 ```
 
@@ -95,26 +95,26 @@ To do this we’ll have to change our approach a bit and use the <a href="https:
 
 ```css
 .rocky {
-	/* CSS from before... */
-	-webkit-animation: moveMe 3s forwards;
-	animation: moveMe 3s forwards;
+  /* CSS from before... */
+  -webkit-animation: moveMe 3s forwards;
+  animation: moveMe 3s forwards;
 }
 
 @-webkit-keyframes moveMe {
-	25% {
-		transform: translate(0, 15%);
-	}
-	100% {
-		transform: translate(50%, 50%);
-	}
+  25% {
+    transform: translate(0, 15%);
+  }
+  100% {
+    transform: translate(50%, 50%);
+  }
 }
 @keyframes moveMe {
-	25% {
-		transform: translate(0, 15%);
-	}
-	100% {
-		transform: translate(50%, 50%);
-	}
+  25% {
+    transform: translate(0, 15%);
+  }
+  100% {
+    transform: translate(50%, 50%);
+  }
 }
 ```
 
@@ -132,17 +132,17 @@ But first we need to do some preparation with our CSS. Let’s remove the hover 
 
 ```css
 .rocky {
-	width: 300px;
-	height: 300px;
-	background: #b41b04;
-	padding: 20px;
-	margin-bottom: 15px;
-	font-size: 2rem;
-	transition: 0.3s, transform 1s;
+  width: 300px;
+  height: 300px;
+  background: #b41b04;
+  padding: 20px;
+  margin-bottom: 15px;
+  font-size: 2rem;
+  transition: 0.3s, transform 1s;
 }
 .moved {
-	color: white;
-	transform: translate(50%, 50%);
+  color: white;
+  transform: translate(50%, 50%);
 }
 ```
 
@@ -154,8 +154,8 @@ var rocky = document.querySelector('.rocky'); // Selects the first instance of t
 
 // Now we want to do something when it's clicked
 rocky.onclick = function () {
-	// Toggle the class we created
-	rocky.classList.toggle('moved');
+  // Toggle the class we created
+  rocky.classList.toggle('moved');
 };
 ```
 
@@ -176,10 +176,10 @@ var rockyElems = document.querySelectorAll('.rocky');
 
 // Instead of just applying it to one, we have to iterate through all of them and apply the function to each
 for (var i = 0; i < rockyElems.length; i++) {
-	rockyElems[i].onclick = function () {
-		// 'this' points to the element the onclick is called on
-		this.classList.toggle('moved');
-	};
+  rockyElems[i].onclick = function () {
+    // 'this' points to the element the onclick is called on
+    this.classList.toggle('moved');
+  };
 }
 ```
 
@@ -195,9 +195,9 @@ var rockyElems = document.querySelectorAll('.rocky');
 // We need to create a function to apply the click action,
 // passing in a reference to the element for it to be applied to
 function attatchClick(elem) {
-	elem.onclick = function () {
-		this.classList.toggle('moved');
-	};
+  elem.onclick = function () {
+    this.classList.toggle('moved');
+  };
 }
 ```
 

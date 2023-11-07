@@ -1,99 +1,99 @@
 <script>
-	import { preloadCode } from '$app/navigation';
-	import { onMount } from 'svelte';
-	import { fade } from 'svelte/transition';
+  import { preloadCode } from '$app/navigation';
+  import { onMount } from 'svelte';
+  import { fade } from 'svelte/transition';
 
-	import { current_page, recent_posts } from '$lib/utilities/store';
-	import { nav_items } from '$lib/config';
+  import { current_page, recent_posts } from '$lib/utilities/store';
+  import { nav_items } from '$lib/config';
 
-	import Ribbons from '$lib/components/Ribbons.svelte';
-	import Header from '$lib/components/Header.svelte';
-	import Sidebar from '$lib/components/Sidebar.svelte';
-	import Footer from '$lib/components/Footer.svelte';
+  import Ribbons from '$lib/components/Ribbons.svelte';
+  import Header from '$lib/components/Header.svelte';
+  import Sidebar from '$lib/components/Sidebar.svelte';
+  import Footer from '$lib/components/Footer.svelte';
 
-	export let data;
+  export let data;
 
-	recent_posts.set(data.recent_posts);
+  recent_posts.set(data.recent_posts);
 
-	const transitionIn = { delay: 150, duration: 150 };
-	const transitionOut = { duration: 100 };
+  const transitionIn = { delay: 150, duration: 150 };
+  const transitionOut = { duration: 100 };
 
-	/**
-	 * Updates the global store with the current path. (Used for highlighting
-	 * the current page in the nav, but could be useful for other purposes.)
-	 **/
-	$: current_page.set(data.path);
+  /**
+   * Updates the global store with the current path. (Used for highlighting
+   * the current page in the nav, but could be useful for other purposes.)
+   **/
+  $: current_page.set(data.path);
 
-	/**
-	 * This pre-fetches all top-level routes on the site in the background for faster loading.
-	 * https://kit.svelte.dev/docs/modules#$app-navigation-preloaddata
-	 *
-	 * Any route added in src/lib/config.js will be preloaded automatically. You can add your
-	 * own preloadData() calls here, too.
-	 **/
+  /**
+   * This pre-fetches all top-level routes on the site in the background for faster loading.
+   * https://kit.svelte.dev/docs/modules#$app-navigation-preloaddata
+   *
+   * Any route added in src/lib/config.js will be preloaded automatically. You can add your
+   * own preloadData() calls here, too.
+   **/
 
-	onMount(() => {
-		const navRoutes = nav_items.map((item) => item.route);
-		preloadCode(...navRoutes);
-	});
+  onMount(() => {
+    const navRoutes = nav_items.map((item) => item.route);
+    preloadCode(...navRoutes);
+  });
 </script>
 
 <div class="outer_container">
-	<Ribbons />
+  <Ribbons />
 
-	<Header style="grid-area: Header;" />
+  <Header style="grid-area: Header;" />
 
-	{#key data.path}
-		<main id="main" tabindex="-1" in:fade={transitionIn} out:fade={transitionOut}>
-			<slot />
-		</main>
-	{/key}
+  {#key data.path}
+    <main id="main" tabindex="-1" in:fade={transitionIn} out:fade={transitionOut}>
+      <slot />
+    </main>
+  {/key}
 
-	<Sidebar style="grid-area: Aside;" />
+  <Sidebar style="grid-area: Aside;" />
 
-	<Footer style="grid-area: Footer" />
+  <Footer style="grid-area: Footer" />
 </div>
 
 <style>
-	.outer_container {
-		position: relative;
-		max-width: 1200px;
-		padding-left: 110px;
-		margin: 0 auto;
-		display: grid;
-		grid-template-columns: minmax(0, 1fr) 300px;
-		grid-template-rows: auto 1fr;
-		grid-template-areas:
-			'Header Header'
-			'Main Aside'
-			'Footer Aside';
-		min-height: 100vh;
-	}
+  .outer_container {
+    position: relative;
+    max-width: 1200px;
+    padding-left: 110px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 300px;
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+      'Header Header'
+      'Main Aside'
+      'Footer Aside';
+    min-height: 100vh;
+  }
 
-	main {
-		position: relative;
-		grid-area: Main;
-		padding-bottom: var(--footer-height);
-	}
+  main {
+    position: relative;
+    grid-area: Main;
+    padding-bottom: var(--footer-height);
+  }
 
-	@media (max-width: 999px) {
-		.outer_container {
-			grid-template-areas:
-				'Header Header'
-				'Main Main'
-				'Aside Aside'
-				'Footer Footer';
-			overflow: hidden;
-		}
+  @media (max-width: 999px) {
+    .outer_container {
+      grid-template-areas:
+        'Header Header'
+        'Main Main'
+        'Aside Aside'
+        'Footer Footer';
+      overflow: hidden;
+    }
 
-		main {
-			padding-bottom: 0;
-		}
-	}
+    main {
+      padding-bottom: 0;
+    }
+  }
 
-	@media (max-width: 749px) {
-		.outer_container {
-			padding-left: 40px;
-		}
-	}
+  @media (max-width: 749px) {
+    .outer_container {
+      padding-left: 40px;
+    }
+  }
 </style>

@@ -36,12 +36,12 @@ In essence, there are <a href="https://usecases.responsiveimages.org/">many use 
 
 ```html
 <img
-	sizes="(max-width: 30em) 100vw,
+  sizes="(max-width: 30em) 100vw,
          (max-width: 50em) 50vw,
          calc(33vw - 100px)"
-	srcset="swing-200.jpg 200w, swing-400.jpg 400w, swing-800.jpg 800w, swing-1600.jpg 1600w"
-	src="swing-400.jpg"
-	alt="Kettlebell Swing"
+  srcset="swing-200.jpg 200w, swing-400.jpg 400w, swing-800.jpg 800w, swing-1600.jpg 1600w"
+  src="swing-400.jpg"
+  alt="Kettlebell Swing"
 />
 ```
 
@@ -53,10 +53,10 @@ An example of using the picture element is as follows (again pulled from <a href
 
 ```html
 <picture>
-	<source media="(min-width: 45em)" srcset="large.jpg" />
-	<source media="(min-width: 32em)" srcset="med.jpg" />
-	<img src="small.jpg" alt="The president giving an award." />
-	<!-- Fallback -->
+  <source media="(min-width: 45em)" srcset="large.jpg" />
+  <source media="(min-width: 32em)" srcset="med.jpg" />
+  <img src="small.jpg" alt="The president giving an award." />
+  <!-- Fallback -->
 </picture>
 ```
 

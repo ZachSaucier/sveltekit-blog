@@ -11,50 +11,50 @@ import remarkGfm from 'remark-gfm';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
-	// Ensures both .svelte and .md files are treated as components
-	extensions: ['.svelte', '.md'],
+  // Ensures both .svelte and .md files are treated as components
+  extensions: ['.svelte', '.md'],
 
-	preprocess: [
-		mdsvex({
-			// This overrides the default mdsvex extension of .svx
-			extensions: ['.md'],
+  preprocess: [
+    mdsvex({
+      // This overrides the default mdsvex extension of .svx
+      extensions: ['.md'],
 
-			// Note: Order matters
-			rehypePlugins: [
-				rehypeSlug,
-				[
-					rehypeAutolinkHeadings,
-					{
-						behavior: 'wrap',
-						properties: {
-							className: ['section_heading']
-						}
-					}
-				],
-				rehypeToc,
-				rehypeAccessibleEmojis,
-				rehypeWidont
-			],
+      // Note: Order matters
+      rehypePlugins: [
+        rehypeSlug,
+        [
+          rehypeAutolinkHeadings,
+          {
+            behavior: 'wrap',
+            properties: {
+              className: ['section_heading'],
+            },
+          },
+        ],
+        rehypeToc,
+        rehypeAccessibleEmojis,
+        rehypeWidont,
+      ],
 
-			remarkPlugins: [remarkGfm]
-		}),
-		importAssets(),
-		preprocess()
-	],
+      remarkPlugins: [remarkGfm],
+    }),
+    importAssets(),
+    preprocess(),
+  ],
 
-	kit: {
-		adapter: adapter(),
-		prerender: {
-			entries: [
-				'/blog',
-				'/blog/*',
-				'/blog/api/posts/page/*',
-				'/blog/tag/',
-				'/blog/tag/*',
-				'/blog/tag/*/page/*'
-			]
-		}
-	}
+  kit: {
+    adapter: adapter(),
+    prerender: {
+      entries: [
+        '/blog',
+        '/blog/*',
+        '/blog/api/posts/page/*',
+        '/blog/tag/',
+        '/blog/tag/*',
+        '/blog/tag/*/page/*',
+      ],
+    },
+  },
 };
 
 export default config;

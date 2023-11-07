@@ -80,9 +80,9 @@ So, having completed Step 1 above and thought about some of Step 2, I started St
 
 ```html
 <div class="yin">
-	<!-- All of image one here -->
-	<div class="yang"></div>
-	<!-- All of image two here -->
+  <!-- All of image one here -->
+  <div class="yang"></div>
+  <!-- All of image two here -->
 </div>
 ```
 
@@ -92,9 +92,9 @@ Thus, I switched my approach to the following
 
 ```html
 <div class="yin">
-	<!-- Top image and small circles  -->
-	<div class="yang"></div>
-	<!-- Bottom image and big circles -->
+  <!-- Top image and small circles  -->
+  <div class="yang"></div>
+  <!-- Bottom image and big circles -->
 </div>
 ```
 
@@ -110,20 +110,20 @@ This led me to a new, simple (but not minimal) HTML structure:
 
 ```html
 <div class="container circle">
-	<div class="main one"></div>
-	<!-- The top half -->
-	<div class="main two"></div>
-	<!-- The bottom half -->
+  <div class="main one"></div>
+  <!-- The top half -->
+  <div class="main two"></div>
+  <!-- The bottom half -->
 
-	<div class="big circle one"></div>
-	<!-- The right big circle -->
-	<div class="big circle two"></div>
-	<!-- The left big circle -->
+  <div class="big circle one"></div>
+  <!-- The right big circle -->
+  <div class="big circle two"></div>
+  <!-- The left big circle -->
 
-	<div class="small circle one"></div>
-	<!-- The right small circle -->
-	<div class="small circle two"></div>
-	<!-- The left small circle -->
+  <div class="small circle one"></div>
+  <!-- The right small circle -->
+  <div class="small circle two"></div>
+  <!-- The left small circle -->
 </div>
 ```
 

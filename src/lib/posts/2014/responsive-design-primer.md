@@ -57,16 +57,16 @@ Back to what we were talking about, in practice I like to develop with a smaller
 /* ... Some styles for the smallest viewport ... */
 
 @media screen and (min-width: $small-medium-ish) {
-	/* ... New styles / overriding some old ones ... */
+  /* ... New styles / overriding some old ones ... */
 }
 @media screen and (min-width: $medium-ish) {
-	/* ... New styles / overriding some old ones ... */
+  /* ... New styles / overriding some old ones ... */
 }
 @media screen and (min-width: $large-ish) {
-	/* ... New styles / overriding some old ones ... */
+  /* ... New styles / overriding some old ones ... */
 }
 @media screen and (min-width: $extra-large-ish) {
-	/* ... New styles / overriding some old ones ... */
+  /* ... New styles / overriding some old ones ... */
 }
 ```
 
