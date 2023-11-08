@@ -57,7 +57,7 @@ In this example we also learn some new assignment operators.
 
 We see `b++` which uses the increment operator `++`. It is the same as saying `b = b + 1`, adding to the value of `b` by 1. Similarly we also have the decrement operator `--`.
 
-We also see some calculation operators. `/=` means take the value of the variable to the left and divide it by what’s to the right, the same as `a = a / 10` in this case. Similarly we have the `*=` operator which multiplies, the `+=` operator which adds, and the `-=` operator which substracts.
+We also see some calculation operators. `/=` means take the value of the variable to the left and divide it by what’s to the right, the same as `a = a / 10` in this case. Similarly we have the `*=` operator which multiplies, the `+=` operator which adds, and the `-=` operator which subtracts.
 
 So in this example, what is the value of `a` and `b` at the end of these lines?
 

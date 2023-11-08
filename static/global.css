@@ -27,7 +27,8 @@ img {
   max-width: 100%;
 }
 hr {
-  margin-bottom: 0.3em;
+  margin-top: 1.2em;
+  margin-bottom: 1.5em;
 }
 
 .sr-only {
@@ -80,9 +81,8 @@ html {
   /* Breakpoints:
 	/* Note that these variables can't be used inside media queries,
 	 * listing them here is for documentation purposes */
-
   --ribbon-breakpoint: 749px;
-  --aside-balow: 999px;
+  --aside-below: 999px;
 }
 
 @media (max-width: 749px) {
@@ -91,8 +91,17 @@ html {
   }
 }
 
+::selection {
+  background-color: var(--accent);
+  color: var(--background-color);
+}
+
+a::selection {
+  color: var(--accent-dark);
+}
+
 html.dark {
-  --accent-dark: #fff;
+  --accent-dark: #e8e8e8;
   --background-color: #2c2c2c;
 
   --link-color-hover: color-mix(
@@ -105,7 +114,7 @@ html.dark {
 
 body {
   font-family: var(--font-sans-serif);
-  line-height: 1.7em;
+  line-height: 1.7;
   background: var(--background-color) url('/images/noise.png') top left;
   color: var(--accent-dark);
 }
@@ -165,15 +174,21 @@ html.dark :where(button:hover, .read_on.read_on:hover) {
 
 article {
   & :is(h1, h2, h3, h4, h5, h6) {
-    margin-bottom: 0.5em;
+    margin-top: 1.4em;
+    margin-bottom: 0.6rem;
   }
 
   & h2 {
-    font-size: 1.5em;
+    font-size: 1.5rem;
   }
 
   & h3 {
-    font-size: 1.2em;
+    font-size: 1.2rem;
+  }
+
+  & > p:first-of-type::first-letter {
+    font-size: 1.3em;
+    font-weight: 300;
   }
 
   & :is(p, article blockquote, ul, ol):not(:last-child) {
@@ -191,14 +206,14 @@ article {
   }
 
   & li:not(:last-child) {
-    margin-bottom: 0.5em;
+    margin-bottom: 0.5rem;
   }
 
   & img {
     border-radius: 0.3em;
-    border: #fff 0.5em solid;
+    border: var(--background-color) 0.5em solid;
     box-shadow: rgba(0, 0, 0, 0.15) 0 1px 4px;
-    margin-bottom: 0.5em;
+    margin-bottom: 0.5rem;
   }
 
   & .content_aside {
@@ -209,7 +224,11 @@ article {
     border: 1px dashed #141414;
   }
   & .content_aside:not(:last-child) {
-    margin-bottom: 1em;
+    margin-bottom: 1rem;
+  }
+
+  & > sub {
+    margin-bottom: 1rem;
   }
 }
 
@@ -238,10 +257,13 @@ article {
 }
 
 nav.toc {
-  margin-bottom: 1em;
+  margin-bottom: 2rem;
+
   &::before {
     content: 'Table of contents';
     display: block;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
   }
 }
 
@@ -281,6 +303,10 @@ html.dark {
 
   & .section_heading.section_heading.section_heading::after {
     content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' width='18' aria-hidden='true'%3E%3Cpath fill='%23ffffff' d='m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z'%3E%3C/path%3E%3C/svg%3E");
+  }
+
+  & img {
+    border-color: var(--accent-dark);
   }
 }
 

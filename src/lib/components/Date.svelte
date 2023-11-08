@@ -18,10 +18,25 @@
           day: 'numeric',
           timeZone: 'UTC',
         });
+
+  const updated_date = new Date(updated);
+  const updated_string =
+    short || updated_date.getFullYear() === new Date().getFullYear()
+      ? updated_date.toLocaleDateString(undefined, {
+          month: 'short',
+          day: 'numeric',
+          timeZone: 'UTC',
+        })
+      : updated_date.toLocaleDateString(undefined, {
+          year: 'numeric',
+          month: 'short',
+          day: 'numeric',
+          timeZone: 'UTC',
+        });
 </script>
 
-<time datetime={date} {style}>
-  {date_string}{#if updated} updated at {updated}{/if}
+<time datetime={updated ? updated_string : date_string} {style}>
+  {date_string}{#if updated}, updated {updated_string}{/if}
 </time>
 
 <style>

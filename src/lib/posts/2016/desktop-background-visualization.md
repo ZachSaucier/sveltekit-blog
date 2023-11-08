@@ -117,7 +117,7 @@ Now we need to create an executable for our `.ahk` file by right clicking it and
 **We’re done!** Now we have a working webpage as our desktop background that will start every time we login!
 
 <aside class="content_aside">
-  If you create a Mac veresion of this script, let me know and I will gladly credit you and link it in this post!
+  If you create a Mac version of this script, let me know and I will gladly credit you and link it in this post!
 </aside>
 
 ### Pros

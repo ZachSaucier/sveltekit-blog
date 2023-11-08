@@ -35,7 +35,7 @@ Other web technologies, such as Canvas, SVG, WebGL, and the improvements with CS
 
 Flash also is not supported on Apple products and is rapidly losing support on other mobile devices such as those owned by Android and Windows.
 
-<sub>The next three paragraphs come from <a href="https://grantpalin.com/">Grant Palin’s</a> answer on WebDesign</sub>
+<aside class="content_aside">The next three paragraphs come from <a href="https://grantpalin.com/">Grant Palin’s</a> answer on WebDesign</aside>
 
 A long-running issue with Flash is that it isn’t ideal for accessibility. The JavaScript route usually involves having actual content in markup, which JavaScript then manipulates. When using Flash, the content is buried within the Flash object, which is opaque. If Flash is disabled, or the appropriate plugin isn’t installed, or it malfunctions, the user has no access to the enclosed content. Conversely, a well-built webpage or application which uses JavaScript in a way that enhances content, rather than placing it, will still be accessible.
 

@@ -12,6 +12,8 @@ tags:
 description: An overview of basic CSS and JavaScript animation of DOM elements.
 ---
 
+## Intro
+
 I’ve written a lot about animations, from <a href="https://graphicdesign.stackexchange.com/a/39665/23061">choosing the appropriate method</a> to <a href="https://zachsaucier.com/blog/blog/2014/09/30/limiting-reflow/">limiting browser reflow</a>, but have never made a any basic tutorial because I haven’t had much reason to. But now I see that it could be useful to get people started down the right track.
 
 I highly recommend checking out my post on <a href="https://graphicdesign.stackexchange.com/questions/463/good-place-to-start-learning-web-design/46296#46296">beginning web development</a> if you’re at all interested in learning how to program for the web. It should be quite useful to you!
@@ -20,7 +22,7 @@ Throughout this tutorial I’ll be writing code in the post itself, but I am als
 
 Please branch off from the tutorial to test out things! That’s a great way to learn exactly what’s going on.
 
-### Let’s get started!
+## Let’s get started!
 
 <span class="excerpt-marker"></span>
 

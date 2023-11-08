@@ -79,7 +79,7 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 10px;
-    padding: 0 var(--content-gutter) 37px;
+    padding: 15px var(--content-gutter) 24px;
 
     background: var(--border-dashed);
   }
@@ -89,7 +89,7 @@
     display: flex;
     gap: var(--gap);
     align-items: center;
-    font-size: 14px;
+    font-size: 0.8rem;
 
     & h2 {
       font-family: inherit;

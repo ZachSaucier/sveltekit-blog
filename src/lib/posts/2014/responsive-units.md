@@ -81,7 +81,7 @@ Web design actually has _two_ units based on the `em` unit; one called `em` (whi
 
 Different browsers have different root-font-sizes. On your computer screen, your 12-pt type is quite considerably larger than it would appear on your phone; this is because ‘pts’, at least in web-design, are a somewhat arbitrary measurement (they’re not really; 72pt = 1in, but few displays actually adhere to that rule).
 
-However, this means that each display will know what size to make something in order to keep it legibile; 6pt on a monitor is obnoxiously small — on a phone, it’s virtually invisible. If you rely on the root-em, then, everything will be scaled appropriately.
+However, this means that each display will know what size to make something in order to keep it legible; 6pt on a monitor is obnoxiously small — on a phone, it’s virtually invisible. If you rely on the root-em, then, everything will be scaled appropriately.
 
 Here’s a quick example of this: Let’s say you have a button that has the text “Submit” and a **✓**. If you set the check-icon’s size to 20px, it may be the same size as your 12pt text on your computer, but your phone’s browser may display differently, and you’ll wind up with a mismatched icon.
 

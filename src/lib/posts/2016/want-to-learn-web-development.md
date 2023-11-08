@@ -23,13 +23,13 @@ If you’re looking for a post about actually learning the core of web developme
 
 <hr>
 
-- ### Programming should be fun
+## Programming should be fun
 
 If you’re not enjoying the programming you’re doing (at least once you’ve create a project or two), it might not be for you. In order to create something truly high quality all of the time, you’ve got to care about and enjoy it, at least some. With that being said, some programming projects are just plain dull and tiresome, so choose projects that you are interested in doing before you even start.
 
 And if you end up not going down the path of programming, that’s okay! It says nothing about you other than the fact that programming is not for you. Thankfully we’re not all made to do the same thing.
 
-- ### Learn through building projects
+## Learn through building projects
 
 It’s best to have some goal in mind. That way you have a motive and learn what is actually useful towards achieving that goal. Choose a project that interests you and learn all that you need to to accomplish that goal. If you end up wanting to switch projects once you’ve started one, that’s okay so long as you actually end up completing some projects.
 
@@ -37,31 +37,31 @@ Focusing on projects also makes it much easier to continue working on a project 
 
 A great way to learn through making projects is to take the projects that other people have made and edit them to do something else that you want – to remix them. Sites like <a href="https://codepen.io/">CodePen</a> are great for this since they let you see the code someone used to create something, “fork” it (creating your own version), and offer a built in editor with everything you need, no server required!
 
-- ### Focus on the core, not frameworks or libraries
+## Focus on the core, not frameworks or libraries
 
 The core of the web is built on HTML, CSS, and JavaScript. Stick to those until you have a good understanding of how they work (including how they work together) before moving on to using any type of framework or library. This will help you down the road and help your understanding as you learn it.
 
 Don’t worry about server stuff or build processes until you understand the core technology and are committed to development on a more serious level. They are necessary to learn some at some point, but focus on the fun stuff that’s not the setup. This way you can judge if you actually want to become a web developer and then invest in learning the more drab stuff and are less likely to get discouraged.
 
-- ### Don’t get “certified”
+## Don’t get “certified”
 
 Any website that promises “certification” in some skill related to development is not globally accepted and is likely bologna, not worth your time and _especially_ your money. It probably has _some_ truth to it, but probably about as the same level as your high school grades represent your IQ.
 
 You also don’t have to go to school for development, especially web development. School teaches how to think well and shows you a wider range of subjects than you would likely study without it. Actual work related skills and knowledge come from working on projects and working at companies, not a classroom.
 
-- ### Don’t stop what you’re doing
+## Don’t stop what you’re doing
 
 If you’re currently enrolled in a school program that isn’t programming, I recommend to try development in your free time before switching tracks. That’s because it is something that _can_ be learned in your spare time a lot more easily than some other tracks. It also may prevent waste if you end up not liking development.
 
 This is especially true if you already have a job. Income is income. Before giving up a guranteed paycheck for a fancy that may not work out long term, invest your free time to make sure it will work for you.
 
-- ### How long it takes to learn or get hired depends on the situation
+## How long it takes to learn or get hired depends on the situation
 
-There are countless factors to hireability, from ones related to your skillset to how the market is looking at the time in the area where you’re looking to get hired. The role at the company that you’re applying to also plays a huge factor, as they may be looking for someone who can come into the company fully capable of doing the job or may be looking to teach from the ground up – it just depends on their needs and ability to teach.
+There are countless factors to hire-ability, from ones related to your skillset to how the market is looking at the time in the area where you’re looking to get hired. The role at the company that you’re applying to also plays a huge factor, as they may be looking for someone who can come into the company fully capable of doing the job or may be looking to teach from the ground up – it just depends on their needs and ability to teach.
 
 With that being said, to be a really _good_ candidate the most entry-level job, I estimate it will likely take several months of spare time creating projects. For a less entry-level job, it’d probably require working on several larger, completed self projects that are used by people in the real world. And you simply won’t be able to get a senior level job until you have years of work experience.
 
-- ### Bootcamps can be helpful but are not necessary
+## Bootcamps can be helpful but are not necessary
 
 None of the truly good programmers I know went to a bootcamp. They all picked programming up in their spare time because they found it enjoyable.
 

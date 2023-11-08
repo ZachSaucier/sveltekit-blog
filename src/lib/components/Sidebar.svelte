@@ -134,8 +134,9 @@
   }
 
   ul,
-  ol,
-  .sidebar_content {
+  ol
+  /* ,
+  .sidebar_content */ {
     padding-inline-start: 20px;
     font-size: 0.9rem;
   }
@@ -146,9 +147,9 @@
     margin-bottom: 0.4em;
   }
 
-  form {
+  /* form {
     margin-top: 0.3em;
-  }
+  } */
 
   .socials {
     display: flex;
@@ -173,12 +174,6 @@
   }
 
   @media (min-height: 700px) {
-    aside {
-      border-top: var(--border);
-      border-left: none;
-      border-right: none;
-    }
-
     .aside_content {
       position: sticky;
       top: 20px;

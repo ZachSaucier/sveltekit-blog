@@ -14,7 +14,7 @@ description: How my creative process works.
 
 ##### Note: In this post I am primarily talking about creative personal projects, but also some about programming and creativity in general.
 
-Some people ask me how I create the things that I do, what inspires me, and why I do what I do. This post is to give infomation as to some of that.
+Some people ask me how I create the things that I do, what inspires me, and why I do what I do. This post is to give information as to some of that.
 
 First I’ll start with the **creative process**.
 
@@ -38,7 +38,7 @@ With that being said we can’t ever create something wholly new, we have to hav
 
 ##### Side note: For new creators recreating something exactly _is_ good practice so long as they don’t look how it’s done in the first place.
 
-Lastly in reference to reasonable choices, break the project down into chunks. Something worth doing can often seem overwhelming. Working on a small portion of said project really does make it managable.
+Lastly in reference to reasonable choices, break the project down into chunks. Something worth doing can often seem overwhelming. Working on a small portion of said project really does make it manageable.
 
 ## Step 3: Start coding!
 
@@ -54,7 +54,7 @@ With that being said, what I’ve learned the hard way, _minimal is not always s
 
 As I said before, don’t be afraid to change! Starting all over almost always will enable you to create something better, simpler, and more capable. In the yin-yang project I went through four iterations of how to create it before coming to the final, simple solution.
 
-Also, development tools are your friend. At the start of my web career I had no idea how to use them properly, but now that I do my speed of programming has increased greatly. Playing around with values as you see them can help aid understanding and make gettings exact values easier. After you’re happy with a section you can copy it anyway, so it’s awesome! This is what makes sites like CodePen and CSSDeck so valuable.
+Also, development tools are your friend. At the start of my web career I had no idea how to use them properly, but now that I do my speed of programming has increased greatly. Playing around with values as you see them can help aid understanding and make getting exact values easier. After you’re happy with a section you can copy it anyway, so it’s awesome! This is what makes sites like CodePen and CSSDeck so valuable.
 
 By far the biggest piece of advice I can give here is to not stop. Breaks are great, some of my greatest thoughts about programming have been when I’m eating, taking a shower, or doing something like running, but stopping a project is not. However, if you completely stop working on a project then most of the time you won’t pick it up again which means it won’t get finished. If you need help then there are communities like StackOverflow which can help, but I encourage you to spend a couple of days working at it and thinking before asking. Figuring things out and doing them yourself always help you become a better programmer and thinker in general.
 

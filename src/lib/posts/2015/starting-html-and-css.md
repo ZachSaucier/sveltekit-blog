@@ -153,7 +153,7 @@ There are <a href="https://code.tutsplus.com/tutorials/the-30-css-selectors-you-
 
 There are comments in CSS like there are in HTML but they use the form of `/* Example text */`.
 
-CSS also has **browser prefixes** for properties (and some values) which are any parts surrounded by dashes `-`. These are created so that specific browsers can beselected to use certain values. Part of the reason why this is needed is because sometimes browsers don’t follow the official specifications for certain things and do things differently.
+CSS also has **browser prefixes** for properties (and some values) which are any parts surrounded by dashes `-`. These are created so that specific browsers can be selected to use certain values. Part of the reason why this is needed is because sometimes browsers don’t follow the official specifications for certain things and do things differently.
 
 Another key term in CSS is **specificity**, which is what determines which property-value pair is used when more than one selector selects the same element and both try to change a particular property. The more specific, the higher weight it has when determining which to use. IDs are the most specific followed by relationships, then classes, then attributes, then any `_` styling, then default tag styling, and finally any inheritance from parents. You can play around with <a href="https://specificity.keegan.st/">this specificity calculator</a> to get a better understanding of how it works.
 
@@ -204,7 +204,7 @@ There are also values of `table` and `flex`, but those are out of scope for this
 
 Another CSS property that deals with positioning is `float` which can have a value of `left`, `right`, or `none`. These make content go to either the left or right of its container but should really only be used for images or elements that you want text to surround. Otherwise they really shouldn’t be used very often and are abused sometimes.
 
-A key point is that you need to _clear_ the floats so that the parent knows how tall the floated element is. To do so, you need to place an element after the floats and give that elementthe property-value pair of `clear: both` (or just `clear: left` or `clear:right` if you want to only clear one). This technique of clearing floats is called a _clearfix_ and you can read more about that <a href="https://stackoverflow.com/q/211383/2065702">on this SO post</a>.
+A key point is that you need to _clear_ the floats so that the parent knows how tall the floated element is. To do so, you need to place an element after the floats and give that element the property-value pair of `clear: both` (or just `clear: left` or `clear:right` if you want to only clear one). This technique of clearing floats is called a _clearfix_ and you can read more about that <a href="https://stackoverflow.com/q/211383/2065702">on this SO post</a>.
 
 <img src="$lib/images/cc2/slide21.png" alt="CSS units" loading="lazy" />
 

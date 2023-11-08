@@ -64,6 +64,6 @@ An example of using the picture element is as follows (again pulled from <a href
 
 You should use the `<picture>` element when your use case is in an <a href="https://blog.cloudfour.com/a-framework-for-discussing-responsive-images-solutions/">**art direction**</a>, meaning when you need to crop the image at different viewports or do something similar, no other time.
 
-Feel free to start using the responsive images specification<sup>1</sup> now as both `src-set` and the `<picture>` element fallback to currently supported methods. There is also a great poly fill called <a href="https://github.com/scottjehl/picturefill">Picturefill</a> so you can use the full features on current browsers.
+Feel free to start using the responsive images specification[^1] now as both `src-set` and the `<picture>` element fallback to currently supported methods. There is also a great poly fill called <a href="https://github.com/scottjehl/picturefill">Picturefill</a> so you can use the full features on current browsers.
 
-<sub>1. Since “picture specification” is an ambiguous, ill-used term, some people recommend that we call the spec “**responsive images specification**” instead which I believe is a good idea.</sub>
+[^1]: Since “picture specification” is an ambiguous, ill-used term, some people recommend that we call the spec “**responsive images specification**” instead which I believe is a good idea.

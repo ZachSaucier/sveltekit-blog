@@ -11,7 +11,7 @@ tags:
 description: Some of the history and exploration behind my 2017 site redesign.
 ---
 
-#### Design aspects
+## Design aspects
 
 I’ve been wanting to redesign my personal website/portfolio for the past couple of years. I had the <a href="https://codepen.io/ZachSaucier/pen/aevDq">previous version</a> since 2014 (if not before), and only made minor updates to it. It did the job, but wasn’t really impressive like I wanted it to be in order to apply to the companies I want to work at. But I spent all my extra time working on other projects and didn’t really have an idea of what I wanted to do with it until recently.
 
@@ -25,19 +25,19 @@ After talking with some designer friends of mine, I started <a href="https://i.s
 
 At this point I had several pieces that I liked but no cohesiveness to it. I tried a bunch of things like <a href="https://i.stack.imgur.com/GuCqc.png">colorful shadows</a>, adding a game from <a href="https://codepen.io/ZachSaucier/pen/zGebEL">an old project</a> to the bottom, and some other ideas but nothing really stuck. It was then that in a conversation with a friend I remembered <a href="https://i.stack.imgur.com/NLVLl.png">some old business card ideas</a> using the letter Z in them that I made for a typography course my freshman year of college. I took that idea, paired with a more modern gradient, and made <a href="https://i.stack.imgur.com/1nVB0.png">a new header</a>. That was much more the direction I was looking for. After finding a font with a Z that looked more like parallelograms (Futura Bold) and adding a white gradient at the bottom so I could transition to the rest of the page, I had <a href="https://i.imgur.com/Y3WTByA.png">a version</a> close to what it is now.
 
-#### Technical aspects
+## Technical aspects
 
 At this point I was still attempting to use `clip-path`s for the parallelograms, which, while perfect for what I was doing at the time, only worked in Chrome (and even then <a href="https://bugs.chromium.org/p/chromium/issues/detail?id=727865">it had a bug</a>). Thus I decided it was probably best to recreate the same design using CSS’s `transform: skewX()`. This served as an adequate replacement in every way except for a <a href="https://i.imgur.com/NFUxzAP.png">small hoverable area</a> when the titles are not over the preview videos. I feel like this is an acceptable trade off given my site now works back to IE9. I did continue to use clip-paths for the “Check out my blog” link, only falling back to using transforms there.
 
 It then took about two days work to get it all responsive. Getting the project previews responsive definitely took the most iterations because of their complexity. I also had to use a little JavaScript to make sure the text underline on hover and image zoom always worked together.
 
-Then came my least favorite part of the whole experience: figuring out how to best take video of my projects. Ended up sizing a browser window to 750x375 (like the placeholder image I was developing with) and using FlackBack Recorder to record my screen. I originally planned on using gifs but switched to video for file size reasons. Figuring out how to do that well and actually recording all the projects took a full day’s work.
+Then came my least favorite part of the whole experience: figuring out how to best take video of my projects. Ended up sizing a browser window to 750x375 (like the placeholder image I was developing with) and using FlackBack Recorder to record my screen. I originally planned on using GIFs but switched to video for file size reasons. Figuring out how to do that well and actually recording all the projects took a full day’s work.
 
 The last thing I added was the layout animations. I played around with fading in and up the elements in the header, added a <a href="https://github.com/dixonandmoe/rellax">vanilla JS parallax effect</a> to my picture and “About” paragraphs, wrote a script to reveal my projects once they’ve been scrolled to, and then added a little movement of the big Z when users move their mouse around the area.
 
 Overall I’m very happy with the result! I built pretty much everything from scratch, which gave me a lot of control over the way everything acts and interacts. I also designed in the browser, which made switching over to code a little _too_ easy (I wasted some time fixing details when I ended up scrapping some ideas altogether). But I learned a fair bit, especially about some browser bugs, and had fun making things that no one has really made before.
 
-### Other possibly interesting aspects
+## Other possibly interesting aspects
 
 - I tried showing new words inline by <a href="https://jsfiddle.net/ZachSaucier/t6y7yy6u/1/">scrolling them down</a>, but I can’t because of silly reasoning <a href="https://stackoverflow.com/a/6433475/2065702">in the spec</a> that prevents that behavior. So I ended up <a href="https://jsfiddle.net/t6y7yy6u/9/">scrambling words instead</a>.
 - I played around with <a href="https://i.imgur.com/1gQYZpw.gif">a text intro</a> (<a href="https://jsfiddle.net/uxLwdgq4/14/">code here</a>) for a bit but decided against it for usability purposes (we’re supposed to try to avoid loaders).

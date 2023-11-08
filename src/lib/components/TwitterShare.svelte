@@ -2,10 +2,10 @@
   import { twitter_handle } from '$lib/config';
   import Icon from '$lib/components/Icon.svelte';
 
-  export let text;
+  export let text = null;
   export let url;
-  export let hashtags;
-  export let related;
+  export let hashtags = null;
+  export let related = null;
 
   $: query = [
     `via=${encodeURIComponent(twitter_handle)}`,

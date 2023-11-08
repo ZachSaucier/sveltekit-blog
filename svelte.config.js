@@ -36,6 +36,12 @@ const config = {
           {
             customizeTOC: (toc) => {
               if (toc.children[0].children.length > 0) {
+                const secondary_list = toc.children[0].children[0].children[1]?.children || [];
+                // Strip subheadings that start with "NUM. "
+                secondary_list.forEach((li) => {
+                  const text = li.children[0].children[0];
+                  text.value = text.value.replace(/^\d\.\s*/g, '');
+                });
                 return toc;
               }
               return false;
