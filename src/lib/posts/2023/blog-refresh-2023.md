@@ -1,6 +1,6 @@
 ---
 title: Blog refresh 2023
-date: 2023-11-05
+date: 2023-11-07
 tags:
   - code
   - projects
@@ -27,11 +27,11 @@ I started programming for the web when jQuery was _the tool_ to use. However, na
 
 For the next several years, frameworks came and went on large scales but I never felt the need to use one for the projects I was building, which were relatively small in nature. I did use preprocessors like SCSS sometimes. And for medium sized projects I'd use either templating engines like Pug/Jade or a backend language like PHP for templating. For [the Just Read website](https://justread.link/)/server I used Node.js + Express.js which was fine but sticking close to my native roots.
 
-I never was really drawn to any of the major frameworks. The most appealing was Vue due to its acceptance of using straight HTML + CSS + JS and just enhancing parts, but even then I didn't really like the Vue-y parts of it.
+I was never really drawn to any of the major frameworks. The most appealing was Vue due to its acceptance of using straight HTML + CSS + JS and just enhancing parts, but even then I didn't really like the Vue-y parts of it.
 
-At [GreenSock](https://gsap.com/) we mainly used a (crappy) PHP-based CMS called Invision Power Board (now Invision Community). At ([Rally](https://rallyinteractive.com/)) we used Nunjucks for templating and Contentful as the CMS for the major projects I worked on there. At [Stripe](https://stripe.com/) we used Ruby on the backend, Liquid as the templating engine, and Contentful as the CMS.
+At [GreenSock](https://gsap.com/) (GSAP) we mainly used a (crappy) PHP-based CMS called Invision Power Board (now Invision Community). At ([Rally](https://rallyinteractive.com/)) we used Nunjucks for templating and Contentful as the CMS for the major projects I worked on there. At [Stripe](https://stripe.com/) we used Ruby on the backend, Liquid as the templating engine, and Contentful as the CMS.
 
-That's not to say that I never used React or the other frameworks; I used React at GreenSock, Rally, Stripe, and multiple freelance projects. I used Angular and Vue once or twice for little things. But I never really vibed with the big hype around React and frameworks like it.
+That's not to say that I never used React or the other frameworks; I used React at GreenSock, Rally, Stripe, and multiple freelance projects. I used Angular and Vue once or twice for little things. But I never really vibed with the big hype around React and the other big frameworks.
 
 ## Svelte is great!
 
@@ -54,7 +54,7 @@ Going back to the subject of this blog, I built it from scratch using Svelte + S
 - Adding the [archive](/blog/archive) functionality
 - Adding the search functionality
 - Adding a table of contents to blog posts
-- Adding section link click functionality
+- Adding section heading link click functionality
 - Adding a tweet button to blog posts
 - Adding blog post "draft" functionality
 - Making fairly big additions to the pagination functionality
@@ -66,16 +66,25 @@ As a bonus, SvelteKit comes with content transitions between pages out of the bo
 
 ## Cool new CSS features
 
-Building the site from scratch also provided a time to touch up some bits, shave a lot of CSS (bye bye browser prefixes), and try out new CSS tools.
+Building the site from scratch also provided a time to touch up some bits, shave old CSS (bye bye browser prefixes), and try out new CSS tools.
 
-Perhaps my favorite change related to styles comes from using Svelte: components automatically [come with scoped CSS](https://svelte.dev/docs/svelte-components) to that component 😮 So you don't need CSS modules, Tailwind, or even [cascade layers](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Cascade_layers).
+But perhaps my favorite change related to styles comes from using Svelte: components automatically [come with scoped CSS](https://svelte.dev/docs/svelte-components) to that component 😮 So you don't need CSS modules, Tailwind, or even [cascade layers](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Cascade_layers).
 
-- nested selectors
-- mix-color
-- oklch
-- dark theme with CSS variables
-- Media query range, logical or (,)
-- Sticky aside
+Of the new CSS features, using CSS nesting feels the most refreshing. Paired with using CSS variables, 99% of my use cases for CSS pre-processors are accounted for. Since this website doesn't get much traffic, I'm not even providing a fallback since it's [pretty well supported](https://caniuse.com/css-nesting).
+
+The neatest CSS feature I used was the OKLCH color space. It made the blue used on the ribbon pop even more than before!
+
+<!-- TODO ADD COMPARISON IMAGE -->
+
+I've seen some weird flashes with the colors sometimes where it looks like it goes to the RGB color fallback, but that's worth the tradeoff for me on this website.
+
+Another color feature I used for the first time [color-mix](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/color-mix) to do some lightening and darkening of the CSS variables for different states. It is not bad but I wish there was something more like a true lighten/darken that used the color itself as the extreme. Some of the colors I tried got washed out a bit by the white or black that I mixed it with.
+
+By converting my colors for the site to use CSS variables, I basically got a dark mode for free! It only took some playing around with the values to find somthing that I liked.
+
+One of the nice-to-have features I used was query ranges for CSS media queries. It's another feature I've long-awaited since media queries were first introduced. Oh, and I used the `,` operator of media queries for the first time!
+
+Lastly, I used some `position: sticky` on the sidebar if the viewport height is tall enough. Not super new or the first time I've used the feature but still a nice addition.
 
 ## Where my blog is going from here
 

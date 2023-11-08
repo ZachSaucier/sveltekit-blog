@@ -10,11 +10,13 @@
       ? date.toLocaleDateString(undefined, {
           month: 'short',
           day: 'numeric',
+          timeZone: 'UTC',
         })
       : date.toLocaleDateString(undefined, {
           year: 'numeric',
           month: 'short',
           day: 'numeric',
+          timeZone: 'UTC',
         });
 </script>
 
