@@ -1,5 +1,4 @@
 <script>
-  import { email_list_id } from '$lib/config';
   import { recent_posts } from '$lib/utilities/store';
   import Icon from '$lib/components/Icon.svelte';
 
@@ -63,23 +62,30 @@
       </section>
     {/if}
 
-    <!-- {#if email_list_id}
-			<section>
-				<h1>Blog highlights newsletter</h1>
-				<div class="sidebar_content">
-					<p>Get email notifications for the top blog posts every once in a while.</p>
-					<form
-						method="POST"
-						action="//manage.kmail-lists.com/subscriptions/subscribe"
-						novalidate="novalidate"
-					>
-						<input type="hidden" name="g" value={email_list_id} />
-						<input type="email" value="" id="k_id_email" placeholder="Your email" />
-						<button type="submit">Subscribe</button>
-					</form>
-				</div>
-			</section>
-		{/if} -->
+    <section>
+      <h1>Blog highlights newsletter</h1>
+      <div class="sidebar_content">
+        <p>Get emails about the top blog posts every once in a while.</p>
+
+        <form
+          action="https://zachsaucier.us10.list-manage.com/subscribe/post?u=bb6f49ab8432b5ad1f4c97206&amp;id=e928920a6c&amp;f_id=0033dee5f0"
+          method="post"
+          id="mc-embedded-subscribe-form"
+          name="mc-embedded-subscribe-form"
+        >
+          <input type="email" name="EMAIL" id="mce-EMAIL" placeholder="Email" value="" />
+          <div aria-hidden="true" style="position: absolute; left: -5000px;">
+            <input
+              type="text"
+              name="b_bb6f49ab8432b5ad1f4c97206_e928920a6c"
+              tabindex="-1"
+              value=""
+            />
+          </div>
+          <input type="submit" name="subscribe" id="mc-embedded-subscribe" value="Subscribe" />
+        </form>
+      </div>
+    </section>
 
     <section>
       <h1>Favorite side projects</h1>
@@ -134,9 +140,8 @@
   }
 
   ul,
-  ol
-  /* ,
-  .sidebar_content */ {
+  ol,
+  .sidebar_content {
     padding-inline-start: 20px;
     font-size: 0.9rem;
   }
@@ -147,13 +152,14 @@
     margin-bottom: 0.4em;
   }
 
-  /* form {
+  form {
     margin-top: 0.3em;
-  } */
+  }
 
   .socials {
     display: flex;
     gap: 5px;
+    justify-content: space-between;
     padding-inline-start: 0;
 
     & a {

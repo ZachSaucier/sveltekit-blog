@@ -36,6 +36,11 @@
 </nav>
 
 <style>
+  ::selection {
+    background-color: var(--accent-dark);
+    color: var(--background-color);
+  }
+
   nav {
     font-size: 18px;
   }

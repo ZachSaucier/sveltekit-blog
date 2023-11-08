@@ -5,8 +5,6 @@ export const site_link = 'https://zachsaucier.com/blog';
 export const site_author = 'Zach Saucier';
 export const twitter_handle = 'ZachSaucier';
 
-export const email_list_id = 'VaU3PM';
-
 export const nav_items = [
   {
     title: 'Blog',

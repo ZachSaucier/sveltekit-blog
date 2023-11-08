@@ -150,6 +150,7 @@ a {
 }
 
 button,
+[type='submit'],
 .read_on.read_on {
   background-color: var(--button-dark-background);
   color: var(--background-color);

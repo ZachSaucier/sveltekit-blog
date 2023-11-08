@@ -27,6 +27,7 @@ This blog started as a fork of Josh Collinsworth's [Sveltekit static blog starte
 - **Table of contents for blog posts** that outlines the sections of each page.
 - **Tweet button** to let users more easily share to Twitter (X).
 - **Automatic widow prevention** to make your blocks of text look better.
+- **Email signup functionality.** It makes use of Mailchimp, but you could easily switch out the email provider for another of your choice.
 
 ## Getting started
 
