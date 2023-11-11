@@ -1,10 +1,31 @@
+<script>
+  import { browser } from '$app/environment';
+
+  export let expandable = false;
+
+  let theme = 'light';
+
+  if (browser) {
+    theme = localStorage.theme;
+  }
+</script>
+
 <svelte:head>
   <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </svelte:head>
 
-<blockquote class="twitter-tweet">
-  <slot />
-</blockquote>
+{#if expandable}
+  <details>
+    <summary>View tweet</summary>
+    <blockquote class="twitter-tweet" data-theme={theme}>
+      <slot />
+    </blockquote>
+  </details>
+{:else}
+  <blockquote class="twitter-tweet" data-theme={theme}>
+    <slot />
+  </blockquote>
+{/if}
 
 <style>
   blockquote.twitter-tweet {

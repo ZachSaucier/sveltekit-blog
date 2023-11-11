@@ -26,14 +26,27 @@ In this post I'll cover some of the key changes and cool new tech that I got to 
 
 ## What I've been doing since 2017
 
-In case you're interested in what I've been doing since I last posted on this blog, here's a lightning recap:
+In case you're interested in what I've been doing since I last posted on this blog, here's a partial lightning recap:
 
-- I worked fulltime for [GreenSock (GSAP)](https://gsap.com/), an agency called [Rally Interactive](https://rallyinteractive.com/), [Stripe](https://stripe.com/), and [Mailchimp](https://mailchimp.com/).
+- I've worked fulltime for [GreenSock (GSAP)](https://gsap.com/), an agency called [Rally Interactive](https://rallyinteractive.com/), [Stripe](https://stripe.com/), and [Mailchimp](https://mailchimp.com/).
   - Here's a Twitter thread about some of the work I created at Stripe:
-    <TwitterEmbed>
+    <TwitterEmbed expandable="true">
       <p lang="en" dir="ltr">I was a part of the <a href="https://twitter.com/stripe?ref_src=twsrc%5Etfw">@stripe</a> 14% layoffs last week. If you&#39;d like to work with me, please DM me!<br><br>Here’s a of some of my favorite animations I contributed to during my time at Stripe (videos in thread): <a href="https://t.co/ankCaE2E1p">pic.twitter.com/ankCaE2E1p</a></p>&mdash; Zach Saucier (@ZachSaucier) <a href="https://twitter.com/ZachSaucier/status/1590027167173611521?ref_src=twsrc%5Etfw">November 8, 2022</a>
     </TwitterEmbed>
 - I've freelanced for many individuals, startups, and companies including [Retool](https://retool.com/).
+  - Here's a breakdown of some of the effects I made for Retool:
+    <TwitterEmbed expandable="true">
+      <p lang="en" dir="ltr">Here&#39;s a 🧵 overviewing the techniques I used while creating the <a href="https://twitter.com/retool?ref_src=twsrc%5Etfw">@retool</a> Visual Basic page <a href="https://t.co/RcA0yV1rkn">https://t.co/RcA0yV1rkn</a> (1/10): <a href="https://t.co/Hrajp6ED6L">pic.twitter.com/Hrajp6ED6L</a></p>&mdash; Zach Saucier (@ZachSaucier) <a href="https://twitter.com/ZachSaucier/status/1643231123361677314?ref_src=twsrc%5Etfw">April 4, 2023</a>
+    </TwitterEmbed>
+- I wrote a thread about my most recent interview process:
+  - <TwitterEmbed expandable="true">
+      <p lang="en" dir="ltr">I was laid off from <a href="https://twitter.com/stripe?ref_src=twsrc%5Etfw">@stripe</a> in November, started looking for senior front-end web developer jobs immediately, and accepted a full-time position in April.<br><br>Here&#39;s a 🧵 with some stats about my experience:<a href="https://t.co/4BAskUnHJ7">https://t.co/4BAskUnHJ7</a></p>&mdash; Zach Saucier (@ZachSaucier) <a href="https://twitter.com/ZachSaucier/status/1661716656706428928?ref_src=twsrc%5Etfw">May 25, 2023</a>
+    </TwitterEmbed>
+- I moved to New York City.
+- I celebrated my 5 year wedding anniversary!
+- I made new friends, got into rock climbing, and built a lot of little projects.
+
+Now that that's out of the way, onto the meat of this post!
 
 ## My history with frameworks
 
