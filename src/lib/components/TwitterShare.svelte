@@ -1,6 +1,5 @@
 <script>
   import { twitter_handle } from '$lib/config';
-  import Icon from '$lib/components/Icon.svelte';
 
   export let text = null;
   export let url;
@@ -20,24 +19,8 @@
   $: href = `https://twitter.com/intent/tweet?${query}`;
 </script>
 
-<a target="_blank" noreferrer {href}>
-  <Icon type="Twitter" fill="currentColor" width={20} />
-  Tweet this
-</a>
+<svelte:head>
+  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</svelte:head>
 
-<style>
-  a {
-    font-family: var(--font-sans-serif);
-    font-size: 0.8em;
-    display: inline-flex;
-    gap: 5px;
-    background-color: var(--accent);
-    color: var(--background-color);
-    padding: 0.3em 0.5em;
-    border-radius: 0.3em;
-
-    &:hover {
-      /* border-bottom: 2px solid rgb(29, 161, 242); */
-    }
-  }
-</style>
+<a target="_blank" noreferrer class="twitter-share-button" {href} data-size="large"> Tweet</a>

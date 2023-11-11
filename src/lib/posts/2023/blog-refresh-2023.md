@@ -1,6 +1,6 @@
 ---
 title: Blog refresh 2023
-date: 2023-11-07
+date: 2023-11-11
 tags:
   - code
   - projects
@@ -9,9 +9,12 @@ tags:
 # cover_image: /images/linus-nylund-Q5QspluNZmM-unsplash.jpg
 # cover_width: 16
 # cover_height: 9
-description:
-draft: true
+description: A post covering some new web features that I used when recreating this blog.
 ---
+
+<script>
+	import TwitterEmbed from "$lib/components/TwitterEmbed.svelte";
+</script>
 
 I first created my blog in 2014. For the next ~10 years, it stayed the same, only adding new posts through 2017 when I lost the ability to easily make new posts (note: always save to the cloud). Its design has held up surprisingly well!
 
@@ -20,6 +23,17 @@ In the last ~1.5 years CSS-Tricks has basically died and Twitter has similarly t
 In this post I'll cover some of the key changes and cool new tech that I got to use in building this blog!
 
 <span class="excerpt-marker"></span>
+
+## What I've been doing since 2017
+
+In case you're interested in what I've been doing since I last posted on this blog, here's a lightning recap:
+
+- I worked fulltime for [GreenSock (GSAP)](https://gsap.com/), an agency called [Rally Interactive](https://rallyinteractive.com/), [Stripe](https://stripe.com/), and [Mailchimp](https://mailchimp.com/).
+  - Here's a Twitter thread about some of the work I created at Stripe:
+    <TwitterEmbed>
+      <p lang="en" dir="ltr">I was a part of the <a href="https://twitter.com/stripe?ref_src=twsrc%5Etfw">@stripe</a> 14% layoffs last week. If you&#39;d like to work with me, please DM me!<br><br>Here’s a of some of my favorite animations I contributed to during my time at Stripe (videos in thread): <a href="https://t.co/ankCaE2E1p">pic.twitter.com/ankCaE2E1p</a></p>&mdash; Zach Saucier (@ZachSaucier) <a href="https://twitter.com/ZachSaucier/status/1590027167173611521?ref_src=twsrc%5Etfw">November 8, 2022</a>
+    </TwitterEmbed>
+- I've freelanced for many individuals, startups, and companies including [Retool](https://retool.com/).
 
 ## My history with frameworks
 

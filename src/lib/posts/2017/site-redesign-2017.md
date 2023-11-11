@@ -17,7 +17,7 @@ I’ve been wanting to redesign my personal website/portfolio for the past coupl
 
 One day in class in my final semester at UGA I got a bit of inspiration to use parallelograms as a slider to show projects, so I made a <a href="https://i.imgur.com/JJDHqFX.png">quick sketch</a> and figured I had enough skill to develop it pretty well. I made use of <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/clip-path">CSS clip-paths</a> and got a working version of <a href="https://i.imgur.com/fyhDPjK.png">the design in code</a>. However, the result wasn’t as impressive as I was imagining (though I still think it’s cool and could be a valid slider in the future for a different site) and it wasn’t the most usable thing I’ve made.
 
-<img src="https://i.imgur.com/fyhDPjK.png" alt="One of my early explorations for how to show off my projects" loading="lazy" />
+<img src="https://i.imgur.com/fyhDPjK.png" alt="One of my early explorations for how to show off my projects" width="1257" height="718" loading="lazy" />
 
 <span class="excerpt-marker"></span>
 

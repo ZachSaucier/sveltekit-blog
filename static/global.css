@@ -25,6 +25,7 @@ ul {
 }
 img {
   max-width: 100%;
+  height: auto;
 }
 hr {
   margin-top: 1.2em;

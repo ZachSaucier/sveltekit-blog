@@ -5,23 +5,13 @@
     <link rel="icon" href="/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css" />
     <link
-      href="https://fonts.googleapis.com/css?family=Merriweather:400,300"
-      rel="stylesheet"
-      type="text/css"
+      href="https://fonts.googleapis.com/css?family=Lato|Merriweather:400,300&display=swap"
+      rel="preload"
+      as="style"
+      onload="this.onload=null; this.rel='stylesheet'"
     />
     <link href="/global.css" rel="stylesheet" type="text/css" />
-
-    <script>
-      if (localStorage.theme) {
-        if (localStorage.theme === 'dark') {
-          document.documentElement.classList.add('dark');
-        }
-      } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        document.documentElement.classList.add('dark');
-      }
-    </script>
 
     %sveltekit.head%
   </head>
