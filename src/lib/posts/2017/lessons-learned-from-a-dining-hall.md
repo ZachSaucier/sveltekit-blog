@@ -3,7 +3,7 @@ title: Lessons learned from a dining hall
 date: 2017-01-03
 tags:
   - rambling
-  - life-lessons
+  - life
 # cover_image: /images/PLACEHOLDER_IMAGE.jpg
 # cover_width: 16
 # cover_height: 9

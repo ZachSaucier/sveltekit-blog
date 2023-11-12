@@ -4,6 +4,7 @@ date: 2023-11-11
 tags:
   - code
   - css
+  - responsive
 # cover_image: /images/PLACEHOLDER_IMAGE.jpg
 # cover_width: 16
 # cover_height: 9
