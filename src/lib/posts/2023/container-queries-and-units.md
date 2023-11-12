@@ -87,7 +87,7 @@ What's more, you're not restricted to using container query units inside of cont
 
 "Container query units" is kind of a mouthful to say. Given that they can be used outside of container queries (so long as a container is defined), I think we can probably just refer to these as "container units" [like Chris Coyier did](https://css-tricks.com/container-units-should-be-pretty-handy/) when he wrote about them a while back. As such, I'm going to be calling them that for the rest of this article.
 
-### Available container query units
+### Available container units
 
 Here's the list of container query units we currently have access to:
 
@@ -118,9 +118,9 @@ Perhaps the most common use case for container queries is to change the layout o
 
 Accessibility note: It's best to keep the logical order of things in markup.
 
-### Adding detail when there's more space available
+### Adding non-vital detail when there's more space available
 
-In addition to changing the layout, sometimes it doesn't make sense to hide some of the less important information or decorative elements when a component is smaller. A great exactly of this is Chris Coyier's calendar layout demo:
+In addition to changing the layout, sometimes it makes sense to hide some of the less important information or decorative elements when a component is smaller. A great exactly of this is Chris Coyier's calendar layout demo:
 
 https://codepen.io/chriscoyier/pen/jOeBzNN
 
@@ -134,6 +134,10 @@ Check out this demo:
 
 Stephanie Eckles wrote a more in-depth article about [using container query units for typography](https://moderncss.dev/container-query-units-and-fluid-typography/) that I highly recommend!
 
+## When to use media queries instead
+
+Content queries and units free us up from having to always use breakpoints that are tied to the layout. However, there are cases where you want content to update based on the layout! That's when you should still use media queries—so content can be updated across multiple components at the same time.
+
 ## Browser support
 
 Container queries for sizing [have pretty solid browser support](https://caniuse.com/css-container-queries) these days, as does [container units](https://caniuse.com/css-container-query-units).
@@ -145,7 +149,3 @@ There's also discussion around creating CSS _style_ container queries. This woul
 Container queries and container units enable us to create more isolated components. This makes it easier for components to be used across multiple pages, layouts, and systems. They're prime for use in design systems!
 
 If you're interested in what other CSS features I used when recreating my blog, check out [my blog post about the process](/blog/blog-refresh-2023)!
-
-<!-- Extra stuff -->
-
-I won't go into too much more detail about how to use container queries for sizing because Stephanie already wrote [a useful article about them](https://www.smashingmagazine.com/2021/05/complete-guide-css-container-queries/).

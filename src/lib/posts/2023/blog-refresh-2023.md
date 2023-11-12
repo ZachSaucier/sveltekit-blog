@@ -111,6 +111,8 @@ By converting my colors for the site to use CSS variables, I basically got a dar
 
 One of the nice-to-have features I used was query ranges for CSS media queries. It's another feature I've long-awaited since media queries were first introduced. Oh, and I used the `,` operator of media queries for the first time!
 
+And I tried out container queries for the first time. I will write another, more in depth article about using them!
+
 Lastly, I used some `position: sticky` on the sidebar if the viewport height is tall enough. Not super new or the first time I've used the feature but still a nice addition.
 
 ## Where my blog is going from here

@@ -35,24 +35,16 @@
 
 <style>
   footer {
+    container: footer / inline-size;
     position: absolute;
     bottom: 25px;
     left: var(--content-gutter);
     right: var(--content-gutter);
+    white-space: nowrap;
   }
 
   ul {
     display: flex;
-    gap: var(--nav-gap);
-  }
-
-  @media (width <= 808px), (1000px <= width <= 1108px) {
-    footer {
-      font-size: 0.75em;
-    }
-
-    ul {
-      gap: 8px;
-    }
+    gap: clamp(8px, 3.1cqi, var(--nav-gap));
   }
 </style>
