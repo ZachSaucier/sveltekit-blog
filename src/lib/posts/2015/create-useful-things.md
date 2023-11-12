@@ -4,7 +4,7 @@ date: 2015-12-28
 tags:
   - rambling
   - life
-# cover_image: /images/linus-nylund-Q5QspluNZmM-unsplash.jpg
+# cover_image: /images/PLACEHOLDER_IMAGE.jpg
 # cover_width: 16
 # cover_height: 9
 description: Some of my thoughts on our mandate as humans.

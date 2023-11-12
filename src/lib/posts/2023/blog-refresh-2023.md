@@ -6,7 +6,7 @@ tags:
   - projects
   - css
   - svelte
-# cover_image: /images/linus-nylund-Q5QspluNZmM-unsplash.jpg
+# cover_image: /images/PLACEHOLDER_IMAGE.jpg
 # cover_width: 16
 # cover_height: 9
 description: A post covering some new web features that I used when recreating this blog.

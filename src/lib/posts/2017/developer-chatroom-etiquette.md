@@ -3,7 +3,7 @@ title: Developer chatroom etiquette
 date: 2017-04-16
 tags:
   - rambling
-# cover_image: /images/linus-nylund-Q5QspluNZmM-unsplash.jpg
+# cover_image: /images/PLACEHOLDER_IMAGE.jpg
 # cover_width: 16
 # cover_height: 9
 description: Tips to keep in mind when using a developer chatroom.

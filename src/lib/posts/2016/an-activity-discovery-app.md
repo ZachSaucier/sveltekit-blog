@@ -4,7 +4,7 @@ date: 2016-12-05
 tags:
   - projects
   - design
-# cover_image: /images/linus-nylund-Q5QspluNZmM-unsplash.jpg
+# cover_image: /images/PLACEHOLDER_IMAGE.jpg
 # cover_width: 16
 # cover_height: 9
 description: An app I created to help address decision paralysis when trying to find activities to do.

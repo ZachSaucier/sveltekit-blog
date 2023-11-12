@@ -4,7 +4,7 @@ date: 2015-01-01
 tags:
   - rambling
   - community
-# cover_image: /images/linus-nylund-Q5QspluNZmM-unsplash.jpg
+# cover_image: /images/PLACEHOLDER_IMAGE.jpg
 # cover_width: 16
 # cover_height: 9
 description: Some of the reasons why I believe contributing to something like StackOverflow is important.
