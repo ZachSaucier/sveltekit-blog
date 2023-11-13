@@ -118,20 +118,20 @@
 <style>
   aside {
     --border: 1px solid #ededed;
-    padding: 20px;
+    padding: 4rem 1rem;
     border-left: var(--border);
     border-right: var(--border);
   }
 
   h1 {
     font-size: 1.2rem;
-    margin: 1.5em 0 0.4em;
+    margin-bottom: 0.4em;
     padding-bottom: 0.2em;
     border-bottom: var(--border);
   }
 
-  section:not(:last-child) {
-    margin-bottom: 15px;
+  section {
+    margin-bottom: 1.5rem;
   }
 
   p {

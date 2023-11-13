@@ -64,11 +64,11 @@ html {
   --content-gutter: 55px;
   --footer-height: 85px;
 
-  --font-serif: 'Merriweather', serif;
+  --font-serif: 'Lora', serif;
   --font-sans-serif: 'Lato', 'Helvetica Neue', Arial, sans-serif;
   --font-code: Menlo, Monaco, 'Andale Mono', 'lucida console', 'Courier New', monospace;
 
-  font-size: 18.4px;
+  font-size: 19px;
 
   --button-dark-background: color-mix(
     in srgb,
@@ -115,7 +115,7 @@ html.dark {
 
 body {
   font-family: var(--font-sans-serif);
-  line-height: 1.7;
+  line-height: 1.6;
   background: var(--background-color) url('/images/noise.png') top left;
   color: var(--accent-dark);
 }
@@ -186,11 +186,6 @@ article {
 
   & h3 {
     font-size: 1.2rem;
-  }
-
-  & > p:first-of-type::first-letter {
-    font-size: 1.3em;
-    font-weight: 300;
   }
 
   & :is(p, article blockquote, ul, ol):not(:last-child) {
@@ -350,7 +345,7 @@ pre[class*='language-'] {
   background: none;
   text-shadow: 0 1px rgba(0, 0, 0, 0.3);
   font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-  font-size: 1em;
+  font-size: 0.87em;
   text-align: left;
   white-space: pre;
   word-spacing: normal;

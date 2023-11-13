@@ -29,7 +29,7 @@
     position: absolute;
     top: -6rem;
     left: 0;
-    padding: 0.5em;
+    padding: 0.5rem;
     opacity: 0;
     display: flex;
     justify-content: center;
@@ -50,20 +50,20 @@
 
   .site_title_wrapper {
     text-align: right;
-    padding: 22px 0 17px 0;
+    padding: 22px 0 23.6px 0;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
   }
 
   h1 {
-    font-size: 2.826rem;
+    font-size: 2.5rem;
     text-decoration: none;
     color: var(--button-dark-background);
   }
 
   h2 {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     color: var(--grayed-text);
   }
 
@@ -74,11 +74,11 @@
     }
 
     h1 {
-      font-size: 1.91rem;
+      font-size: 1.7rem;
     }
 
     h2 {
-      font-size: 0.87rem;
+      font-size: 0.9rem;
     }
   }
 </style>

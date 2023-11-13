@@ -99,7 +99,6 @@
     display: flex;
     gap: var(--gap);
     align-items: center;
-    font-size: 0.8rem;
 
     & h2 {
       font-family: inherit;

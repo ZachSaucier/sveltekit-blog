@@ -8,7 +8,7 @@
 
 <style>
   section {
-    padding: 37px var(--content-gutter);
+    padding: 2rem var(--content-gutter);
     background: var(--border-dashed);
   }
 
