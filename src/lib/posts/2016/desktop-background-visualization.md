@@ -17,7 +17,7 @@ On a seemingly different note, I have warm memories of the screensavers from whe
 
 Also, ever since I got into animating, I’ve wanted to include the things I make into more areas of my life. One area that has come into my mind several times was my desktop background.
 
-<span class="excerpt-marker"></span>
+<span class="excerpt_marker"></span>
 
 If you’ve looked into this subject at all, you may know that Windows used to have a way to do this called <a href="https://en.wikipedia.org/wiki/Active_Desktop">Active Desktop</a> but removed it because of the security problems it allowed. You may also know that all software that changes the desktop now does so in a static way. In fact, the only really interactive desktop software I could find is <a href="https://www.rainmeter.net/">RainMeter</a>, which is more of a tool overlay and requires that users use their programming language. The only <a href="https://www.makeuseof.com/tag/set-live-wallpapers-animated-desktop-backgrounds-windows/">video software I found</a> for the desktop accepts only video formats and seemed poorly made. None of these options satisfied me.
 
@@ -94,15 +94,19 @@ IfWinExist, <program name>
 return
 ```
 
+<script>
+	import ContentAside from "$lib/components/ContentAside.svelte";
+</script>
+
 You can download this file without comments <a href="https://gist.github.com/ZachSaucier/c086c01aa3018e3848e6932af4d7c4da">from GitHub</a>.
 
 And then we save it as a `.ahk` file like `bubbles-background.ahk` and we’re done with it! Now we can run it and we should get a result like the following:
 
 <img src="https://i.imgur.com/mQLVLEi.png" alt="A blue cell background on the desktop with a browser window and code editor window on top of it." loading="lazy" />
 
-<aside class="content_aside">
+<ContentAside>
   This is my first script using AHK, so if you know how ugly it is, please forgive me and let me know how it could be improved.
-</aside>
+</ContentAside>
 
 Also note that Autohotkey by default creates a tray icon that we can use to turn off the script at any time.
 
@@ -116,9 +120,9 @@ Now we need to create an executable for our `.ahk` file by right clicking it and
 
 **We’re done!** Now we have a working webpage as our desktop background that will start every time we login!
 
-<aside class="content_aside">
+<ContentAside>
   If you create a Mac version of this script, let me know and I will gladly credit you and link it in this post!
-</aside>
+</ContentAside>
 
 ### Pros
 

@@ -5,6 +5,8 @@
   import Section from '$lib/components/Section.svelte';
   import Date from '$lib/components/Date.svelte';
   import TwitterShare from '$lib/components/TwitterShare.svelte';
+  import ContentAside from '$lib/components/ContentAside.svelte';
+
   export let data;
 
   let url = ``;
@@ -52,26 +54,33 @@
   <article>
     <svelte:component this={PostContent} />
   </article>
+
+  {#if tags}
+    <aside>
+      <div class="tags">
+        <h2>Tags:</h2>
+        <ul>
+          {#each tags as tag}
+            <li>
+              <a href="/blog/tag/{tag}/">
+                {tag}
+              </a>
+            </li>
+          {/each}
+        </ul>
+      </div>
+
+      <TwitterShare {url} />
+    </aside>
+  {/if}
+
+  <ContentAside type="ad">
+    <p>
+      Like this post? Maybe you'd also like my customizable reader mode web extension:<br />
+      <a href="https://justread.link">Just Read</a>
+    </p>
+  </ContentAside>
 </Section>
-
-{#if tags}
-  <aside>
-    <div class="tags">
-      <h2>Tags:</h2>
-      <ul>
-        {#each tags as tag}
-          <li>
-            <a href="/blog/tag/{tag}/">
-              {tag}
-            </a>
-          </li>
-        {/each}
-      </ul>
-    </div>
-
-    <TwitterShare {url} />
-  </aside>
-{/if}
 
 <style>
   aside {
@@ -79,7 +88,8 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 10px;
-    padding: 15px var(--content-gutter) 24px;
+    padding-bottom: 24px;
+    margin: 1rem 0;
 
     background: var(--border-dashed);
   }

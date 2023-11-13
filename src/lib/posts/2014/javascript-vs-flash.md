@@ -10,9 +10,13 @@ tags:
 description: This post covers some of the advantages that JavaScript has over Flash.
 ---
 
-<aside class="content_aside">
+<script>
+	import ContentAside from "$lib/components/ContentAside.svelte";
+</script>
+
+<ContentAside>
   <strong>Aside:</strong> This question was originally asked on WebDesign.StackExchange.com, a private beta that ended up being deleted on October 6th, 2014.
-</aside>
+</ContentAside>
 
 Nowadays I see that the majority of websites are using JavaScript for their animations. I remember the days when Flash was usually used to fulfill those tasks.
 
@@ -21,7 +25,7 @@ Nowadays I see that the majority of websites are using JavaScript for their anim
 1. What are the advantages of using JavaScript instead of Flash? Yes I know about the performance, but are the other advantages?
 2. Web developers could use JavaScripts at that point in time, why did they choose Flash anyway?
 
-<span class="excerpt-marker"></span>
+<span class="excerpt_marker"></span>
 
 <hr>
 
@@ -35,7 +39,7 @@ Other web technologies, such as Canvas, SVG, WebGL, and the improvements with CS
 
 Flash also is not supported on Apple products and is rapidly losing support on other mobile devices such as those owned by Android and Windows.
 
-<aside class="content_aside">The next three paragraphs come from <a href="https://grantpalin.com/">Grant Palin’s</a> answer on WebDesign</aside>
+<ContentAside>The next three paragraphs come from <a href="https://grantpalin.com/">Grant Palin’s</a> answer on WebDesign</ContentAside>
 
 A long-running issue with Flash is that it isn’t ideal for accessibility. The JavaScript route usually involves having actual content in markup, which JavaScript then manipulates. When using Flash, the content is buried within the Flash object, which is opaque. If Flash is disabled, or the appropriate plugin isn’t installed, or it malfunctions, the user has no access to the enclosed content. Conversely, a well-built webpage or application which uses JavaScript in a way that enhances content, rather than placing it, will still be accessible.
 

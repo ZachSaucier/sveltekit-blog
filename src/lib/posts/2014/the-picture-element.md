@@ -10,15 +10,19 @@ tags:
 description: This post covers how you should use the picture element.
 ---
 
-<aside class="content_aside">
+<script>
+	import ContentAside from "$lib/components/ContentAside.svelte";
+</script>
+
+<ContentAside>
 	<strong>Aside:</strong> This question was originally asked on WebDesign.StackExchange.com, a private beta that ended up being deleted on October 6th, 2014.
-</aside>
+</ContentAside>
 
 I know how to use the `<img>` element, but I’ve been hearing things about the upcoming `<picture>` element to be used for responsive images. The articles I’ve read on the subject are kind of mixed up about the usage of the `<picture>` element and I’d like to get some clarification.
 
 How is the `<picture>` element different from the `<img>` element? Should I always use it instead of the `<img>` element given that I want all of my sites to be responsive?
 
-<span class="excerpt-marker"></span>
+<span class="excerpt_marker"></span>
 
 <hr>
 

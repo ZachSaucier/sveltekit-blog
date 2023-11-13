@@ -12,6 +12,10 @@ description: An up-to-date article about why and how to use CSS container querie
 draft: true
 ---
 
+<script>
+	import ContentAside from "$lib/components/ContentAside.svelte";
+</script>
+
 ## What are container queries?
 
 Container queries are similar to media queries but allow you to set styles based on the size of pre-defined containers in an element's ancestry tree.
@@ -30,9 +34,9 @@ Here's what the above demo looks like using container queries and container quer
 
 Much nicer!
 
-<aside>
+<ContentAside>
   <p>Container queries are separate from, but can be in used in combination with, [the `container` property](https://developer.mozilla.org/en-US/docs/Web/CSS/contain).</p>
-</aside>
+</ContentAside>
 
 ### How to use container queries
 

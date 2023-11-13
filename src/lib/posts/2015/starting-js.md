@@ -23,7 +23,7 @@ Welcome to my series on learning web development! I created this crash course se
 
 If you want to play around with the JS snippets as you see them on the slides, you can copy it from <a href="./js-example.js">this JS file</a> and run it on JSFiddle or something similar.
 
-<span class="excerpt-marker"></span>
+<span class="excerpt_marker"></span>
 
 ## The very basics
 

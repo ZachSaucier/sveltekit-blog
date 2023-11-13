@@ -12,9 +12,13 @@ tags:
 description: A primer on responsive web design, including how to use media queries, a mobile-first approach, and other techniques.
 ---
 
-<aside class="content_aside">
+<script>
+	import ContentAside from "$lib/components/ContentAside.svelte";
+</script>
+
+<ContentAside>
   <strong>Aside:</strong> In the editing phases of this post, Brad Frost posted a great, resources driven <a href="https://bradfrost.com/blog/post/the-principles-of-adaptive-design/">article</a> on the same issue. I recommend reading it and using the resources provided as they give more detail to certain areas which this post doesn’t talk much about.
-</aside>
+</ContentAside>
 
 Countless articles, many quite useful, have been written on the subject of responsive design since Ethan Marcotte’s <a href="https://alistapart.com/article/responsive-web-design/">post that started it all</a>, but finding one that directly helps people understand some specific techniques while also explaining the _why_ behind each action and decision is exceedingly hard. I’ll try my best to do so concisely here.
 
@@ -24,7 +28,7 @@ Countless articles, many quite useful, have been written on the subject of respo
 
 _Design:_ making plans and decisions about how something will be created [<a href="https://www.merriam-webster.com/dictionary/design">1</a>].
 
-<span class="excerpt-marker"></span>
+<span class="excerpt_marker"></span>
 
 _Responsive:_ reacting in a desired or positive way, or quick to react [<a href="https://www.merriam-webster.com/dictionary/responsive?show=0&amp;t=1405636347">2</a>].
 

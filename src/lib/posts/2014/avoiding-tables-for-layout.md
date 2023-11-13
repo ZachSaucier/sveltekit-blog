@@ -10,9 +10,13 @@ tags:
 description: Reasons why you should not use HTML tables for layout.
 ---
 
-<aside class="content_aside">
+<script>
+	import ContentAside from "$lib/components/ContentAside.svelte";
+</script>
+
+<ContentAside>
   <strong>Aside:</strong> This question was originally asked on WebDesign.StackExchange.com, a private beta that ended up being deleted on October 6th, 2014.
-</aside>
+</ContentAside>
 
 Why should I not use a table for my layout?
 
@@ -22,7 +26,7 @@ This question has been discussed <a href="https://stackoverflow.com/q/83073/2065
 
 We should use tables, but **_only for tabular data_** because it is incorrect, and more difficult to use tables for layout.
 
-<span class="excerpt-marker"></span>
+<span class="excerpt_marker"></span>
 
 - **It’s invalid HTML** to use tables for _layout_ as of HTML 4.01
 - **Tables take longer to render** due to the in depth calculations for positioning/sizing

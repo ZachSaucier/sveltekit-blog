@@ -24,7 +24,7 @@ Please branch off from the tutorial to test out things! That’s a great way to 
 
 ## Let’s get started!
 
-<span class="excerpt-marker"></span>
+<span class="excerpt_marker"></span>
 
 First thing is first, we need elements to work with. Let’s create one in the HTML section and give it a class so we can select it easily later on. In a plain HTML file this is the section that would be within the `<body>` tags.
 

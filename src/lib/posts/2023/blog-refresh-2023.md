@@ -22,7 +22,7 @@ In the last ~1.5 years CSS-Tricks has basically died and Twitter has similarly t
 
 In this post I'll cover some of the key changes and cool new tech that I got to use in building this blog!
 
-<span class="excerpt-marker"></span>
+<span class="excerpt_marker"></span>
 
 ## What I've been doing since 2017
 
@@ -42,6 +42,7 @@ In case you're interested in what I've been doing since I last posted on this bl
   - <TwitterEmbed expandable="true">
       <p lang="en" dir="ltr">I was laid off from <a href="https://twitter.com/stripe?ref_src=twsrc%5Etfw">@stripe</a> in November, started looking for senior front-end web developer jobs immediately, and accepted a full-time position in April.<br><br>Here&#39;s a 🧵 with some stats about my experience:<a href="https://t.co/4BAskUnHJ7">https://t.co/4BAskUnHJ7</a></p>&mdash; Zach Saucier (@ZachSaucier) <a href="https://twitter.com/ZachSaucier/status/1661716656706428928?ref_src=twsrc%5Etfw">May 25, 2023</a>
     </TwitterEmbed>
+- [Just Read](https://justread.link/) reached 200,000 weekly users (now for the last ~5 years!).
 - I moved to New York City.
 - I celebrated my 5 year wedding anniversary!
 - I made new friends, got into rock climbing, and built a lot of little projects.

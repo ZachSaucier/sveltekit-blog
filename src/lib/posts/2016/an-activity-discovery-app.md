@@ -14,7 +14,7 @@ Most any time we go to a new place, we are looking to find activities to do. It 
 
 My sophomore year, I created a quick little prototype of an app to do just this. I called it Palm Date. It started as a project just so I could practice UI animations but turned into something I could actually use on dates to help us choose activities to do. A gif of how it worked is below.
 
-<span class="excerpt-marker"></span>
+<span class="excerpt_marker"></span>
 
 (Open images in a new tab to see larger versions)
 

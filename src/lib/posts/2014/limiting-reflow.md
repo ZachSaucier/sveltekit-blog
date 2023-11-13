@@ -12,9 +12,13 @@ tags:
 description: Some tips to efficiently modify DOM elements while limiting reflow.
 ---
 
-<aside class="content_aside">
+<script>
+	import ContentAside from "$lib/components/ContentAside.svelte";
+</script>
+
+<ContentAside>
   <strong>Aside:</strong> This question was originally asked on WebDesign.StackExchange.com, a private beta that ended up being deleted on October 6th, 2014.
-</aside>
+</ContentAside>
 
 When working with a very dynamic UI (think Single Page App) with potentially large JS libraries, view templates, validation, ajax, animations, etc… what are some strategies that will help minimize or reduce the time the browser spends on reflow?
 
@@ -22,7 +26,7 @@ For example, we know there are many ways to accomplish a DIV size change but are
 
 <hr>
 
-It’s best to try and avoid changing DOM elements whenever possible. At times you can prevent reflow at all by sticking to CSS properties or, if required, using CSS’ `transform`s so that the element itself is not affected at all but, instead the visual state is just changed. <span class="excerpt-marker"></span>Kayce Basques and Rachel Andrew go into detail about why this is the case in <a href="https://web.dev/articles/animations-guide">this article</a>.
+It’s best to try and avoid changing DOM elements whenever possible. At times you can prevent reflow at all by sticking to CSS properties or, if required, using CSS’ `transform`s so that the element itself is not affected at all but, instead the visual state is just changed. <span class="excerpt_marker"></span>Kayce Basques and Rachel Andrew go into detail about why this is the case in <a href="https://web.dev/articles/animations-guide">this article</a>.
 
 This approach will not work in all cases because sometimes it’s required to change the actual DOM element, but for many animations and such, `transform`s brings the best performance.
 

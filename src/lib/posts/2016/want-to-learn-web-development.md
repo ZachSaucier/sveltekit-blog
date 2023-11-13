@@ -17,7 +17,7 @@ I’ve had several friends come to me seeking advice for how to get started prog
 
 What follows is a collection of recommendations that I have for a person starting out. I’ll keep updating it as time goes on. If you feel like it’s missing something or have a question, don’t hesitate to contact me at hello@zachsaucier.com!
 
-<span class="excerpt-marker"></span>
+<span class="excerpt_marker"></span>
 
 If you’re looking for a post about actually learning the core of web development, I created <a href="https://zachsaucier.com/blog/blog/2015/09/26/the-why-and-what-of-web-development/">a crash course</a> that you should check out!
 

@@ -24,7 +24,7 @@ _How can you care for me but not about what describes me?_
 
 Because I care much more about what _defines_ you than what _describes_ you. That which defines you influences all of the decisions you make, which lead to descriptions of you. Descriptions can change, definitions cannot without it becoming something entirely different.
 
-<span class="excerpt-marker"></span>
+<span class="excerpt_marker"></span>
 
 When a thing is defined by something, that thing would not be said thing without that something, it would be a different thing. The something is completely vital to the thing’s being what it is. Should it should be taken away, the thing would no longer be the same thing.
 

@@ -12,6 +12,10 @@ tags:
 description: A look into how to create loading effects for images and videos.
 ---
 
+<script>
+	import ContentAside from "$lib/components/ContentAside.svelte";
+</script>
+
 <a href="https://zachsaucier.github.io/Asset-Loading-Effects/" target="_blank">Just show me the demo</a>
 
 <a href="https://github.com/ZachSaucier/Asset-Loading-Effects/tree/master">View this project on GitHub</a>
@@ -20,11 +24,11 @@ Today I will demonstrate how to show the loading of large image and video assets
 
 In order to show the asset loading process, we will have to make <a href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest">XHR requests</a> for them instead of loading them the conventional way. I will also be using <a href="https://github.com/kimmobrunfeldt/progressbar.js">ProgressBar.js</a> to make creating and animating the loaders easier.
 
-<span class="excerpt-marker"></span>
+<span class="excerpt_marker"></span>
 
-<aside class="content_aside">
+<ContentAside>
 	<strong>Aside:</strong> Please keep in mind some of these animated reveals are **highly experimental** and only supported by some modern browsers. I use a fade fallback in Internet Explorer for some of the demos.
-</aside>
+</ContentAside>
 
 ## Basic structure
 

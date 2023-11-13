@@ -10,9 +10,13 @@ tags:
 description: This post covers some of the benefits of using units other than pixels when designing responsive sites.
 ---
 
-<aside class="content_aside">
+<script>
+	import ContentAside from "$lib/components/ContentAside.svelte";
+</script>
+
+<ContentAside>
   <strong>Aside:</strong> This question was originally asked on WebDesign.StackExchange.com, a private beta that ended up being deleted on October 6th, 2014.
-</aside>
+</ContentAside>
 
 I understand that the overall goal is to stay responsive, but what is the purpose of avoiding pixels?
 
@@ -20,7 +24,7 @@ I understand that the overall goal is to stay responsive, but what is the purpos
 
 The purpose of avoiding any **absolutely**[^1] **sized units** like `px` (includes `in`, `mm`, and `cm`) is to allow our content to be as responsive as possible with the least amount of work. Absolutely sized units are only one type of unit. In this post I’ll go into more detail about the others.
 
-<span class="excerpt-marker"></span>
+<span class="excerpt_marker"></span>
 
 ### Font-relative units
 
@@ -63,9 +67,9 @@ Using relative units also allows us to make changes to the content more easily i
 [^3]:
     3. An element can be taken out of its parent’s stacking context by positioning it absolutely while statically positioning its parent.
 
-<aside class="content_aside">
+<ContentAside>
   The next section was written by <a href="https://jordan.matelsky.com/">Jordan Matelsky</a>
-</aside>
+</ContentAside>
 
 **`em` units are responsive by design.**
 

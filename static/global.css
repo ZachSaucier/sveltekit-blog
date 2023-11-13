@@ -218,17 +218,6 @@ article {
     margin-bottom: 0.5rem;
   }
 
-  & .content_aside {
-    font-size: 13px;
-    line-height: 1.65;
-    padding: 10px;
-    background-color: #ebebeb;
-    border: 1px dashed #141414;
-  }
-  & .content_aside:not(:last-child) {
-    margin-bottom: 1rem;
-  }
-
   & > sub {
     margin-bottom: 1rem;
   }
