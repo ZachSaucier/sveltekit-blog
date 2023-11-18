@@ -61,7 +61,7 @@
 <svelte:window bind:innerWidth bind:scrollY />
 
 <div class="outer_container" class:collapsed>
-  {#if innerWidth >= 1000}
+  {#if innerWidth >= 1200}
     <button
       aria-pressed={collapsed}
       on:click={() => (collapsed = !collapsed)}
@@ -103,37 +103,64 @@
       'Footer Aside';
     min-height: 100vh;
 
-    &.collapsed {
+    @media (max-width: 1199px) {
       grid-template-areas:
         'Header Header'
         'Main Main'
+        'Aside Aside'
         'Footer Footer';
+    }
 
-      & button {
-        left: calc(50% + 600px);
-        transform: translateX(-100%);
-        border-left: var(--border-sidebar);
-        border-bottom-left-radius: 4px;
+    @media (max-width: 999px) {
+      overflow: hidden;
+    }
 
-        @media (max-width: 1199px) {
-          left: auto;
-          right: 300px;
-        }
+    @media (max-width: 749px) {
+      padding-left: 40px;
+    }
+
+    & main,
+    & footer {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+  }
+
+  .outer_container.collapsed {
+    grid-template-areas:
+      'Header Header'
+      'Main Main'
+      'Footer Footer';
+
+    @media (max-width: 1199px) {
+      grid-template-areas:
+        'Header Header'
+        'Main Main'
+        'Aside Aside'
+        'Footer Footer';
+    }
+
+    & button {
+      left: calc(50% + 600px);
+      transform: translateX(-100%);
+      border-left: var(--border-sidebar);
+      border-bottom-left-radius: 4px;
+
+      @media (max-width: 1199px) {
+        right: 0;
       }
+    }
 
-      & main,
-      & footer {
-        max-width: 900px;
-        margin: 0 auto;
-      }
+    & aside {
+      display: none;
 
-      & aside {
-        display: none;
+      @media (max-width: 1199px) {
+        display: block;
       }
+    }
 
-      & footer ul {
-        justify-content: center;
-      }
+    & footer ul {
+      justify-content: center;
     }
   }
 
@@ -153,27 +180,10 @@
       background-color: var(--accent-dark);
       color: var(--background-color);
     }
-  }
 
-  @media (max-width: 1199px) {
-    .outer_container.outer_container button {
+    @media (max-width: 1199px) {
       left: auto;
       right: 300px;
-    }
-    .outer_container.collapsed {
-      grid-template-areas:
-        'Header Header'
-        'Main Main'
-        'Aside Aside'
-        'Footer Footer';
-    }
-
-    .outer_container.collapsed aside {
-      display: block;
-    }
-
-    .outer_container.collapsed button {
-      right: 0;
     }
   }
 
@@ -181,26 +191,9 @@
     position: relative;
     grid-area: Main;
     padding-bottom: var(--footer-height);
-  }
 
-  @media (max-width: 999px) {
-    .outer_container {
-      grid-template-areas:
-        'Header Header'
-        'Main Main'
-        'Aside Aside'
-        'Footer Footer';
-      overflow: hidden;
-    }
-
-    main {
+    @media (max-width: 999px) {
       padding-bottom: 0;
-    }
-  }
-
-  @media (max-width: 749px) {
-    .outer_container {
-      padding-left: 40px;
     }
   }
 </style>
