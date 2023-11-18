@@ -70,7 +70,7 @@
   @media (max-width: 749px) {
     .site_title_wrapper {
       gap: 3px;
-      padding-top: 10px;
+      padding: 10px 0 20px 0;
     }
 
     h1 {

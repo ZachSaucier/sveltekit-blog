@@ -90,6 +90,7 @@
   @media (max-width: 749px) {
     nav {
       font-size: 16px;
+      margin-bottom: 4px;
     }
 
     ul {

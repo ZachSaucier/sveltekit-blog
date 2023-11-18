@@ -61,15 +61,17 @@
 <svelte:window bind:innerWidth bind:scrollY />
 
 <div class="outer_container" class:collapsed>
-  <button
-    aria-pressed={collapsed}
-    on:click={() => (collapsed = !collapsed)}
-    title={collapsed ? 'Open sidebar' : 'Collapse sidebar'}
-    style={`transform: translateX(${translateX()}) translateY(-${Math.min(scrollY, 210)}px)`}
-  >
-    <span aria-hidden>{collapsed ? '«' : '»'}</span>
-    <span class="sr-only">Collapse sidebar</span>
-  </button>
+  {#if innerWidth >= 1000}
+    <button
+      aria-pressed={collapsed}
+      on:click={() => (collapsed = !collapsed)}
+      title={collapsed ? 'Open sidebar' : 'Collapse sidebar'}
+      style={`transform: translateX(${translateX()}) translateY(-${Math.min(scrollY, 210)}px)`}
+    >
+      <span aria-hidden>{collapsed ? '«' : '»'}</span>
+      <span class="sr-only">Collapse sidebar</span>
+    </button>
+  {/if}
 
   <Ribbons />
 
@@ -102,27 +104,35 @@
     min-height: 100vh;
 
     &.collapsed {
+      grid-template-areas:
+        'Header Header'
+        'Main Main'
+        'Footer Footer';
+
       & button {
         left: calc(50% + 600px);
         transform: translateX(-100%);
         border-left: var(--border-sidebar);
         border-bottom-left-radius: 4px;
+
+        @media (max-width: 1199px) {
+          left: auto;
+          right: 300px;
+        }
       }
 
-      & main {
-        transform: translateX(150px);
+      & main,
+      & footer {
+        max-width: 900px;
+        margin: 0 auto;
       }
 
       & aside {
         display: none;
       }
 
-      & footer {
-        transform: translateX(150px);
-
-        & ul {
-          justify-content: center;
-        }
+      & footer ul {
+        justify-content: center;
       }
     }
   }
@@ -150,6 +160,18 @@
       left: auto;
       right: 300px;
     }
+    .outer_container.collapsed {
+      grid-template-areas:
+        'Header Header'
+        'Main Main'
+        'Aside Aside'
+        'Footer Footer';
+    }
+
+    .outer_container.collapsed aside {
+      display: block;
+    }
+
     .outer_container.collapsed button {
       right: 0;
     }
