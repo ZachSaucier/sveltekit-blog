@@ -41,10 +41,20 @@
     left: var(--content-gutter);
     right: var(--content-gutter);
     white-space: nowrap;
+
+    @media (max-width: 580px) {
+      position: static;
+    }
   }
 
   ul {
     display: flex;
     gap: clamp(8px, 3.1cqi, var(--nav-gap));
+
+    @media (max-width: 580px) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding: 0 1rem 2rem;
+    }
   }
 </style>

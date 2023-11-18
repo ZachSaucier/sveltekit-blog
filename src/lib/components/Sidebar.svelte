@@ -129,6 +129,10 @@
       max-width: 900px;
       margin: 0 auto;
     }
+
+    @media (max-width: 580px) {
+      padding-bottom: 0;
+    }
   }
 
   h1 {
@@ -178,12 +182,6 @@
       padding: 0;
       border-bottom: 0;
       margin-bottom: 0;
-    }
-  }
-
-  @media (max-width: 999px) {
-    aside {
-      padding: 0 var(--content-gutter) var(--footer-height);
     }
   }
 

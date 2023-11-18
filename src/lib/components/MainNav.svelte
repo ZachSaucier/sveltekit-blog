@@ -51,6 +51,10 @@
     padding: 5px;
     border-radius: 100px;
     border: none;
+
+    &::placeholder {
+      overflow: visible;
+    }
   }
 
   :global(html.dark [type='search']) {
@@ -67,6 +71,10 @@
 
   .search_item {
     margin-right: -10px;
+
+    @media (max-width: 416px) {
+      display: none;
+    }
   }
 
   .theme_toggle_item {
