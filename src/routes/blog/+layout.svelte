@@ -63,6 +63,7 @@
 <div class="outer_container" class:collapsed>
   {#if innerWidth >= 1200}
     <button
+      class="collapse_button"
       aria-pressed={collapsed}
       on:click={() => (collapsed = !collapsed)}
       title={collapsed ? 'Open sidebar' : 'Collapse sidebar'}
@@ -140,7 +141,7 @@
         'Footer Footer';
     }
 
-    & button {
+    & .collapse_button {
       left: calc(50% + 600px);
       transform: translateX(-100%);
       border-left: var(--border-sidebar);
@@ -164,7 +165,7 @@
     }
   }
 
-  button {
+  .collapse_button {
     position: fixed;
     top: 210px;
     left: calc(50% + 300px);
@@ -187,12 +188,16 @@
     }
   }
 
+  :global(.dark .collapse_button:hover) {
+    background-color: #fff;
+  }
+
   main {
     position: relative;
     grid-area: Main;
     padding-bottom: var(--footer-height);
 
-    @media (max-width: 999px) {
+    @media (max-width: 1199px) {
       padding-bottom: 0;
     }
   }

@@ -36,4 +36,8 @@
       font-size: 8cqi;
     }
   }
+
+  :global(.dark .content_aside--ad) {
+    color: var(--accent-dark);
+  }
 </style>

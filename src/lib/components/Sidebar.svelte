@@ -120,6 +120,15 @@
     padding: 4rem 1rem;
     border-left: var(--border-sidebar);
     border-right: var(--border-sidebar);
+
+    @media (max-width: 1199px) {
+      padding-top: 1rem;
+      border-left: none;
+      border-right: none;
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+    }
   }
 
   h1 {
@@ -181,7 +190,7 @@
   @media (min-height: 700px) {
     .aside_content {
       position: sticky;
-      top: 20px;
+      top: 35px;
     }
   }
 </style>

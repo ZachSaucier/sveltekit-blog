@@ -60,6 +60,7 @@
     display: inline-block;
     padding: 0.4em 0.8em;
     margin-right: 0.5em;
+    margin-top: 1rem;
     text-decoration: none;
 
     &::after {

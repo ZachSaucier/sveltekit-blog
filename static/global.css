@@ -169,12 +169,16 @@ button:hover,
   background-color: var(--link-color-hover);
 }
 
-html.dark :where(button, .read_on.read_on) {
+html.dark button,
+html.dark [type='submit'],
+html.dark .read_on.read_on {
   color: var(--accent-dark);
   background-color: var(--link-color);
 }
 
-html.dark :where(button:hover, .read_on.read_on:hover) {
+html.dark button:hover,
+html.dark [type='submit']:hover,
+html.dark .read_on.read_on:hover {
   background-color: var(--link-color-hover);
 }
 
