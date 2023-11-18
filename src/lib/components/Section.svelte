@@ -1,9 +1,8 @@
 <script>
   export let no_border = false;
-  export let class_name = '';
 </script>
 
-<section class:class_name class:no_border>
+<section class:no_border>
   <slot />
 </section>
 

@@ -76,7 +76,7 @@
 
   <ContentAside type="ad">
     <p>
-      Like this post? Maybe you'd also like my customizable reader mode web extension:<br />
+      Like this post? Try my reader mode:<br />
       <a href="https://justread.link">Just Read</a>
     </p>
   </ContentAside>

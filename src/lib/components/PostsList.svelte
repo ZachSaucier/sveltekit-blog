@@ -69,6 +69,7 @@
       transform: translateX(4px);
       transition: 0.15s;
     }
+
     &:hover::after {
       transform: translateX(6px);
     }

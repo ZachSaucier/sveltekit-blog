@@ -188,7 +188,7 @@
     }
   }
 
-  :global(.dark .collapse_button:hover) {
+  :global(html.dark .collapse_button:hover) {
     background-color: #fff;
   }
 

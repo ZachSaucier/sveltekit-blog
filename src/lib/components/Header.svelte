@@ -54,30 +54,28 @@
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+
+    @media (max-width: 749px) {
+      gap: 3px;
+      padding: 10px 0 20px 0;
+    }
   }
 
   h1 {
     font-size: 2.5rem;
     text-decoration: none;
     color: var(--button-dark-background);
+
+    @media (max-width: 749px) {
+      font-size: 1.7rem;
+    }
   }
 
   h2 {
     font-size: 1.2rem;
     color: var(--grayed-text);
-  }
 
-  @media (max-width: 749px) {
-    .site_title_wrapper {
-      gap: 3px;
-      padding: 10px 0 20px 0;
-    }
-
-    h1 {
-      font-size: 1.7rem;
-    }
-
-    h2 {
+    @media (max-width: 749px) {
       font-size: 0.9rem;
     }
   }

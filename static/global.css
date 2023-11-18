@@ -80,26 +80,9 @@ html {
     bottom left repeat-x;
   --border-sidebar: 1px solid #ededed;
 
-  /* Breakpoints:
-	/* Note that these variables can't be used inside media queries,
-	 * listing them here is for documentation purposes */
-  --ribbon-breakpoint: 749px;
-  --aside-below: 999px;
-}
-
-@media (max-width: 749px) {
-  html {
+  @media (max-width: 749px) {
     --content-gutter: 25px;
   }
-}
-
-::selection {
-  background-color: var(--accent);
-  color: var(--background-color);
-}
-
-a::selection {
-  color: var(--accent-dark);
 }
 
 html.dark {
@@ -121,6 +104,16 @@ body {
   color: var(--accent-dark);
   overscroll-behavior: none;
 }
+
+::selection {
+  background-color: var(--accent);
+  color: var(--background-color);
+}
+
+a::selection {
+  color: var(--accent-dark);
+}
+
 main {
   font-family: var(--font-serif);
 }
@@ -161,12 +154,10 @@ button,
   cursor: pointer;
   border: none;
   padding: 3px 10px;
-}
-/* Work around webkit specificity bug */
-button:hover,
-[type='submit']:hover,
-.read_on.read_on:hover {
-  background-color: var(--link-color-hover);
+
+  &:hover {
+    background-color: var(--link-color-hover);
+  }
 }
 
 html.dark button,
@@ -174,12 +165,10 @@ html.dark [type='submit'],
 html.dark .read_on.read_on {
   color: var(--accent-dark);
   background-color: var(--link-color);
-}
 
-html.dark button:hover,
-html.dark [type='submit']:hover,
-html.dark .read_on.read_on:hover {
-  background-color: var(--link-color-hover);
+  &:hover {
+    background-color: var(--link-color-hover);
+  }
 }
 
 article {

@@ -14,7 +14,7 @@
     background-color: #ebebeb;
     border: 1px dashed #141414;
   }
-  :global(.content_aside:not(:last-child)) {
+  .content_aside:not(:last-child) {
     margin-bottom: 1rem;
   }
 
@@ -37,7 +37,7 @@
     }
   }
 
-  :global(.dark .content_aside--ad) {
+  :global(html.dark .content_aside--ad) {
     color: var(--accent-dark);
   }
 </style>
