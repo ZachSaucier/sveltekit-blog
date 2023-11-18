@@ -117,17 +117,16 @@
 
 <style>
   aside {
-    --border: 1px solid #ededed;
     padding: 4rem 1rem;
-    border-left: var(--border);
-    border-right: var(--border);
+    border-left: var(--border-sidebar);
+    border-right: var(--border-sidebar);
   }
 
   h1 {
     font-size: 1.2rem;
     margin-bottom: 0.4em;
     padding-bottom: 0.2em;
-    border-bottom: var(--border);
+    border-bottom: var(--border-sidebar);
   }
 
   section {

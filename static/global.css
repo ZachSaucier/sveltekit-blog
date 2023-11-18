@@ -78,6 +78,7 @@ html {
 
   --border-dashed: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAABCAYAAACsXeyTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAFUlEQVQIHWNIS0sr/v//PwMMDzY+ADqMahlW4J91AAAAAElFTkSuQmCC)
     bottom left repeat-x;
+  --border-sidebar: 1px solid #ededed;
 
   /* Breakpoints:
 	/* Note that these variables can't be used inside media queries,
@@ -118,6 +119,7 @@ body {
   line-height: 1.6;
   background: var(--background-color) url('/images/noise.png') top left;
   color: var(--accent-dark);
+  overscroll-behavior: none;
 }
 main {
   font-family: var(--font-serif);
@@ -159,10 +161,12 @@ button,
   cursor: pointer;
   border: none;
   padding: 3px 10px;
-
-  &:hover {
-    background-color: var(--link-color-hover);
-  }
+}
+/* Work around webkit specificity bug */
+button:hover,
+[type='submit']:hover,
+.read_on.read_on:hover {
+  background-color: var(--link-color-hover);
 }
 
 html.dark :where(button, .read_on.read_on) {

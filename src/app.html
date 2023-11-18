@@ -17,5 +17,12 @@
   </head>
   <body>
     <div id="svelte">%sveltekit.body%</div>
+    <script defer>
+      // See https://codepen.io/ZachSaucier/pen/GRzypKq
+      console.info(
+        '%c ',
+        `color:transparent;padding:100px 375px;width:750px;height:200px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 750 200'%3E%3Cstyle%3E text %7B font-family: sans-serif; font-weight: 100; fill: %23d8eaff; %7D %23stop1 %7B animation: recolor 40s linear infinite alternate %7D %23stop2 %7B animation: recolor 40s -32s linear infinite alternate %7D @keyframes recolor %7B 0%25 %7B stop-color: %23388bee %7D 20%25 %7B stop-color: %2324c6dc %7D 40%25 %7B stop-color: %23af74fd %7D 60%25 %7B stop-color: %23c020d9 %7D 80%25 %7B stop-color: %23514a9d %7D 100%25 %7B stop-color: %23053ece %7D %7D %3C/style%3E%3Cdefs%3E%3ClinearGradient id='grad'%3E%3Cstop id='stop1' offset='0%25' stop-color='%23ffe4a1' /%3E%3Cstop id='stop2' offset='100%25' stop-color='%23ffcb96' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='750' height='500' fill='url(%23grad)' /%3E%3Ctext text-anchor='end' font-size='50' x='727' y='125'%3E%3Ctspan%3Ethanks for%3C/tspan%3E%3C/text%3E%3Ctext text-anchor='end' font-size='50' x='725' y='175'%3E stopping by %3C/text%3E%3C/svg%3E")`
+      );
+    </script>
   </body>
 </html>

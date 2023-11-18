@@ -108,11 +108,15 @@ I've seen some weird flashes with the colors sometimes where it looks like it go
 
 Another color feature I used for the first time [color-mix](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/color-mix) to do some lightening and darkening of the CSS variables for different states. It is not bad but I wish there was something more like a true lighten/darken that used the color itself as the extreme. Some of the colors I tried got washed out a bit by the white or black that I mixed it with.
 
-By converting my colors for the site to use CSS variables, I basically got a dark mode for free! It only took some playing around with the values to find somthing that I liked.
+By converting my colors for the site to use CSS variables, I basically got a dark mode for free! It only took some playing around with the values to find something that I liked.
 
 One of the nice-to-have features I used was query ranges for CSS media queries. It's another feature I've long-awaited since media queries were first introduced. Oh, and I used the `,` operator of media queries for the first time!
 
+<!-- overscroll-behavior? collapsible sidebar? -->
+
 And I tried out container queries for the first time. I will write another, more in depth article about using them!
+
+I also tried using `console.info` to add a little surprise for those who look in the console. I will also write another article about this approach as I think it's quite interesting.
 
 Lastly, I used some `position: sticky` on the sidebar if the viewport height is tall enough. Not super new or the first time I've used the feature but still a nice addition.
 
