@@ -102,7 +102,7 @@ Of the new CSS features, using CSS nesting feels the most refreshing. Paired wit
 
 The neatest CSS feature I used was the OKLCH color space. It made the blue used on the ribbon pop even more than before!
 
-<img src="$lib/images/comparison.webp" alt="The old version of the blog next to the new version of the blog, showing some of the subtle updates as well as the more vibrant blue accent color" loading="lazy" width="2766" height="998" />
+<img src="#" alt="The old version of the blog next to the new version of the blog, showing some of the subtle updates as well as the more vibrant blue accent color" loading="lazy" width="2766" height="998" />
 
 I've seen some weird flashes with the colors sometimes where it looks like it goes to the RGB color fallback, but that's worth the tradeoff for me on this website.
 

@@ -55,5 +55,5 @@ Pushing our world towards that better future is a priority for me. That leads me
 
 <ContentAside>
   5. There are some really cool things happening in the wearables world, like <a href="https://www.ted.com/talks/david_eagleman_can_we_create_new_senses_for_humans">David Eagleman’s work</a>.
-  6. You can hear more of my thoughts on creating a pleasant user experience, in particular in regards to animation, at <a href="https://2015.front-trends.com/">Front-Trends</a> where I’ll be speaking in May or on <a href="https://zachsaucier.com/blog/">my blog</a>.
+  6. You can hear more of my thoughts on creating a pleasant user experience, in particular in regards to animation, at <a href="https://2015.front-trends.com/">Front-Trends</a> where I’ll be speaking in May or on <a href="/blog/">my blog</a>.
 </ContentAside>

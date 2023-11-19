@@ -19,7 +19,7 @@ What follows is a collection of recommendations that I have for a person startin
 
 <span class="excerpt_marker"></span>
 
-If you’re looking for a post about actually learning the core of web development, I created <a href="https://zachsaucier.com/blog/blog/2015/09/26/the-why-and-what-of-web-development/">a crash course</a> that you should check out!
+If you’re looking for a post about actually learning the core of web development, I created <a href="/blog/the-why-and-what-of-web-development/">a crash course</a> that you should check out!
 
 <hr>
 
@@ -65,7 +65,7 @@ With that being said, to be a really _good_ candidate the most entry-level job, 
 
 None of the truly good programmers I know went to a bootcamp. They all picked programming up in their spare time because they found it enjoyable.
 
-With that being said, I can see bootcamps being useful for two purposes: 1) giving you ideas for projects and motivating you to try and complete them (which I believe you can do without them if you’re self motivated), and 2) a community of people also learning and programming with you, which is probably the most valuable asset it offers. However, you can find communities of people who are building things, particularly ones online. I found a <a href="https://chat.stackoverflow.com/rooms/29074/html-css-webdesign">chatroom on StackOverflow</a> that offered this community for me. This is the biggest reason <a href="https://zachsaucier.com/blog/blog/2015/01/01/why-i-still-contribute-to-stack-overflow/">why I contribute to StackOverflow</a>.
+With that being said, I can see bootcamps being useful for two purposes: 1) giving you ideas for projects and motivating you to try and complete them (which I believe you can do without them if you’re self motivated), and 2) a community of people also learning and programming with you, which is probably the most valuable asset it offers. However, you can find communities of people who are building things, particularly ones online. I found a <a href="https://chat.stackoverflow.com/rooms/29074/html-css-webdesign">chatroom on StackOverflow</a> that offered this community for me. This is the biggest reason <a href="/blog/why-i-still-contribute-to-stack-overflow/">why I contribute to StackOverflow</a>.
 
 <hr>
 
