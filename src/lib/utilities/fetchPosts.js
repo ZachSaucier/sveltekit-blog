@@ -23,7 +23,7 @@ const fetchPosts = async ({ offset = 0, limit = posts_per_page, tag = '' } = {})
   let sorted_posts = posts.sort((a, b) => new Date(b.date) - new Date(a.date));
 
   if (tag) {
-    sorted_posts = sorted_posts.filter((post) => post.tags.includes(tag));
+    sorted_posts = sorted_posts.filter((post) => post.tags?.includes(tag));
   }
 
   if (offset) {
