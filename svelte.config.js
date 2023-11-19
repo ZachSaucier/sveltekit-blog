@@ -70,6 +70,7 @@ const config = {
         '/blog/tags/',
         '/blog/tag/*',
         '/blog/tag/*/page/*',
+        '/blog/api/posts/page/*',
       ],
     },
   },

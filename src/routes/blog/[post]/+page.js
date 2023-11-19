@@ -1,8 +1,6 @@
 import { error } from '@sveltejs/kit';
 import { start_year } from '$lib/config';
 
-export const prerender = true;
-
 export const load = async ({ params }) => {
   // This searches through the directories of posts, looking for a file that matches the slug, regardless of the year
   const modules = import.meta.glob('/src/lib/posts/**/*.md');

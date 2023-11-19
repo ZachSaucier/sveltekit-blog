@@ -1,7 +1,5 @@
 import { site_title, site_description, site_link } from '$lib/config';
 
-export const prerender = true;
-
 export const GET = async () => {
   let data = await Promise.all(
     Object.entries(import.meta.glob('$lib/posts/**/*.md')).map(async ([path, page]) => {

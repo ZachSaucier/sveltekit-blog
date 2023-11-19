@@ -1,7 +1,5 @@
 import { posts_per_page } from '$lib/config';
 
-export const prerender = true;
-
 const SEPARATOR = '<span class="excerpt_marker"></span>';
 
 const fetchPosts = async ({ offset = 0, limit = posts_per_page, tag = '' } = {}) => {

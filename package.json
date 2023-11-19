@@ -9,6 +9,7 @@
     "format": "prettier --ignore-path .gitignore --write --plugin-search-dir=. ."
   },
   "devDependencies": {
+    "@microflash/rehype-toc": "^1.0.2",
     "@sveltejs/adapter-static": "^1.0.1",
     "@sveltejs/kit": "^1.0.1",
     "eslint": "^8.31.0",
@@ -28,8 +29,5 @@
     "svelte-preprocess-import-assets": "^1.0.1",
     "vite": "^4.0.4"
   },
-  "type": "module",
-  "dependencies": {
-    "@microflash/rehype-toc": "^1.0.2"
-  }
+  "type": "module"
 }

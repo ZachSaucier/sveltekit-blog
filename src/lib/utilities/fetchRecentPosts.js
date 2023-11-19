@@ -1,5 +1,3 @@
-export const prerender = true;
-
 const fetchRecentPosts = async () => {
   let posts = await Promise.all(
     Object.entries(import.meta.glob('/src/lib/posts/**/*.md')).map(async ([path, resolver]) => {
