@@ -4,9 +4,6 @@ date: 2015-09-26
 tags:
   - code
   - crash-course
-# cover_image: /images/PLACEHOLDER_IMAGE.jpg
-# cover_width: 16
-# cover_height: 9
 description: The intro talk to my front-end development crash course for designers.
 ---
 

@@ -4,9 +4,6 @@ date: 2016-01-24
 tags:
   - rambling
   - learning
-# cover_image: /images/PLACEHOLDER_IMAGE.jpg
-# cover_width: 16
-# cover_height: 9
 description: The way that I think about how the learning process works.
 ---
 

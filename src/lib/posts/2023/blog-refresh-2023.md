@@ -1,14 +1,11 @@
 ---
 title: Blog refresh 2023
-date: 2023-11-11
+date: 2023-11-19
 tags:
   - code
   - projects
   - css
   - svelte
-# cover_image: /images/PLACEHOLDER_IMAGE.jpg
-# cover_width: 16
-# cover_height: 9
 description: A post covering some new web features that I used when recreating this blog.
 ---
 
@@ -84,8 +81,11 @@ Going back to the subject of this blog, I built it from scratch using Svelte + S
 - Adding a table of contents to blog posts
 - Adding section heading link click functionality
 - Adding a tweet button to blog posts
+- Twitter embeds
+- CodePen embeds
 - Adding blog post "draft" functionality
 - Making fairly big additions to the pagination functionality
+- Adding a (collapsible) sidebar
 - Fixing the category (I renamed them to [tags](/blog/tags)) counts
 - Making the site titles across pages more consistent
 - Improving some Markdown handling to add footnotes, accessibility for emojis, and preventing widows

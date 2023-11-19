@@ -5,10 +5,7 @@ tags:
   - rambling
   - design
   - technology
-# cover_image: /images/PLACEHOLDER_IMAGE.jpg
-# cover_width: 16
-# cover_height: 9
-description: A look at the purpose of wearable technology and what it could be.
+ A look at the purpose of wearable technology and what it could be.
 ---
 
 <script>

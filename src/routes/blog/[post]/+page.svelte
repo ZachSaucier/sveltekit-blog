@@ -12,13 +12,22 @@
   let url = ``;
   onMount(() => (url = window.location.href));
 
-  const { title, description, date, updated, cover_image, cover_width, cover_height, tags } =
-    data.meta;
+  const {
+    title,
+    description,
+    date,
+    updated,
+    cover_image,
+    cover_width,
+    cover_height,
+    cover_alt,
+    cover_in_post,
+    tags,
+  } = data.meta;
   const { PostContent } = data;
 </script>
 
 <svelte:head>
-  <!-- Be sure to add your image files and un-comment the lines below -->
   <title>{title}{title_ending}</title>
   <meta data-key="description" name="description" content={description} />
   <meta property="og:type" content="article" />
@@ -26,24 +35,18 @@
   <meta name="twitter:title" content={title} />
   <meta property="og:description" content={description} />
   <meta name="twitter:description" content={description} />
-  <!-- <meta property="og:image" content="https://yourdomain.com/image_path" /> -->
-  <meta property="og:image:width" content={cover_width} />
-  <meta property="og:image:height" content={cover_height} />
-  <!-- <meta name="twitter:image" content="https://yourdomain.com/image_path" /> -->
+  {#if cover_image}
+    <meta property="og:image" content={cover_image} />
+    <meta property="og:image:width" content={cover_width} />
+    <meta property="og:image:height" content={cover_height} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content={cover_image} />
+    <meta name="twitter:image:alt" content={cover_alt} />
+  {/if}
 </svelte:head>
 
 <Section>
   <header class="post_header">
-    {#if cover_image}
-      <img
-        src={cover_image}
-        alt=""
-        width={cover_width}
-        height={cover_height}
-        style="ratio: {cover_width} / {cover_height}"
-      />
-    {/if}
-
     <h2 class="post_title">
       {title}
     </h2>
@@ -52,6 +55,15 @@
   </header>
 
   <article>
+    {#if cover_image && !!cover_in_post}
+      <img
+        src={cover_image}
+        alt=""
+        width={cover_width}
+        height={cover_height}
+        style="ratio: {cover_width} / {cover_height}"
+      />
+    {/if}
     <svelte:component this={PostContent} />
   </article>
 

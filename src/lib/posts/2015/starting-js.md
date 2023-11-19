@@ -5,9 +5,6 @@ tags:
   - code
   - crash-course
   - javascript
-# cover_image: /images/PLACEHOLDER_IMAGE.jpg
-# cover_width: 16
-# cover_height: 9
 description: The third talk in my front-end development crash course for designers.
 ---
 

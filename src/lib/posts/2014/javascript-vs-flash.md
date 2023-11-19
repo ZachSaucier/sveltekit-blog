@@ -4,9 +4,6 @@ date: 2014-09-30
 tags:
   - code
   - javascript
-# cover_image: /images/PLACEHOLDER_IMAGE.jpg
-# cover_width: 16
-# cover_height: 9
 description: This post covers some of the advantages that JavaScript has over Flash.
 ---
 

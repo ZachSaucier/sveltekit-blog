@@ -4,9 +4,6 @@ date: 2015-07-28
 tags:
   - rambling
   - learning
-# cover_image: /images/PLACEHOLDER_IMAGE.jpg
-# cover_width: 16
-# cover_height: 9
 description: Covering an approach to learning that I've found to be quite valuable.
 ---
 

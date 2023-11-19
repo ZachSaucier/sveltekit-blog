@@ -1,6 +1,6 @@
 ---
 title: 5 year anniversary party
-date: 2023-11-12
+date: 2023-11-19
 tags:
   - rambling
   - life
@@ -8,18 +8,23 @@ tags:
   - projects
   - technology
   - animation
-# cover_image: /images/PLACEHOLDER_IMAGE.jpg
-# cover_width: 16
-# cover_height: 9
+cover_image: https://res.cloudinary.com/desumhldo/image/upload/v1700412741/5th-anniversary/the_masters_threesome_dh1wjw.webp
+cover_width: 1024
+cover_height: 1024
+cover_alt: A fake photograph of 3 men in green Masters' jackets holding champaign and smiling
+cover_in_post: false
 description: Our anniversary party was comprised of solid friends and Lisa Frank Jesus among other things.
-draft: true
 ---
 
-## intro
+<script>
+	import CodePen from "$lib/components/CodePen.svelte";
+</script>
 
 I've now been married to my lovely wife, Avery, for over 5 years! I'm _so_ thankful for her and for our marriage.
 
-We decided to throw a party in celebration of this milestone with some of our friends at our apartment in NYC.
+We decided to throw a party in celebration of this milestone with some of our friends at our apartment in NYC. We made it more unique using a theme + technology!
+
+<span class="excerpt_marker"></span>
 
 ## Attire and vibe
 
@@ -31,7 +36,7 @@ We used this theme in our e-invitations (created using TODO), for the music (big
 
 I wanted to create something that made the event stand out a little and also direct guests to the activities, especially as people were arriving. I created this anniversary party welcome / instructions animation that I had playing on our TV:
 
-https://codepen.io/ZachSaucier/pen/VwgmWoK
+<CodePen pen_title="Anniversary party welcome / announcement" slug="VwgmWoK" tab="result" />
 
 ## AI-generated image activity
 
@@ -39,9 +44,9 @@ As an activity, I had my laptop out and had guests use Midjourney to create an A
 
 This went over very well, particularly with our friends who are not as tech savvy. They were blown away with how fast you can generate images and spent extensive time trying to recreate some of the people in the group. For example:
 
-<!-- Insert image and link other images -->
+<img src="https://res.cloudinary.com/desumhldo/image/upload/v1700412741/5th-anniversary/the_masters_threesome_dh1wjw.webp" alt="A fake photograph of 3 men in green Masters' jackets holding champaign and smiling" loading="lazy" width="1024" height="1024">
 
-We also got a wide range of other images, including some elephants carrying flowers, a rat mafia, golden retrievers in Sheep Meadow, and even a Lisa Frank Jesus!
+We also got a wide range of other images, including some [elephants carrying flowers](https://res.cloudinary.com/desumhldo/image/upload/v1700412734/5th-anniversary/ninjicken_a_parade_of_elephants_carrying_lots_of_flowers_in_the_ffe30ebf-6d39-49cc-a190-b74ea1e805e8_knnqer.webp), a [rat mafia](https://res.cloudinary.com/desumhldo/image/upload/v1700412737/5th-anniversary/rat_mafia_ebjvan.webp), [golden retrievers in Sheep Meadow](https://res.cloudinary.com/desumhldo/image/upload/v1700412732/5th-anniversary/goldens_aqpwun.webp), and even a [Lisa Frank Jesus](https://res.cloudinary.com/desumhldo/image/upload/v1700412737/5th-anniversary/ninjicken_Lisa_Frank_themed_Jesus_ddc845dc-bc2c-42ea-b0f8-b046a1cc4254_mnnjii.webp)!
 
 I highly recommend this activity for groups that are casually hanging out!
 

@@ -6,9 +6,6 @@ tags:
   - animation
   - css
   - javascript
-# cover_image: /images/PLACEHOLDER_IMAGE.jpg
-# cover_width: 16
-# cover_height: 9
 description: An overview of basic CSS and JavaScript animation of DOM elements.
 ---
 

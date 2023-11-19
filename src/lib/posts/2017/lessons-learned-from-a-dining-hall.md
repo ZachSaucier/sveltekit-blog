@@ -4,9 +4,6 @@ date: 2017-01-03
 tags:
   - rambling
   - life
-# cover_image: /images/PLACEHOLDER_IMAGE.jpg
-# cover_width: 16
-# cover_height: 9
 description: Some things I learned by regularly going to a college dining hall.
 ---
 

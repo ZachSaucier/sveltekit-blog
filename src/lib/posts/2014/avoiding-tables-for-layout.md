@@ -4,9 +4,6 @@ date: 2014-09-30
 tags:
   - code
   - javascript
-# cover_image: /images/PLACEHOLDER_IMAGE.jpg
-# cover_width: 16
-# cover_height: 9
 description: Reasons why you should not use HTML tables for layout.
 ---
 

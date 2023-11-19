@@ -6,9 +6,6 @@ tags:
   - css
   - javascript
   - projects
-# cover_image: /images/PLACEHOLDER_IMAGE.jpg
-# cover_width: 16
-# cover_height: 9
 description: A look into how to create loading effects for images and videos.
 ---
 

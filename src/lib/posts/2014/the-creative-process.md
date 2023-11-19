@@ -8,8 +8,7 @@ tags:
   - meta
 # cover_image: /images/jerry-zhang-ePpaQC2c1xA-unsplash.jpg
 # cover_width: 16
-# cover_height: 9
-description: How my creative process works.
+# cover_height: 9description: How my creative process works.
 ---
 
 ##### Note: In this post I am primarily talking about creative personal projects, but also some about programming and creativity in general.

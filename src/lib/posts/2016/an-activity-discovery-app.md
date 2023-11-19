@@ -4,10 +4,7 @@ date: 2016-12-05
 tags:
   - projects
   - design
-# cover_image: /images/PLACEHOLDER_IMAGE.jpg
-# cover_width: 16
-# cover_height: 9
-description: An app I created to help address decision paralysis when trying to find activities to do.
+ An app I created to help address decision paralysis when trying to find activities to do.
 ---
 
 Most any time we go to a new place, we are looking to find activities to do. It could be anything from hiking to finding a trendy coffee shop. When I first came to study at the University of Georgia, I found myself in this situation, particularly in respect to finding activities for groups of people to do and activities to do on dates. Over time I came to know a lot of local places and activities, but it took a lot of talking to people and didn’t always come when I wanted it to. It would have been great to have a way to find out about all of those activities quicker and more easily.

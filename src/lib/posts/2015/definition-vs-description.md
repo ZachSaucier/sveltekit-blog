@@ -4,9 +4,6 @@ date: 2015-04-20
 tags:
   - rambling
   - life
-# cover_image: /images/PLACEHOLDER_IMAGE.jpg
-# cover_width: 16
-# cover_height: 9
 description: A look at what just describes us vs what truly defines us.
 ---
 

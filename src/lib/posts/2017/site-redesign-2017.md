@@ -5,9 +5,6 @@ tags:
   - code
   - projects
   - css
-# cover_image: /images/PLACEHOLDER_IMAGE.jpg
-# cover_width: 16
-# cover_height: 9
 description: Some of the history and exploration behind my 2017 site redesign.
 ---
 
