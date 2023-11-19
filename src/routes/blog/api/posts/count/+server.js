@@ -7,7 +7,7 @@ export const GET = async () => {
     Object.entries(import.meta.glob('/src/lib/posts/**/*.md')).map(async ([path, resolver]) => {
       const { metadata } = await resolver();
       return {
-        draft: metadata.draft,
+        draft: metadata?.draft,
       };
     })
   );

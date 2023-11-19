@@ -5,6 +5,7 @@ export const load = async ({ url, fetch }) => {
   const archive_data = {};
 
   posts.forEach((post) => {
+    if (!post.date) return;
     const year = parseInt(post.date.split('-')[0]);
     if (!archive_data[year]) archive_data[year] = [];
     archive_data[year].push({

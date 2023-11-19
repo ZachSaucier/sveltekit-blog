@@ -64,8 +64,10 @@ const config = {
       entries: [
         '/blog',
         '/blog/*',
-        '/blog/api/posts/page/*',
-        '/blog/tag/',
+        '/blog/page/*',
+        '/blog/archive',
+        '/blog/api/rss.xml',
+        '/blog/tags/',
         '/blog/tag/*',
         '/blog/tag/*/page/*',
       ],

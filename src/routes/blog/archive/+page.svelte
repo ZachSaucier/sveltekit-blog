@@ -6,7 +6,7 @@
   export let data;
   const { archive_data } = data;
 
-  const date_styles = 'top: 1.35em; left: 0; font-size: 0.9em; line-height: 1.5;';
+  const date_styles = 'top: 0.85rem; left: 0; font-size: 0.9em; line-height: 1.5;';
 </script>
 
 <svelte:head>
@@ -51,7 +51,7 @@
     & li::marker {
       color: var(--grayed-text);
       font-family: var(--font-sans-serif);
-      font-size: 1.5em;
+      font-size: 1.5rem;
     }
   }
 
@@ -78,7 +78,8 @@
   }
 
   h1 {
-    font-size: 1.5em;
+    font-size: 1.5rem;
+    margin-top: 0;
   }
 
   footer {
