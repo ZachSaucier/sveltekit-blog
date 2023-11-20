@@ -13,8 +13,8 @@ Part 2 of my front-end development crash course.
 
 - <a href="https://slides.com/zachsaucier/cc2">The slides</a>
 - <a href="https://gdclub.uga.edu/audio/part2-audio.wav">Audio</a>
-- <a href="/Front-end%20CC%20-%20Project%201.zip">Project files</a>
-- <a href="/blog/project-1-solution.html">My project solution</a>
+- <a href="https://zachsaucier.com/Front-end%20CC%20-%20Project%201.zip">Project files</a>
+- <a href="https://zachsaucier.com/blog/project-1-solution.html">My project solution</a>
 - <a href="/blog/the-why-and-what-of-web-development/">Go to part 1 (The what and why of programming)</a>
 - <a href="/blog/starting-js/">Go to part 3 (JS)</a>
 
@@ -239,7 +239,7 @@ To be a good developer means that you are also a good Googler, able to find what
 
 And we’re also here to help. The web development community has a very large sector of trying to help each other out, especially beginners. That’s the exact reason why I’m doing this crash course – I want more people to be involved! Diversity brings excellence and new ideas.
 
-Some great resources you should use are <a href="https://stackoverflow.com/">StackOverflow</a> which is by far the leading resource for any programming problems you may face, <a href="https://graphicdesign.stackexchange.com/">GraphicDesign.StackExchange</a> which is the same for designers, and <a href="/blog/resources.html">my resources page</a> which has a lot more specific resources geared towards people starting out.
+Some great resources you should use are <a href="https://stackoverflow.com/">StackOverflow</a> which is by far the leading resource for any programming problems you may face, and <a href="https://graphicdesign.stackexchange.com/">GraphicDesign.StackExchange</a> which is the same for designers.
 
 <img src="https://res.cloudinary.com/desumhldo/image/upload/v1700365807/cc2/slide27_k08hrd.png" alt="Don't give up. It takes time" loading="lazy" />
 
@@ -257,7 +257,7 @@ The project I’d like to have you do before next time (or before moving on to t
 
 You can use a text editor on your computer, save it as a `.html` file, and open it in your browser or you can use something like <a href="https://codepen.io">CodePen.io</a> to view your work instead.
 
-To obtain the project files, you can <a href="/Front-end%20CC%20-%20Project%201.zip">click this link to download them</a>.
+To obtain the project files, you can <a href="https://zachsaucier.com/Front-end%20CC%20-%20Project%201.zip">click this link to download them</a>.
 
 I hope you have learned a lot, work on the project, and check out the next post when it’s up!
 

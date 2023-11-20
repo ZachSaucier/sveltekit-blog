@@ -5,9 +5,7 @@ updated: 2023-10-22
 tags:
   - code
   - css
-# cover_image: "/images/jefferson-santos-fCEJGBzAkrU-unsplash.jpg"
-# cover_width: 16
-# cover_height: 9description: An exploration into how to make CSS-only shapes with gradients and outlines.
+description: An exploration into how to make CSS-only shapes with gradients and outlines.
 ---
 
 ## Making basic shapes

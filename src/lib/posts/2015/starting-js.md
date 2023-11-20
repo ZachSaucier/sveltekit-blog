@@ -11,14 +11,14 @@ description: The third talk in my front-end development crash course for designe
 Part 3 of my front-end development crash course.
 
 - <a href="https://slides.com/zachsaucier/cc3">The slides</a>
-- <a href="/blog/js-example.js">Slides JS code</a>
+- <a href="https://zachsaucier.com/js-example.js">Slides JS code</a>
 - <a href="/blog/starting-html-and-css/">Go to part 2 (HTML &amp; CSS)</a>
 
 <img src="https://res.cloudinary.com/desumhldo/image/upload/v1700365841/cc3/slide1_byeijt.png" alt="Starting JavaScript (JS)" />
 
 Welcome to my series on learning web development! I created this crash course series to help teach a group of mostly designers at my school about web development, especially on the front-end. This is the third lesson but the first where we learn JS. If you want to start from the beginning, check out <a href="/blog/the-why-and-what-of-web-development/">the first post</a>.
 
-If you want to play around with the JS snippets as you see them on the slides, you can copy it from <a href="./js-example.js">this JS file</a> and run it on JSFiddle or something similar.
+If you want to play around with the JS snippets as you see them on the slides, you can copy it from <a href="https://zachsaucier.com/js-example.js">this JS file</a> and run it on JSFiddle or something similar.
 
 <span class="excerpt_marker"></span>
 

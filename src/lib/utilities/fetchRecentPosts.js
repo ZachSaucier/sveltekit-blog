@@ -4,7 +4,7 @@ const fetchRecentPosts = async () => {
       const { metadata } = await resolver();
       const path_pieces = path.split('/');
       // const year = path_pieces[4];
-      const slug = path_pieces.pop().slice(0, -3);
+      const slug = `/blog/${path_pieces.pop().slice(0, -3)}`;
       return { ...metadata, slug };
     })
   );

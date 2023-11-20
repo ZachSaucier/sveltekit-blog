@@ -27,7 +27,7 @@
             <footer>
               <span class="categories">posted in </span>
               {#each post_data.tags as tag, i}
-                <a class="tag" href="/blog/tags/{tag}/">{tag}</a
+                <a class="tag" href="/blog/tag/{tag}/">{tag}</a
                 >{#if i !== post_data.tags.length - 1},&thinsp;{/if}
               {/each}
             </footer>

@@ -1,6 +1,6 @@
 export const load = async ({ url, fetch }) => {
   const res = await fetch(`${url.origin}/blog/api/posts_for_tags.json`);
-  let posts = await res.json();
+  let posts = (await res.json()) || [];
 
   const archive_data = {};
 

@@ -11,7 +11,13 @@ const fetchPosts = async ({ offset = 0, limit = posts_per_page, tag = '' } = {})
       const slug = path_pieces.pop().slice(0, -3);
       const html = rest.default.render().html;
       const has_excerpt = html.indexOf(SEPARATOR) === -1;
-      const excerpt = has_excerpt ? html : html.split(SEPARATOR)[0];
+      let excerpt = has_excerpt ? html : html.split(SEPARATOR)[0];
+      // Strip table of contents from the excerpt
+      const match = new RegExp('<nav class="toc">' + '(.*)' + '</ol></nav>\n');
+      const toc = excerpt.match(match);
+      if (toc) {
+        excerpt = excerpt.replace(toc[0], '');
+      }
       return { ...metadata, slug, excerpt, has_excerpt };
     })
   );
