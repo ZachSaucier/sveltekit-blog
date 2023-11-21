@@ -14,6 +14,7 @@
 
 <svelte:head>
   <title>Musings{title_ending}</title>
+  <meta name="description" content={site_description} />
   <meta property="og:site_name" content={site_description} />
 </svelte:head>
 

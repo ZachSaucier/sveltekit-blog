@@ -38,7 +38,7 @@
       <ul>
         {#if !is_small_num_pages && current_page > 3}
           <li>
-            <a href="{path}/1" aria-label="Go to first page">«</a>
+            <a href="{path}/1" aria-label="Go to first page «">«</a>
           </li>
         {/if}
 
@@ -68,7 +68,7 @@
 
         {#if !is_small_num_pages && current_page < pages_available - 2}
           <li>
-            <a href="{path}/{pages_available}" aria-label="Go to last page">»</a>
+            <a href="{path}/{pages_available}" aria-label="Go to last page »">»</a>
           </li>
         {/if}
       </ul>
