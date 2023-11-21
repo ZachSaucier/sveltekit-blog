@@ -11,7 +11,12 @@
       {@const href = page.route}
       {@const is_current_page = $current_page.startsWith(href)}
       <li>
-        <a {href} class:active={is_current_page} aria-current={is_current_page ? 'page' : false}>
+        <a
+          {href}
+          class="nav_link"
+          class:active={is_current_page}
+          aria-current={is_current_page ? 'page' : false}
+        >
           {page.title}
         </a>
       </li>
@@ -43,7 +48,7 @@
     color: var(--background-color);
   }
 
-  a {
+  .nav_link {
     color: var(--background-color);
     text-decoration: none;
   }
