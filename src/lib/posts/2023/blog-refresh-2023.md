@@ -1,12 +1,17 @@
 ---
 title: Blog refresh 2023
-date: 2023-11-19
+date: 2023-11-18
+description: A post covering some new web features that I used when recreating this blog.
 tags:
   - code
   - projects
   - css
   - svelte
-description: A post covering some new web features that I used when recreating this blog.
+cover_image: https://res.cloudinary.com/desumhldo/image/upload/v1700535044/blog-comparison_oddqxi.webp
+cover_width: 6720
+cover_height: 1814
+cover_alt: The old version of the blog next to the new version of the blog
+cover_in_post: false
 ---
 
 <script>
@@ -102,7 +107,7 @@ Of the new CSS features, using CSS nesting feels the most refreshing. Paired wit
 
 The neatest CSS feature I used was the OKLCH color space. It made the blue used on the ribbon pop even more than before!
 
-<img src="#" alt="The old version of the blog next to the new version of the blog, showing some of the subtle updates as well as the more vibrant blue accent color" loading="lazy" width="2766" height="998" />
+<img src="https://res.cloudinary.com/desumhldo/image/upload/v1700535044/blog-comparison_oddqxi.webp" alt="The old version of the blog next to the new version of the blog" loading="lazy" width="6720" height="1814" />
 
 I've seen some weird flashes with the colors sometimes where it looks like it goes to the RGB color fallback, but that's worth the tradeoff for me on this website.
 
@@ -111,8 +116,6 @@ Another color feature I used for the first time [color-mix](https://developer.mo
 By converting my colors for the site to use CSS variables, I basically got a dark mode for free! It only took some playing around with the values to find something that I liked.
 
 One of the nice-to-have features I used was query ranges for CSS media queries. It's another feature I've long-awaited since media queries were first introduced. Oh, and I used the `,` operator of media queries for the first time!
-
-<!-- overscroll-behavior? collapsible sidebar? -->
 
 And I tried out container queries for the first time. I will write another, more in depth article about using them!
 

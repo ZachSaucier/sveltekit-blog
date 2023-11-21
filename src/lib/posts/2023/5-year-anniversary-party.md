@@ -1,6 +1,7 @@
 ---
 title: 5 year anniversary party
-date: 2023-11-19
+date: 2023-11-21
+description: Our anniversary party was comprised of solid friends and Lisa Frank Jesus among other things.
 tags:
   - rambling
   - life
@@ -13,7 +14,6 @@ cover_width: 1024
 cover_height: 1024
 cover_alt: A fake photograph of 3 men in green Masters' jackets holding champaign and smiling
 cover_in_post: false
-description: Our anniversary party was comprised of solid friends and Lisa Frank Jesus among other things.
 ---
 
 <script>
