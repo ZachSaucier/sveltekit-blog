@@ -30,7 +30,7 @@ We decided to throw a party in celebration of this milestone with some of our fr
 
 We wanted this to feel more special than a usual hangout for ourselves and our guests. We decided that we should have optional semi-formal attire and went with a 1920's-esque theme.
 
-We used this theme in our e-invitations (created using TODO), for the music (big band playlists [like](https://open.spotify.com/playlist/6wFujBaGABV58gfuWwbgrd?si=bc34cbe1d9d14417) [these](https://open.spotify.com/playlist/47AkrXkF5hWKwUvN3L3U0b?si=98d907bda9bb4914)), for the drinks (we fixed a large batch of Manhattan cocktails), and for the welcome + intro.
+We used this theme in our e-invitations (created using [evite](https://www.evite.com/)), for the music (big band playlists [like](https://open.spotify.com/playlist/6wFujBaGABV58gfuWwbgrd?si=bc34cbe1d9d14417) [these](https://open.spotify.com/playlist/47AkrXkF5hWKwUvN3L3U0b?si=98d907bda9bb4914)), for the drinks (we fixed a large batch of Manhattan cocktails), and for the welcome + intro animation.
 
 ## Welcome + instructions animation
 
@@ -42,7 +42,7 @@ I wanted to create something that made the event stand out a little and also dir
 
 As an activity, I had my laptop out and had guests use Midjourney to create an AI-generated image for us. I provided [some basic instructions](https://docs.google.com/document/d/1QosVRWplvjfsJP_eUwU3vzU7rREbn5EqPfYLoTW-AKA/edit#heading=h.tekmwjl2n1gt) alongside the Discord server that is used to generate the images.
 
-This went over very well, particularly with our friends who are not as tech savvy. They were blown away with how fast you can generate images and spent extensive time trying to recreate some of the people in the group. For example:
+This went over very well! Particularly with our friends who are not as tech savvy. They were blown away with how fast you can generate images and spent extensive time trying to recreate some of the people in the group. For example:
 
 <img src="https://res.cloudinary.com/desumhldo/image/upload/v1700412741/5th-anniversary/the_masters_threesome_dh1wjw.webp" alt="A fake photograph of 3 men in green Masters' jackets holding champaign and smiling" loading="lazy" width="1024" height="1024">
 

@@ -11,7 +11,7 @@
       <li>
         <Section>
           <header class="post_header">
-            <a href={path} rel="full-article">
+            <a class="post_title" href={path} rel="full-article">
               <h2 class="post_title">
                 {post.title}
               </h2>
@@ -36,7 +36,7 @@
 </div>
 
 <style>
-  a {
+  .post_title {
     color: inherit;
   }
 

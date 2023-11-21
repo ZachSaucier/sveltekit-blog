@@ -31,6 +31,9 @@ hr {
   margin-top: 1.2em;
   margin-bottom: 1.5em;
 }
+summary {
+  cursor: pointer;
+}
 
 .sr-only {
   position: absolute;
@@ -142,7 +145,8 @@ code {
   font-family: var(--font-code);
 }
 
-a {
+a,
+a code {
   color: var(--link-color);
   text-decoration: none;
 

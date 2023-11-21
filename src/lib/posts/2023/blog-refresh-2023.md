@@ -18,9 +18,11 @@ cover_in_post: false
 	import TwitterEmbed from "$lib/components/TwitterEmbed.svelte";
 </script>
 
-I first created my blog in 2014. For the next ~10 years, it stayed the same, only adding new posts through 2017 when I lost the ability to easily make new posts (note: always save to the cloud). Its design has held up surprisingly well!
+I first created my blog in 2014. For the next ~10 years, it stayed the same, only adding new posts through 2017 when I lost the ability to easily make new posts (note: always save source files to the cloud). Its design held up surprisingly well!
 
-In the last ~1.5 years CSS-Tricks has basically died and Twitter has similarly taken a blow thanks to Elon. As a result, I have tech stuff that I want to explore and post about but not a great place to post it. In the last ~6 months I've been using Svelte a lot more and I figured now's a good time as any to rebuild my blog. (I should probably do the same thing for [my personal site](/) sometime).
+In the last ~1.5 years CSS-Tricks has basically died and Twitter has similarly taken a blow thanks to Elon. As a result, I have tech stuff that I want to explore and post about but not a great place to post it.
+
+Additionally, in the last ~6 months I've been using Svelte a lot more and I figured now's a good time as any to rebuild my blog. I should probably redo [my personal site](/) sometime...
 
 In this post I'll cover some of the key changes and cool new tech that I got to use in building this blog!
 
@@ -59,13 +61,13 @@ For the next several years, frameworks came and went on large scales but I never
 
 I was never really drawn to any of the major frameworks. The most appealing was Vue due to its acceptance of using straight HTML + CSS + JS and just enhancing parts, but even then I didn't really like the Vue-y parts of it.
 
-At [GreenSock](https://gsap.com/) (GSAP) we mainly used a (crappy) PHP-based CMS called Invision Power Board (now Invision Community). At ([Rally](https://rallyinteractive.com/)) we used Nunjucks for templating and Contentful as the CMS for the major projects I worked on there. At [Stripe](https://stripe.com/) we used Ruby on the backend, Liquid as the templating engine, and Contentful as the CMS.
+At [GreenSock](https://gsap.com/) (GSAP) we mainly used a (crappy) PHP-based CMS called Invision Power Board (now Invision Community). At [Rally](https://rallyinteractive.com/) we used Nunjucks for templating and Contentful as the CMS for the major projects I worked on there. At [Stripe](https://stripe.com/) we used Ruby on the backend, Liquid as the templating engine, and Contentful as the CMS.
 
-That's not to say that I never used React or the other frameworks; I used React at GreenSock, Rally, Stripe, and multiple freelance projects. I used Angular and Vue once or twice for little things. But I never really vibed with the big hype around React and the other big frameworks.
+That's not to say that I never used React or the other frameworks. I used React at GreenSock, Rally, Stripe, and multiple freelance projects. I used Angular and Vue once or twice for little things. But I never really vibed with the big hype around React and the other big frameworks.
 
 ## Svelte is great!
 
-Around 2020, I started hearing more about Svelte, Solid.js and other tools like it — what I consider the modern era of frameworks. However, due to my full time job and hobbies that didn't involve front-end web frameworks, I didn't really give them a try.
+Around 2020, I started hearing more about Svelte, Solid.js, and other tools like them — what I consider the modern era of frameworks. However, due to my full time job and hobbies that didn't involve the cool, new front-end web frameworks, I didn't really give them a try.
 
 When I was laid off by Stripe in late 2022, that suddenly changed: I had time to not only play with cool new tools like [Rive](https://rive.app/) and [Spline](https://spline.design/) but also to learn about Svelte and Solid.js! I also did freelance work that got me exposed to a wider variety of tools.
 
@@ -75,25 +77,25 @@ In particular, Svelte's way of handling data storage (called [stores](https://sv
 
 ## Building this blog
 
-Going back to the subject of this blog, I built it from scratch using Svelte + SvelteKit. I originally started by forking Josh Collinsworth's [sveltekit-blog-starter](https://github.com/josh-collinsworth/sveltekit-blog-starter) but ended up changing how most all of it works. Those changes included:
+Going back to the subject of this blog, I built it from scratch using Svelte + SvelteKit. I originally started by forking Josh Collinsworth's [sveltekit-blog-starter](https://github.com/josh-collinsworth/sveltekit-blog-starter) but ended up changing how most all of it worked. Those changes included:
 
 - Moving the blog off of the top-level directory to `/blog` so that I can keep my personal website independent
 - Adding handling for nested directories of blog posts (2014, 2015, etc.) to better organize entries on the backend while keeping the same `/blog/[post]` URL format
 - Adding recent posts functionality
 - Adding excerpt functionality
 - Adding the [archive](/blog/archive) functionality
-- Adding the search functionality
+- Adding the (basic) search functionality
 - Adding a table of contents to blog posts
 - Adding section heading link click functionality
-- Adding a tweet button to blog posts
+- Adding a tweet button to the bottom of blog posts
 - Twitter embeds
 - CodePen embeds
 - Adding blog post "draft" functionality
 - Making fairly big additions to the pagination functionality
-- Adding a (collapsible) sidebar
+- Adding a sidebar and making it collapsible
 - Fixing the category (I renamed them to [tags](/blog/tags)) counts
-- Making the site titles across pages more consistent
-- Improving some Markdown handling to add footnotes, accessibility for emojis, and preventing widows
+- Making the page titles more consistent
+- Improving some Markdown handling to add footnotes, labels for emojis (for accessibility), and preventing widows
 
 As a bonus, SvelteKit comes with content transitions between pages out of the box! Yay for not having to use something like Barba.js to do this.
 
@@ -101,9 +103,9 @@ As a bonus, SvelteKit comes with content transitions between pages out of the bo
 
 Building the site from scratch also provided a time to touch up some bits, shave old CSS (bye bye browser prefixes), use a new serif font, and try out new CSS tools.
 
-But perhaps my favorite change related to styles comes from using Svelte: components automatically [come with scoped CSS](https://svelte.dev/docs/svelte-components) to that component 😮 So you don't need CSS modules, Tailwind, or even [cascade layers](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Cascade_layers).
+But perhaps my favorite change related to styles comes from using Svelte: components automatically [come with scoped CSS](https://svelte.dev/docs/svelte-components) to that component! 😮 So you don't need CSS modules, Tailwind, or even [cascade layers](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Cascade_layers).
 
-Of the new CSS features, using CSS nesting feels the most refreshing. Paired with using CSS variables, 99% of my use cases for CSS pre-processors are accounted for. Since this website doesn't get much traffic, I'm not even providing a fallback since it's [pretty well supported](https://caniuse.com/css-nesting).
+Of the new CSS features, using CSS nesting feels the most refreshing. Paired with using CSS variables, 99% of my use cases for CSS pre-processors are accounted for (variables within media queries are the missing 1%). Since this website doesn't get much traffic, I'm not even providing a fallback since it's [pretty well supported](https://caniuse.com/css-nesting).
 
 The neatest CSS feature I used was the OKLCH color space. It made the blue used on the ribbon pop even more than before!
 
@@ -111,13 +113,13 @@ The neatest CSS feature I used was the OKLCH color space. It made the blue used 
 
 I've seen some weird flashes with the colors sometimes where it looks like it goes to the RGB color fallback, but that's worth the tradeoff for me on this website.
 
-Another color feature I used for the first time [color-mix](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/color-mix) to do some lightening and darkening of the CSS variables for different states. It is not bad but I wish there was something more like a true lighten/darken that used the color itself as the extreme. Some of the colors I tried got washed out a bit by the white or black that I mixed it with.
+Another color feature I used for the first time is [`color-mix`](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/color-mix). I used it to lighten and darken the CSS variables for different states. It's not bad, but I wish there was something more like a true lighten/darken that used the color itself as the extreme. Some of the colors I tried got washed out a bit by the white or black that I mixed it with.
 
-By converting my colors for the site to use CSS variables, I basically got a dark mode for free! It only took some playing around with the values to find something that I liked.
+By converting my colors to CSS variables, I basically got a dark mode for free!
 
 One of the nice-to-have features I used was query ranges for CSS media queries. It's another feature I've long-awaited since media queries were first introduced. Oh, and I used the `,` operator of media queries for the first time!
 
-And I tried out container queries for the first time. I will write another, more in depth article about using them!
+And I tried out container queries for the first time. I will write another, more in depth article about using them soon.
 
 I also tried using `console.info` to add a little surprise for those who look in the console. I will also write another article about this approach as I think it's quite interesting.
 
