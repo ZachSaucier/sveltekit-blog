@@ -7,7 +7,7 @@
   <p>I'm not sure how you got here. But here's some options of where to go!</p>
   <ul>
     <li><a href="/blog">Blog home</a></li>
-    <li><a href="/">My personal site</a></li>
+    <li><a href="https://zachsaucier.com">My personal site</a></li>
     <li><a href="mailto:hello@zachsaucier.com">Email me</a></li>
   </ul>
 

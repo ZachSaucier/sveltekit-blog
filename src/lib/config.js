@@ -12,7 +12,7 @@ export const nav_items = [
   },
   {
     title: 'About me',
-    route: '/',
+    route: 'https://zachsaucier.com',
   },
 ];
 

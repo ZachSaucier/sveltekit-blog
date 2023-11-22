@@ -22,7 +22,7 @@ I first created my blog in 2014. For the next ~10 years, it stayed the same, onl
 
 In the last ~1.5 years CSS-Tricks has basically died and Twitter has similarly taken a blow thanks to Elon. As a result, I have tech stuff that I want to explore and post about but not a great place to post it.
 
-Additionally, in the last ~6 months I've been using Svelte a lot more and I figured now's a good time as any to rebuild my blog. I should probably redo [my personal site](/) sometime...
+Additionally, in the last ~6 months I've been using Svelte a lot more and I figured now's a good time as any to rebuild my blog. I should probably redo [my personal site](https://zachsaucier.com) sometime...
 
 In this post I'll cover some of the key changes and cool new tech that I got to use in building this blog!
 
