@@ -153,7 +153,7 @@
       }
     }
 
-    & aside {
+    & .sidebar {
       display: none;
 
       @media (max-width: 1199px) {

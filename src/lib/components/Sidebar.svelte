@@ -45,7 +45,7 @@
   ];
 </script>
 
-<aside {style}>
+<aside class="sidebar" {style}>
   <div class="aside_content">
     {#if $recent_posts.length}
       <h1>Recent posts</h1>
@@ -116,7 +116,7 @@
 </aside>
 
 <style>
-  aside {
+  .sidebar {
     padding: 4rem 1rem;
     border-left: var(--border-sidebar);
     border-right: var(--border-sidebar);
