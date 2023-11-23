@@ -21,10 +21,10 @@
           </header>
 
           <article>
-            {@html post.excerpt}
+            {@html post.excerpt ? post.excerpt : post.full_post}
           </article>
 
-          {#if !post.has_excerpt}
+          {#if post.excerpt}
             <footer>
               <a href={path} class="read_on" rel="full-article">Read on</a>
             </footer>

@@ -53,7 +53,7 @@
         <ol>
           {#each $recent_posts as post}
             <li>
-              <a href={post.slug}>
+              <a href={`/blog/${post.slug}`}>
                 <h2>{post.title}</h2>
               </a>
             </li>

@@ -1,24 +1,23 @@
 import { posts_per_page } from '$lib/config';
 
 const SEPARATOR = '<span class="excerpt_marker"></span>';
+const TOC_MATCH = new RegExp('<nav class="toc"(?:.*)>(.*)</ol></nav>');
 
-const fetchPosts = async ({ offset = 0, limit = posts_per_page, tag = '' } = {}) => {
+const fetchPosts = async ({ offset = 0, limit = posts_per_page, tag } = {}) => {
   let posts = await Promise.all(
     Object.entries(import.meta.glob('/src/lib/posts/**/*.md')).map(async ([path, resolver]) => {
       const { metadata, ...rest } = await resolver();
       const path_pieces = path.split('/');
       // const year = path_pieces[4];
       const slug = path_pieces.pop().slice(0, -3);
-      const html = rest.default.render().html;
-      const has_excerpt = html.indexOf(SEPARATOR) === -1;
-      let excerpt = has_excerpt ? html : html.split(SEPARATOR)[0];
+      const full_post = rest.default.render().html;
+      let excerpt = full_post.indexOf(SEPARATOR) !== -1 ? full_post.split(SEPARATOR)[0] : null;
       // Strip table of contents from the excerpt
-      const match = new RegExp('<nav class="toc">' + '(.*)' + '</ol></nav>\n');
-      const toc = excerpt.match(match);
+      const toc = excerpt && excerpt.match(TOC_MATCH);
       if (toc) {
         excerpt = excerpt.replace(toc[0], '');
       }
-      return { ...metadata, slug, excerpt, has_excerpt };
+      return { ...metadata, slug, full_post, excerpt };
     })
   );
 
@@ -34,24 +33,11 @@ const fetchPosts = async ({ offset = 0, limit = posts_per_page, tag = '' } = {})
     sorted_posts = sorted_posts.slice(offset);
   }
 
-  if (limit && limit < sorted_posts.length && limit != -1) {
+  if (limit && limit != -1 && limit < sorted_posts.length) {
     sorted_posts = sorted_posts.slice(0, limit);
   }
 
   sorted_posts = sorted_posts.filter(Boolean);
-
-  sorted_posts = sorted_posts.map((post) => ({
-    title: post.title,
-    slug: post.slug,
-    description: post.description,
-    excerpt: post.excerpt,
-    has_excerpt: post.has_excerpt,
-    cover_image: post.cover_image,
-    cover_width: post.cover_width,
-    cover_height: post.cover_height,
-    date: post.date,
-    tags: post.tags,
-  }));
 
   return {
     posts: sorted_posts,

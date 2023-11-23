@@ -225,7 +225,6 @@ article {
 }
 
 .posts_list {
-  & .toc,
   & .section_heading::after {
     display: none !important;
   }

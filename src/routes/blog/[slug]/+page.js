@@ -8,11 +8,11 @@ export const load = async ({ params }) => {
   const current_year = new Date().getFullYear();
   while (year <= current_year) {
     try {
-      const match = modules[`/src/lib/posts/${year}/${params.post}.md`];
+      const match = modules[`/src/lib/posts/${year}/${params.slug}.md`];
       const post = await match();
       return {
         PostContent: post.default,
-        meta: { ...post.metadata, slug: `${year}/${params.post}` },
+        meta: { ...post.metadata, slug: `${params.slug}` },
       };
     } catch (err) {
       // it's fine, try the next year

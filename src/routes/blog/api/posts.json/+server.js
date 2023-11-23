@@ -5,10 +5,6 @@ import fetchPosts from '$lib/utilities/fetchPosts';
 export const prerender = true;
 
 export const GET = async () => {
-  const options = {
-    limit: posts_per_page,
-  };
-
-  const { posts } = await fetchPosts(options);
+  const { posts } = await fetchPosts({ limit: posts_per_page });
   return json(posts);
 };

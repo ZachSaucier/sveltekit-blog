@@ -7,12 +7,10 @@ export const prerender = true;
 export const GET = async ({ params }) => {
   const { page } = params || 1;
 
-  const options = {
+  const { posts } = await fetchPosts({
     offset: (page - 1) * posts_per_page,
     limit: posts_per_page,
-  };
-
-  const { posts } = await fetchPosts(options);
+  });
 
   return json(posts);
 };

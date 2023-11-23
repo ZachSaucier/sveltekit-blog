@@ -81,7 +81,7 @@ In particular, Svelte's way of handling data storage (called [stores](https://sv
 Going back to the subject of this blog, I built it from scratch using Svelte + SvelteKit. I originally started by forking Josh Collinsworth's [sveltekit-blog-starter](https://github.com/josh-collinsworth/sveltekit-blog-starter) but ended up changing how most all of it worked. Those changes included:
 
 - Moving the blog off of the top-level directory to `/blog` so that I can keep my personal website independent
-- Adding handling for nested directories of blog posts (2014, 2015, etc.) to better organize entries on the backend while keeping the same `/blog/[post]` URL format
+- Adding handling for nested directories of blog posts (2014, 2015, etc.) to better organize entries on the backend while keeping the same `/blog/[slug]` URL format
 - Adding recent posts functionality
 - Adding excerpt functionality
 - Adding the [archive](/blog/archive) functionality

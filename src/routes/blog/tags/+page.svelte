@@ -3,7 +3,7 @@
   import Section from '$lib/components/Section.svelte';
   import PageTitle from '$lib/components/PageTitle.svelte';
   export let data;
-  const { unique_tags } = data;
+  const { tags } = data;
 </script>
 
 <svelte:head>
@@ -14,7 +14,7 @@
   <PageTitle title="All tags" />
 
   <ol>
-    {#each unique_tags as tag}
+    {#each tags as tag}
       <li>
         <a href="/blog/tag/{tag.title}">
           {tag.title}
