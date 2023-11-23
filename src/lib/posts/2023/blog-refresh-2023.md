@@ -85,7 +85,7 @@ Going back to the subject of this blog, I built it from scratch using Svelte + S
 - Adding recent posts functionality
 - Adding excerpt functionality
 - Adding the [archive](/blog/archive) functionality
-- Adding the (basic) search functionality
+- Adding a sitemap and robots.txt
 - Adding a table of contents to blog posts
 - Adding section heading link click functionality
 - Adding a tweet button to the bottom of blog posts
@@ -96,6 +96,7 @@ Going back to the subject of this blog, I built it from scratch using Svelte + S
 - Adding a sidebar and making it collapsible
 - Fixing the category (I renamed them to [tags](/blog/tags)) counts
 - Making the page titles more consistent
+- Adding the (basic) search functionality
 - Improving some Markdown handling to add footnotes, labels for emojis (for accessibility), and preventing widows
 
 As a bonus, SvelteKit comes with content transitions between pages out of the box! Yay for not having to use something like Barba.js to do this.

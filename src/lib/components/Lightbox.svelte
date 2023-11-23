@@ -46,18 +46,12 @@
   </button>
 
   <!-- svelte-ignore a11y-click-events-have-key-events -->
+  <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
   <dialog bind:this={dialog} on:click={closeLightbox}>
     <!-- svelte-ignore a11y-autofocus -->
     <button class="lightbox__close" autofocus on:click={closeLightbox}>Close</button>
     {#if intention}
-      <img
-        class="lightbox__image_full"
-        {src}
-        {alt}
-        {width}
-        {height}
-        style="--ar: {width} / {height};"
-      />
+      <img class="lightbox__image_full" {src} {alt} {width} {height} />
     {/if}
   </dialog>
 {/if}
@@ -95,14 +89,6 @@
 
   ::backdrop {
     background-color: rgba(0, 0, 0, 0.5);
-  }
-
-  .lightbox__image_full {
-    aspect-ratio: var(--ar);
-    width: auto;
-    height: auto;
-    max-width: calc(100% - 2rem);
-    max-height: calc(100% - 2rem);
   }
 
   .lightbox__close {
