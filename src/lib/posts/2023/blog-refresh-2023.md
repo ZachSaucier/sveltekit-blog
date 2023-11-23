@@ -15,6 +15,7 @@ cover_in_post: false
 ---
 
 <script>
+  import Lightbox from "$lib/components/Lightbox.svelte";
 	import TwitterEmbed from "$lib/components/TwitterEmbed.svelte";
 </script>
 
@@ -109,7 +110,7 @@ Of the new CSS features, using CSS nesting feels the most refreshing. Paired wit
 
 The neatest CSS feature I used was the OKLCH color space. It made the blue used on the ribbon pop even more than before!
 
-<img src="https://res.cloudinary.com/desumhldo/image/upload/v1700535044/blog-comparison_oddqxi.webp" alt="The old version of the blog next to the new version of the blog" loading="lazy" width="6720" height="1814" />
+<Lightbox src="https://res.cloudinary.com/desumhldo/image/upload/v1700535044/blog-comparison_oddqxi.webp" alt="The old version of the blog next to the new version of the blog" loading="lazy" width="6720" height="1814" />
 
 I've seen some weird flashes with the colors sometimes where it looks like it goes to the RGB color fallback, but that's worth the tradeoff for me on this website.
 

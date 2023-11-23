@@ -24,6 +24,7 @@ This blog started as a fork of Josh Collinsworth's [Sveltekit static blog starte
 - **Archive functionality** which is similar to the blog listing but only shows the title and tags with a different layout that focuses on the year it was published. [Demo](https://zachsaucier.com/blog/archive/).
 - **Collapsible sidebar**.
 - **Tweet and CodePen embeds**.
+- **Image lightboxing functionality**
 - **(basic) Search functionality** that uses the search engine of your choice.
 - **Clickable section headings** to make sharing to a particular part of a post a breeze.
 - **Table of contents for blog posts** that outlines the sections of each page.

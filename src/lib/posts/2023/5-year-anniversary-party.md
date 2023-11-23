@@ -17,6 +17,7 @@ cover_in_post: false
 ---
 
 <script>
+  import Lightbox from "$lib/components/Lightbox.svelte";
 	import CodePen from "$lib/components/CodePen.svelte";
 </script>
 
@@ -44,7 +45,7 @@ As an activity, I had my laptop out and had guests use Midjourney to create an A
 
 This went over very well! Particularly with our friends who are not as tech savvy. They were blown away with how fast you can generate images and spent extensive time trying to recreate some of the people in the group. For example:
 
-<img src="https://res.cloudinary.com/desumhldo/image/upload/v1700412741/5th-anniversary/the_masters_threesome_dh1wjw.webp" alt="A fake photograph of 3 men in green Masters' jackets holding champaign and smiling" loading="lazy" width="1024" height="1024">
+<Lightbox src="https://res.cloudinary.com/desumhldo/image/upload/v1700412741/5th-anniversary/the_masters_threesome_dh1wjw.webp" alt="A fake photograph of 3 men in green Masters' jackets holding champaign and smiling" width="1024" height="1024" />
 
 We also got a wide range of other images, including some [elephants carrying flowers](https://res.cloudinary.com/desumhldo/image/upload/v1700412734/5th-anniversary/ninjicken_a_parade_of_elephants_carrying_lots_of_flowers_in_the_ffe30ebf-6d39-49cc-a190-b74ea1e805e8_knnqer.webp), a [rat mafia](https://res.cloudinary.com/desumhldo/image/upload/v1700412737/5th-anniversary/rat_mafia_ebjvan.webp), [golden retrievers in Sheep Meadow](https://res.cloudinary.com/desumhldo/image/upload/v1700412732/5th-anniversary/goldens_aqpwun.webp), and even a [Lisa Frank Jesus](https://res.cloudinary.com/desumhldo/image/upload/v1700412737/5th-anniversary/ninjicken_Lisa_Frank_themed_Jesus_ddc845dc-bc2c-42ea-b0f8-b046a1cc4254_mnnjii.webp)!
 
