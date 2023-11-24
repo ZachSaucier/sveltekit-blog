@@ -1,14 +1,10 @@
 <script>
-  // import { onMount } from 'svelte';
-
   export let pen_title;
   export let slug;
   export let tab = 'html,result';
   export let height = 400;
   export let username = 'ZachSaucier';
   export let name = 'Zach Saucier';
-
-  // onMount(() => __CPEmbed());
 </script>
 
 <svelte:head>

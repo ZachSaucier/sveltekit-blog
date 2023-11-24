@@ -37,11 +37,12 @@
     height: 3rem;
     background-color: var(--accent-dark);
     color: var(--background-color);
-  }
-  .skip_to_content:focus {
-    transform: translateY(6rem);
-    opacity: 1;
-    z-index: 2;
+
+    &:focus {
+      opacity: 1;
+      transform: translateY(0);
+      z-index: 2;
+    }
   }
 
   header {
