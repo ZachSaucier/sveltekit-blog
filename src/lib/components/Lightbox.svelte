@@ -9,6 +9,7 @@
   let display_src = src.replace(/\/upload\//, `/upload/w_${display_width}/`);
 
   let dialog;
+  let close_button;
   let intention = false;
 
   function showIntention() {
@@ -17,6 +18,7 @@
 
   function openLightbox() {
     dialog.showModal();
+    close_button.focus();
   }
 
   function closeLightbox() {
@@ -48,8 +50,7 @@
   <!-- svelte-ignore a11y-click-events-have-key-events -->
   <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
   <dialog bind:this={dialog} on:click={closeLightbox}>
-    <!-- svelte-ignore a11y-autofocus -->
-    <button class="lightbox__close" autofocus on:click={closeLightbox}>Close</button>
+    <button bind:this={close_button} class="lightbox__close" on:click={closeLightbox}>Close</button>
     {#if intention}
       <img class="lightbox__image_full" {src} {alt} {width} {height} />
     {/if}

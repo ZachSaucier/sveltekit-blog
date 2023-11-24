@@ -7,10 +7,10 @@ tags:
   - projects
   - css
   - svelte
-cover_image: https://res.cloudinary.com/desumhldo/image/upload/v1700535044/blog-comparison_oddqxi.webp
-cover_width: 6720
-cover_height: 1814
-cover_alt: The old version of the blog next to the new version of the blog
+cover_image: https://res.cloudinary.com/desumhldo/image/upload/w_1600/v1700621534/blog_ybcr0n.webp
+cover_width: 1600
+cover_height: 864
+cover_alt: A screenshot of the new blog.
 cover_in_post: false
 ---
 
