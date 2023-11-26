@@ -23,4 +23,6 @@
   <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </svelte:head>
 
-<a target="_blank" noreferrer class="twitter-share-button" {href} data-size="large"> Tweet</a>
+{#key query}
+  <a target="_blank" noreferrer class="twitter-share-button" {href} data-size="large"> Tweet</a>
+{/key}
