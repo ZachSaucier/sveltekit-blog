@@ -31,10 +31,6 @@
     } else {
       localStorage.setItem('theme', 'light');
     }
-
-    if (localStorage.collapsed) {
-      document.documentElement.classList.add('sidebar_start_collapsed');
-    }
   </script>
 </svelte:head>
 

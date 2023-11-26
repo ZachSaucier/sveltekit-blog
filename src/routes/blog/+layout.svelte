@@ -19,12 +19,13 @@
   let scrollY = 0;
 
   if (browser) {
-    collapsed = localStorage.collapsed;
+    collapsed = localStorage.collapsed === 'true';
+    document.documentElement.classList.remove('sidebar_start_collapsed');
   }
 
   function toggleCollapsed() {
     collapsed = !collapsed;
-    localStorage.setItem('collapsed', collapsed);
+    localStorage.setItem('collapsed', collapsed ? 'true' : 'false');
   }
 
   recent_posts.set(data.recent_posts);
@@ -67,6 +68,14 @@
     }
   };
 </script>
+
+<svelte:head>
+  <script>
+    if (localStorage.collapsed === 'true') {
+      document.documentElement.classList.add('sidebar_start_collapsed');
+    }
+  </script>
+</svelte:head>
 
 <svelte:window bind:innerWidth bind:scrollY />
 
