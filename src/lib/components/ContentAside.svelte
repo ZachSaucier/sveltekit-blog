@@ -10,7 +10,7 @@
   .content_aside {
     font-size: 13px;
     line-height: 1.65;
-    padding: 10px;
+    padding: 1rem 0.8rem;
     background-color: #ebebeb;
     border: 1px dashed #141414;
   }

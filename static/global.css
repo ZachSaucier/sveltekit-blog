@@ -109,6 +109,9 @@ html.dark {
   ); /* Approx #46adff */
   --link-color-visited: color-mix(in srgb, var(--link-color) 50%, #fff); /* Approx #0e5bf0 */
 
+  --link-color-dark: oklab(0.74 -0.11 -0.14);
+  --link-color-dark-hover: oklch(0.84 0.11 228.79);
+
   --border-dashed-color: rgb(176 176 176);
 }
 
@@ -146,8 +149,7 @@ code {
   font-family: var(--font-code);
 }
 
-a,
-a code {
+a {
   color: var(--link-color);
   text-decoration: none;
 
@@ -270,20 +272,21 @@ nav.toc {
 }
 
 html.dark {
+  & a {
+    color: var(--link-color-dark);
+  }
+
   & main a {
     color: var(--accent-dark);
   }
 
   & main article a {
-    color: var(--link-color-visited);
+    color: var(--link-color-dark);
 
-    &:visited {
-      color: var(--link-color);
-    }
-
+    &:visited,
     &:focus,
     &:hover {
-      color: var(--link-color-hover);
+      color: var(--link-color-dark-hover);
     }
   }
 
@@ -314,7 +317,7 @@ code {
   background-color: var(--background-color);
   font-size: 0.8em;
   line-height: 1.5em;
-  color: var(--accent-dark);
+  color: inherit;
   border-radius: 0.4em;
   border: 1px solid #ddd;
   padding: 0 0.3em;

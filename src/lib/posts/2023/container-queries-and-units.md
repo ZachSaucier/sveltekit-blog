@@ -11,6 +11,7 @@ draft: true
 
 <script>
 	import ContentAside from "$lib/components/ContentAside.svelte";
+  import CodePen from "$lib/components/CodePen.svelte";
 </script>
 
 ## What are container queries?
@@ -32,12 +33,20 @@ Here's what the above demo looks like using container queries and container quer
 Much nicer!
 
 <ContentAside>
-  <p>Container queries are separate from, but can be in used in combination with, [the `container` property](https://developer.mozilla.org/en-US/docs/Web/CSS/contain).</p>
+  <p>Container queries are separate from, but can be in used in combination with, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/contain">the <code>container</code> property</a>. The <code>container</code> property is useful for controlling how overflow is rendered.</p>
 </ContentAside>
 
 ### How to use container queries
 
-To use container queries, you must first define what your container(s) is going to be. You do this by defining a [`container-type`](https://developer.mozilla.org/en-US/docs/Web/CSS/container-type) and optionally a [`container-name`](https://developer.mozilla.org/en-US/docs/Web/CSS/container-name). The value of a `container-name` is of the [`<custom-indent>`](https://developer.mozilla.org/en-US/docs/Web/CSS/custom-ident) type.
+To use container queries, you must first define what your container is going to be. You do this by defining a [`container-type`](https://developer.mozilla.org/en-US/docs/Web/CSS/container-type)and optionally a [`container-name`](https://developer.mozilla.org/en-US/docs/Web/CSS/container-name).
+
+The `container-type` can have a value of `size`, `inline-size`, or `normal`. `size` establishes a query container for the inline and block dimensions as well as for style (which we will address at the end of this article). `inline-size` establishes a query container for the inline dimensions as well as for style. `normal` establishes a query container only for style.
+
+<ContentAside>
+  <p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/inline-size">Inline size</a> is equivalent to width for horizontal <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/writing-mode">writing modes</a> and equivalent to the height for vertical writing modes. The <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/block-size">block size</a> is the corresponding opposite.</p>
+</ContentAside>
+
+The `container-name` can be a value of the [`<custom-indent>`](https://developer.mozilla.org/en-US/docs/Web/CSS/custom-ident) type.
 
 You can also optionally use the `container` shorthand to define both. Such as:
 
@@ -102,8 +111,6 @@ Here's the list of container query units we currently have access to:
 
 The width and height values are pretty straightforward.
 
-[Inline size](https://developer.mozilla.org/en-US/docs/Web/CSS/inline-size) is equivalent to width for horizontal [writing modes](https://developer.mozilla.org/en-US/docs/Web/CSS/writing-mode) and equivalent to the height for vertical writing modes. The [block size](https://developer.mozilla.org/en-US/docs/Web/CSS/block-size) is the corresponding opposite.
-
 Min and max are also fairly straightforward.
 
 Of these, `cqi` will probably the most commonly used unit for those who want to build websites for international audiences.
@@ -124,7 +131,7 @@ Accessibility note: It's best to keep the logical order of things in markup.
 
 In addition to changing the layout, sometimes it makes sense to hide some of the less important information or decorative elements when a component is smaller. A great exactly of this is Chris Coyier's calendar layout demo:
 
-https://codepen.io/chriscoyier/pen/jOeBzNN
+<CodePen pen_title="Container Query Calendar" slug="jOeBzNN" username="chriscoyier" name="Chris Coyier" tab="css,result" />
 
 ### Fluid typography
 
@@ -139,6 +146,8 @@ Stephanie Eckles wrote a more in-depth article about [using container query unit
 ## When to use media queries instead
 
 Content queries and units free us up from having to always use breakpoints that are tied to the layout. However, there are cases where you want content to update based on the layout! That's when you should still use media queries—so content can be updated across multiple components at the same time.
+
+Another time to use media queries is when you're wanting to check certain features, such as `@media (not(hover)) { ... }` or `@media (not (color)) { ... }` (which checks if the display is monochrome).
 
 ## Browser support
 
