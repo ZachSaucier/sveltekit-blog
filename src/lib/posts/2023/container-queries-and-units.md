@@ -12,25 +12,28 @@ draft: true
 <script>
 	import ContentAside from "$lib/components/ContentAside.svelte";
   import CodePen from "$lib/components/CodePen.svelte";
+  import Lightbox from "$lib/components/Lightbox.svelte";
 </script>
 
 ## What are container queries?
 
 Container queries are similar to media queries but allow you to set styles based on the size of pre-defined containers in an element's ancestry tree.
 
-This is super handy because you can write CSS in a way that gives flexibility to the layout! We no longer have to tightly couple the layout of components with how those components are styled internally. In other words, you can set up components to respond to the container size without having to know the breakpoints of the overall page layout. Yay for increased isolation!
+This is super handy because you can write CSS in a way that gives flexibility to the layout! We no longer have to tightly couple the layout of components with how those components are styled internally.
 
-Let's look at a quick example. Here's how I might set up my CSS _before_ container queries:
+In other words, you can set up components to respond to the container size without having to know the breakpoints of the overall page layout. Yay for increased isolation!
 
-<!-- TODO -->
+Let's think about a theoretical example to illustrate this. Pulling from [Michelle Barker's helpful MDN article about container queries](https://developer.mozilla.org/en-US/blog/getting-started-with-css-container-queries/), here's a mockup:
 
-Note that the component has to know the breakpoints for the larger page layout to update properly. This is a pain to maintain, especially given the fact that you can't use CSS variables inside of media queries.
+<Lightbox src="https://developer.mozilla.org/en-US/blog/getting-started-with-css-container-queries/layout-desktop-01.webp" width="1600" height="1142" />
 
-Here's what the above demo looks like using container queries and container query units instead:
+Each article preview has the image on the left and copy on the right when there's more width available. When there's less room available, it stacks the image on top of the content.
 
-<!-- TODO -->
+Without container queries, we'd have to specify all of the cards that we want to have the vertical layout, which ones should have the horizontal layout, and which should have a bigger image explicitly. When you consider all possible screen sizes, this quickly becomes more complicated.
 
-Much nicer!
+Additionally, if there's a possibility for the sidebar to be collapsed or if you sometimes need to show additional content (like ads), it gets even more complex! Not to mention when the layout gets changed to something else, like you switch to having 3 column instead of 4, you have to go back and adjust everything.
+
+Container queries can help us more easily address this sort of situation in a much more manageable way!
 
 <ContentAside>
   <p>Container queries are separate from, but can be in used in combination with, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/contain">the <code>container</code> property</a>. The <code>container</code> property is useful for controlling how overflow is rendered.</p>
@@ -38,7 +41,7 @@ Much nicer!
 
 ### How to use container queries
 
-To use container queries, you must first define what your container is going to be. You do this by defining a [`container-type`](https://developer.mozilla.org/en-US/docs/Web/CSS/container-type)and optionally a [`container-name`](https://developer.mozilla.org/en-US/docs/Web/CSS/container-name).
+To use container queries, you must first define what your container is going to be. You do this by defining a [`container-type`](https://developer.mozilla.org/en-US/docs/Web/CSS/container-type) and optionally a [`container-name`](https://developer.mozilla.org/en-US/docs/Web/CSS/container-name).
 
 The `container-type` can have a value of `size`, `inline-size`, or `normal`. `size` establishes a query container for the inline and block dimensions as well as for style (which we will address at the end of this article). `inline-size` establishes a query container for the inline dimensions as well as for style. `normal` establishes a query container only for style.
 

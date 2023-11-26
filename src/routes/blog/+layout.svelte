@@ -1,7 +1,8 @@
 <script>
-  import { preloadCode } from '$app/navigation';
   import { onMount } from 'svelte';
   import { fade } from 'svelte/transition';
+  import { preloadCode } from '$app/navigation';
+  import { browser } from '$app/environment';
 
   import { current_page, recent_posts } from '$lib/utilities/store';
   import { nav_items } from '$lib/config';
@@ -16,6 +17,15 @@
   let collapsed = false;
   let innerWidth = 0;
   let scrollY = 0;
+
+  if (browser) {
+    collapsed = localStorage.collapsed;
+  }
+
+  function toggleCollapsed() {
+    collapsed = !collapsed;
+    localStorage.setItem('collapsed', collapsed);
+  }
 
   recent_posts.set(data.recent_posts);
 
@@ -65,7 +75,7 @@
     <button
       class="collapse_button"
       aria-pressed={collapsed}
-      on:click={() => (collapsed = !collapsed)}
+      on:click={toggleCollapsed}
       title={collapsed ? 'Open sidebar' : 'Collapse sidebar'}
       style={`transform: translateX(${translateX()}) translateY(-${Math.min(scrollY, 210)}px)`}
     >
@@ -128,6 +138,7 @@
     }
   }
 
+  :global(.sidebar_start_collapsed .outer_container),
   .outer_container.collapsed {
     grid-template-areas:
       'Header Header'
