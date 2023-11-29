@@ -15,7 +15,7 @@
   export let data;
 
   let collapsed = false;
-  let innerWidth = 0;
+  let innerWidth = 1200;
   let scrollY = 0;
 
   if (browser) {
