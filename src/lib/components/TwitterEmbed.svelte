@@ -6,7 +6,7 @@
   let theme = 'light';
 
   if (browser) {
-    theme = localStorage.theme;
+    theme = getCookie('theme');
   }
 </script>
 

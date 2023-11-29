@@ -11,21 +11,21 @@
   import Header from '$lib/components/Header.svelte';
   import Sidebar from '$lib/components/Sidebar.svelte';
   import Footer from '$lib/components/Footer.svelte';
+  import { setCookie } from '$lib/utilities/cookies.js';
 
   export let data;
 
-  let collapsed = false;
-  let innerWidth = 1200;
+  let collapsed = data.collapsed === 'true';
+  let innerWidth = parseInt(data.innerWidth) || 1200;
   let scrollY = 0;
-
-  if (browser) {
-    collapsed = localStorage.collapsed === 'true';
-    document.documentElement.classList.remove('sidebar_start_collapsed');
-  }
 
   function toggleCollapsed() {
     collapsed = !collapsed;
-    localStorage.setItem('collapsed', collapsed ? 'true' : 'false');
+    setCookie('collapsed', collapsed ? 'true' : 'false');
+  }
+
+  function handleResize() {
+    setCookie('innerWidth', innerWidth);
   }
 
   recent_posts.set(data.recent_posts);
@@ -69,15 +69,7 @@
   };
 </script>
 
-<svelte:head>
-  <script>
-    if (localStorage.collapsed === 'true') {
-      document.documentElement.classList.add('sidebar_start_collapsed');
-    }
-  </script>
-</svelte:head>
-
-<svelte:window bind:innerWidth bind:scrollY />
+<svelte:window bind:innerWidth bind:scrollY on:resize={handleResize} />
 
 <div class="outer_container" class:collapsed>
   {#if innerWidth >= 1200}
@@ -147,7 +139,6 @@
     }
   }
 
-  :global(.sidebar_start_collapsed .outer_container),
   .outer_container.collapsed {
     grid-template-areas:
       'Header Header'
@@ -197,6 +188,7 @@
     color: var(--grayed-text);
     background-color: var(--background-color);
     border-bottom-right-radius: 4px;
+    transition: opacity 0.2s linear;
 
     &:hover {
       background-color: var(--accent-dark);

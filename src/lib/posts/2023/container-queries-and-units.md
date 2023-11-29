@@ -23,6 +23,8 @@ This is super handy because you can write CSS in a way that gives flexibility to
 
 In other words, you can set up components to respond to the container size without having to know the breakpoints of the overall page layout. Yay for increased isolation!
 
+<span class="excerpt_marker"></span>
+
 Let's think about a theoretical example to illustrate this. Pulling from [Michelle Barker's helpful MDN article about container queries](https://developer.mozilla.org/en-US/blog/getting-started-with-css-container-queries/), here's a mockup:
 
 <Lightbox src="https://developer.mozilla.org/en-US/blog/getting-started-with-css-container-queries/layout-desktop-01.webp" width="1600" height="1142" />

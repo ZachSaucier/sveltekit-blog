@@ -1,17 +1,28 @@
 <script>
   import { browser } from '$app/environment';
+  import { getCookie, setCookie } from '$lib/utilities/cookies';
   import Icon from '$lib/components/Icon.svelte';
 
   let is_dark_mode = false;
 
   if (browser) {
-    is_dark_mode = localStorage.theme === 'dark' ? true : false;
+    const set_mode = getCookie('theme');
+    if (set_mode) {
+      if (set_mode === 'dark') {
+        document.documentElement.classList.add('dark');
+      }
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.documentElement.classList.add('dark');
+      setCookie('theme', 'dark');
+    } else {
+      setCookie('theme', 'light');
+    }
   }
 
   function handleSwitchDarkMode() {
     is_dark_mode = !is_dark_mode;
 
-    localStorage.setItem('theme', is_dark_mode ? 'dark' : 'light');
+    setCookie('theme', is_dark_mode ? 'dark' : 'light');
 
     is_dark_mode
       ? document.documentElement.classList.add('dark')
@@ -21,15 +32,15 @@
 
 <svelte:head>
   <script>
-    if (localStorage.theme) {
-      if (localStorage.theme === 'dark') {
+    const getInitCookie = (cookieName) =>
+      (document.cookie.match(`(^|;) *${cookieName}=([^;]*)`) || [])[2];
+
+    if (getInitCookie('theme')) {
+      if (getInitCookie('theme') === 'dark') {
         document.documentElement.classList.add('dark');
       }
     } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
       document.documentElement.classList.add('dark');
-      localStorage.setItem('theme', 'dark');
-    } else {
-      localStorage.setItem('theme', 'light');
     }
   </script>
 </svelte:head>
