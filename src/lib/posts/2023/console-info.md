@@ -48,17 +48,15 @@ From there I added a CSS keyframe animation. It also worked! So I already knew t
 
 ### Attempting to add JavaScript
 
-Even though I was content just using CSS animation, I naturally had to also test to see if using a `<script>` tag inside of the `console.info` SVG would work. In my mind, surely it wouldn't work because "security" and "circular references", right?
+Even though I was content just using a CSS animation for my SVG, I naturally had to also test to see if using a `<script>` tag inside of the `console.info` SVG would work. In my mind, surely it wouldn't work because "security" and "circular references", right?
 
-To my surprised, my `console.log('test')` worked great! Even more surprising, the log was placed _before_ the SVG that was rendered in the console. I don't really understand why... Maybe it's because the browser renders the SVG as its own page and then logs it to the console?
+My first test was just placing a `console.log` in a script tag in the SVG. To my surprise, it showed up!
 
-And, of course, the next thing I had to try was a `console.info` inside of a `console.info`. Sure enough, it works as well! Even having a `console.log` inside of the `console.info` that's inside of a `console.info` works 🤯.
+However, it logged _before_ the `console.info`. After a while of being confused, I realized that the log was from the HTML and not from the script inside the `console.info` SVG.
 
-At this point, I was absolutely tickled with what I had discovered. This is such a cool and surprising little potential feature!
+To make sure that future tests were done properly, I made sure to clear the console properly before running the `console.info`.
 
-Also at this point, I was pretty sure most most anything would work inside of the script tag.
-
-I tested DOM references by switching out some of the text using:
+Then I did another test: using a DOM reference and changing the SVG text:
 
 ```html
 <tspan id="line1">thanks for</tspan>
@@ -69,13 +67,15 @@ I tested DOM references by switching out some of the text using:
 </script>
 ```
 
-Worked great. So you could do something like scramble text for SVG content in the console no problem.
+It worked! So some level of JavaScript was supported. Just not `console.log`s.
 
-I then tried using the `prompt` method to get user's input to set the text. This worked.
+I tried putting a `console.log` inside of a `setTimeout` to see if it would work around the limitation. It didn't. Neither did `console.info`.
 
-`window.addEventListener("load", () => ...)` worked well.
+Next I tried multiple script tags and global variables. They worked!
 
-Tried importing a third party script but couldn't get it working
+Then I moved on to loading external scripts (I tested with GSAP). Sadly, no luck.
+
+I then tried using `prompt` to get user input. Didn't work.
 
 ## My `console.info` attempt
 
