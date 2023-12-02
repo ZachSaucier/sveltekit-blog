@@ -6,9 +6,10 @@
   let is_dark_mode = false;
 
   if (browser) {
-    const set_mode = getCookie('theme');
-    if (set_mode) {
-      if (set_mode === 'dark') {
+    const theme_cookie = getCookie('theme');
+    is_dark_mode = theme_cookie === 'dark';
+    if (theme_cookie) {
+      if (theme_cookie === 'dark') {
         document.documentElement.classList.add('dark');
       }
     } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
@@ -52,8 +53,10 @@
   on:click={handleSwitchDarkMode}
   type="checkbox"
 />
-<label for="theme_toggle">
-  <Icon type="ThemeToggle" state={{ is_dark_mode }} width={29} />
+
+<label for="theme_toggle" title={is_dark_mode ? 'Switch to light theme' : 'Switch to dark theme'}>
+  <Icon type="Sun" width={29} />
+  <Icon type="Moon" width={29} />
 </label>
 
 <style>
