@@ -54,7 +54,7 @@
   type="checkbox"
 />
 
-<label for="theme_toggle" title={is_dark_mode ? 'Switch to light theme' : 'Switch to dark theme'}>
+<label for="theme_toggle">
   <Icon type="Sun" width={29} />
   <Icon type="Moon" width={29} />
 </label>
