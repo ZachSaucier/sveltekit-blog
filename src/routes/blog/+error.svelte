@@ -23,6 +23,6 @@
 
 <style>
   footer {
-    margin-top: 2em;
+    margin-block-start: 2em;
   }
 </style>

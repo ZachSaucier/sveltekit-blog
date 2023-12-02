@@ -53,8 +53,7 @@
     text-decoration: none;
   }
 
-  a:hover,
-  a:focus {
+  a:is(:hover, :focus) {
     text-decoration: underline;
   }
 
@@ -63,7 +62,7 @@
 
     @media (max-width: 749px) {
       font-size: 16px;
-      margin-bottom: 4px;
+      margin-block-end: 4px;
     }
   }
 
@@ -80,7 +79,7 @@
   }
 
   .search_item {
-    margin-right: -10px;
+    margin-inline-end: -10px;
 
     @media (max-width: 416px) {
       display: none;
@@ -106,7 +105,7 @@
   }
 
   .theme_toggle_item {
-    margin-right: -5px;
+    margin-inline-end: -5px;
   }
 
   .rss_link {

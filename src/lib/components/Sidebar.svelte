@@ -137,13 +137,13 @@
 
   h1 {
     font-size: 1.2rem;
-    margin-bottom: 0.4em;
+    margin-block-end: 0.4em;
     padding-bottom: 0.2em;
     border-bottom: var(--border-sidebar);
   }
 
   section {
-    margin-bottom: 1.5rem;
+    margin-block-end: 1.5rem;
   }
 
   p {
@@ -161,11 +161,11 @@
   li {
     padding: 0.5em 0;
     border-bottom: 1px solid #ededed;
-    margin-bottom: 0.4em;
+    margin-block-end: 0.4em;
   }
 
   form {
-    margin-top: 0.3em;
+    margin-block-start: 0.3em;
   }
 
   .socials {
@@ -181,7 +181,7 @@
     & li {
       padding: 0;
       border-bottom: 0;
-      margin-bottom: 0;
+      margin-block-end: 0;
     }
   }
 

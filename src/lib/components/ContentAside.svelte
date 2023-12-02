@@ -15,7 +15,7 @@
     border: 1px dashed #141414;
   }
   .content_aside:not(:last-child) {
-    margin-bottom: 1rem;
+    margin-block-end: 1rem;
   }
 
   .content_aside--ad {

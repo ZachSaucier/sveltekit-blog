@@ -41,14 +41,14 @@
   }
 
   footer {
-    margin-top: 1em;
+    margin-block-start: 1em;
   }
 
   .read_on {
     display: inline-block;
     padding: 0.4em 0.8em;
-    margin-right: 0.5em;
-    margin-top: 1rem;
+    margin-inline-end: 0.5em;
+    margin-block-start: 1rem;
     text-decoration: none;
 
     &::after {
@@ -58,7 +58,7 @@
       transition: 0.15s;
     }
 
-    &:hover::after {
+    &:is(:hover, :focus)::after {
       transform: translateX(6px);
     }
   }

@@ -57,8 +57,7 @@
     outline: 0 none;
   }
 
-  :global(blockquote.twitter-tweet a:hover),
-  :global(blockquote.twitter-tweet a:focus) {
+  :global(blockquote.twitter-tweet a:is(:hover, :focus)) {
     text-decoration: underline;
   }
 </style>

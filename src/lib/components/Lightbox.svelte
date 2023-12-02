@@ -65,7 +65,7 @@
     border-radius: 0.3rem;
     border: var(--background-color) 0.5rem solid;
     box-shadow: rgba(0, 0, 0, 0.15) 0 1px 4px;
-    margin-bottom: 0.5rem;
+    margin-block-end: 0.5rem;
   }
 
   :global(html.dark .lightbox__button_open) {

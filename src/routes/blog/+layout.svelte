@@ -190,7 +190,7 @@
     border-bottom-right-radius: 4px;
     transition: opacity 0.2s linear;
 
-    &:hover {
+    &:is(:hover, :focus) {
       background-color: var(--accent-dark);
       color: var(--background-color);
     }
@@ -201,7 +201,7 @@
     }
   }
 
-  :global(html.dark .collapse_button.collapse_button:hover) {
+  :global(html.dark .collapse_button.collapse_button:is(:hover, :focus)) {
     background-color: #fff;
   }
 

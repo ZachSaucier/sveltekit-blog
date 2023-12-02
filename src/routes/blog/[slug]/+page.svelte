@@ -130,7 +130,7 @@
 
     & li:not(:last-child)::after {
       content: ', ';
-      margin-left: -5px;
+      margin-inline-start: -5px;
     }
   }
 </style>

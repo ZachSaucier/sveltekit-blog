@@ -12,7 +12,7 @@
 <style>
   header {
     font-family: var(--font-sans-serif);
-    margin-bottom: 1em;
+    margin-block-end: 1em;
     padding-bottom: 0.5em;
     background: var(--border-dashed);
     display: flex;

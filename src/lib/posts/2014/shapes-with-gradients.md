@@ -150,15 +150,15 @@ And that about wraps up what I have to offer on the subject. If you liked this y
 }
 
 .triangleBorder::before {
-  margin-top: -100px;
-  margin-left: -100px;
+  margin-block-start: -100px;
+  margin-inline-start: -100px;
   border-width: 200px 100px 0 100px;
   border-color: black transparent transparent transparent;
 }
 
 .triangleBorder::after {
-  margin-top: -90px;
-  margin-left: -80px;
+  margin-block-start: -90px;
+  margin-inline-start: -80px;
   border-width: 165px 80px 0 80px;
   border-color: teal transparent transparent transparent;
 }

@@ -72,20 +72,20 @@
   a {
     color: inherit;
 
-    &:hover {
+    &:is(:hover, :focus) {
       color: var(--link-color-hover);
     }
   }
 
   h1 {
     font-size: 1.5rem;
-    margin-top: 0;
+    margin-block-start: 0;
   }
 
   footer {
     color: var(--grayed-text);
     font-family: var(--font-sans-serif);
-    margin-bottom: 0.1em;
+    margin-block-end: 0.1em;
   }
 
   @media (max-width: 530px) {

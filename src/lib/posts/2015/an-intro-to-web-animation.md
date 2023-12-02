@@ -135,7 +135,7 @@ But first we need to do some preparation with our CSS. Let’s remove the hover 
   height: 300px;
   background: #b41b04;
   padding: 20px;
-  margin-bottom: 15px;
+  margin-block-end: 15px;
   font-size: 2rem;
   transition: 0.3s, transform 1s;
 }
