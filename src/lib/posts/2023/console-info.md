@@ -14,7 +14,7 @@ draft: true
   import Lightbox from "$lib/components/Lightbox.svelte";
 </script>
 
-I heard saw `console.info` for more stylistic purposes in Ahmad Shadeed's [post breaking down the Photoshop web application](https://ishadeed.com/article/photoshop-web-css#photoshop-old-logo). When I [was refreshing my blog](/blog/blog-refresh-2023/), I thought it would be fun to add something like that to my own site.
+I first saw `console.info` for more stylistic purposes in Ahmad Shadeed's [post breaking down the Photoshop web application](https://ishadeed.com/article/photoshop-web-css#photoshop-old-logo). When I [was refreshing my blog](/blog/blog-refresh-2023/), I thought it would be fun to add something like that to my own site.
 
 However, I love animation and was wondering if I could animate it somehow. This led me to explore a bit and this post is what I learned!
 
@@ -26,25 +26,31 @@ However, I love animation and was wondering if I could animate it somehow. This 
   <p>Note: Using <code>console.info</code> in this way is very experimental and these results are likely to be inaccurate at some point in the future.
 </ContentAside>
 
-The web Photoshop app doesn't support Safari (I feel you, Adobe. I feel you.) so I pasted the code directly into the console to test. I saw that it looks like a bunch of jibberish:
+### Safari
 
-Firefox
+The Photoshop web app doesn't support Safari (I feel you, Adobe. I feel you.) so I pasted the code directly into the Safari console to test. I saw that it looks like a bunch of jibberish:
 
-Edge
+### Firefox
 
-TL;DR: Only Chrome supports this more complicated rendering inside of `console.info`.
+### Edge
+
+### Chrome
+
+Only Chrome supports this more complicated rendering inside of `console.info`.
 
 ## Exploring the capabilities of `console.info`
 
-At first I was just copying, pasting, and modifying `console.info`s in my dev tools console directly. This worked fine for a bit but it was kind of a hassle. Writing the HTML in a text editor and then pasting that into Yoksel's [SVG URL encoder](https://yoksel.github.io/url-encoder/) made it more palatable.
+To explore what all we are able to do inside of a `console.info` message, I started by simply copying, pasting, and modifying `console.info`s directly in my dev tools console. Once I realized it was going to take a bit longer to explore all that I wanted to explore, I started writing the HTML in a text editor, then pasting that into Yoksel's [SVG URL encoder](https://yoksel.github.io/url-encoder/), and then pasting that into a `console.info` in the console.
 
-But given how many tests I was doing, making [a CodePen](https://codepen.io/ZachSaucier/pen/GRzypKq?editors=0010) that could automatically convert my HTML SVG into a data image, put it into a `console.info`, and run it ended up saving me a lot of time.
+However, as I continued to test, I ended up making [a CodePen](https://codepen.io/ZachSaucier/pen/GRzypKq?editors=0010) that could automatically convert my HTML SVG into a data image, put it into a `console.info`, and run it for me. This ended up saving me a good bit of effort.
 
-### Attempting to use the style tag
+### Attempting to use the style tag and CSS animations
 
 I already knew from the Adobe usage that SVGs were supported in at least a basic capacity. I checked to see if it supported `<style>` tags inside of the SVG. Thankfully, but not too surprisingly, it worked!
 
 From there I added a CSS keyframe animation. It also worked! So I already knew that I could use it to animate the SVG inside of a `console.info`.
+
+I tried using `:hover` to see if I could make it interactive: Nope.
 
 ### Attempting to add JavaScript
 
@@ -52,7 +58,7 @@ Even though I was content just using a CSS animation for my SVG, I naturally had
 
 My first test was just placing a `console.log` in a script tag in the SVG. To my surprise, it showed up!
 
-However, it logged _before_ the `console.info`. After a while of being confused, I realized that the log was from the HTML and not from the script inside the `console.info` SVG.
+However, it logged _before_ the `console.info`. After a while of being confused, I realized that the log was from the HTML version of the SVG and not from the script inside the `console.info` SVG. If it worked, it would have showed _two_ console logs, one before the `console.info` and the other one after it.
 
 To make sure that future tests were done properly, I made sure to clear the console properly before running the `console.info`.
 
@@ -76,6 +82,14 @@ Next I tried multiple script tags and global variables. They worked!
 Then I moved on to loading external scripts (I tested with GSAP). Sadly, no luck.
 
 I then tried using `prompt` to get user input. Didn't work.
+
+## Exploring what SVG options work
+
+Using an `<a>` tag: No go.
+
+`stroke-dashoffset` animation (line drawing animation): Works!
+
+TODO investigate when console opens and fire animation then
 
 ## My `console.info` attempt
 
