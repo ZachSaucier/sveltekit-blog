@@ -34,3 +34,9 @@
     >
   </p>
 {/key}
+
+<style>
+  :global(.cp_embed_wrapper) {
+    margin-block-end: 1rem;
+  }
+</style>
