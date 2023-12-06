@@ -38,6 +38,11 @@
   </ol>
 </Section>
 
+<section class="draft-posts">
+  <a href="/blog/container-queries-and-units">1</a>
+  <a href="/blog/console-delight">1</a>
+</section>
+
 <style>
   @counter-style plain-number {
     system: extends decimal;
@@ -103,5 +108,9 @@
     article {
       padding: 2.7em 0 0.7em 0;
     }
+  }
+
+  .draft-posts {
+    display: none;
   }
 </style>
