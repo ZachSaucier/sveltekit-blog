@@ -38,7 +38,7 @@
   </ol>
 </Section>
 
-<section class="draft-posts">
+<section class="draft_posts">
   <a href="/blog/container-queries-and-units">1</a>
   <a href="/blog/console-delight">1</a>
 </section>
@@ -110,7 +110,7 @@
     }
   }
 
-  .draft-posts {
+  .draft_posts {
     display: none;
   }
 </style>

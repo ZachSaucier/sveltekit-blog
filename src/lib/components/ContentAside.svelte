@@ -40,4 +40,8 @@
   :global(html.dark .content_aside--ad) {
     color: var(--accent-dark);
   }
+
+  :global(.content_aside :is(h1, h2, h3, h4, h5, h6)) {
+    margin-block-start: 0;
+  }
 </style>
