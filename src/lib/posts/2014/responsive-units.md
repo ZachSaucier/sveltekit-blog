@@ -55,14 +55,9 @@ Instead of sizing our elements absolutely, requiring several media queries to re
 
 Using relative units also allows us to make changes to the content more easily in the future. Instead of having to rethink all of our layout because a new element is slightly larger than the previous, we can let our sizing and positioning be more malleable. This give us more breathing room as to what’s acceptable. Having relative sizing also goes hand in hand with how we position our elements which is for another post.
 
-[^1]:
-    1. Units like pixels are arguably not “absolute” because pixels are rendered differently across different devices, but that’s a separate issue.
-
-[^2]:
-    2. Some people may talk about a `ch` unit which is like `ex` but based on the width of the 0 character. It is not in the W3 spec and is not well supported.
-
-[^3]:
-    3. An element can be taken out of its parent’s stacking context by positioning it absolutely while statically positioning its parent.
+[^1]: Units like pixels are arguably not “absolute” because pixels are rendered differently across different devices, but that’s a separate issue.
+[^2]: Some people may talk about a `ch` unit which is like `ex` but based on the width of the 0 character. It is not in the W3 spec and is not well supported.
+[^3]: An element can be taken out of its parent’s stacking context by positioning it absolutely while statically positioning its parent.
 
 <ContentAside>
   The next section was written by <a href="https://jordan.matelsky.com/">Jordan Matelsky</a>

@@ -24,6 +24,7 @@
     "rehype-slug": "^5.1.0",
     "rehype-toc": "^3.0.2",
     "rehype-widont": "^0.1.1",
+    "remark-footnotes": "2.0",
     "remark-gfm": "^4.0.0",
     "svelte": "^4.0.0",
     "svelte-preprocess": "^5.0.4",

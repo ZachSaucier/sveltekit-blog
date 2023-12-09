@@ -52,7 +52,7 @@ console.info(
 
 Here's what is looks like Chrome (I use dark mode):
 
-<!-- TODO -->
+<Lightbox src="https://res.cloudinary.com/desumhldo/image/upload/v1702131548/console-delight/console-info-chrome_iazb3v.webp" width="782" height="78" />
 
 You can probably already guess, the `%c`s correspond to the strings that follow. Each one starts a new style section, seemingly like an `inline-block` element.
 
@@ -75,15 +75,17 @@ Interestingly, a character (like the space I included to the right of the `%c` a
 
 Here's what Adobe's `console.info` command looks like in various browsers:
 
-### Safari
+**Safari**
 
-The Photoshop web app doesn't support Safari (I feel you, Adobe. I feel you.) so I pasted the code directly into the Safari console to test. I saw that it looks like a bunch of jibberish:
+The Photoshop web app doesn't support Safari (I feel you, Adobe. I feel you.) so I pasted the code directly into the Safari console to test. It just prints the raw text and ignores the CSS:
 
-### Firefox
+<Lightbox src="https://res.cloudinary.com/desumhldo/image/upload/v1702131549/console-delight/console-info-safari_yxertc.webp" width="1844" height="74" />
 
-### Edge
+**Firefox**
 
-### Chrome
+**Edge**
+
+**Chrome**
 
 Chrome is what I used to show the original image. As such, only Chrome supports this more complicated rendering inside of console as of this time (but I hope this article will spur some other browsers to add support for this!).
 
@@ -101,132 +103,44 @@ However, as I continued to test, I ended up making [a CodePen](https://codepen.i
 
 **Note:** It's important that the SVG has `xmlns="http://www.w3.org/2000/svg"`! If it doesn't, it won't render, even in Chrome.
 
-<table>
-  <thead>
-    <tr>
-      <td>Capability</td>
-      <td>Supported?</td>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>&lt;a&gt;</code> tag</td>
-      <td>🚫</td>
-    </tr>
-    <tr>
-      <td>External images</td>
-      <td>🚫</td>
-    </tr>
-    <tr>
-      <td>SMIL animation</td>
-      <td>✅</td>
-    </tr>
-    <tr>
-      <td><code>foreignObject</code></td>
-      <td>✅<sup>1</sup></td>
-    </tr>
-  </tbody>
-</table>
+| Capability      | Supported? |
+| --------------- | :--------: |
+| `<a>` tag       |     ❌     |
+| External images |     ❌     |
+| SMIL animation  |     ✅     |
+| `foreignObject` |   ✅[^1]   |
 
-1: `foreignObject` works!! But only if `xmlns="http://www.w3.org/1999/xhtml"` is set on the outermost element. Also note that the HTML content has the same sort of restrictions that the SVG itself has, as discussed in this article (no `<a>` tags, etc.).
+[^1]: `foreignObject` works!! But only if `xmlns="http://www.w3.org/1999/xhtml"` is set on the outermost element. Also note that the HTML content has the same sort of restrictions that the SVG itself has, as discussed in this article (no `<a>` tags, etc.).
 
 ### CSS capabilities
 
-<table>
-  <thead>
-    <tr>
-      <td>Capability</td>
-      <td>Supported?</td>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>CSS animations</td>
-      <td>✅</td>
-    </tr>
-    <tr>
-      <td><code>:hover</code></td>
-      <td>🚫</td>
-    </tr>
-    <tr>
-      <td>CSS variables</td>
-      <td>✅<sup>2</sup></td>
-    </tr>
-    <tr>
-      <td>Viewport units</td>
-      <td>✅<sup>3</sup></td>
-    </tr>
-    <tr>
-      <td><code>background-image: linear-gradient()</code></td>
-      <td>✅</td>
-    </tr>
-    <tr>
-      <td><code>background-image: url()</code></td>
-      <td>🚫</td>
-    </tr>
-  </tbody>
-</table>
+| Capability                            | Supported? |
+| ------------------------------------- | :--------: |
+| CSS animations                        |     ✅     |
+| `:hover`                              |     ❌     |
+| CSS variables                         |   ✅[^2]   |
+| Viewport units                        |   ✅[^3]   |
+| `background-image: linear-gradient()` |     ✅     |
+| `background-image: url()`             |     ❌     |
 
-2: Note that CSS variable usage _cannot_ be inherited from the scope outside of the SVG (i.e. from your webpage).
-
-3: I was very surprised to see viewport units work! They seem to use the SVG's size as the viewport upon initial inspection.
+[^2]: Note that CSS variable usage _cannot_ be inherited from the scope outside of the SVG (i.e. from your webpage).
+[^3]: I was very surprised to see viewport units work! They seem to use the SVG's size as the viewport upon initial inspection.
 
 ### JavaScript capabilities
 
-<table>
-  <thead>
-    <tr>
-      <td>Capability</td>
-      <td>Supported?</td>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Console commands</td>
-      <td>🚫</td>
-    </tr>
-    <tr>
-      <td>DOM references within the SVG</td>
-      <td>✅</td>
-    </tr>
-    <tr>
-      <td>DOM reference to the SVG itself</td>
-      <td>✅</td>
-    </tr>
-    <tr>
-      <td><code>setTimeout</code></td>
-      <td>✅</td>
-    </tr>
-    <tr>
-      <td>"Global" variables via multiple <code>&lt;script&gt;</code> tags</td>
-      <td>✅</td>
-    </tr>
-    <tr>
-      <td>Importing external JS</td>
-      <td>🚫</td>
-    </tr>
-    <tr>
-      <td><code>prompt</code></td>
-      <td>🚫</td>
-    </tr>
-    <tr>
-      <td>WAAPI</td>
-      <td>🚫</td>
-    </tr>
-    <tr>
-      <td><code>new Date</code></td>
-      <td>🚫</td>
-    </tr>
-    <tr>
-      <td><code>.addEventListener</code></td>
-      <td>✅</td>
-    </tr>
-    <tr>
-      <td><code>Setting CSS variables</code></td>
-      <td>✅</td>
-    </tr>
-  </tbody>
-</table>
+| Capability                                      | Supported? |
+| ----------------------------------------------- | :--------: |
+| Console commands                                |     ✅     |
+| DOM references within the SVG                   |     ✅     |
+| DOM reference to the SVG itself                 |     ✅     |
+| DOM reference outside of the SVG                |     ❌     |
+| `setTimeout`                                    |     ✅     |
+| "Global" variables via multiple `<script>` tags |     ✅     |
+| Setting CSS variables                           |     ✅     |
+| Importing external JS                           |     ❌     |
+| `prompt`                                        |     ❌     |
+| WAAPI                                           |     ❌     |
+| `.addEventListener`                             |     ❌     |
 
 ## Some interesting effects to inspire you
 

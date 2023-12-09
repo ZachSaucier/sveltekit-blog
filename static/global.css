@@ -46,6 +46,10 @@ summary {
   border: 0;
 }
 
+.text_center {
+  text-align: center;
+}
+
 html {
   --bright-teal: oklch(69.71% 0.195 236.12);
 
@@ -175,6 +179,17 @@ button,
   &:is(:hover, :focus) {
     background-color: var(--link-color-hover);
   }
+}
+
+table {
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+}
+
+:is(th, td) {
+  font-weight: normal;
+  padding: 0.3rem 0.6rem;
+  border: 1px solid var(--gray-accent);
 }
 
 html.dark button,

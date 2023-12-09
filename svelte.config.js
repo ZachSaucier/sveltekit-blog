@@ -8,6 +8,7 @@ import rehypeToc from '@jsdevtools/rehype-toc';
 import { rehypeAccessibleEmojis } from 'rehype-accessible-emojis';
 import rehypeWidont from 'rehype-widont';
 import remarkGfm from 'remark-gfm';
+import remarkFootnotes from 'remark-footnotes';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -52,7 +53,7 @@ const config = {
         rehypeWidont,
       ],
 
-      remarkPlugins: [remarkGfm],
+      remarkPlugins: [remarkGfm, remarkFootnotes],
     }),
     importAssets(),
     preprocess(),
