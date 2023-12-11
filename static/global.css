@@ -34,6 +34,9 @@ hr {
 summary {
   cursor: pointer;
 }
+sup {
+  margin-left: 3px;
+}
 
 .sr-only {
   position: absolute;
@@ -224,7 +227,7 @@ article {
   & :is(ul, ol) {
     list-style: disc;
     margin-inline-start: 0;
-    padding-inline-start: 20px;
+    padding-inline-start: 1.2rem;
   }
 
   & ol {
