@@ -78,7 +78,7 @@ console.info(
 
 Here's what is looks like in Chrome and Edge (I use dark mode):
 
-<Lightbox src="https://res.cloudinary.com/desumhldo/image/upload/v1702131548/console-delight/console-info-chrome_iazb3v.webp" width="782" height="78" />
+<Lightbox src="https://res.cloudinary.com/desumhldo/image/upload/v1702131548/console-delight/console-info-chrome_iazb3v.webp" width="782" height="78" alt="An SVG image of an eye followed by three pills, which say 'Adobe Photoshop Web', '2023.23.0.1', and '037a8af9746', each in a different color." />
 
 You can probably already guess, the `%c`s correspond to the strings that follow. Each one starts a new element that has `display: inline`.
 
@@ -126,6 +126,7 @@ Interestingly, a character (like the space I included to the right of the `%c` a
 | `background-image: linear-gradient()` |     ✅     |
 | `background-image: url()`             |     ❌     |
 | `@import`                             |     ❌     |
+| `background-clip`                     |     ❌     |
 
 [^3]: Note that CSS variable usage _cannot_ be inherited from the scope outside of the SVG (i.e. from your webpage).
 [^4]: Viewport units for elements inside of the SVG. I was surprised to! They seem to use the SVG's size as the viewport upon initial inspection.
@@ -138,13 +139,17 @@ Interestingly, a character (like the space I included to the right of the `%c` a
 | DOM references within the SVG                   |     ✅     |
 | DOM reference to the SVG itself                 |     ✅     |
 | DOM reference outside of the SVG                |     ❌     |
-| `setTimeout`                                    |     ✅     |
+| Changing the SVG's DOM (attributes, text, etc.) |     ✅     |
+| `setTimeout`                                    |   ❌[^5]   |
+| `requestAnimationFrame`                         |   ❌[^5]   |
+| WAAPI                                           |     ❌     |
 | "Global" variables via multiple `<script>` tags |     ✅     |
 | Setting CSS variables                           |     ✅     |
 | Importing external JS                           |     ❌     |
 | `prompt`                                        |     ❌     |
-| WAAPI                                           |     ❌     |
 | `.addEventListener`                             |     ❌     |
+
+[^5]: It looks like it runs a only before the console message is posted but none afterwards.
 
 ## Rendering HTML inside of the SVG
 
@@ -293,7 +298,7 @@ This is what you saw earlier in the article.
 
 Firefox fails to set the proper height of the background image and cuts off the SVG a bit:
 
-<Lightbox src="https://res.cloudinary.com/desumhldo/image/upload/v1702266191/console-delight/console-info-firefox_hgoffa.webp" width="768" height="84" />
+<Lightbox src="https://res.cloudinary.com/desumhldo/image/upload/v1702266191/console-delight/console-info-firefox_hgoffa.webp" width="768" height="84"  alt="The same console message as before but with the SVG misplaced and cut off and the tops of the pills are cut off." />
 
 I got it to appear the same using some guess and check:
 
@@ -312,7 +317,7 @@ console.info(
 
 However, this throws off the position of the SVG in Chrome and Edge:
 
-<Lightbox src="https://res.cloudinary.com/desumhldo/image/upload/v1702266191/console-delight/console-info-firefox-in-chrome_wgjdme.webp" width="792" height="120" />
+<Lightbox src="https://res.cloudinary.com/desumhldo/image/upload/v1702266191/console-delight/console-info-firefox-in-chrome_wgjdme.webp" width="792" height="120" alt="The console message rendering correctly other than the SVG being misplaced by being above where it should be." />
 
 It seems like for Firefox you have to basically double the height: use the height for the `line-height` then use half the height for the `padding-block`. The downside of doing this is that it adds a bit of extra white space at the bottom of the SVGs in Chrome and Edge. In order to have this effect look significantly better in Firefox, I think this is worth the tradeoff but I also hope that Firefox can address this issue. If you have figured out a way to get around this issue, please let me know!
 
@@ -324,7 +329,7 @@ So long as you're not trying to align other text with an SVG, you can drop the `
 
 Safari is the only major browser that doesn't really support this sort of thing (per usual). It just prints the raw text and ignores the CSS:
 
-<Lightbox src="https://res.cloudinary.com/desumhldo/image/upload/v1702131549/console-delight/console-info-safari_yxertc.webp" width="1844" height="74" />
+<Lightbox src="https://res.cloudinary.com/desumhldo/image/upload/v1702131549/console-delight/console-info-safari_yxertc.webp" width="1844" height="74" alt="The console message fails to render properly and just shows the raw text of the message." />
 
 It _does_ have some limited CSS support for console messages though. Just not enough to support most of the more complex CSS and background images that we had. Hopefully this article can help spur them on to improve their support!
 
@@ -332,10 +337,11 @@ All in all, since technique acts like progressive enhancement and is basically a
 
 ## Tooling that makes this easier
 
-- [My testing CodePen](https://codepen.io/ZachSaucier/pen/GRzypKq): I made a CodePen that automatically generates these `console.info`s for you! Paste an SVG into the HTML section of the pen and then open the console. It will show you a preview of the output as well as the code used to generate it. Note that is doesn't have the `vertical-align: middle` bit I talked about in the Firefox section above.
-- [css-doodle](https://css-doodle.com/) is a tool / web-component created by [Chuan](https://yuanchuan.dev/) ([@yuanchuan](https://vis.social/@yuanchuan)) which prime for creating SVGs to use in the console!
-- Yoksel's [SVG URL encoder](https://yoksel.github.io/url-encoder/) if you want a standalone SVG encoder.
-- [EZGIF](https://ezgif.com/image-to-datauri/ezgif-4-975be6affc.jpg) for converting regular images into dataURIs.
+- [My testing CodePen](https://codepen.io/ZachSaucier/pen/GRzypKq): I made a CodePen that automatically generates these `console.info`s for you! Paste an SVG into the HTML section of the pen and then open the console. It will show you a preview of the output as well as the code used to generate it.
+- Your favorite vector editor - Using the CodePen above, you can paste in most any SVG and get a working console command. That means you can use Inkscape, Illustator, or whatever other tool you want to use to generate the SVG!
+- [css-doodle](https://css-doodle.com/) is a tool / web-component created by [Chuan](https://yuanchuan.dev/) ([@yuanchuan](https://vis.social/@yuanchuan)) which is prime for creating SVGs to use in the console!
+- [SVGOMG](https://jakearchibald.github.io/svgomg/) - Trim down your SVG to reduce the file size and also fit in Firefox's character limit.
+- [EZGIF](https://ezgif.com/image-to-datauri/ezgif-4-975be6affc.jpg) for converting regular images into data URIs.
 
 ## Go forth and delight!
 

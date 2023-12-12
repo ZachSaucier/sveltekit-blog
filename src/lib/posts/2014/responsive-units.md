@@ -17,11 +17,11 @@ description: This post covers some of the benefits of using units other than pix
 
 I understand that the overall goal is to stay responsive, but what is the purpose of avoiding pixels?
 
+<span class="excerpt_marker"></span>
+
 <hr>
 
 The purpose of avoiding any **absolutely**[^1] **sized units** like `px` (includes `in`, `mm`, and `cm`) is to allow our content to be as responsive as possible with the least amount of work. Absolutely sized units are only one type of unit. In this post I’ll go into more detail about the others.
-
-<span class="excerpt_marker"></span>
 
 ### Font-relative units
 
