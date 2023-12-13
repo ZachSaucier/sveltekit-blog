@@ -235,6 +235,21 @@ There's no way to my knowledge to detect if the console itself is open (if you k
 
 I got the lightweight package [`devtools-detect`](https://github.com/sindresorhus/devtools-detect) working in a project using [this sort of setup](https://gist.github.com/ZachSaucier/ea8ebf65079febbde4f2f9190ae6644a). However, the package has many known issues/limitations, which the author notes in the README. But for the purpose of something superfluous like this it is probably okay. If you're really wanting to do this, I might recommend [detect-devtools-via-debugger-heartstop](https://github.com/david-fong/detect-devtools-via-debugger-heartstop) instead because it seems more reliable but I didn't test it myself.
 
+## Notable mention: css-doodle
+
+[css-doodle](https://css-doodle.com/#function-@shape) is a library similar to P5.js and the like but that specializes in HTML + CSS + SVG creations (though recently it's gotten support for GLSL shaders also). This makes it a perfect for creating effects to be used in the console! It's created by [Chuan](https://yuanchuan.dev/) ([@yuanchuan](https://vis.social/@yuanchuan)).
+
+I could write several articles on how to use `css-doodle`, but for the purpose of this article I will keep it short:
+
+- You can use [the starter pen](https://codepen.io/yuanchuan/pen/QWYRyyM) to write css-doodle code.
+- For what commands you can use, [the usage section](https://css-doodle.com/#usage) of the website is helpful. It is important to use the [`@svg` command](https://css-doodle.com/#function-@svg) so that it uses SVG, which can then be used as a background image in console commands.
+- [The CodePen collection](https://codepen.io/collection/XyVkpQ/) is a great place to see examples and learn more by breaking down how effects are made.
+- When you're happy with your result, the easiest way to copy the raw SVG is to use the element inspector of your dev tools: right click the `<svg>` and click `Copy` then `Copy outerHTML`. If your SVG element is empty, that means you didn't use the `@svg` command to create your work.
+
+Here's an example:
+
+<!-- TODO -->
+
 ## Notable mention: CSS text effects
 
 You can create some nice looking console messages without using SVGs or anything like that. For example, you can apply multiple `text-shadows` to apply a 3D text effect:
@@ -339,7 +354,7 @@ All in all, since technique acts like progressive enhancement and is basically a
 
 - [My testing CodePen](https://codepen.io/ZachSaucier/pen/GRzypKq): I made a CodePen that automatically generates these `console.info`s for you! Paste an SVG into the HTML section of the pen and then open the console. It will show you a preview of the output as well as the code used to generate it.
 - Your favorite vector editor - Using the CodePen above, you can paste in most any SVG and get a working console command. That means you can use Inkscape, Illustator, or whatever other tool you want to use to generate the SVG!
-- [css-doodle](https://css-doodle.com/) is a tool / web-component created by [Chuan](https://yuanchuan.dev/) ([@yuanchuan](https://vis.social/@yuanchuan)) which is prime for creating SVGs to use in the console!
+- [css-doodle](https://css-doodle.com/) is a tool / web-component which is prime for creating SVGs to use in the console!
 - [SVGOMG](https://jakearchibald.github.io/svgomg/) - Trim down your SVG to reduce the file size and also fit in Firefox's character limit.
 - [EZGIF](https://ezgif.com/image-to-datauri/ezgif-4-975be6affc.jpg) for converting regular images into data URIs.
 
