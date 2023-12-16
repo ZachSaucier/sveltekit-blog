@@ -52,16 +52,16 @@ It's a neat technique that can delight the curious and further your brand for cu
 
 ## How to use CSS, SVGs, and HTML in a console message
 
-Here's the magic: `%c`. It lets us render a console message (like`console.log` or `console.info`) using a bit of CSS!
+Here's the magic: `%c`. It lets us render a console message (like `console.log` or `console.info`) using a bit of CSS!
 
 <ContentAside>
   <h4>Should I use <code>console.log</code> or <code>console.info</code>?</h4>
-  <p>Console logs are generally used for debugging purposes while console infos are used for information that is more relevant to end users. The only difference in terms of how they're handled by browsers are some styling differences.</p>
+  <p>Console logs are generally used for debugging purposes while console infos are used for information that is more relevant to end users. The only difference in terms of how they're handled by browsers are some styling differences. For the purpose of an effect like the ones discussed in this article, I think <code>console.info</code> makes more sense.</p>
 </ContentAside>
 
 Let's see how it works.
 
-Here's the `console.info` from the online version of Adobe Photoshop:
+Here's the `console.info` from the online version of Adobe Photoshop (partially unminified):
 
 ```js
 console.info(
@@ -97,7 +97,7 @@ Interestingly, a character (like the space I included to the right of the `%c` a
 
 ### SVG capabilities
 
-**Note:** It's important that the SVG has `xmlns="http://www.w3.org/2000/svg"`! If it doesn't, it won't render, even in Chrome.
+**Note:** It's important that the SVG has `xmlns="http://www.w3.org/2000/svg"`! If it doesn't, it won't render, even in browsers that support SVGs as background images in the console.
 
 | Capability                | Supported? |
 | ------------------------- | :--------: |
@@ -168,17 +168,9 @@ console.info(
 );
 ```
 
-## Responsive sizing
-
-Unfortunately I couldn't find a way to make the console message span 100% of the width of the console because the `display` can't be changed and things like `width: 100%` don't work here. The element (and therefore the SVG) has an explicit width and height.
-
-I did notice that `console.table(['foo'])` spans the whole width, but we're unable to use CSS styling on console tables as far as I know.
-
-I hope that browser change this behavior in the future so that we can have a responsive width element in the console.
-
 ## Example effects to inspire you
 
-So what are some things that we can make given these capabilities and limitations? Here are some ideas to inspire you!
+So what are some things that we can make given these capabilities and limitations? Here are some additional ideas to inspire you!
 
 Here's my first attempt at adding animation to the console that I created for [my personal blog](/blog/):
 
@@ -207,7 +199,7 @@ console.info(
 );
 ```
 
-What would a post exploring a new animation technique be without a horse running animation? This one is [from Cyril Levallois](https://codepen.io/CyrilLevallois/pen/eYBKKM):
+What would a post exploring a new animation technique be without a horse running animation? This one is [from Cyril Levallois](https://codepen.io/CyrilLevallois/pen/eYBKKM) (doesn't work in Firefox due to the character limit):
 
 ```js
 console.info(
@@ -216,16 +208,22 @@ console.info(
 );
 ```
 
-Scramble text
+Here's an example to show that you can use JavaScript to switch out the text of the SVG (using `.textContent`, not `.innerText` since it's an SVG element). With that being said, you can't do something like a scramble text effect due to the limitation around using `setInterval`s / `requestAnimationFrame`[^5].
 
-```html
-<tspan id="line1">thanks for</tspan>
-...
-<script>
-  const line1 = document.querySelector('#line1');
-  line1.textContent = 'test';
-</script>
+```js
+console.info(
+  '%c ',
+  `line-height:100px;padding-block:50px;padding-left:400px;background-repeat:no-repeat;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 100'%3E%3Cstyle%3E text %7B font-family: sans-serif; font-weight: 100; fill: %23d8eaff; %7D %3C/style%3E%3Crect width='400' height='100'%3E%3C/rect%3E%3Ctext text-anchor='middle' font-size='15' x='200' y='50'%3ESaturday, December 16, 2023 at 6:28 PM%3C/text%3E%3Cscript%3E const text_element = document.querySelector('text'); text_element.textContent = new Date().toLocaleString(true, %7B weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric' %7D); %3C/script%3E%3C/svg%3E")`
+);
 ```
+
+## Responsive sizing
+
+Unfortunately I couldn't find a way to make the console message span 100% of the width of the console. I believe that this is because elements we can't change the `display` of elements in the console, so things like `width: 100%` don't work here. The element has an explicit width and height in pixels or else its size will be based on the text.
+
+I did notice that `console.table(['foo'])` spans the whole width, but we're unable to use CSS styling on console tables as far as I know.
+
+I hope that browsers will change this behavior in the future so that we can have a responsive width element in the console.
 
 ## Detecting whether or not the console is open
 
@@ -235,9 +233,82 @@ There's no way to my knowledge to detect if the console itself is open (if you k
 
 I got the lightweight package [`devtools-detect`](https://github.com/sindresorhus/devtools-detect) working in a project using [this sort of setup](https://gist.github.com/ZachSaucier/ea8ebf65079febbde4f2f9190ae6644a). However, the package has many known issues/limitations, which the author notes in the README. But for the purpose of something superfluous like this it is probably okay. If you're really wanting to do this, I might recommend [detect-devtools-via-debugger-heartstop](https://github.com/david-fong/detect-devtools-via-debugger-heartstop) instead because it seems more reliable but I didn't test it myself.
 
+## Performance impact
+
+I tried getting a sense of the performance impact by running the most intense animation that I provided as an example, the horse animation from the example section above, and looking at my Activity Monitor.
+
+When the console was open and the animation was running, the "Google Chrome Helper (GPU)" went up to around 80% on my 2018 Macbook Pro. With any other devtools tab open instead or with the dev tools closed, I could not see any measurable impact on any process.
+
+This indicates that this sort of effect should not have much of an effect on your page unless someone has their devtools console open.
+
+With that being said, always do your own testing with whatever you end up with, including on a wider range of devices, to make sure it's not a detriment to any user's experience.
+
+## Browser support
+
+<ContentAside>
+  <p>Note: Using consoles in this way is very experimental and these results are likely to be inaccurate at some point in the future. As far as I can tell, styles in the console using <code>%c</code> like this <a href="https://console.spec.whatwg.org/#logger">is mentioned</a> in a spec but not fleshed out.
+</ContentAside>
+
+Here's what Adobe's `console.info` command looks like in various browsers:
+
+### Chrome & Edge
+
+This is what you saw earlier in the article, reposted here again:
+
+<Lightbox src="https://res.cloudinary.com/desumhldo/image/upload/v1702131548/console-delight/console-info-chrome_iazb3v.webp" width="782" height="78" alt="An SVG image of an eye followed by three pills, which say 'Adobe Photoshop Web', '2023.23.0.1', and '037a8af9746', each in a different color." />
+
+### Firefox
+
+Firefox fails to set the proper height of the background image and cuts off the SVG a bit:
+
+<Lightbox src="https://res.cloudinary.com/desumhldo/image/upload/v1702266191/console-delight/console-info-firefox_hgoffa.webp" width="768" height="84"  alt="The same console message as before but with the SVG misplaced and cut off and the tops of the pills are cut off." />
+
+I got it to appear the same using some guess and check:
+
+```js
+console.info(
+  '%c %cAdobe %cPhotoshop Web%c  %c2023.23.0.1%c  %c037a8af9746',
+  "vertical-align: middle; padding-left:36px; padding-top: 11px; padding-bottom: 9px; line-height: 36px; background-image: url('data:image/gif;base64,R0lGODlhIAAgAPEBAAAAAP///wAAAAAAACH5BAEAAAIALAAAAAAgACAAAAKkhC+py3zfopxGvIsztsCGD4La2FVAGBoBuZnox45WcqLsum5KDWdvf1nwTo+fLbgDqo7LFCJJbOY0oidt6ozVKrtib0qaCnlYcJh7rf5iK6HZaM64VeS6L+pWf89WT+6vRAUBBVQ1gpOTJ4IYdxCnOBSJ8ZhkZNekk5ZSxpTpt6Y1eEVm00j3VALDmBXVyPEJB2r2ShoLh2ASqvU60dsr5yuBUQAAOw=='); background-size: 32px 32px; background-repeat: no-repeat; background-position: 0px 0px; overflow: visible",
+  'vertical-align: middle; background: #666; border-radius:0.5em 0 0 0.5em; padding:0.2em 0em 0.1em 0.5em; color: white; font-weight: bold',
+  'vertical-align: middle; background: #666; border-radius:0 0.5em 0.5em 0; padding:0.2em 0.5em 0.1em 0em; color: white;',
+  '',
+  'vertical-align: middle; background: #c3a650; border-radius:0.5em; padding:0.2em 0.5em 0.1em 0.5em; color: white;',
+  '',
+  'vertical-align: middle; background: #15889f; border-radius:0.5em; padding:0.2em 0.5em 0.1em 0.5em; color: white;'
+);
+```
+
+However, this throws off the position of the SVG in Chrome and Edge:
+
+<Lightbox src="https://res.cloudinary.com/desumhldo/image/upload/v1702266191/console-delight/console-info-firefox-in-chrome_wgjdme.webp" width="792" height="120" alt="The console message rendering correctly other than the SVG being misplaced by being above where it should be." />
+
+It seems like for Firefox you have to basically double the height: use the height for the `line-height` then use half the height for the `padding-block`. The downside of doing this is that it adds a bit of extra white space at the bottom of the SVGs in Chrome and Edge. In order to have this effect look significantly better in Firefox, I think this is worth the tradeoff but I also hope that Firefox can address this issue. If you have figured out a way to get around this issue, please let me know!
+
+Additionally, Firefox has a significantly shorter character limit for console messages, so ones like the horse animation above don't render anything in Firefox.
+
+So long as you're not trying to align other text with an SVG, you can drop the `vertical-align: middle` which makes the Chrome & Edge version a bit better.
+
+### Safari
+
+Safari is the only major browser that doesn't really support this sort of thing (per usual). It just prints the raw text and ignores the CSS:
+
+<Lightbox src="https://res.cloudinary.com/desumhldo/image/upload/v1702131549/console-delight/console-info-safari_yxertc.webp" width="1844" height="74" alt="The console message fails to render properly and just shows the raw text of the message." />
+
+It _does_ have some limited CSS support for console messages though. Just not enough to support most of the more complex CSS and background images that we had. Hopefully this article can help spur them on to improve their support!
+
+All in all, since this technique acts like progressive enhancement and is basically an easter egg, I would be happy to ship something like this in production code at any company. I think you should too!
+
+## Tooling that makes this easier
+
+- [My console testing CodePen](https://codepen.io/ZachSaucier/pen/GRzypKq): I made a CodePen that automatically generates these `console.info`s for you! Paste an SVG into the HTML section of the pen, run it, then open the console. The console will show you how the message renders as well as the code used to generate it.
+- Your favorite vector editor - Using the CodePen above, you can paste in most any SVG and get a working console command. That means you can use [Inkscape](https://inkscape.org/), [Adobe Illustator](https://www.adobe.com/products/illustrator.html), or whatever other tool you want to use to generate the SVG!
+- [css-doodle](https://css-doodle.com/) is a tool / web-component which is prime for creating SVGs to use in the console, detailed in the section below.
+- [SVGOMG](https://jakearchibald.github.io/svgomg/) - Trim down your SVG to reduce the file size. This can also help you try to fit in Firefox's character limit.
+- [EZGIF](https://ezgif.com/image-to-datauri/ezgif-4-975be6affc.jpg) for converting regular images into data URIs.
+
 ## Notable mention: css-doodle
 
-[css-doodle](https://css-doodle.com/#function-@shape) is a library similar to P5.js and the like but that specializes in HTML + CSS + SVG creations (though recently it's gotten support for GLSL shaders also). This makes it a perfect for creating effects to be used in the console! It's created by [Chuan](https://yuanchuan.dev/) ([@yuanchuan](https://vis.social/@yuanchuan)).
+[css-doodle](https://css-doodle.com/#function-@shape) is a library similar to [P5.js](https://p5js.org/) and the like but that specializes in HTML + CSS + SVG creations (though recently it's gotten support for GLSL shaders also). This makes it a perfect for creating effects to be used in the console! It's created by [Chuan](https://yuanchuan.dev/) ([@yuanchuan](https://vis.social/@yuanchuan)).
 
 I could write several articles on how to use `css-doodle`, but for the purpose of this article I will keep it short:
 
@@ -300,79 +371,10 @@ console.log(
 );
 ```
 
+Note the usage of `font-family: monospace` to make sure the characters have a consistent width.
+
 If you're looking for some tools to generate ASCII art, [ASCII Art Archive](https://www.asciiart.eu/) has a bunch of tools to generate ASCII art, including [image to ASCII](https://www.asciiart.eu/image-to-ascii) and [text to ASCII](https://www.asciiart.eu/text-to-ascii-art).
-
-## Performance impact
-
-I tried getting a sense of the performance impact by running the most intense animation, the horse animation from the example section above, and looking at my Activity Monitor.
-
-When the console was open and the animation was running, the "Google Chrome Helper (GPU)" went up to around 80% on my 2018 Macbook Pro. With any other devtools tab open instead or with the dev tools closed, I could not see any measurable impact on any process.
-
-With that being said, always do your own testing with whatever you end up with, including on a wider range of devices, to make sure it's not a detriment to any user's experience.
-
-## Browser support
-
-<ContentAside>
-  <p>Note: Using consoles in this way is very experimental and these results are likely to be inaccurate at some point in the future. As far as I can tell, styles in the console using <code>%c</code> like this <a href="https://console.spec.whatwg.org/#logger">is mentioned</a> in a spec but not fleshed out.
-</ContentAside>
-
-Here's what Adobe's `console.info` command looks like in various browsers:
-
-### Chrome & Edge
-
-This is what you saw earlier in the article, reposted here again:
-
-<Lightbox src="https://res.cloudinary.com/desumhldo/image/upload/v1702131548/console-delight/console-info-chrome_iazb3v.webp" width="782" height="78" alt="An SVG image of an eye followed by three pills, which say 'Adobe Photoshop Web', '2023.23.0.1', and '037a8af9746', each in a different color." />
-
-### Firefox
-
-Firefox fails to set the proper height of the background image and cuts off the SVG a bit:
-
-<Lightbox src="https://res.cloudinary.com/desumhldo/image/upload/v1702266191/console-delight/console-info-firefox_hgoffa.webp" width="768" height="84"  alt="The same console message as before but with the SVG misplaced and cut off and the tops of the pills are cut off." />
-
-I got it to appear the same using some guess and check:
-
-```js
-console.info(
-  '%c %cAdobe %cPhotoshop Web%c  %c2023.23.0.1%c  %c037a8af9746',
-  "vertical-align: middle; padding-left:36px; padding-top: 11px; padding-bottom: 9px; line-height: 36px; background-image: url('data:image/gif;base64,R0lGODlhIAAgAPEBAAAAAP///wAAAAAAACH5BAEAAAIALAAAAAAgACAAAAKkhC+py3zfopxGvIsztsCGD4La2FVAGBoBuZnox45WcqLsum5KDWdvf1nwTo+fLbgDqo7LFCJJbOY0oidt6ozVKrtib0qaCnlYcJh7rf5iK6HZaM64VeS6L+pWf89WT+6vRAUBBVQ1gpOTJ4IYdxCnOBSJ8ZhkZNekk5ZSxpTpt6Y1eEVm00j3VALDmBXVyPEJB2r2ShoLh2ASqvU60dsr5yuBUQAAOw=='); background-size: 32px 32px; background-repeat: no-repeat; background-position: 0px 0px; overflow: visible",
-  'vertical-align: middle; background: #666; border-radius:0.5em 0 0 0.5em; padding:0.2em 0em 0.1em 0.5em; color: white; font-weight: bold',
-  'vertical-align: middle; background: #666; border-radius:0 0.5em 0.5em 0; padding:0.2em 0.5em 0.1em 0em; color: white;',
-  '',
-  'vertical-align: middle; background: #c3a650; border-radius:0.5em; padding:0.2em 0.5em 0.1em 0.5em; color: white;',
-  '',
-  'vertical-align: middle; background: #15889f; border-radius:0.5em; padding:0.2em 0.5em 0.1em 0.5em; color: white;'
-);
-```
-
-However, this throws off the position of the SVG in Chrome and Edge:
-
-<Lightbox src="https://res.cloudinary.com/desumhldo/image/upload/v1702266191/console-delight/console-info-firefox-in-chrome_wgjdme.webp" width="792" height="120" alt="The console message rendering correctly other than the SVG being misplaced by being above where it should be." />
-
-It seems like for Firefox you have to basically double the height: use the height for the `line-height` then use half the height for the `padding-block`. The downside of doing this is that it adds a bit of extra white space at the bottom of the SVGs in Chrome and Edge. In order to have this effect look significantly better in Firefox, I think this is worth the tradeoff but I also hope that Firefox can address this issue. If you have figured out a way to get around this issue, please let me know!
-
-Additionally, Firefox has a significantly shorter character limit for console log messages, so ones like the horse animation above don't render anything in Firefox.
-
-So long as you're not trying to align other text with an SVG, you can drop the `vertical-align: middle` which makes the Chrome & Edge version a bit better.
-
-### Safari
-
-Safari is the only major browser that doesn't really support this sort of thing (per usual). It just prints the raw text and ignores the CSS:
-
-<Lightbox src="https://res.cloudinary.com/desumhldo/image/upload/v1702131549/console-delight/console-info-safari_yxertc.webp" width="1844" height="74" alt="The console message fails to render properly and just shows the raw text of the message." />
-
-It _does_ have some limited CSS support for console messages though. Just not enough to support most of the more complex CSS and background images that we had. Hopefully this article can help spur them on to improve their support!
-
-All in all, since technique acts like progressive enhancement and is basically an easter egg, I would be happy to ship something like this in production code at any company. I think you should too!
-
-## Tooling that makes this easier
-
-- [My testing CodePen](https://codepen.io/ZachSaucier/pen/GRzypKq): I made a CodePen that automatically generates these `console.info`s for you! Paste an SVG into the HTML section of the pen and then open the console. It will show you a preview of the output as well as the code used to generate it.
-- Your favorite vector editor - Using the CodePen above, you can paste in most any SVG and get a working console command. That means you can use Inkscape, Illustator, or whatever other tool you want to use to generate the SVG!
-- [css-doodle](https://css-doodle.com/) is a tool / web-component which is prime for creating SVGs to use in the console, detailed in [a section above](#notable-mention-css-doodle).
-- [SVGOMG](https://jakearchibald.github.io/svgomg/) - Trim down your SVG to reduce the file size and also fit in Firefox's character limit.
-- [EZGIF](https://ezgif.com/image-to-datauri/ezgif-4-975be6affc.jpg) for converting regular images into data URIs.
 
 ## Go forth and delight!
 
-I'm hoping that this article inspires many more developers to implement delightful console suprises. I think it should become a normal addition to a website!
+I'm hoping that this article inspires many more developers and companies to implement delightful console suprises. I think it should become a normal addition to a website!
