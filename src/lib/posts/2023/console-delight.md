@@ -241,14 +241,19 @@ I got the lightweight package [`devtools-detect`](https://github.com/sindresorhu
 
 I could write several articles on how to use `css-doodle`, but for the purpose of this article I will keep it short:
 
-- You can use [the starter pen](https://codepen.io/yuanchuan/pen/QWYRyyM) to write css-doodle code.
-- For what commands you can use, [the usage section](https://css-doodle.com/#usage) of the website is helpful. It is important to use the [`@svg` command](https://css-doodle.com/#function-@svg) so that it uses SVG, which can then be used as a background image in console commands.
-- [The CodePen collection](https://codepen.io/collection/XyVkpQ/) is a great place to see examples and learn more by breaking down how effects are made.
+- You can use [the css-doodle web editor](https://css-doodle.com/svg/?name=grid) to see examples and edit them to create your own (there's also a [starter CodePen](https://codepen.io/yuanchuan/pen/QWYRyyM) if you'd like to work or save your work there).
+- For what commands you can use, [the usage section](https://css-doodle.com/#usage) of the website is helpful. It is pretty important to use the [`@svg` command](https://css-doodle.com/#function-@svg) so that it uses SVG, which can then be used as a background image in console commands, though some other commands do work outside of the SVG ones.
+- [The CodePen collection](https://codepen.io/collection/XyVkpQ/) is another great place to see examples and learn more by breaking down how effects are made.
 - When you're happy with your result, the easiest way to copy the raw SVG is to use the element inspector of your dev tools: right click the `<svg>` and click `Copy` then `Copy outerHTML`. If your SVG element is empty, that means you didn't use the `@svg` command to create your work.
 
-Here's an example:
+Here's an example, based on [this demo](https://css-doodle.com/svg/?name=polyline):
 
-<!-- TODO -->
+```js
+console.info(
+  '%c ',
+  `line-height:100px;padding-block:50px;padding-left:100px;background-repeat:no-repeat;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-50 -50 100 100' stroke='%231B2D37' fill='none'%3E%3Crect stroke-width='2' width='98' height='98' x='-49' y='-49' fill='%23d5f1ff'%3E%3C/rect%3E%3Cpolyline stroke-dasharray='10' pathLength='10' points='0.00001 0,-0.991793 -1.8173446,-2.2402741 3.4823486,6.1949453 0.4474444,-3.4331809 -7.5362848,-6.2133014 8.2797801,12.2932314 1.7851273,-5.0423611 -13.5870507,-10.8698086 12.4970611,18.1990361 3.9991341,-5.7863618 -19.8785691,-16.1450444 16.0621084,23.818206 7.0663947,-5.6410665 -26.3168978,-21.9675334 18.9092802,29.059075 10.9548628,-4.591445 -32.806032,-28.2596767 20.9799619,33.8332657 15.6237668,-2.6317133 -39.248728,-34.9384013 22.223098,38.056466 21.0239282,0.2345778 -45.5473393,-41.915853 22.5956673,41.6491767 27.0981467,3.9945268 -51.6046566,-49.1001299 22.0630962,44.5374235 33.7816489,8.6259382 -57.3247487,-56.3960484 20.5996079,46.653429 41.0025973,14.0974514 -62.6137955,-63.7059392 18.188505,47.9362389 48.6826567,20.368742 -67.3809088,-70.9304643 14.8223821,48.3322984 56.7376131,27.3907928 -71.5389343,-77.9694531 10.5032683,47.7959744 65.0780416,35.1062339 -75.0052279,-84.7227478 5.2426967,46.2900186 73.6100184,43.4497494 -77.7024033,-91.0910542 -0.9382987,43.7859697 82.2358716,52.3485481 -79.559042,-96.9767918 -8.0092596,40.2644891 90.8549658,61.7228942 -80.5103629,-102.2849352 -15.9304529,35.7156303 99.3645155,71.4866962 -80.4988455,-106.9238436 -24.6530929,30.1390368 107.66042,81.5481482 -79.474802,-110.8060694 -34.1196343,23.5440691 115.6381161,91.8104205 -77.396894,-113.8491417 -44.264135,15.9498573 123.1934404'%3E%3Canimate attributeName='stroke-dashoffset' from='10' to='0' dur='10s'%3E%3C/animate%3E%3C/polyline%3E%3C/svg%3E")`
+);
+```
 
 ## Notable mention: CSS text effects
 
@@ -297,6 +302,14 @@ console.log(
 
 If you're looking for some tools to generate ASCII art, [ASCII Art Archive](https://www.asciiart.eu/) has a bunch of tools to generate ASCII art, including [image to ASCII](https://www.asciiart.eu/image-to-ascii) and [text to ASCII](https://www.asciiart.eu/text-to-ascii-art).
 
+## Performance impact
+
+I tried getting a sense of the performance impact by running the most intense animation, the horse animation from the example section above, and looking at my Activity Monitor.
+
+When the console was open and the animation was running, the "Google Chrome Helper (GPU)" went up to around 80% on my 2018 Macbook Pro. With any other devtools tab open instead or with the dev tools closed, I could not see any measurable impact on any process.
+
+With that being said, always do your own testing with whatever you end up with, including on a wider range of devices, to make sure it's not a detriment to any user's experience.
+
 ## Browser support
 
 <ContentAside>
@@ -307,7 +320,9 @@ Here's what Adobe's `console.info` command looks like in various browsers:
 
 ### Chrome & Edge
 
-This is what you saw earlier in the article.
+This is what you saw earlier in the article, reposted here again:
+
+<Lightbox src="https://res.cloudinary.com/desumhldo/image/upload/v1702131548/console-delight/console-info-chrome_iazb3v.webp" width="782" height="78" alt="An SVG image of an eye followed by three pills, which say 'Adobe Photoshop Web', '2023.23.0.1', and '037a8af9746', each in a different color." />
 
 ### Firefox
 
@@ -354,7 +369,7 @@ All in all, since technique acts like progressive enhancement and is basically a
 
 - [My testing CodePen](https://codepen.io/ZachSaucier/pen/GRzypKq): I made a CodePen that automatically generates these `console.info`s for you! Paste an SVG into the HTML section of the pen and then open the console. It will show you a preview of the output as well as the code used to generate it.
 - Your favorite vector editor - Using the CodePen above, you can paste in most any SVG and get a working console command. That means you can use Inkscape, Illustator, or whatever other tool you want to use to generate the SVG!
-- [css-doodle](https://css-doodle.com/) is a tool / web-component which is prime for creating SVGs to use in the console!
+- [css-doodle](https://css-doodle.com/) is a tool / web-component which is prime for creating SVGs to use in the console, detailed in [a section above](#notable-mention-css-doodle).
 - [SVGOMG](https://jakearchibald.github.io/svgomg/) - Trim down your SVG to reduce the file size and also fit in Firefox's character limit.
 - [EZGIF](https://ezgif.com/image-to-datauri/ezgif-4-975be6affc.jpg) for converting regular images into data URIs.
 
