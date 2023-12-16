@@ -19,15 +19,19 @@ description: A primer on responsive web design, including how to use media queri
 
 Countless articles, many quite useful, have been written on the subject of responsive design since Ethan Marcotte’s <a href="https://alistapart.com/article/responsive-web-design/">post that started it all</a>, but finding one that directly helps people understand some specific techniques while also explaining the _why_ behind each action and decision is exceedingly hard. I’ll try my best to do so concisely here.
 
+<span class="excerpt_marker"></span>
+
 <hr>
 
 ## First things first. What is “responsive design”?
 
-_Design:_ making plans and decisions about how something will be created [<a href="https://www.merriam-webster.com/dictionary/design">1</a>].
+_Design:_ making plans and decisions about how something will be created[^1].
 
-<span class="excerpt_marker"></span>
+[^1]: https://www.merriam-webster.com/dictionary/design
 
-_Responsive:_ reacting in a desired or positive way, or quick to react [<a href="https://www.merriam-webster.com/dictionary/responsive?show=0&amp;t=1405636347">2</a>].
+_Responsive:_ reacting in a desired or positive way, or quick to react[^2].
+
+[^2]: https://www.merriam-webster.com/dictionary/responsive?show=0&amp;t=1405636347
 
 Responsive design, therefore, is simply the mix of the two: crafting our applications and websites in such a way that the user’s experience is tailored to him regardless of the device he is viewing it on.
 
