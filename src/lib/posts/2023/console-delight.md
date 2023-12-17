@@ -181,7 +181,7 @@ console.info(
 );
 ```
 
-How about a line-drawing animation? The one below is pulled from [Amelia Carlie's pen](https://codepen.io/acarlie/pen/eYmqEVB) but you could do [more decorative elements](https://codepen.io/lorryc/pen/pjwEJK), draw [outlines of shapes](https://codepen.io/shdesign/pen/aGzjBR), or create [an ongoing visualization](https://codepen.io/juliangarnier/pen/ZeEpgd) if you'd like to.
+How about a line-drawing animation? The one below is pulled from [Amelia Carlie's pen](https://codepen.io/acarlie/pen/eYmqEVB) but you could do [more decorative elements](https://codepen.io/lorryc/pen/pjwEJK), draw [outlines of shapes](https://codepen.io/shdesign/pen/aGzjBR), or create [an ongoing visualization](https://codepen.io/juliangarnier/pen/ZeEpgd) if you'd like.
 
 ```js
 console.info(
@@ -219,19 +219,19 @@ console.info(
 
 ## Responsive sizing
 
-Unfortunately I couldn't find a way to make the console message span 100% of the width of the console. I believe that this is because elements we can't change the `display` of elements in the console, so things like `width: 100%` don't work here. The element has an explicit width and height in pixels or else its size will be based on the text.
+Unfortunately I couldn't find a way to make the message span 100% of the width of the console. I believe that this is because we can't change the `display` of elements in the console, so things like `width: 100%` don't work here. The element has an explicit width and height in pixels or else its size will be based on the text.
 
 I did notice that `console.table(['foo'])` spans the whole width, but we're unable to use CSS styling on console tables as far as I know.
 
-I hope that browsers will change this behavior in the future so that we can have a responsive width element in the console.
+In the future, I hope browsers will add a responsive width element in the console.
 
 ## Detecting whether or not the console is open
 
 Reveal animations (like the first half of the line-drawing animation above) are one way of animating using this technique. However, these animations may finish before someone actually opens up the console. As such, I wanted to see if we can detect when the console is open so that we can wait to fire the animation until then.
 
-There's no way to my knowledge to detect if the console itself is open (if you know of a way, please let me know!). However, there are some ways to detect if the devtools in general are open, though the way to detect that [seems to change every so often](https://stackoverflow.com/q/7798748/2065702).
+There's no way to my knowledge to detect if the console itself is open (if you know of a way, please let me know!). However, there are some ways to detect if the devtools in general are open, though the method [seems to change every so often](https://stackoverflow.com/q/7798748/2065702).
 
-I got the lightweight package [`devtools-detect`](https://github.com/sindresorhus/devtools-detect) working in a project using [this sort of setup](https://gist.github.com/ZachSaucier/ea8ebf65079febbde4f2f9190ae6644a). However, the package has many known issues/limitations, which the author notes in the README. But for the purpose of something superfluous like this it is probably okay. If you're really wanting to do this, I might recommend [detect-devtools-via-debugger-heartstop](https://github.com/david-fong/detect-devtools-via-debugger-heartstop) instead because it seems more reliable but I didn't test it myself.
+I got the lightweight package [`devtools-detect`](https://github.com/sindresorhus/devtools-detect) working in a project using [this sort of setup](https://gist.github.com/ZachSaucier/ea8ebf65079febbde4f2f9190ae6644a). However, the package has many known issues, which the author notes in the README. But for the purpose of something superfluous like this it is probably okay. If you're really wanting to do this, I might recommend [detect-devtools-via-debugger-heartstop](https://github.com/david-fong/detect-devtools-via-debugger-heartstop) instead because it seems more reliable but I didn't test it myself.
 
 ## Performance impact
 
@@ -239,9 +239,9 @@ I tried getting a sense of the performance impact by running the most intense an
 
 When the console was open and the animation was running, the "Google Chrome Helper (GPU)" went up to around 80% on my 2018 Macbook Pro. With any other devtools tab open instead or with the dev tools closed, I could not see any measurable impact on any process.
 
-This indicates that this sort of effect should not have much of an effect on your page unless someone has their devtools console open.
+This indicates that this sort of effect should not have much of an impact on your page unless someone has their devtools console open.
 
-With that being said, always do your own testing with whatever you end up with, including on a wider range of devices, to make sure it's not a detriment to any user's experience.
+With that being said, always do your own testing, including on a wider range of devices, to make sure it's not a detriment to any user's experience.
 
 ## Browser support
 
@@ -290,27 +290,27 @@ So long as you're not trying to align other text with an SVG, you can drop the `
 
 ### Safari
 
-Safari is the only major browser that doesn't really support this sort of thing (per usual). It just prints the raw text and ignores the CSS:
+Safari is the only major browser that doesn't support this sort of thing (per usual). It just prints the raw text and ignores the CSS:
 
 <Lightbox src="https://res.cloudinary.com/desumhldo/image/upload/v1702131549/console-delight/console-info-safari_yxertc.webp" width="1844" height="74" alt="The console message fails to render properly and just shows the raw text of the message." />
 
-It _does_ have some limited CSS support for console messages though. Just not enough to support most of the more complex CSS and background images that we had. Hopefully this article can help spur them on to improve their support!
+It _does_ have some limited CSS support for console messages though, just not enough for the more complex CSS and background images. Hopefully this article can encourage them to improve their support!
 
 All in all, since this technique acts like progressive enhancement and is basically an easter egg, I would be happy to ship something like this in production code at any company. I think you should too!
 
 ## Tooling that makes this easier
 
 - [My console testing CodePen](https://codepen.io/ZachSaucier/pen/GRzypKq): I made a CodePen that automatically generates these `console.info`s for you! Paste an SVG into the HTML section of the pen, run it, then open the console. The console will show you how the message renders as well as the code used to generate it.
-- Your favorite vector editor - Using the CodePen above, you can paste in most any SVG and get a working console command. That means you can use [Inkscape](https://inkscape.org/), [Adobe Illustator](https://www.adobe.com/products/illustrator.html), or whatever other tool you want to use to generate the SVG!
+- Your favorite vector editor - Using the CodePen above, you can paste in almost any SVG and get a working console command. That means you can use [Inkscape](https://inkscape.org/), [Adobe Illustator](https://www.adobe.com/products/illustrator.html), or whatever other tool you want to use to generate the SVG!
 - [css-doodle](https://css-doodle.com/) is a tool / web-component which is prime for creating SVGs to use in the console, detailed in the section below.
 - [SVGOMG](https://jakearchibald.github.io/svgomg/) - Trim down your SVG to reduce the file size. This can also help you try to fit in Firefox's character limit.
 - [EZGIF](https://ezgif.com/image-to-datauri/ezgif-4-975be6affc.jpg) for converting regular images into data URIs.
 
 ## Notable mention: css-doodle
 
-[css-doodle](https://css-doodle.com/#function-@shape) is a library similar to [P5.js](https://p5js.org/) and the like but that specializes in HTML + CSS + SVG creations (though recently it's gotten support for GLSL shaders also). This makes it a perfect for creating effects to be used in the console! It's created by [Chuan](https://yuanchuan.dev/) ([@yuanchuan](https://vis.social/@yuanchuan)).
+[css-doodle](https://css-doodle.com/#function-@shape) is a library similar to [P5.js](https://p5js.org/) and the like. It specializes in HTML + CSS + SVG creations (though recently it's gotten support for GLSL shaders). This makes it a perfect for creating effects for the console! It's created by [Chuan](https://yuanchuan.dev/) ([@yuanchuan](https://vis.social/@yuanchuan)).
 
-I could write several articles on how to use `css-doodle`, but for the purpose of this article I will keep it short:
+I could write several articles on `css-doodle`, but for the purpose of this article I will keep it short:
 
 - You can use [the css-doodle web editor](https://css-doodle.com/svg/?name=grid) to see examples and edit them to create your own (there's also a [starter CodePen](https://codepen.io/yuanchuan/pen/QWYRyyM) if you'd like to work or save your work there).
 - For what commands you can use, [the usage section](https://css-doodle.com/#usage) of the website is helpful. It is pretty important to use the [`@svg` command](https://css-doodle.com/#function-@svg) so that it uses SVG, which can then be used as a background image in console commands, though some other commands do work outside of the SVG ones.
@@ -377,4 +377,4 @@ If you're looking for some tools to generate ASCII art, [ASCII Art Archive](http
 
 ## Go forth and delight!
 
-I'm hoping that this article inspires many more developers and companies to implement delightful console suprises. I think it should become a normal addition to a website!
+I'm hoping that this article inspires developers and companies to implement delightful console suprises. I think it should become a normal addition to a website!
