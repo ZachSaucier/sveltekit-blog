@@ -1,12 +1,29 @@
 <script>
+  import { browser } from '$app/environment';
+
   export let src;
   export let alt;
   export let loading = 'lazy';
   export let width;
   export let height;
-  export let display_width = 790;
+  export let max_display_width = 790;
+  export let quality = 'auto';
 
-  let display_src = src.replace(/\/upload\//, `/upload/w_${display_width}/`);
+  const aspect_ratio = width / height;
+  const high_dpi = browser ? window.devicePixelRatio >= 2 : false;
+
+  const width_based_on_dpi = high_dpi ? Math.round(width / 2) : width;
+  const height_based_on_dpi = high_dpi ? Math.round(height / 2) : height;
+
+  const display_width = Math.min(width_based_on_dpi, max_display_width);
+  const display_height = Math.round(display_width / aspect_ratio);
+
+  const should_double_src_size = high_dpi && width >= display_width * 2;
+
+  const display_src = src.replace(
+    /\/upload\//,
+    `/upload/w_${should_double_src_size ? display_width * 2 : display_width}/q_${quality}/`
+  );
 
   let dialog;
   let close_button;
@@ -26,15 +43,15 @@
   }
 </script>
 
-{#if width < display_width}
+{#if display_width < max_display_width}
   <!-- If image is too small to lightbox, don't add the functionality -->
   <img
     class="lightbox__button_open lightbox__image_inline"
     src={display_src}
     {alt}
     {loading}
-    {width}
-    {height}
+    width={display_width}
+    height={display_height}
   />
 {:else}
   <button
@@ -44,7 +61,14 @@
     on:click={openLightbox}
     aria-label="View larger image"
   >
-    <img class="lightbox__image_inline" src={display_src} {alt} {loading} {width} {height} />
+    <img
+      class="lightbox__image_inline"
+      src={display_src}
+      {alt}
+      {loading}
+      width={display_width}
+      height={display_height}
+    />
   </button>
 
   <!-- svelte-ignore a11y-click-events-have-key-events -->
@@ -52,18 +76,25 @@
   <dialog bind:this={dialog} on:click={closeLightbox}>
     <button bind:this={close_button} class="lightbox__close" on:click={closeLightbox}>Close</button>
     {#if intention}
-      <img class="lightbox__image_full" {src} {alt} {width} {height} />
+      <img
+        class="lightbox__image_full"
+        {src}
+        {alt}
+        width={width_based_on_dpi}
+        height={height_based_on_dpi}
+      />
     {/if}
   </dialog>
 {/if}
 
 <style>
   .lightbox__button_open {
+    box-sizing: content-box;
     padding: 0;
     background: none !important;
 
     border-radius: 0.3rem;
-    border: var(--background-color) 0.5rem solid;
+    border: var(--background-color) 0.3rem solid;
     box-shadow: rgba(0, 0, 0, 0.15) 0 1px 4px;
     margin-block-end: 0.5rem;
   }
