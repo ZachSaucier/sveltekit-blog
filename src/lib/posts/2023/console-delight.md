@@ -7,6 +7,11 @@ tags:
   - javascript
   - css
   - svg
+cover_image: https://res.cloudinary.com/desumhldo/image/upload/q_100/v1702838810/console-delight/cover_daxdj0.webp
+cover_width: 1620
+cover_height: 582
+cover_alt: An animation running in the dev tools console.
+cover_in_post: false
 draft: true
 ---
 
@@ -323,12 +328,12 @@ All in all, since this technique acts like progressive enhancement and is basica
 
 ## Notable mention: css-doodle
 
-[css-doodle](https://css-doodle.com/#function-@shape) is a library similar to [P5.js](https://p5js.org/) and the like. It specializes in HTML + CSS + SVG creations (though recently it's gotten support for GLSL shaders). This makes it a perfect for creating effects for the console! It's created by [Chuan](https://yuanchuan.dev/) ([@yuanchuan](https://vis.social/@yuanchuan)).
+[css-doodle](https://css-doodle.com/#function-@shape) is a library similar to [P5.js](https://p5js.org/) and the like. It specializes in HTML + CSS + SVG creations (though recently it's gotten support for GLSL shaders). This makes it a perfect for creating effects for the console! It's created by [Chuan](https://yuanchuan.dev/) ([@yuanchuan](https://vis.social/@yuanchuan)). Note that it's still fairly early on in its development and not everything about it is documented!
 
 I could write several articles on `css-doodle`, but for the purpose of this article I will keep it short:
 
 - You can use [the css-doodle web editor](https://css-doodle.com/svg/?name=grid) to see examples and edit them to create your own (there's also a [starter CodePen](https://codepen.io/yuanchuan/pen/QWYRyyM) if you'd like to work or save your work there).
-- For what commands you can use, [the usage section](https://css-doodle.com/#usage) of the website is helpful. It is pretty important to use the [`@svg` command](https://css-doodle.com/#function-@svg) so that it uses SVG, which can then be used as a background image in console commands, though some other commands do work outside of the SVG ones.
+- For what commands you can use, [the usage section](https://css-doodle.com/#usage) of the website is helpful. It is pretty important to use the [`@svg` command](https://css-doodle.com/#function-@svg) so that it uses SVG, which can then be used as a background image in console commands, though some other commands do work outside of the SVG ones. You can set ease for SVG animations in keySpines.
 - [The CodePen collection](https://codepen.io/collection/XyVkpQ/) is another great place to see examples and learn more by breaking down how effects are made.
 - When you're happy with your result, the easiest way to copy the raw SVG is to use the element inspector of your dev tools: right click the `<svg>` and click `Copy` then `Copy outerHTML`. If your SVG element is empty, that means you didn't use the `@svg` command to create your work.
 
