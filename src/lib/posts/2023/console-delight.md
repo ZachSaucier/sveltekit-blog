@@ -130,14 +130,16 @@ Interestingly, a character (like the space I included to the right of the `%c` a
 | CSS animations                        |     ✅     |
 | `:hover`                              |     ❌     |
 | CSS variables                         |   ✅[^3]   |
-| Viewport units                        |   ✅[^4]   |
+| `@media` queries                      |   ✅[^4]   |
+| Viewport units                        |   ✅[^5]   |
 | `background-image: linear-gradient()` |     ✅     |
 | `background-image: url()`             |     ❌     |
 | `@import`                             |     ❌     |
 | `background-clip`                     |     ❌     |
 
 [^3]: Note that CSS variable usage _cannot_ be inherited from the scope outside of the SVG (i.e. from your webpage).
-[^4]: Viewport units for elements inside of the SVG. I was surprised to! They seem to use the SVG's size as the viewport upon initial inspection.
+[^4]: `@media (prefers-color-scheme: dark)` is particularly useful if you don't want to set a background color but want text to be readable since the console's background color depends on the user's setting.
+[^5]: Viewport units for elements inside of the SVG. I was surprised to! They seem to use the SVG's size as the viewport upon initial inspection.
 
 ### JavaScript capabilities
 
@@ -147,9 +149,10 @@ Interestingly, a character (like the space I included to the right of the `%c` a
 | DOM references within the SVG                   |     ✅     |
 | DOM reference to the SVG itself                 |     ✅     |
 | DOM reference outside of the SVG                |     ❌     |
+| `.appendChild`                                  |     ❌     |
 | Changing the SVG's DOM (attributes, text, etc.) |     ✅     |
-| `setTimeout`                                    |   ❌[^5]   |
-| `requestAnimationFrame`                         |   ❌[^5]   |
+| `setTimeout`                                    |   ❌[^6]   |
+| `requestAnimationFrame`                         |   ❌[^6]   |
 | WAAPI                                           |     ❌     |
 | "Global" variables via multiple `<script>` tags |     ✅     |
 | Setting CSS variables                           |     ✅     |
@@ -157,7 +160,7 @@ Interestingly, a character (like the space I included to the right of the `%c` a
 | `prompt`                                        |     ❌     |
 | `.addEventListener`                             |     ❌     |
 
-[^5]: It looks like it runs a only before the console message is posted but none afterwards.
+[^6]: Note that `setTimeout` and `requestAnimationFrame` can only run before the console message is posted and not afterwards.
 
 ## Rendering HTML inside of the SVG
 
@@ -181,6 +184,8 @@ console.info(
 ## Example effects to inspire you
 
 So what are some things that we can make given these capabilities and limitations? Here are some additional ideas to inspire you!
+
+Note that you can decode and unminify any of these examples to view the sort of raw input I gave it to generate these console messages. To do so, you can paste the part inside of the ticks (`\``) into [this CodePen](https://codepen.io/ZachSaucier/pen/KKJOJWR), optionally copying the result back into the CSS section and having CodePen format the result for you.
 
 Here's my first attempt at adding animation to the console that I created for [my personal blog](/blog/):
 
@@ -226,7 +231,7 @@ console.info(
 
 <Video src="https://res.cloudinary.com/desumhldo/video/upload/v1702832000/console-delight/horse_mpbmd9.mp4" width="2058" height="1362" alt="An SVG horse animation running in the dev tools console." />
 
-Here's an example to show that you can use JavaScript to switch out the text of the SVG (using `.textContent`, not `.innerText` since it's an SVG element). With that being said, you can't do something like a scramble text effect due to the limitation around using `setInterval`s / `requestAnimationFrame`[^5].
+Here's an example to show that you can use JavaScript to switch out the text of the SVG (using `.textContent`, not `.innerText` since it's an SVG element). With that being said, you can't do something like a scramble text effect due to the limitation around using `setInterval` and `requestAnimationFrame`[^6].
 
 ```js
 console.info(
@@ -236,6 +241,28 @@ console.info(
 ```
 
 <Lightbox src="https://res.cloudinary.com/desumhldo/image/upload/v1702830339/console-delight/datetime_zzmiav.webp" width="926" height="328" alt="The user's locale's current date and time being rendered inside of an SVG within the dev tools console." />
+
+We _can_ swap out the text (or any elements) after the start if we use an SVG along with CSS animations! To do so you have to include the content in the original SVG and use CSS keyframes.
+
+```js
+console.info(
+  '%c ',
+  `line-height:100px;padding-block:50px;padding-left:400px;background-repeat:no-repeat;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 400 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cstyle%3E @keyframes swapText %7B 0%25, 49.999%25 %7B opacity: 0; %7D 50%25, 100%25 %7B opacity: 1; %7D %7D text %7B animation: swapText 2s linear infinite; %7D text:nth-child(2) %7B animation-delay: 1s; %7D @media (prefers-color-scheme: dark) %7B text %7B fill: white; %7D %7D %3C/style%3E%3Ctext text-anchor='middle' font-size='15' x='200' y='50'%3E Hello %3C/text%3E%3Ctext text-anchor='middle' font-size='15' x='200' y='50'%3E there %3C/text%3E%3C/svg%3E")`
+);
+```
+
+<Video src="https://res.cloudinary.com/desumhldo/video/upload/v1702956389/console-delight/text-switch_acyv4d.mp4" width="450" height="390" alt="Text switching between 'Hello' and 'there' within the dev tools console." />
+
+The above technique can be used to create a stop motion effect or make words and/or elements appear "randomly" around the console (you might want to [use JavaScript](https://codepen.io/ZachSaucier/pen/zYegbPB??editors=1000) or a pre-processor to help you generate this sort of thing). For example, here's a some random circles that disappear and appear:
+
+```js
+console.info(
+  '%c ',
+  `line-height:400px;padding-block:200px;padding-left:400px;background-repeat:no-repeat;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cstyle%3E%0Acircle %7B animation: swapText 20s linear infinite;%0A%7D @keyframes swapText %7B 0%25, 3.3333333333%25 %7B opacity: 1; %7D 3.33333333330001%25, 100%25 %7B opacity: 0; %7D%0A%7D %3C/style%3E%3Ccircle cx='188.14' cy='207.93' r='186.27' fill='rgb(115.4, 46.31, 186.22)' style='animation-delay: 0s;'%3E%3C/circle%3E%3Ccircle cx='208.55' cy='300.58' r='81.02' fill='rgb(60.85, 183.01, 62.49)' style='animation-delay: -0.666667s;'%3E%3C/circle%3E%3Ccircle cx='235.74' cy='369.64' r='93.29' fill='rgb(10.65, 167.53, 177.52)' style='animation-delay: -1.33333s;'%3E%3C/circle%3E%3Ccircle cx='125.52' cy='188.99' r='172.44' fill='rgb(232.94, 75.08, 191.74)' style='animation-delay: -2s;'%3E%3C/circle%3E%3Ccircle cx='354.54' cy='196.67' r='195.4' fill='rgb(137.93, 57.6, 128.53)' style='animation-delay: -2.66667s;'%3E%3C/circle%3E%3Ccircle cx='90.95' cy='96.81' r='174.46' fill='rgb(106.74, 31.22, 195)' style='animation-delay: -3.33333s;'%3E%3C/circle%3E%3Ccircle cx='309.85' cy='12.27' r='18.34' fill='rgb(189.97, 49.11, 49.68)' style='animation-delay: -4s;'%3E%3C/circle%3E%3Ccircle cx='263.33' cy='392.19' r='58.1' fill='rgb(72.32, 215.33, 61.88)' style='animation-delay: -4.66667s;'%3E%3C/circle%3E%3Ccircle cx='335.22' cy='97.45' r='127.62' fill='rgb(249.17, 162.85, 49.06)' style='animation-delay: -5.33333s;'%3E%3C/circle%3E%3Ccircle cx='293.03' cy='82.52' r='129.85' fill='rgb(159.97, 1.79, 70.68)' style='animation-delay: -6s;'%3E%3C/circle%3E%3Ccircle cx='332.17' cy='399.66' r='45.81' fill='rgb(125.03, 23.01, 116.03)' style='animation-delay: -6.66667s;'%3E%3C/circle%3E%3Ccircle cx='244.8' cy='218.9' r='16.62' fill='rgb(106.53, 210.25, 160.91)' style='animation-delay: -7.33333s;'%3E%3C/circle%3E%3Ccircle cx='161.25' cy='72.33' r='77.1' fill='rgb(42.7, 63.89, 62.5)' style='animation-delay: -8s;'%3E%3C/circle%3E%3Ccircle cx='120.48' cy='211.7' r='96.26' fill='rgb(45.85, 88.66, 125.79)' style='animation-delay: -8.66667s;'%3E%3C/circle%3E%3Ccircle cx='79.6' cy='195.93' r='181.76' fill='rgb(186.39, 73.52, 213.41)' style='animation-delay: -9.33333s;'%3E%3C/circle%3E%3Ccircle cx='26.78' cy='133.29' r='169.22' fill='rgb(132.18, 143.88, 243.06)' style='animation-delay: -10s;'%3E%3C/circle%3E%3Ccircle cx='250.25' cy='16.06' r='157.62' fill='rgb(181.3, 222.83, 41.63)' style='animation-delay: -10.6667s;'%3E%3C/circle%3E%3Ccircle cx='217.1' cy='230.67' r='176.79' fill='rgb(25.67, 124.93, 206.89)' style='animation-delay: -11.3333s;'%3E%3C/circle%3E%3Ccircle cx='76.33' cy='192.31' r='95.13' fill='rgb(249.72, 59.98, 233.37)' style='animation-delay: -12s;'%3E%3C/circle%3E%3Ccircle cx='51.43' cy='146.38' r='45.94' fill='rgb(178.89, 28.13, 79.03)' style='animation-delay: -12.6667s;'%3E%3C/circle%3E%3Ccircle cx='119.16' cy='280.71' r='57.92' fill='rgb(218.66, 139.32, 192.7)' style='animation-delay: -13.3333s;'%3E%3C/circle%3E%3Ccircle cx='315.62' cy='272.65' r='133.31' fill='rgb(200.25, 161.12, 172.04)' style='animation-delay: -14s;'%3E%3C/circle%3E%3Ccircle cx='23.75' cy='20.3' r='93.59' fill='rgb(133.26, 3.74, 246.73)' style='animation-delay: -14.6667s;'%3E%3C/circle%3E%3Ccircle cx='202.55' cy='251.22' r='181.33' fill='rgb(238.6, 80.06, 100.32)' style='animation-delay: -15.3333s;'%3E%3C/circle%3E%3Ccircle cx='279.03' cy='129.2' r='109.52' fill='rgb(92.32, 128.44, 80.39)' style='animation-delay: -16s;'%3E%3C/circle%3E%3Ccircle cx='170.57' cy='65.82' r='149.48' fill='rgb(31.27, 122.5, 20.26)' style='animation-delay: -16.6667s;'%3E%3C/circle%3E%3Ccircle cx='166.27' cy='188.27' r='113.96' fill='rgb(208.93, 241.97, 247.86)' style='animation-delay: -17.3333s;'%3E%3C/circle%3E%3Ccircle cx='320.95' cy='308.88' r='17.71' fill='rgb(131.17, 189.11, 212.93)' style='animation-delay: -18s;'%3E%3C/circle%3E%3Ccircle cx='42.53' cy='61.09' r='86.35' fill='rgb(3.28, 56.87, 58.35)' style='animation-delay: -18.6667s;'%3E%3C/circle%3E%3Ccircle cx='29.74' cy='333.41' r='128.8' fill='rgb(39.54, 206.65, 222.78)' style='animation-delay: -19.3333s;'%3E%3C/circle%3E%3C/svg%3E")`
+);
+```
+
+<Video src="https://res.cloudinary.com/desumhldo/video/upload/v1702961424/console-delight/circles_tmjltq.mp4" width="882" height="918" alt="Random circles disappearing and appearing within the dev tools console." />
 
 ## Responsive sizing
 
