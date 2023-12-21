@@ -7,7 +7,7 @@ export const load = async ({ params }) => {
   const { tag } = params;
 
   if (page <= 1) {
-    throw redirect(301, `/blog/tag/${tag}`);
+    redirect(301, `/blog/tag/${tag}`);
   }
 
   const total_posts_with_tag = (await fetchPosts({ tag, limit: -1 })).posts.length;

@@ -5,7 +5,7 @@ export const load = async ({ params }) => {
   // This searches through the directories of posts, looking for a file that matches the slug, regardless of the year
   const modules = import.meta.glob('/src/lib/posts/**/*.md');
   let year = start_year;
-  const current_year = new Date().getFullYear();
+  const current_year = new Date().getFullYear() + 1;
   while (year <= current_year) {
     try {
       const match = modules[`/src/lib/posts/${year}/${params.slug}.md`];
@@ -20,7 +20,7 @@ export const load = async ({ params }) => {
     year++;
   }
 
-  throw error(404, {
+  error(404, {
     message: 'Article not found',
   });
 };

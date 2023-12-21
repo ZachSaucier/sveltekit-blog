@@ -7,7 +7,7 @@ export const load = async ({ url, params, fetch }) => {
 
   // Keeps from duplicating the blog index route as page 1
   if (page <= 1) {
-    throw redirect(301, '/blog');
+    redirect(301, '/blog');
   }
 
   const offset = page * posts_per_page - posts_per_page;

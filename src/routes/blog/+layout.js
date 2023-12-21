@@ -13,8 +13,8 @@ export const load = async ({ url, fetch }) => {
       recent_posts: recent_posts,
     };
   } catch (err) {
-    throw error(500, {
-      message: 'Internal server error',
-    });
+    error(500, {
+            message: 'Internal server error',
+          });
   }
 };
