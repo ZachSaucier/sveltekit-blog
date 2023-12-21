@@ -1,6 +1,6 @@
 ---
 title: console.delight
-date: 2023-12-10
+date: 2024-01-05
 description: An article exploring the capabilities and limitations of adding HTML, CSS, JavaScript, and SVGs to the console.
 tags:
   - code

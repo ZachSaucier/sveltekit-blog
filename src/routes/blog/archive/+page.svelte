@@ -39,7 +39,6 @@
 </Section>
 
 <section class="draft_posts">
-  <a href="/blog/container-queries-and-units">1</a>
   <a href="/blog/console-delight">1</a>
 </section>
 

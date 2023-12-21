@@ -1,6 +1,6 @@
 ---
 title: Container queries and container units
-date: 2023-12-10
+date: 2023-12-21
 description: An up-to-date article about why and how to use CSS container queries and container query units.
 tags:
   - code
