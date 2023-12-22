@@ -266,7 +266,7 @@ console.info(
 
 ## Responsive sizing
 
-Unfortunately I couldn't find a way to make the message span 100% of the width of the console. I believe that this is because we can't change the `display` of elements in the console, so things like `width: 100%` don't work here. The element must have an explicit width and height in pixels or else its size will be based on the text.
+Unfortunately I couldn't find a way to make the message span 100% of the width of the console. I believe that this is because we can't change the `display` of elements in the console, so things like `width: 100%` don't work here. The element must have an explicit width and height in pixels (or other non-relative unit) or else its size will be based on the text.
 
 I did notice that `console.table(['foo'])` spans the whole width, but we're unable to use CSS styling on console tables as far as I know.
 
