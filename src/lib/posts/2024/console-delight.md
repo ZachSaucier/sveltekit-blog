@@ -185,7 +185,7 @@ console.info(
 
 So what are some things that we can make given these capabilities and limitations? Here are some additional ideas to inspire you!
 
-Note that you can decode and unminify any of these examples to view the sort of raw input I gave it to generate these console messages. To do so, you can paste the part inside of the ticks (`\``) into [this CodePen](https://codepen.io/ZachSaucier/pen/KKJOJWR), optionally copying the result back into the CSS section and having CodePen format the result for you.
+Note that you can decode and unminify any of these examples to view the sort of raw input I gave it to generate these console messages. To do so, you can paste the part inside of the ticks (<code>`</code>) into [this CodePen](https://codepen.io/ZachSaucier/pen/KKJOJWR), optionally copying the result back into the CSS section and have CodePen format the result for you.
 
 Here's my first attempt at adding animation to the console that I created for [my personal blog](/blog/):
 
@@ -242,7 +242,7 @@ console.info(
 
 <Lightbox src="https://res.cloudinary.com/desumhldo/image/upload/v1702830339/console-delight/datetime_zzmiav.webp" width="926" height="328" alt="The user's locale's current date and time being rendered inside of an SVG within the dev tools console." />
 
-We _can_ swap out the text (or any elements) after the start if we use an SVG along with CSS animations! To do so you have to include the content in the original SVG and use CSS keyframes.
+However, we _can_ swap out the text (or any elements) after the start if we use an SVG along with CSS animations! To do so you have to include the content in the original SVG and use CSS keyframes.
 
 ```js
 console.info(
@@ -266,7 +266,7 @@ console.info(
 
 ## Responsive sizing
 
-Unfortunately I couldn't find a way to make the message span 100% of the width of the console. I believe that this is because we can't change the `display` of elements in the console, so things like `width: 100%` don't work here. The element has an explicit width and height in pixels or else its size will be based on the text.
+Unfortunately I couldn't find a way to make the message span 100% of the width of the console. I believe that this is because we can't change the `display` of elements in the console, so things like `width: 100%` don't work here. The element must have an explicit width and height in pixels or else its size will be based on the text.
 
 I did notice that `console.table(['foo'])` spans the whole width, but we're unable to use CSS styling on console tables as far as I know.
 
@@ -279,6 +279,8 @@ Reveal animations (like the first half of the line-drawing animation above) are 
 There's no way to my knowledge to detect if the console itself is open (if you know of a way, please let me know!). However, there are some ways to detect if the devtools in general are open, though the method [seems to change every so often](https://stackoverflow.com/q/7798748/2065702).
 
 I got the lightweight package [`devtools-detect`](https://github.com/sindresorhus/devtools-detect) working in a project using [this sort of setup](https://gist.github.com/ZachSaucier/ea8ebf65079febbde4f2f9190ae6644a). However, the package has many known issues, which the author notes in the README. But for the purpose of something superfluous like this it is probably okay. If you're really wanting to do this, I might recommend [detect-devtools-via-debugger-heartstop](https://github.com/david-fong/detect-devtools-via-debugger-heartstop) instead because it seems more reliable but I didn't test it myself.
+
+With that being said, you may want to just use a looping or ambient (constantly running) animation so you make sure that your user sees the hard work you've invested.
 
 ## Performance impact
 
@@ -428,4 +430,4 @@ If you're looking for some tools to generate ASCII art, [ASCII Art Archive](http
 
 ## Go forth and delight!
 
-I'm hoping that this article inspires developers and companies to implement delightful console suprises. I think it should become a normal addition to a website!
+I'm hoping that this article inspires developers and companies to implement delightful console surprises. I think it should become a normal addition to a website!

@@ -2,7 +2,6 @@
   import { onMount } from 'svelte';
   import { fade } from 'svelte/transition';
   import { preloadCode } from '$app/navigation';
-  import { browser } from '$app/environment';
 
   import { current_page, recent_posts } from '$lib/utilities/store';
   import { nav_items } from '$lib/config';
