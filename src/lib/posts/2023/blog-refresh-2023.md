@@ -121,7 +121,7 @@ By converting my colors to CSS variables, I basically got a dark mode for free!
 
 One of the nice-to-have features I used was query ranges for CSS media queries. It's another feature I've long-awaited since media queries were first introduced. Oh, and I used the `,` operator of media queries for the first time!
 
-And I tried out container queries for the first time. I will write another, more in depth article about using them soon.
+And I tried out container queries for the first time. (_Edit:_ I published [an article](https://frontendmasters.com/blog/container-queries-and-units/) about this also!)
 
 I also tried using `console.info` to add a little surprise for those who look in the console. I will also write another article about this approach as I think it's quite interesting.
 
