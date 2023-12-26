@@ -23,7 +23,7 @@
       link: 'mailto:hello@zachsaucier.com',
     },
     {
-      title: 'Twitter',
+      title: 'X',
       link: 'https://twitter.com/ZachSaucier/',
     },
     {
@@ -42,10 +42,10 @@
       title: 'Bluesky',
       link: 'https://bsky.app/profile/zachsaucier.bsky.social',
     },
-    {
-      title: 'StackOverflow',
-      link: 'https://stackoverflow.com/users/2065702/Zach-Saucier',
-    },
+    // {
+    //   title: 'StackOverflow',
+    //   link: 'https://stackoverflow.com/users/2065702/Zach-Saucier',
+    // },
   ];
 </script>
 
