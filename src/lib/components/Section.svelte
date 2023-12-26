@@ -1,8 +1,9 @@
 <script>
+  export let searchable = false;
   export let no_border = false;
 </script>
 
-<section class:no_border>
+<section class:no_border data-pagefind-body={searchable || null}>
   <slot />
 </section>
 

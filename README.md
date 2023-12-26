@@ -10,12 +10,13 @@ This blog started as a fork of Josh Collinsworth's [Sveltekit static blog starte
 - **Static site generation with hydration.** Every route is compiled down to static HTML and routed with (optional) JavaScript, thanks to the SvelteKit static adapter.
 - **Markdown support** with GitHub Flavored Markdown (GFM).
 - **Styles per component** along with a single global stylesheet for general styles (mostly article content styles). With CSS variables and CSS nesting, there's no need for SASS!
-- **mdvsex support.** Use Svelte components in your Markdown files!
+- **mdvsex support** so you can use Svelte components in your Markdown files!
 - **Automatic page transitions.**
 - **Responsive and accessible defaults** including a "skip to content" link, accessible navigation and components, and accessible emojis.
 - **Basic SEO** for blog posts.
 - **RSS feed** for users to easily subscribe to new posts.
 - **Draft blog post functionality** so you can save to the same place but not have the link show up in your listings or counts.
+- **Footnotes functionality**
 - **Blog excerpt functionality** so that you can show the start of your blog posts on the blog homepage instead of the description.
 - **Tags (categories) functionality** which make looking for specific types of posts easy.
 - **Advanced pagination** where only the nearest 5 pages are shown along with "first" and "last" page buttons when applicable.
@@ -24,8 +25,8 @@ This blog started as a fork of Josh Collinsworth's [Sveltekit static blog starte
 - **Archive functionality** which is similar to the blog listing but only shows the title and tags with a different layout that focuses on the year it was published. [Demo](https://zachsaucier.com/blog/archive/).
 - **Collapsible sidebar**.
 - **Tweet and CodePen embeds**.
-- **Image lightboxing functionality**
-- **(basic) Search functionality** that uses the search engine of your choice.
+- **Image lightboxing functionality** with built in image serving for high DPI devices.
+- **High quality search functionality** using [Pagefind](https://pagefind.app/).
 - **Clickable section headings** to make sharing to a particular part of a post a breeze.
 - **Table of contents for blog posts** that outlines the sections of each page.
 - **Tweet button** to let users more easily share to Twitter (X).

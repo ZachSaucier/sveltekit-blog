@@ -9,7 +9,7 @@
   };
 </script>
 
-<header {style}>
+<header {style} data-pagefind-ignore="all">
   <a on:click|preventDefault={focusMain} class="skip_to_content" href="#main">
     Skip to main content
   </a>

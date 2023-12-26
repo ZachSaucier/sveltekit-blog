@@ -1,8 +1,17 @@
 <script>
+  import { goto } from '$app/navigation';
   import { current_page } from '$lib/utilities/store';
   import { nav_items } from '$lib/config';
   import Icon from '$lib/components/Icon.svelte';
   import ThemeToggle from '$lib/components/ThemeToggle.svelte';
+
+  function handleSearchSubmit(e) {
+    const form_data = new FormData(e.target);
+    let search_query = form_data.get('search');
+    search_query = search_query.trim();
+    if (search_query.length < 1) return;
+    else return goto(`/blog/search?q=${search_query}`);
+  }
 </script>
 
 <nav>
@@ -23,11 +32,8 @@
     {/each}
     <li class="search_item">
       <search>
-        <form action="https://www.google.com/search" method="get">
-          <fieldset>
-            <input type="hidden" name="q" value="site:zachsaucier.com/blog" />
-            <input type="search" name="q" results="0" placeholder="Search" />
-          </fieldset>
+        <form on:submit|preventDefault={handleSearchSubmit}>
+          <input type="search" name="search" results="0" placeholder="Search" />
         </form>
       </search>
     </li>

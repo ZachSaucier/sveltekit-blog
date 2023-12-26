@@ -29,6 +29,9 @@
       <li>
         <a href="/blog/tags">Tags</a>
       </li>
+      <li style="display:none">
+        <a href="/blog/search">Search</a>
+      </li>
     </ul>
   </nav>
 </footer>

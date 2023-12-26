@@ -52,6 +52,7 @@
     {loading}
     width={display_width}
     height={display_height}
+    data-pagefind-index-attrs="alt"
   />
 {:else}
   <button
@@ -68,6 +69,7 @@
       {loading}
       width={display_width}
       height={display_height}
+      data-pagefind-index-attrs="alt"
     />
   </button>
 

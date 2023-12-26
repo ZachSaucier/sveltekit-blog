@@ -45,7 +45,7 @@
   {/if}
 </svelte:head>
 
-<Section>
+<Section searchable={true}>
   <header class="post_header">
     <h2 class="post_title">
       {title}

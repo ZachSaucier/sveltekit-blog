@@ -49,7 +49,7 @@
   ];
 </script>
 
-<aside class="sidebar" {style}>
+<aside class="sidebar" {style} data-pagefind-ignore="all">
   <div class="aside_content">
     {#if $recent_posts.length}
       <h1>Recent posts</h1>
