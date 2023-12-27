@@ -126,6 +126,10 @@
     @media (max-width: 749px) {
       --content-gutter: 25px;
     }
+
+    --button-background: var(--button-dark-background);
+    --button-background-hover: var(--link-color-hover);
+    --button-color: var(--background-color);
   }
 
   html.dark {
@@ -144,6 +148,10 @@
     --link-color-dark-hover: oklch(0.84 0.11 228.79);
 
     --border-dashed-color: rgb(176 176 176);
+
+    --button-background: var(--link-color);
+    --button-background-hover: var(--link-color-hover);
+    --button-color: var(--accent-dark);
   }
 
   body {
@@ -196,15 +204,15 @@
   button,
   [type='submit'],
   .read_on.read_on {
-    background-color: var(--button-dark-background);
-    color: var(--background-color);
+    background-color: var(--button-background);
+    color: var(--button-color);
     transition: 0.15s;
     cursor: pointer;
     border: none;
     padding: 3px 10px;
 
     &:is(:hover, :focus) {
-      background-color: var(--link-color-hover);
+      background-color: var(--button-background-hover);
     }
   }
 
@@ -217,17 +225,6 @@
     font-weight: normal;
     padding: 0.3rem 0.6rem;
     border: 1px solid var(--gray-accent);
-  }
-
-  html.dark button,
-  html.dark [type='submit'],
-  html.dark .read_on.read_on {
-    color: var(--accent-dark);
-    background-color: var(--link-color);
-
-    &:is(:hover, :focus) {
-      background-color: var(--link-color-hover);
-    }
   }
 
   article {

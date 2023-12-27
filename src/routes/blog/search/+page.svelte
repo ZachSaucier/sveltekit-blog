@@ -42,4 +42,25 @@
     --pagefind-ui-border: var(--border-dashed-color);
     --pagefind-ui-tag: var(--border-dashed-color);
   }
+
+  :global(.pagefind-ui__result, .pagefind-ui__message) {
+    background: var(--border-dashed) !important;
+    border-top: none !important;
+    border-bottom: none !important;
+  }
+
+  :global(.pagefind-ui__button) {
+    --pagefind-ui-background: var(--button-background) !important;
+    --pagefind-ui-primary: var(--button-color) !important;
+    --pagefind-ui-border-radius: 0px !important;
+    border: none !important;
+    transition: 0.15s;
+  }
+  :global(.pagefind-ui__button:hover) {
+    --pagefind-ui-background: var(--button-background-hover) !important;
+  }
+
+  :global(.pagefind-ui__result-nested .pagefind-ui__result-link::before) {
+    top: -2px !important;
+  }
 </style>
