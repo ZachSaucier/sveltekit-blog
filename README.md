@@ -1,6 +1,6 @@
 # A Sveltekit blog by Zach Saucier
 
-This blog started as a fork of Josh Collinsworth's [Sveltekit static blog starter](https://github.com/josh-collinsworth/sveltekit-blog-starter). It grew to encompass several more features and does things a bit differently.
+This blog started as a fork of Josh Collinsworth's [Sveltekit static blog starter](https://github.com/josh-collinsworth/sveltekit-blog-starter). It grew to encompass many more features and does things a bit differently.
 
 ## [Demo](https://zachsaucier.com/blog/)
 
@@ -35,7 +35,11 @@ This blog started as a fork of Josh Collinsworth's [Sveltekit static blog starte
 
 ## Getting started
 
-I recommend forking this repo and then cloning it from there.
+I recommend forking this repo and then cloning it from there so that your changes are independent of the ones I will make in the future.
+
+Use `npm run dev` to get it running locally.
+
+In order to get the search functionality working locally, you must build the project using `npm run build`. If you want the search content to update, you need to rebuild the project.
 
 ## Documentation
 

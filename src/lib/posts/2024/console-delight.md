@@ -264,6 +264,29 @@ console.info(
 
 <Video src="https://res.cloudinary.com/desumhldo/video/upload/v1702961424/console-delight/circles_tmjltq.mp4" width="882" height="918" alt="Random circles disappearing and appearing within the dev tools console." />
 
+## Including a link inside of the design
+
+It's impossible to add click events or links inside of the SVG that's used as a background image. However, if you're fine showing the full URL, you can fake it by using carefully chosen padding values to place the URL from the console message where you want it to be relative to the background image. It might also be worth changing the `font-family` being used to more closely match the SVG that you use.
+
+Keep in mind that the URL itself will affect the width of the element, so you may need to adjust your SVG. Also make sure to test thoroughly between browsers because there's more cross-browser inconsistencies with this technique.
+
+```js
+console.info(
+  '%chttps://zachsaucier.com/',
+  `line-height:88px;padding-block:44px;color:#ffb400;font-family:'Phosphate';font-size:36px;padding-inline:205px;background-repeat:no-repeat;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 610 88'%3E%3Cdefs%3E%3Cfilter id='glow'%3E%3CfeGaussianBlur stdDeviation='2.5' result='coloredBlur'%3E%3C/feGaussianBlur%3E%3CfeMerge%3E%3CfeMergeNode in='coloredBlur'%3E%3C/feMergeNode%3E%3CfeMergeNode in='SourceGraphic'%3E%3C/feMergeNode%3E%3C/feMerge%3E%3C/filter%3E%3C/defs%3E%3Cpath filter='url(%23glow)' fill='%23ffb400' d='M545.835 10c-1.643 0-3.18.646-4.326 1.822a6.052 6.052 0 0 0 .101 8.548l13.723 13.397-48.961.362a6.378 6.378 0 0 0-6.371 6.37 6.377 6.377 0 0 0 6.37 6.37h11.902a5.946 5.946 0 0 0-1.868 4.316 5.95 5.95 0 0 0 1.807 4.264c.054.056.118.102.174.156.112.101.224.2.344.293a5.986 5.986 0 0 0 3.494 1.397 5.944 5.944 0 0 0-1.725 4.177 5.9 5.9 0 0 0 .76 2.899 6.047 6.047 0 0 0 5.287 3.275 6.028 6.028 0 0 0-1.791 4.293c0 .309.031.61.076.906.003.02.004.04.008.061.16.99.572 1.89 1.152 2.658a6.086 6.086 0 0 0 .852.91c.086.075.175.147.265.217a5.978 5.978 0 0 0 3.325 1.273c.093.007.186.014.28.016.03 0 .058.004.087.004h41.271a9.606 9.606 0 0 0 9.188-6.725h5.418v3.838h13.324V37.254h-13.324v4.218h-5.287c-2.754-5.768-26.366-25.62-31.358-29.777a6.012 6.012 0 0 0-4.197-1.696zm0 1.754a4.27 4.27 0 0 1 2.998 1.22l.05.047c14.806 12.329 30.71 26.833 31.02 29.432l.092.773h6.682v26.28H579.9l-.162.671a7.862 7.862 0 0 1-7.667 6.053h-20.54a5.952 5.952 0 0 0 1.809-4.266c0-3.32-2.748-6.02-6.125-6.02h-.182c1.25-1.102 2.041-2.695 2.041-4.472 0-3.249-2.63-5.903-5.908-6.015a5.954 5.954 0 0 0 1.814-4.272c0-3.32-2.747-6.02-6.125-6.02h-.422v-.05h-32.062a4.622 4.622 0 0 1-4.617-4.616 4.624 4.624 0 0 1 4.623-4.617l53.231-.392-16.772-16.373a4.296 4.296 0 0 1-.072-6.069 4.257 4.257 0 0 1 3.07-1.295zm42.596 27.253h9.816v34.336h-9.816v-31.87Zm-49.996 7.913h.421c2.41 0 4.371 1.913 4.371 4.265 0 2.352-1.96 4.266-4.37 4.266H522.53a4.41 4.41 0 0 1-3.035-1.202 4.267 4.267 0 0 1-1.219-2.984 4.297 4.297 0 0 1 4.291-4.293h15.867zm-11.807 10.286h16.322c2.41 0 4.371 1.914 4.371 4.266 0 2.353-1.96 4.266-4.37 4.266h-16.327a4.39 4.39 0 0 1-3.705-2.016 4.245 4.245 0 0 1-.584-2.12 4.297 4.297 0 0 1 4.293-4.292zm4.261 10.493h16.327c2.41 0 4.37 1.913 4.37 4.265 0 2.353-1.96 4.266-4.37 4.266h-16.327c-.057 0-.113-.006-.17-.008a4.259 4.259 0 0 1-.595-.06 4.42 4.42 0 0 1-.467-.106c-.049-.013-.096-.03-.145-.045a4.386 4.386 0 0 1-1.95-1.287c-.036-.041-.07-.084-.104-.127a4.244 4.244 0 0 1-.326-.463 4.291 4.291 0 0 1-.332-.68 4.205 4.205 0 0 1-.165-.525 4.288 4.288 0 0 1-.11-.814c0-.05-.007-.1-.007-.15 0-.088.01-.173.014-.258.007-.114.02-.224.035-.334.297-2.073 2.118-3.674 4.322-3.674zM64.165 10a6.013 6.013 0 0 0-4.197 1.695c-4.992 4.157-28.604 24.01-31.358 29.777h-5.287v-4.219H10v37.844h13.324V71.26h5.418a9.606 9.606 0 0 0 9.188 6.724H79.2c.029 0 .057-.003.086-.004.094-.003.188-.01.28-.016a5.974 5.974 0 0 0 3.325-1.273c.09-.07.18-.142.266-.217a6.047 6.047 0 0 0 .851-.91 5.993 5.993 0 0 0 1.157-2.684l.004-.035a6.033 6.033 0 0 0 .076-.906 6.028 6.028 0 0 0-1.791-4.293 6.047 6.047 0 0 0 5.287-3.275 5.9 5.9 0 0 0 .76-2.9c0-1.62-.66-3.093-1.725-4.176a5.986 5.986 0 0 0 3.494-1.397 6.114 6.114 0 0 0 .344-.293c.056-.054.12-.1.174-.156a5.953 5.953 0 0 0 1.806-4.264 5.946 5.946 0 0 0-1.867-4.316h11.9a6.377 6.377 0 0 0 6.372-6.37 6.378 6.378 0 0 0-6.371-6.37l-48.961-.362L68.389 20.37a6.052 6.052 0 0 0 .102-8.548 5.997 5.997 0 0 0-4.326-1.823Zm0 1.754a4.257 4.257 0 0 1 3.07 1.294 4.296 4.296 0 0 1-.072 6.069L50.391 35.49l53.23.392a4.624 4.624 0 0 1 4.624 4.617 4.622 4.622 0 0 1-4.617 4.616H71.565v.05h-.422c-3.377 0-6.125 2.7-6.125 6.02 0 1.668.696 3.18 1.815 4.272-3.278.112-5.909 2.766-5.909 6.015 0 1.777.792 3.37 2.041 4.473h-.181c-3.378 0-6.125 2.7-6.125 6.02a5.95 5.95 0 0 0 1.809 4.265h-20.54a7.862 7.862 0 0 1-7.668-6.053l-.162-.672h-6.775V43.226h6.682l.092-.774c.31-2.599 16.213-17.102 31.019-29.431l.05-.047a4.27 4.27 0 0 1 2.999-1.22zM11.753 39.007h9.816v34.336h-9.816zm59.39 7.913h.423v.052h15.867a4.297 4.297 0 0 1 4.291 4.293 4.267 4.267 0 0 1-1.22 2.985 4.359 4.359 0 0 1-.241.215l-.022.017a4.417 4.417 0 0 1-2.772.969H71.144c-2.41 0-4.371-1.914-4.371-4.266 0-2.352 1.96-4.265 4.37-4.265zM67.05 57.206h16.322v.104a4.297 4.297 0 0 1 4.294 4.291c0 .775-.224 1.493-.585 2.121a4.39 4.39 0 0 1-3.705 2.016H67.05c-2.41 0-4.371-1.913-4.371-4.266 0-2.352 1.96-4.266 4.37-4.266zM62.785 67.7H79.11c2.204 0 4.025 1.601 4.322 3.673a4.265 4.265 0 0 1 .035.335c.005.086.014.17.014.257 0 .051-.006.1-.008.15a4.31 4.31 0 0 1-.11.815 4.24 4.24 0 0 1-.296.834 4.349 4.349 0 0 1-.525.834c-.035.043-.069.086-.104.127a4.376 4.376 0 0 1-.54.523c-.004.005-.01.008-.015.012a4.401 4.401 0 0 1-1.396.752c-.049.015-.096.032-.145.045a4.311 4.311 0 0 1-.467.105 4.234 4.234 0 0 1-.596.061c-.056.002-.112.008-.17.008H62.785c-2.41 0-4.37-1.913-4.37-4.266 0-2.352 1.96-4.265 4.37-4.265z'%3E%3C/path%3E%3C/svg%3E")`
+);
+```
+
+Here's what the above looks like in Chrome:
+
+<Lightbox src="https://res.cloudinary.com/desumhldo/image/upload/v1704566589/console-delight/link-chrome_drdw37.webp" width="1784" height="286" alt="A console message with two hands pointing towards a link in the middle. The link text is not perfectly vertically centered and the link text is the default color while the hands are an orange color." />
+
+And in Firefox:
+
+<Lightbox src="https://res.cloudinary.com/desumhldo/image/upload/v1704566590/console-delight/link-firefox_e4ivnv.webp" width="1786" height="212" alt="A console message with two hands pointing towards a link in the middle. The top of the thumb is cut off a bit." />
+
+In Safari, it only shows the link and not the background image.
+
 ## Responsive sizing
 
 Unfortunately I couldn't find a way to make the message span 100% of the width of the console. I believe that this is because we can't change the `display` of elements in the console, so things like `width: 100%` don't work here. The element must have an explicit width and height in pixels (or other non-relative unit) or else its size will be based on the text.
@@ -427,6 +450,12 @@ console.log(
 Note the usage of `font-family: monospace` to make sure the characters have a consistent width.
 
 If you're looking for some tools to generate ASCII art, [ASCII Art Archive](https://www.asciiart.eu/) has a bunch of tools to generate ASCII art, including [image to ASCII](https://www.asciiart.eu/image-to-ascii) and [text to ASCII](https://www.asciiart.eu/text-to-ascii-art).
+
+## Notable mention: Emojis
+
+Emojis work well in the console. Sometimes, that may be all you need!
+
+<Lightbox src="https://res.cloudinary.com/desumhldo/image/upload/v1704585240/console-delight/emoji_gprvmc.webp" width="1154" height="158" alt="A console message that says, 'Thanks for stopping by' with some sparkle emojis." />
 
 ## Go forth and delight!
 
