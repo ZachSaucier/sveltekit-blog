@@ -16,7 +16,7 @@ cover_in_post: false
 
 Remember the days when all the music you owned was on some hardware in your home (computer, iPod Shuffle, CD, etc.)? Before streaming was the norm every person had to be their own music curator.
 
-I never stopped doing that. I've always had music that was not on every streaming services: music from [NewGrounds](https://www.newgrounds.com/), music I made, custom edits of others' music (mostly just chopping off a sections of songs), or music that are only available on one streaming service. This made me never want to transition to streaming services as the primary way that I listened to my own music.
+I never stopped doing that. I've always had music that was not on every streaming services: music from [NewGrounds](https://www.newgrounds.com/), music I made, custom edits of others' music (mostly just cutting out sections of songs), or music that are only available on one streaming service. This made me never want to transition to streaming services as the primary way that I listened to my own music.
 
 <span class="excerpt_marker"></span>
 

@@ -23,7 +23,12 @@
     setCookie('collapsed', collapsed ? 'true' : 'false');
   }
 
+  function handleScroll() {
+    scrollY = window.scrollY;
+  }
+
   function handleResize() {
+    innerWidth = window.innerWidth;
     setCookie('innerWidth', innerWidth);
   }
 
@@ -49,6 +54,20 @@
   onMount(() => {
     const navRoutes = nav_items.map((item) => item.route);
     preloadCode(...navRoutes);
+
+    window.addEventListener('scroll', handleScroll);
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('scroll', () => {
+        scrollY = window.scrollY;
+      });
+
+      window.removeEventListener('resize', () => {
+        innerWidth = window.innerWidth;
+      });
+    };
   });
 
   $: translateX = () => {
@@ -67,8 +86,6 @@
     }
   };
 </script>
-
-<svelte:window bind:innerWidth bind:scrollY on:resize={handleResize} />
 
 <div class="outer_container" class:collapsed>
   {#if innerWidth >= 1200}
