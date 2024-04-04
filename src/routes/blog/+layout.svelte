@@ -1,10 +1,10 @@
 <script>
-  import { onMount } from 'svelte';
+  // import { onMount } from 'svelte';
   import { fade } from 'svelte/transition';
-  import { preloadCode } from '$app/navigation';
+  // import { preloadCode } from '$app/navigation';
 
   import { current_page, recent_posts } from '$lib/utilities/store';
-  import { nav_items } from '$lib/config';
+  // import { nav_items } from '$lib/config';
 
   import Ribbons from '$lib/components/Ribbons.svelte';
   import Header from '$lib/components/Header.svelte';
@@ -23,12 +23,7 @@
     setCookie('collapsed', collapsed ? 'true' : 'false');
   }
 
-  function handleScroll() {
-    scrollY = window.scrollY;
-  }
-
   function handleResize() {
-    innerWidth = window.innerWidth;
     setCookie('innerWidth', innerWidth);
   }
 
@@ -51,24 +46,10 @@
    * own preloadData() calls here, too.
    **/
 
-  onMount(() => {
-    const navRoutes = nav_items.map((item) => item.route);
-    preloadCode(...navRoutes);
-
-    window.addEventListener('scroll', handleScroll);
-
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('scroll', () => {
-        scrollY = window.scrollY;
-      });
-
-      window.removeEventListener('resize', () => {
-        innerWidth = window.innerWidth;
-      });
-    };
-  });
+  // onMount(() => {
+  //   const navRoutes = nav_items.map((item) => item.route);
+  //   preloadCode(...navRoutes);
+  // });
 
   $: translateX = () => {
     if (collapsed) {
@@ -86,6 +67,8 @@
     }
   };
 </script>
+
+<svelte:window bind:innerWidth bind:scrollY on:resize={handleResize} />
 
 <div class="outer_container" class:collapsed>
   {#if innerWidth >= 1200}
