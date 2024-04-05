@@ -1,10 +1,10 @@
 <script>
-  // import { onMount } from 'svelte';
+  import { onMount } from 'svelte';
   import { fade } from 'svelte/transition';
-  // import { preloadCode } from '$app/navigation';
+  import { preloadCode } from '$app/navigation';
 
   import { current_page, recent_posts } from '$lib/utilities/store';
-  // import { nav_items } from '$lib/config';
+  import { nav_items } from '$lib/config';
 
   import Ribbons from '$lib/components/Ribbons.svelte';
   import Header from '$lib/components/Header.svelte';
@@ -46,10 +46,10 @@
    * own preloadData() calls here, too.
    **/
 
-  // onMount(() => {
-  //   const navRoutes = nav_items.map((item) => item.route);
-  //   preloadCode(...navRoutes);
-  // });
+  onMount(() => {
+    const navRoutes = nav_items.map((item) => item.route);
+    preloadCode(...navRoutes);
+  });
 
   $: translateX = () => {
     if (collapsed) {
