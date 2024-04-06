@@ -58,13 +58,17 @@ The most major issue I've had with Subsonic happens when my computer crashes, wh
 
 After poking around for a while I found that when my computer crashes and Subsonic is closed unexpectedly, it massively bloats the `subsonic.data` (for me that's within `C:\subsonic\db\` -- notice that it's a different path than the one before). Others have ran into this issue and at least one person fixed it by [trimming down the `.data` file itself](https://dpedu.io/article/2015-08-01/subsonic-database-bloatcorruption) but I couldn't get that approach working due to null values.
 
-The first time this issue happened I was able to fix it by just bumping up the max amount of RAM Subsonic used.
+The first time this issue happened I was able to fix it by just bumping up the max amount of RAM Subsonic used. The second time it happened I couldn't fix it by further increasing the max RAM. When this happened a third time, the error I was receiving was different: It was complaining about NUL values.
 
-The second time it happened I couldn't fix it by further increasing the max RAM.
+### The solution: doing a clean reinstall
+
+A clean reinstalling fixes all of these issues. It's now what I do anytime Subsonic fails to startup, which is a little annoying, but with practice you can get going again in a few minutes.
 
 **Note:** Before you carry out the steps below, I highly recommend backing up your `subsonic.properties` file from within the `subsonic` directory and all of your playlists! I made [a script](https://gist.github.com/ZachSaucier/ecb911278a999b1d4bb505cd5548bb4e) to download all playlists that you have, just make sure the number of playlists is changed to ID number of the most recent playlist that have.
 
-To fix this issue the second time I had to delete both the Subsonic application directory (for me that was `C:\Program Files (x86)\Subsonic\`) and the Subsonic personal directory (for me that was `C:\subsonic\`). Then I reinstalled using the Windows installer, added my `subsonic.properties` file that I made a backup of, and was able to get things running again (you'll have to set up any accounts that you had again and manually upload your playlists one by one).
+To do a clean reinstall make sure to delete both the Subsonic application directory (for me that was `C:\Program Files (x86)\Subsonic\`) _and_ the Subsonic personal directory (for me that was `C:\subsonic\`). Install using whatever means of installing Subsonic, add your `subsonic.properties` file back to the `subsonic` directory, and then upload your playlists.
+
+Pro tips for importing playlists more quickly: In `subsonic\jetty\0cfa60\webapp\WEB-INF\jsp\importPlaylist.jsp`, add `style="width:500px;height:500px;"` to the `input` with the type of `file` to make the drag area larger. You can also navigate directly to the `http://localhost:4040/importPlaylist.view` to prevent Subsonic from navigating to the playlist that you imported each time!
 
 ## Where I stand with Subsonic
 
