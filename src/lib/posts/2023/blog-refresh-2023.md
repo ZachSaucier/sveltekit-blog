@@ -129,4 +129,4 @@ Lastly, I used some `position: sticky` on the sidebar if the viewport height is 
 
 ## Where my blog is going from here
 
-I plan on writing short posts anytime that I make a little side project. I also plan on posting a few longer, more in-depth articles about some new technology. If that interests you, please make use of [the RSS feed](/blog/api/rss.xml), the email signup in the sidebar, or following me [on Twitter](https://twitter.com/ZachSaucier) or [Bluesky](https://bsky.app/profile/zachsaucier.bsky.social)!
+I plan on writing short posts anytime that I make a little side project. I also plan on posting a few longer, more in-depth articles about some new technology. If that interests you, please make use of [the RSS feed](/blog/api/rss.xml), the email signup in the sidebar, or following me [on Twitter](https://twitter.com/ZachSaucier)!

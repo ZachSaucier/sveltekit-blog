@@ -40,12 +40,12 @@
     },
     {
       title: 'Bluesky',
-      link: 'https://bsky.app/profile/zachsaucier.bsky.social',
+      link: 'https://bsky.app/profile/zachsaucier.com',
     },
-    // {
-    //   title: 'StackOverflow',
-    //   link: 'https://stackoverflow.com/users/2065702/Zach-Saucier',
-    // },
+    {
+      title: 'StackOverflow',
+      link: 'https://stackoverflow.com/users/2065702/Zach-Saucier',
+    },
   ];
 </script>
 
