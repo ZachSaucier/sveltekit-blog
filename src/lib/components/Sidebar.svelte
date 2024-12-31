@@ -23,9 +23,13 @@
       link: 'mailto:hello@zachsaucier.com',
     },
     {
-      title: 'X',
-      link: 'https://twitter.com/ZachSaucier/',
+      title: 'Bluesky',
+      link: 'https://bsky.app/profile/zachsaucier.com',
     },
+    // {
+    //   title: 'X',
+    //   link: 'https://twitter.com/ZachSaucier/',
+    // },
     {
       title: 'LinkedIn',
       link: 'https://www.linkedin.com/in/zach-saucier-051aa171/',
@@ -37,10 +41,6 @@
     {
       title: 'CodePen',
       link: 'https://codepen.io/ZachSaucier/',
-    },
-    {
-      title: 'Bluesky',
-      link: 'https://bsky.app/profile/zachsaucier.com',
     },
     {
       title: 'StackOverflow',
