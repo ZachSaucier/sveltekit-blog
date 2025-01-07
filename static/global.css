@@ -201,6 +201,10 @@
     }
   }
 
+  a :where(h1, h2) {
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+  }
+
   a[href^='https']:not([href*='zachsaucier.com']) {
     display: inline-flex;
     align-items: center;
