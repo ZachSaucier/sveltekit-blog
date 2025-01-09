@@ -4,7 +4,7 @@
   import { title_ending } from '$lib/config';
   import Section from '$lib/components/Section.svelte';
   import Date from '$lib/components/Date.svelte';
-  import TwitterShare from '$lib/components/TwitterShare.svelte';
+  import BlueskyShare from '$lib/components/BlueskyShare.svelte';
   import ContentAside from '$lib/components/ContentAside.svelte';
 
   export let data;
@@ -82,7 +82,7 @@
         </ul>
       </div>
 
-      <TwitterShare {url} />
+      <BlueskyShare {url} />
     </aside>
   {/if}
 

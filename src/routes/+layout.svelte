@@ -1,5 +1,4 @@
 <script>
-  import { onMount } from 'svelte';
   import { fade } from 'svelte/transition';
   // import { preloadCode } from '$app/navigation';
 
@@ -132,9 +131,11 @@
 
     & main,
     & footer {
-      width: 100%;
-      max-width: 900px;
       margin: 0 auto;
+
+      @media (max-width: 999px) {
+        width: 100%;
+      }
     }
   }
 
@@ -159,7 +160,7 @@
       border-bottom-left-radius: 4px;
 
       @media (max-width: 1199px) {
-        right: 0;
+        display: none;
       }
     }
 
@@ -180,6 +181,7 @@
     position: fixed;
     top: 210px;
     left: calc(50% + 300px);
+    width: 30px;
     z-index: 1;
     transition: none;
     border-right: var(--border-sidebar);

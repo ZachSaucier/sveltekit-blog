@@ -26,7 +26,7 @@
 
           {#if post.excerpt}
             <footer>
-              <a href={path} class="read_on" rel="full-article">Read on</a>
+              <a href={path} class="button read_on" rel="full-article">Read on</a>
             </footer>
           {/if}
         </Section>

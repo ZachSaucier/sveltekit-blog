@@ -4,6 +4,7 @@ export const site_description = "Zach Saucier's personal blog";
 export const site_link = 'https://zachsaucier.com/blog';
 export const site_author = 'Zach Saucier';
 export const twitter_handle = 'ZachSaucier';
+export const bluesky_handle = 'zachsaucier.com';
 
 export const nav_items = [
   {

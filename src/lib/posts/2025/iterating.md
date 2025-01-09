@@ -1,7 +1,7 @@
 ---
-title: The absurd effectiveness of iteration
+title: User-centered iteration
 date: 2025-01-08
-description: My thoughts around starting from scratch vs iterating.
+description: My thoughts around how iterating with user-centered goals makes me more efficient and improves the quality of the end result.
 tags:
   - rambling
   - projects
@@ -13,3 +13,89 @@ cover_alt: TODO
 cover_in_post: false
 draft: true
 ---
+
+## Iteration > from scratch
+
+I'm increasingly convinced that it's usually a bad decision to start from scratch.
+
+There are a lot of reasons behind this belief, but the most important to me is: Usually the old way is doing pretty well. Rather than risk losing what is already going well in a full redesign, it's usually better to focus on improving what's lacking. I think the second most important reason is that starting from something causes one to avoid the blank page syndrome.
+
+I think that this rule of thumb applies to product-level thinking all the way down to code implementaion itself. I think that if you usually follow this rule of thumb and avoid redesigns it will make you much more efficient and able to ship more.
+
+<span class="excerpt_marker"></span>
+
+## When to "start fresh"
+
+Are there any cases when one should do a from-scratch redesign instead of iterating?
+
+I think that it can make sense to do so when the goals are very much not being achieved in the current version.
+
+Even still, if you are creating a version "from scratch" I think that it makes a *lot* of sense to first outline what is going well with the current version and try to use those principles when creating a new version. So it's still not truly "from scratch" (as Kirby Ferguson would say, [everything is a remix](https://www.youtube.com/watch?v=X9RYuvPCQUA) — I don't agree with everything in this video though).
+
+## The trick: Doing user-focused goal-driven work
+
+The trick to being able to avoid redesigns and stick to iterative improvements is knowing what your goals are all of the time. It's best to focus on user-focused goal-driven work, not business goal-driven work. I think this is where most people and companies go wrong.
+
+It's easy to skip over the question or provide a half-baked answer to the question, "why, exactly, am I doing this work?" But if we keep that question at the forefront of our mind as we work it helps not only the efficiency of building it but also improves the end quality.
+
+Who are your users? What are their needs? How does the current product solve their needs and where does it fall short?
+
+Keep this clear in all that you do. If you can't, you probably shouldn't be doing the work that you're attempting.
+
+## How this has played out in my personal projects
+
+Let's take a look at how this rule of thumb has helped me make quality things in my personal time.
+
+### Drawing
+
+I'm pretty terrible at drawing. But I remember when I was growing up I felt like I had to get everything right the first time or throw it away and restart.
+
+Take drawing a straight line for example. I, like most people, have a hard time drawing a long, perfectly straight line, especially without a tool.
+
+One day I saw someone draw a straight line not in one single motion but through a bunch of small straight lines. It's much easier to draw straight lines that are short that it is to draw long ones. It also allows you to "correct" previous lines by adjusting for where you're going in the wrong direction. Yes, it's not the *exact* same outcome of a straight line drawn in one motion. But it avoids significantly down sides and also is a lot less stressful for me to do. So I think it's usually worth doing.
+
+Learning to sketch first then iterate greatly improved my drawing, which also freed me to draw more, creating a cycle of improvement.
+
+### My personal website
+
+I [first](https://web.archive.org/web/20131004134705/http://zachsaucier.com/) created a personal website for my professional self in 2013. Its simple design holds up pretty well! Between 2013 and 2017 I made [minor updates to it](https://web.archive.org/web/20161007032655/http://zachsaucier.com/) when I had something to add or improve. 
+
+In 2017 I sought to redesign my personal website completely. I wanted something more technically impressive and that would stick out to potential employers more. I played around with a few ideas but ultimately ended up with [this version](https://web.archive.org/web/20171005053121/https://zachsaucier.com/) and [wrote about the process](/blog/site-redesign-2017/). I think the end result did a pretty good job of achieving my goals!
+
+Since that time my design and front-end skills have increased significantly. Throughout the years I have played around with mutliple redesigns of my personal site with very different styles. They included a version with 3D room with a digital avatar, a 2D story-driven version, a version with a color scheme and type of interactive visual per section, and a generic "award-looking" version that breaks down and shows a more playful version underneath. Each time I had an idea I started making progress on the idea but never saw it to completion because I wasn't convinced the end experience would be worth switching to for one reason or another.
+
+At the end of 2024 I finally decided to *not* attempt a full design of my website but instead focus on the aspects that I thought should be improved, namely:
+
+1. The projects were all outdated (I don't really want to maintain a continuous projects section)
+2. The visual style was a little dated
+3. Some of the code implementation was a bit outdated, which made updating it a little harder than I wanted it to be
+
+Wouldn't ya know it, after a few days of cleaning up the old site I had [a pretty solid version](https://web.archive.org/web/20250109165011/https://zachsaucier.com/) (TODO FIX) that I liked and is easy to keep up to date! In the updated version I relied more heavily on linking out to websites that I am more likely to update like [my Bluesky](https://bsky.app/profile/zachsaucier.com), [work history deck](https://www.figma.com/deck/K4Z77gNLmWb6ADFMOA6UU5), and [LinkedIn profile](https://www.linkedin.com/in/zach-saucier-051aa171/).
+
+Does it show off the full extent of my abilities? No. But it does achieve my goals for having a personal website, at least for now.
+
+### My blog
+
+I started this blog in 2014 [with its own design](https://web.archive.org/web/20140624003209/zachsaucier.com/blog). The following year I gave it [a light re-paint](https://web.archive.org/web/20150614052602/http://zachsaucier.com/blog/) which helped it match my personal website branding and be a little easier on one's eyes.
+
+But that version of the blog was hard for me to update. Not only was building Jekyll not the least error prone but I also lost the build files due to some hard drive failures, which contributed to me not writing to it from 2017-2023.
+
+In 2023 I got some time to learn and play around with Svelte. I loved it and decided to rebuild my old Jekyll-based blog with Svelte. But I liked the overall look of my old blog so I decided to port it (making improvements to the styling and implementation as I went) to Sveltekit instead of building something new from scratch. It only took around 2 weeks of free time with most of that time being spent setting up Sveltekit exactly the way I wanted it to work.
+
+This shows how this principle applies to not only visual things that people interact with but also to the infrastructure behind something.
+
+### My reader mode extension
+
+After starting web development in 2013 I found myself regularly using the devtools to edit webpages with articles on them to make them more readable. In 2015 I decided to make a custom reader mode during a hackathon to automate some of these edits I regularly made, solely for my own use. That resulted in an open-source reader mode that I called [Just Read](https://github.com/ZachSaucier/Just-Read/). 
+
+To my surprise, more and more people started using Just Read. They made feature requests and I ended up implementing a lot of those features, which led to more users.
+
+In 2018, around the 150k user mark, I started getting too many feature requests for me to keep up with in my free time without interrupting the other things I wanted to do. So I decided to make a premium version which could help me justify putting in more time into maintaining the free version.
+
+After a couple of weeks, I had a premium version along with [a marketing page](https://justread.link/) and user management pages. Now I earn (mostly) passive income from it monthly! And the free version serves ~240k users every week, including many people with disabilities and many students. I still update it but only small pieces at a time — most of it is in "good enough" shape.
+
+## Maybe the key is just caring?
+
+Maybe the key with all of this is just caring. If you care, you will either know or make yourself come to know what your goals should be. If you don't care, it doesn't really matter how many users you talk to, you probably won't make something that's really helpful.
+
+Sometimes I think I just care about the work that I do and the environment that I do it in than most people.
