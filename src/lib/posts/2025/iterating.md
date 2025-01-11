@@ -1,7 +1,7 @@
 ---
 title: User-centered iteration
-date: 2025-01-08
-description: My thoughts around how iterating with user-centered goals makes me more efficient and improves the quality of the end result.
+date: 2025-01-11
+description: My thoughts around how caring, iterating and not striving for perfection leads to great results.
 tags:
   - rambling
   - projects
@@ -30,11 +30,11 @@ Are there any cases when one should do a from-scratch redesign instead of iterat
 
 I think that it can make sense to do so when the goals are very much not being achieved in the current version.
 
-Even still, if you are creating a version "from scratch" I think that it makes a *lot* of sense to first outline what is going well with the current version and try to use those principles when creating a new version. So it's still not truly "from scratch" (as Kirby Ferguson would say, [everything is a remix](https://www.youtube.com/watch?v=X9RYuvPCQUA) — I don't agree with everything in this video though).
+Even still, if you are creating a version "from scratch" I think that it makes a *lot* of sense to first outline what is going well with the current version and try to use those principles when creating a new version. So it's still not truly "from scratch" (as Kirby Ferguson would say, [everything is a remix](https://www.youtube.com/watch?v=X9RYuvPCQUA) — though I don't agree with everything in this video).
 
-## The trick: Doing user-focused goal-driven work
+## The trick: Doing user-focused, goal-driven work
 
-The trick to being able to avoid redesigns and stick to iterative improvements is knowing what your goals are all of the time. It's best to focus on user-focused goal-driven work, not business goal-driven work. I think this is where most people and companies go wrong.
+The trick to being able to avoid redesigns and stick to iterative improvements is knowing what your goals are all of the time. It's best to focus on user-focused, goal-driven work. Not business goal-driven work. I think this is where most people and companies go wrong.
 
 It's easy to skip over the question or provide a half-baked answer to the question, "why, exactly, am I doing this work?" But if we keep that question at the forefront of our mind as we work it helps not only the efficiency of building it but also improves the end quality.
 
@@ -62,17 +62,17 @@ I [first](https://web.archive.org/web/20131004134705/http://zachsaucier.com/) cr
 
 In 2017 I sought to redesign my personal website completely. I wanted something more technically impressive and that would stick out to potential employers more. I played around with a few ideas but ultimately ended up with [this version](https://web.archive.org/web/20171005053121/https://zachsaucier.com/) and [wrote about the process](/blog/site-redesign-2017/). I think the end result did a pretty good job of achieving my goals!
 
-Since that time my design and front-end skills have increased significantly. Throughout the years I have played around with mutliple redesigns of my personal site with very different styles. They included a version with 3D room with a digital avatar, a 2D story-driven version, a version with a color scheme and type of interactive visual per section, and a generic "award-looking" version that breaks down and shows a more playful version underneath. Each time I had an idea I started making progress on the idea but never saw it to completion because I wasn't convinced the end experience would be worth switching to for one reason or another.
+Since that time my design and front-end skills have increased significantly. Throughout the years I have played around with mutliple redesigns of my personal site with very different styles. They included a version with a 3D room with a digital avatar, a 2D story-driven version, a version with a different color scheme and type of interactive visual per section, and a generic "award-looking" version that breaks down and shows a more playful version underneath. Each time I had an idea I started making progress on the idea but never saw it to completion because I wasn't convinced the end experience would be worth switching to for one reason or another.
 
 At the end of 2024 I finally decided to *not* attempt a full design of my website but instead focus on the aspects that I thought should be improved, namely:
 
-1. The projects were all outdated (I don't really want to maintain a continuous projects section)
+1. The projects were all outdated (I don't really want to put in the work to maintain an up to date projects section for my website which gets little traffic)
 2. The visual style was a little dated
 3. Some of the code implementation was a bit outdated, which made updating it a little harder than I wanted it to be
 
 Wouldn't ya know it, after a few days of cleaning up the old site I had [a pretty solid version](https://web.archive.org/web/20250109165011/https://zachsaucier.com/) (TODO FIX) that I liked and is easy to keep up to date! In the updated version I relied more heavily on linking out to websites that I am more likely to update like [my Bluesky](https://bsky.app/profile/zachsaucier.com), [work history deck](https://www.figma.com/deck/K4Z77gNLmWb6ADFMOA6UU5), and [LinkedIn profile](https://www.linkedin.com/in/zach-saucier-051aa171/).
 
-Does it show off the full extent of my abilities? No. But it does achieve my goals for having a personal website, at least for now.
+Does this version of my website show off the full extent of my abilities? No. But it does achieve my goals for having a personal website, at least for now.
 
 ### My blog
 
@@ -80,7 +80,7 @@ I started this blog in 2014 [with its own design](https://web.archive.org/web/20
 
 But that version of the blog was hard for me to update. Not only was building Jekyll not the least error prone but I also lost the build files due to some hard drive failures, which contributed to me not writing to it from 2017-2023.
 
-In 2023 I got some time to learn and play around with Svelte. I loved it and decided to rebuild my old Jekyll-based blog with Svelte. But I liked the overall look of my old blog so I decided to port it (making improvements to the styling and implementation as I went) to Sveltekit instead of building something new from scratch. It only took around 2 weeks of free time with most of that time being spent setting up Sveltekit exactly the way I wanted it to work.
+In 2023 I got some time to learn and play around with Svelte. I loved it and decided to rebuild my old Jekyll-based blog with Svelte. But I liked the overall look of my old blog so I decided to port it (making improvements to the styling and implementation as I went) to Sveltekit instead of building something new from scratch. It only took around 2 weeks of free time with most of that time being spent setting up Sveltekit exactly the way I wanted it to work. I also [wrote about that process](/blog/blog-refresh-2023/) if you're interested in reading more.
 
 This shows how this principle applies to not only visual things that people interact with but also to the infrastructure behind something.
 
@@ -88,14 +88,16 @@ This shows how this principle applies to not only visual things that people inte
 
 After starting web development in 2013 I found myself regularly using the devtools to edit webpages with articles on them to make them more readable. In 2015 I decided to make a custom reader mode during a hackathon to automate some of these edits I regularly made, solely for my own use. That resulted in an open-source reader mode that I called [Just Read](https://github.com/ZachSaucier/Just-Read/). 
 
-To my surprise, more and more people started using Just Read. They made feature requests and I ended up implementing a lot of those features, which led to more users.
+To my surprise, more and more people started using Just Read. They made feature requests and I ended up implementing a lot of those features.
 
 In 2018, around the 150k user mark, I started getting too many feature requests for me to keep up with in my free time without interrupting the other things I wanted to do. So I decided to make a premium version which could help me justify putting in more time into maintaining the free version.
 
 After a couple of weeks, I had a premium version along with [a marketing page](https://justread.link/) and user management pages. Now I earn (mostly) passive income from it monthly! And the free version serves ~240k users every week, including many people with disabilities and many students. I still update it but only small pieces at a time — most of it is in "good enough" shape.
 
-## Maybe the key is just caring?
+## Maybe the key is to care but not strive for perfection
 
-Maybe the key with all of this is just caring. If you care, you will either know or make yourself come to know what your goals should be. If you don't care, it doesn't really matter how many users you talk to, you probably won't make something that's really helpful.
+Maybe the key to all of this is caring. If you care, you will either know or make yourself come to know what your goals should be. If you don't care, it doesn't really matter how many users you talk to, you probably won't make something that's really helpful. Sometimes I think I just care about the work that I do and the environment that I do it in than most people.
 
-Sometimes I think I just care about the work that I do and the environment that I do it in than most people.
+I also think that being okay with less-than-perfect end result is important. I probably wouldn't have ever completed Just Read if I started with a free and paid version from the start. I also might have built something that people didn't want if I did complete it.
+
+Caring + iteration - perfection = A good output, created efficiently
