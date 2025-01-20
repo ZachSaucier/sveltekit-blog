@@ -58,10 +58,10 @@
     {#if cover_image && !!cover_in_post}
       <img
         src={cover_image}
-        alt=""
+        alt={cover_alt}
         width={cover_width}
         height={cover_height}
-        style="ratio: {cover_width} / {cover_height}"
+        style="aspect-ratio: {cover_width} / {cover_height}"
       />
     {/if}
     <svelte:component this={PostContent} />

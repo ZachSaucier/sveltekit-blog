@@ -205,7 +205,8 @@
     text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
   }
 
-  a[href^='https']:not([href^='https://zachsaucier.com']) {
+  a[href^='https']:not([href^='https://zachsaucier.com'])
+  {
     display: inline-flex;
     align-items: center;
     gap: 2px;
@@ -318,6 +319,10 @@
       font-size: 1.1rem;
       margin-block-end: 0.5rem;
     }
+  }
+
+  article:has(> img:first-child) > nav.toc {
+    margin-block-start: 2em;
   }
 
   .section_heading.section_heading.section_heading {

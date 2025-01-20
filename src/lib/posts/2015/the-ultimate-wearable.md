@@ -6,6 +6,7 @@ tags:
   - design
   - technology
   - ai
+  - products
 description: A look at the purpose of wearable technology and what it could be.
 ---
 

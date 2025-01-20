@@ -4,6 +4,7 @@ date: 2024-04-03
 description: The triumphs and struggles of self-hosting my own personal music server.
 tags:
   - projects
+  - products
   - music
 cover_image: https://res.cloudinary.com/desumhldo/image/upload/q_100/v1712180702/Subsonic.png
 cover_width: 1096
