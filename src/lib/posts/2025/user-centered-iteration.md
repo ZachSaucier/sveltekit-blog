@@ -1,6 +1,6 @@
 ---
 title: User-centered iteration
-date: 2025-01-22
+date: 2025-01-21
 description: My thoughts around how caring, iterating and not striving for perfection leads to great results.
 tags:
   - rambling
