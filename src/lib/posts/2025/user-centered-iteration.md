@@ -72,7 +72,7 @@ At the end of 2024 I finally decided to _not_ attempt a full design of my websit
 2. The visual style was a little dated
 3. Some of the code implementation was a bit outdated, which made updating it a little harder than I wanted it to be
 
-Wouldn't ya know it, after a few days of cleaning up the old site I had [a pretty solid version](https://web.archive.org/web/20250109165011/https://zachsaucier.com/) (TODO FIX) that I liked and is easy to keep up to date! In this version I relied more heavily on linking out to websites that I am more likely to update like [my Bluesky](https://bsky.app/profile/zachsaucier.com), [work history deck](https://www.figma.com/deck/K4Z77gNLmWb6ADFMOA6UU5), and [LinkedIn profile](https://www.linkedin.com/in/zach-saucier-051aa171/).
+Wouldn't ya know it, after a few days of cleaning up the old site I had a pretty solid version that I liked and is easy to keep up to date! In this version I relied more heavily on linking out to websites that I am more likely to update like [my Bluesky](https://bsky.app/profile/zachsaucier.com), [work history deck](https://www.figma.com/deck/K4Z77gNLmWb6ADFMOA6UU5), and [LinkedIn profile](https://www.linkedin.com/in/zach-saucier-051aa171/).
 
 Does this version of my website show off the full extent of my abilities? No. But it does achieve my goals for having a personal website, at least for now.
 

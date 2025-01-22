@@ -110,7 +110,6 @@
     --gap: 0.6ex;
     display: flex;
     gap: var(--gap);
-    align-items: center;
 
     & h2 {
       font-family: inherit;
@@ -125,6 +124,7 @@
     & ul {
       display: flex;
       gap: var(--gap);
+      flex-wrap: wrap;
       list-style: none;
     }
 
