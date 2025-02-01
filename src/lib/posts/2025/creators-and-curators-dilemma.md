@@ -1,5 +1,5 @@
 ---
-title: The creator's dilemma and the curator's dilemma
+title: The creator's niche dilemma and the curator's dilemma
 date: 2025-02-10
 description: 
 tags:
@@ -14,7 +14,7 @@ cover_in_post: false
 draft: true
 ---
 
-## The creator's dilemma and the curator's dilemma
+## The creator's nicher dilemma and the curator's dilemma
 
 I don't post that much to social media. I mean, I do compared to most people because most people don't post anything at all. It's more accurate to say that I don't post much compared to the average person who regularly posts to social media.
 
@@ -22,7 +22,9 @@ A big reason for my limited posting is that I stick to just professional content
 
 However, I often have a desire to share more from other areas of my life. One example is sharing music that I found and liked recently. Another is dog videos, which I share privately with my wife but others might also like my highly curated dog videos.
 
-But I think it'd be pretty silly to post those things to my professional social media accounts because people don't follow me for that content. Furthermore, if people did want to find the alternative content that I post like my music likes or dog videos, why would they follow me when I primarily make web dev posts? I call this the creator's dilemma.
+But I think it'd be pretty silly to post those things to my professional social media accounts because people don't follow me for that content. Furthermore, if people did want to find the alternative content that I post like my music likes or dog videos, why would they follow me when I primarily make web dev posts? I call this the creator's niche dilemma.
+
+TODO the dilemma of creator's 
 
 Relatedly, but on the other side of posting, there's a _lot_ of people who post high quality web dev posts that I'd like to see. But many of those authors also post content outside of web dev that I don't care about. In small portions I don't mind but when they post non-tech posts regularly, I often don't find it worth the follow. I call this the curator's dilemma.
 
@@ -76,11 +78,11 @@ So while I will probably try these tools again sometime in the future, I don't t
 
 I hope that custom Bluesky feeds continues to get attention, both from Bluesky and from third parties, because I think they could add a lot of value to users of Bluesky.
 
-## The creator's dilemma is still unaddressed
+## The creator's niche dilemma is still unaddressed
 
-However, even in a world where Bluesky feeds solves the curators dilemma, it doesn't solve the creator's dilemma. Most people aren't going to use a custom feed to consume their content because curation requires effort, regardless of how much. That means that they're going to get _all_ of the posts I make, which means I should probably stick to one (or two, if they're similar areas) areas of content for my account to maximize exposure of that content.
+However, even in a world where Bluesky feeds solves the curators dilemma, it doesn't solve the creator's niche dilemma. Most people aren't going to use a custom feed to consume their content because curation requires effort, regardless of how much. That means that they're going to get _all_ of the posts I make, which means I should probably stick to one (or two, if they're similar areas) areas of content for my account to maximize exposure of that content.
 
-In an effort to solve the creator's dilemma in our current social media landscape, I've tried creating multiple accounts and only posting content to the account based on the "theme" for that account. But switching between the various profiles is a pain, so I didn't keep it up for long. Plus it doesn't really feel like it's _me_ posting if I have a bunch of different profiles.
+In an effort to solve the creator's niche dilemma in our current social media landscape, I've tried creating multiple accounts and only posting content to the account based on the "theme" for that account. But switching between the various profiles is a pain, so I didn't keep it up for long. Plus it doesn't really feel like it's _me_ posting if I have a bunch of different profiles.
 
 ### An idea for a solution?
 
@@ -90,7 +92,7 @@ In essence, it'd be a way to show, "Hey, I'm Zach and here's a few different are
 
 It'd also be nice to be able to post to a private feed that only my close friends could see that has life updates, kinda like Snapchat but a feed of social media posts.
 
-I think a platform like this could solve the creator's dilemma and the curator's dilemma at the same time.
+I think a platform like this could solve the creator's niche dilemma and the curator's dilemma at the same time.
 
 In theory one could use the Bluesky / AT protocol for this, but instead of emphasizing users and subscribing to all of their posts you would primarily subscribe to custom feeds. You'd also have to make creating feeds significantly easier and also let people put their posts in a particular feed exclusively through a user action instead of something based on the content itself (perhaps as an MVP you could just use hashtags or something, but then you'll have naming conflicts and "extra" content in the posts themselves) — I don't know of a way to do this with the current AT protocol.
 
