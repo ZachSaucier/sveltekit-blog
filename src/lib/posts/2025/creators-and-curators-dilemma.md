@@ -1,15 +1,17 @@
 ---
 title: The creator's niche dilemma and the curator's dilemma
-date: 2025-02-14
-description:
+date: 2025-02-17
+description: Thoughts around social media's limits and how to potentially address them.
 tags:
   - rambling
   - products
   - design
-cover_image: TODO
-cover_width: TODO
-cover_height: TODO
-cover_alt: TODO
+# Image designed by kjpargeter / Freepik
+# https://www.freepik.com/free-vector/abstract-background_7039071.htm#fromView=search&page=1&position=1&uuid=d20270d0-1fe1-433c-9a12-6b83abbb729d&query=colored+lines
+cover_image: https://res.cloudinary.com/desumhldo/image/upload/v1739625905/threads_mnsjma.jpg
+cover_width: 1200
+cover_height: 850
+cover_alt: Many colored threads flowing in parallel.
 cover_in_post: false
 draft: true
 ---
@@ -23,8 +25,6 @@ A big reason for my limited posting is that I stick to just professional content
 However, I often have a desire to share more from other areas of my life. One example is sharing music that I found and liked recently. Another is dog videos, which I share privately with my wife, but I think some others might also like my highly curated dog videos.
 
 But I think it would be pretty silly to post those things to my professional social media accounts, because people don't follow me for that content. Furthermore, if people did want to see my music likes or dog videos, why would they follow me when I primarily make web dev posts? I call this the creator's niche dilemma.
-
-TODO the dilemma of creator's
 
 Relatedly, but on the other side of posting, there's a _lot_ of people who post high quality web development posts that I'd like to see. But many of those authors also post content outside of web dev that I don't care about. In small portions, I don't mind, but when they post non-tech posts regularly, I often don't find it worth the follow. I call this the curator's dilemma.
 
@@ -71,11 +71,11 @@ I tried each of them out. I attempted to make a feed that finds wholesome dog vi
 
 I know that it's early on in the Bluesky era, that creating a tool to allow people to generate a feed is hard, and that it's probably expensive to create an app that deals with Bluesky's firehose. But I was surprised by the low quality of these tools.
 
-For one: Shouldn't all of these feed generators have a SFW filter on by default?? Why not?? When trying to create a feed of wholesome dog videos I accidentally generated a feeds that had more gay sex videos in them than dogs. I mean, holy shit, I would never allow my child to attempt to use these tools in their current state if I, as a very tech savvy adult, can't prevent _accidental_ porn from showing up in the generated feeds. **_Turn on SFW filters by default_**.
+For one: Shouldn't all of these feed generators have a SFW filter on by default?? Why not?? When trying to create a feed of wholesome dog videos I accidentally generated a feeds that had more gay sex videos in them than dogs. I mean, my God, I would never allow my child to attempt to use these tools in their current state if I, as a very tech savvy adult, can't prevent _accidental_ porn from showing up in the generated feeds. **_Turn on SFW filters by default_**.
 
 None of the apps were user friendly. None of them came close to feeling like a native experience.
 
-None of the apps have a great preview experience. It'd be super useful to preview the content with the ~7 days of content or something like that.
+None of the apps have a great preview experience. It'd be super useful to preview the generated feed with the ~7 days of content or something like that.
 
 So while I will probably try these tools again sometime in the future, I don't think they're close to solving the curator's dilemma right now.
 
@@ -95,8 +95,8 @@ In essence, it'd be a way to show, "Hey, I'm Zach and here's a few different are
 
 I think a platform like this could solve the creator's niche dilemma and the curator's dilemma at the same time.
 
-In theory, one could use the Bluesky / AT protocol for this, but instead of emphasizing users and subscribing to all of their posts, you would primarily subscribe to custom feeds. You'd also have to make creating feeds significantly easier and let people put their posts in a particular feed exclusively through a user action instead of something based on the content itself. Perhaps as an MVP you could just use hashtags or something similar, but then you'll have naming conflicts and "extra" content in the posts themselves — I don't know of a way to do this with the current AT protocol.
+In theory, one could use the Bluesky / AT protocol for this, but instead of emphasizing users and subscribing to all of their posts, you would primarily subscribe to custom feeds. You'd also have to make creating feeds significantly easier and let people put their posts in a particular feed that they own exclusively through a user action instead of some analysis of the content itself. Perhaps as an MVP you could just use hashtags or something similar, but then you'll have naming conflicts and "extra" content in the posts themselves — I don't know of a way to do this with the current AT protocol.
 
-TODO -- so it most likely needs to be build from scratch or not on the AT protocol? Finish this thought
+So if I were doing this, I might at least consider using a custom protocol that is made for this use case and then weigh the tradeoffs of using that custom approach vs an already used protocol.
 
 I might try to play around with this idea and see where it gets me. Or I might have better things to do. We'll see! If you create something like the platform that I describe here, I'd love to see it!
