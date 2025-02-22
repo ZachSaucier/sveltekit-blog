@@ -4,6 +4,12 @@ This blog started as a fork of Josh Collinsworth's [Sveltekit static blog starte
 
 ## [Demo](https://zachsaucier.com/blog/)
 
+## Support
+
+Did you find this repo useful? I'd really appreciate it if you would consider buying me a coffee!
+
+<a href="https://www.buymeacoffee.com/zachsaucier" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/arial-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
+
 ## Features
 
 - **It lives under `/blog`** instead of the top level so you can keep your main website separate.
