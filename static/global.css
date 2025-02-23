@@ -347,7 +347,7 @@
     margin-block-end: 1rem;
   }
 
-  .content_aside--ad {
+  .content_aside--ad.content_aside--ad {
     container: ad / inline-size;
     background-color: var(--accent-dark);
     color: var(--background-color);
@@ -362,6 +362,10 @@
     }
 
     & a {
+      color: var(--link-color);
+    }
+
+    & .big {
       font-size: 8cqi;
     }
   }

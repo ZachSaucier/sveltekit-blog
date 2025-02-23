@@ -94,7 +94,7 @@ To my surprise, more and more people started using Just Read. They made feature 
 
 In 2018, around the 150k user mark, I started getting too many feature requests to keep up with in my free time. I decided to make a premium version to help justify putting in more time into maintaining the free version.
 
-After a couple of weeks, I had a premium version along with [a marketing page](https://justread.link/) and user management pages. Now I earn (mostly) passive income from it monthly! The free version still serves ~240k users every week, including many students and people with disabilities. I still update it but only small pieces at a time — most of it is in "good enough" shape. [TODO add more info about iteratively adding new features]
+After a couple of weeks, I had a premium version along with [a marketing page](https://justread.link/) and user management pages. Now I earn (mostly) passive income from it monthly! The free version still serves ~240k users every week, including many students and people with disabilities. I still update it but only small pieces at a time — most of it is in "good enough" shape.
 
 ## Maybe the key is to care but not strive for perfection
 

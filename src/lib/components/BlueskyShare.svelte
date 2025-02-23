@@ -22,9 +22,3 @@
 {#key query}
   <a target="_blank" noreferrer class="button" {href}> Share to Bluesky </a>
 {/key}
-
-<style>
-  .button {
-    margin-top: 1.5rem;
-  }
-</style>

@@ -5,7 +5,6 @@
   import Section from '$lib/components/Section.svelte';
   import Date from '$lib/components/Date.svelte';
   import BlueskyShare from '$lib/components/BlueskyShare.svelte';
-  import ContentAside from '$lib/components/ContentAside.svelte';
 
   export let data;
 
@@ -81,17 +80,22 @@
           {/each}
         </ul>
       </div>
-
-      <BlueskyShare {url} />
     </aside>
   {/if}
 
-  <ContentAside type="ad">
-    <p>
-      Like this post? Try my reader mode:<br />
-      <a href="https://justread.link">Just Read</a>
-    </p>
-  </ContentAside>
+  <aside>
+    <p>Like this post?</p>
+    <div class="like_share_buttons">
+      <BlueskyShare {url} />
+      <a href="https://www.buymeacoffee.com/zachsaucier" target="_blank">
+        <img
+          src="https://cdn.buymeacoffee.com/buttons/v2/arial-yellow.png"
+          alt="Buy Me A Coffee"
+          style="height: 60px !important;width: 217px !important;"
+        />
+      </a>
+    </div>
+  </aside>
 </Section>
 
 <style>
@@ -100,10 +104,7 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 10px;
-    padding-bottom: 24px;
-    margin: 1rem 0;
-
-    background: var(--border-dashed);
+    margin: 2rem 0 0;
   }
 
   .tags {
@@ -132,5 +133,11 @@
       content: ', ';
       margin-inline-start: -5px;
     }
+  }
+
+  .like_share_buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
   }
 </style>
