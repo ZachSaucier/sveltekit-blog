@@ -13,7 +13,6 @@ cover_width: 1200
 cover_height: 850
 cover_alt: Many colored threads flowing in parallel.
 cover_in_post: false
-draft: true
 ---
 
 ## The creator's niche dilemma and the curator's dilemma
