@@ -29,6 +29,8 @@ Relatedly, but on the other side of posting, there's a _lot_ of people who post 
 
 I've been thinking about these dilemmas for a while but don't have a good solution for either of them yet.
 
+<span class="excerpt_marker"></span>
+
 ## Bluesky feeds
 
 Bluesky feeds are one potential solution for the curator's dilemma. Bluesky allows anyone to make their own version of a feed where you can see filtered posts. It's one feature enabled by their more open AT protocol (they also provide [a starter project](https://github.com/bluesky-social/feed-generator) for creating a new feed generator).
