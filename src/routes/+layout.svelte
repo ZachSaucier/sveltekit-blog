@@ -209,6 +209,7 @@
   main {
     position: relative;
     grid-area: Main;
+    max-width: 100%;
     padding-bottom: var(--footer-height);
 
     @media (max-width: 1199px) {
