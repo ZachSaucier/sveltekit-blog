@@ -6,6 +6,7 @@ tags:
   - rambling
   - products
   - design
+  - companies
 # Image designed by kjpargeter / Freepik
 # https://www.freepik.com/free-vector/abstract-background_7039071.htm#fromView=search&page=1&position=1&uuid=d20270d0-1fe1-433c-9a12-6b83abbb729d&query=colored+lines
 cover_image: https://res.cloudinary.com/desumhldo/image/upload/v1739625905/threads_mnsjma.jpg

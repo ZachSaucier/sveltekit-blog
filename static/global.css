@@ -445,6 +445,16 @@
     display: inline-block;
   }
 
+  blockquote {
+    font-style: italic;
+    background-image: linear-gradient(to right, currentColor 10px, #ebebeb 10px);
+    padding: 1rem 0.8rem 1rem 1.4rem;
+  }
+
+  html.dark blockquote {
+    background-image: linear-gradient(to right, currentColor 10px, #434343 10px);
+  }
+
   /* Code highlighting */
   /**
   * okaidia theme for JavaScript, CSS and HTML

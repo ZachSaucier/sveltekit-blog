@@ -8,6 +8,7 @@ tags:
   - code
   - design
   - technology
+  - process
 # Photo taken from https://unsplash.com/photos/man-in-black-jacket-and-red-helmet-sitting-on-brown-wooden-bench-wTu1hf79rto
 cover_image: https://res.cloudinary.com/desumhldo/image/upload/v1743651504/workman_dbngjq.webp
 cover_width: 2400

@@ -7,6 +7,8 @@ tags:
   - projects
   - products
   - design
+  - culture
+  - process
 cover_image: https://res.cloudinary.com/desumhldo/image/upload/v1736996846/focus_vgy19d.jpg
 cover_width: 1080
 cover_height: 1071

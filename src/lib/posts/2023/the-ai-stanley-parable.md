@@ -9,6 +9,7 @@ tags:
   - design
   - technology
   - products
+  - process
 cover_image: https://res.cloudinary.com/desumhldo/image/upload/q_100/v1702850590/ai-stanley_wliaiy.webp
 cover_width: 1024
 cover_height: 1024
