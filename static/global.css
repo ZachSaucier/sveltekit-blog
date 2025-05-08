@@ -336,6 +336,16 @@
     }
   }
 
+  h2:has(a + a) {
+    display: flex;
+    gap: 0.5rem;
+
+    .section_heading {
+      order: 1;
+      margin-left: -6px;
+    }
+  }
+
   .content_aside {
     font-size: 13px;
     line-height: 1.65;
