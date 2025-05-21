@@ -41,7 +41,7 @@ I have never been a recruiter, so I don't know what it's like. I know they are p
 
 But to me, messages like this are not appealing. If I were desperate for a job I might respond. But are those the only candidates that you want to hire?
 
-If you're a startup cold-calling people trying to get good talent, you need to stand out by investing more time in each candidate.
+If you're a startup cold-calling people trying to get good talent, it's unlikely that you'll be able to offer a salary higher than most big tech companies. So you need to stand out by investing more time.
 
 Here's what I think might _actually_ get my attention:
 
