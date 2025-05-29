@@ -43,6 +43,10 @@ But to me, messages like this are not appealing. If I were desperate for a job I
 
 If you're a startup cold-calling people trying to get good talent, it's unlikely that you'll be able to offer a salary higher than most big tech companies. So you need to stand out by investing more time.
 
+<ContentAside>
+  <strong>Aside:</strong> I dislike when recruiters add me as a connection on LinkedIn and send a message as a part of that request. I always report that "I don't know this person". Just message me directly. If I engage, maybe we can connect.
+</ContentAside>
+
 Here's what I think might _actually_ get my attention:
 
 ### A very personalized message
