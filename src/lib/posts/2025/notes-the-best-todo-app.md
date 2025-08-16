@@ -7,6 +7,12 @@ tags:
   - life
   - technology
   - process
+# Image by Volodymyr Hryshchenko from https://unsplash.com/@lunarts
+cover_image: https://res.cloudinary.com/desumhldo/image/upload/v1755373160/todo_js3pwt.webp
+cover_width: 1200
+cover_height: 800
+cover_alt: A notebook that says "TODO" across the top.
+cover_in_post: false
 ---
 
 Creating a TODO app is a software engineering trope. I think every software engineer feels the need to create their own at some point or another.
