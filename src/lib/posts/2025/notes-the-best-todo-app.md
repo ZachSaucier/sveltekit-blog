@@ -1,7 +1,7 @@
 ---
 title: Notes — The best TODO app
 date: 2025-08-16
-description: The Mac Notes app is more useful than a plain text file.
+description: The Apple Notes app is more useful than a plain text file.
 tags:
   - rambling
   - life
@@ -13,7 +13,7 @@ Creating a TODO app is a software engineering trope. I think every software engi
 
 But in the end most engineers that I know [end up using a plain text file](https://www.google.com/search?client=firefox-b-1-d&q=hacker+news+i+tried+every+todo+app). I was one of those people for a while, using Window's Notepad as my TODO app.
 
-However in the last few years I've found myself using Mac's Notes app more often due to a few key features that it offers.
+However in the last few years I've found myself using Apple's Notes app more often due to a few key features that it offers.
 
 <span class="excerpt_marker"></span>
 
