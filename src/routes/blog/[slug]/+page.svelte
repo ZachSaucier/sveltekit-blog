@@ -23,7 +23,7 @@
     cover_in_post,
     tags,
   } = data.meta;
-  const { PostContent } = data;
+  const { PostContent, relatedPosts } = data;
 </script>
 
 <svelte:head>
@@ -96,6 +96,21 @@
       </a>
     </div>
   </aside>
+
+  {#if relatedPosts && relatedPosts.length > 0}
+    <aside class="related_posts">
+      <h2>Related posts</h2>
+      <ul>
+        {#each relatedPosts as post}
+          <li>
+            <a href="/blog/{post.slug}/">
+              {post.title}
+            </a>
+          </li>
+        {/each}
+      </ul>
+    </aside>
+  {/if}
 </Section>
 
 <style>
@@ -139,5 +154,37 @@
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
+  }
+
+  .related_posts {
+    margin-top: 2rem;
+    
+    & h2 {
+      font-family: inherit;
+      line-height: inherit;
+      margin: 0 0 1rem 0;
+    }
+
+    & ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    & li {
+      margin: 0;
+    }
+
+    & a {
+      text-decoration: none;
+      color: inherit;
+      
+      &:hover {
+        text-decoration: underline;
+      }
+    }
   }
 </style>
