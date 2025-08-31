@@ -68,7 +68,7 @@
 
   {#if tags}
     <aside>
-      <div class="inline-list">
+      <div class="tags">
         <h2>Tags:</h2>
         <ul>
           {#each tags as tag}
@@ -84,19 +84,17 @@
   {/if}
 
   {#if relatedPosts && relatedPosts.length > 0}
-    <aside>
-      <div class="inline-list">
-        <h2>Related posts:</h2>
-        <ul>
-          {#each relatedPosts as post}
-            <li>
-              <a href="/blog/{post.slug}/">
-                {post.title}
-              </a>
-            </li>
-          {/each}
-        </ul>
-      </div>
+    <aside class="related_posts">
+      <h2>Related posts</h2>
+      <ul>
+        {#each relatedPosts as post}
+          <li>
+            <a href="/blog/{post.slug}/">
+              {post.title}
+            </a>
+          </li>
+        {/each}
+      </ul>
     </aside>
   {/if}
 
@@ -124,7 +122,7 @@
     margin: 2rem 0 0;
   }
 
-  .inline-list {
+  .tags {
     --gap: 0.6ex;
     display: flex;
     gap: var(--gap);
@@ -156,5 +154,14 @@
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
+  }
+
+  .related_posts {
+    margin-top: 2rem;
+
+    & ul {
+      list-style: disc;
+      padding-left: 1em;
+    }
   }
 </style>

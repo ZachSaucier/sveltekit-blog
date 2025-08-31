@@ -198,6 +198,7 @@
 
     &:is(:hover, :focus) {
       color: var(--link-color-hover);
+      text-decoration: underline;
     }
   }
 
