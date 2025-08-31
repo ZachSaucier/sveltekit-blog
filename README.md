@@ -19,7 +19,8 @@ Did you find this repo useful? I'd really appreciate it if you would consider bu
 - **mdvsex support** so you can use Svelte components in your Markdown files!
 - **Automatic page transitions.**
 - **Responsive and accessible defaults** including a "skip to content" link, accessible navigation and components, and accessible emojis.
-- **Basic SEO** for blog posts.
+- **SEO** for blog posts.
+- **Related posts functionality.**
 - **RSS feed** for users to easily subscribe to new posts.
 - **Draft blog post functionality** so you can save to the same place but not have the link show up in your listings or counts.
 - **Footnotes functionality**
