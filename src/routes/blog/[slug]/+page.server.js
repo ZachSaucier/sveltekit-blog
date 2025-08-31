@@ -1,5 +1,5 @@
-import { error } from '@sveltejs/kit';
 import { start_year } from '$lib/config';
+import { error } from '@sveltejs/kit';
 import getRelatedPosts from '$lib/utilities/getRelatedPosts.js';
 
 export const load = async ({ params }) => {
@@ -12,12 +12,17 @@ export const load = async ({ params }) => {
       const match = modules[`/src/lib/posts/${year}/${params.slug}.md`];
       const post = await match();
       const meta = { ...post.metadata, slug: `${params.slug}` };
-      
+
       // Get related posts based on tags
-      const relatedPosts = await getRelatedPosts(params.slug, meta.tags);
-      
+      let relatedPosts;
+      try {
+        relatedPosts = await getRelatedPosts(params.slug, meta.tags);
+      } catch (e) {
+        console.log(e);
+      }
+
       return {
-        PostContent: post.default,
+        postHtml: structuredClone(post.default.render().html),
         meta,
         relatedPosts,
       };

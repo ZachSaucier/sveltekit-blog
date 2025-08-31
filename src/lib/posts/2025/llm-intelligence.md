@@ -1,6 +1,6 @@
 ---
 title: LLM "intelligence"
-date: 2025-08-017
+date: 2025-08-17
 description: Why LLMs are not truly intelligent.
 tags:
   - rambling
