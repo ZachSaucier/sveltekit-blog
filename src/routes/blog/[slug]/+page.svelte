@@ -126,6 +126,7 @@
     --gap: 0.6ex;
     display: flex;
     gap: var(--gap);
+    margin-top: 3rem;
 
     & h2 {
       font-family: inherit;
@@ -157,8 +158,6 @@
   }
 
   .related_posts {
-    margin-top: 2rem;
-
     & ul {
       list-style: disc;
       padding-left: 1em;
