@@ -65,4 +65,4 @@ Here are some principles that I try to stick to for the customer support that I 
 - **Be transparent** -- Tell the user exactly what the restrictions are, what the workarounds are, and how they can get the most out of your service.
 - **Be proactive** -- Don't wait for a response if you can reasonably do it. For example if a customer reaches out to ask for a refund, provide the refund immediately. If you'd like to ask why they want to get a refund, do so _after_ confirming that the refund has been started.
 
-Summed up into one word: [Care](https://zachsaucier.com/blog/user-centered-iteration/#maybe-the-key-is-to-care-but-not-strive-for-perfection).
+Summed up into one word: [Care](/blog/user-centered-iteration/#maybe-the-key-is-to-care-but-not-strive-for-perfection).
