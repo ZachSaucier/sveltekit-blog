@@ -14,7 +14,7 @@ Part 2 of my front-end development crash course.
 - <a href="https://slides.com/zachsaucier/cc2">The slides</a>
 - <a href="https://gdclub.uga.edu/audio/part2-audio.wav">Audio</a>
 - <a href="https://zachsaucier.com/Front-end%20CC%20-%20Project%201.zip">Project files</a>
-- <a href="/blog/project-1-solution.html">My project solution</a>
+- <a href="https://zachsaucier.com/project-1-solution.html">My project solution</a>
 - <a href="/blog/the-why-and-what-of-web-development/">Go to part 1 (The what and why of programming)</a>
 - <a href="/blog/starting-js/">Go to part 3 (JS)</a>
 
