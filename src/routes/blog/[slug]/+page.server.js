@@ -13,10 +13,11 @@ export const load = async ({ params }) => {
       const post = await match();
       const meta = { ...post.metadata, slug: `${params.slug}` };
 
-      // Get related posts based on tags
+      // Get related posts based on internal links first, then tags
       let relatedPosts;
       try {
-        relatedPosts = await getRelatedPosts(params.slug, meta.tags);
+        const postHtml = structuredClone(post.default.render().html);
+        relatedPosts = await getRelatedPosts(params.slug, meta.tags, 2, true, postHtml);
       } catch (e) {
         console.log(e);
       }

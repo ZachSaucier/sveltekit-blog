@@ -1,6 +1,26 @@
 import fetchPosts from './fetchPosts.js';
 
 /**
+ * Extract internal blog links from HTML content
+ * @param {string} htmlContent - The HTML content to parse
+ * @returns {Array<string>} Array of slugs from internal blog links
+ */
+const extractInternalBlogLinks = (htmlContent) => {
+  const linkRegex = /href="\/blog\/([^\/\#"]+)/g;
+  const slugs = [];
+  let match;
+  
+  while ((match = linkRegex.exec(htmlContent)) !== null) {
+    const slug = match[1];
+    if (slug && !slugs.includes(slug)) {
+      slugs.push(slug);
+    }
+  }
+  
+  return slugs;
+};
+
+/**
  * Calculate tag frequency across all posts
  * @param {Array} posts - All posts to analyze
  * @returns {Map} Map of tag -> frequency count
@@ -38,25 +58,49 @@ const calculateWeightedScore = (sharedTags, tagFrequencies, totalPosts) => {
 };
 
 /**
- * Get related posts based on shared tags with weighted scoring
+ * Get related posts based on internal links first, then shared tags with weighted scoring
  * @param {string} currentSlug - The slug of the current post to exclude
  * @param {Array<string>} currentTags - Tags of the current post
  * @param {number} limit - Maximum number of related posts to return (default: 2)
  * @param {boolean} useWeighting - Whether to use weighted scoring (default: true)
- * @returns {Promise<Array>} Array of related posts sorted by weighted relevance and recency
+ * @param {string} postHtml - The HTML content of the current post to extract internal links from
+ * @returns {Promise<Array>} Array of related posts sorted by internal links first, then weighted relevance and recency
  */
-const getRelatedPosts = async (currentSlug, currentTags = [], limit = 2, useWeighting = true) => {
-  if (!currentTags || currentTags.length === 0) {
-    return [];
-  }
-
+const getRelatedPosts = async (currentSlug, currentTags = [], limit = 2, useWeighting = true, postHtml = '') => {
   const { posts } = await fetchPosts({ limit: -1 });
   
-  // Filter out the current post and posts without tags
+  // First, check for internal blog links in the post content
+  let relatedPosts = [];
+  if (postHtml) {
+    const internalLinkSlugs = extractInternalBlogLinks(postHtml);
+    
+    // Find posts that match the internal link slugs, in order of appearance
+    for (const slug of internalLinkSlugs) {
+      if (relatedPosts.length >= limit) break;
+      
+      const linkedPost = posts.find(post => post.slug === slug && post.slug !== currentSlug);
+      if (linkedPost && !relatedPosts.some(p => p.slug === linkedPost.slug)) {
+        relatedPosts.push(linkedPost);
+      }
+    }
+    
+    // If we have enough related posts from internal links, return them
+    if (relatedPosts.length >= limit) {
+      return relatedPosts.slice(0, limit);
+    }
+  }
+  
+  // If we don't have enough posts from internal links, fall back to tag-based logic
+  if (!currentTags || currentTags.length === 0) {
+    return relatedPosts.slice(0, limit);
+  }
+  
+  // Filter out the current post, posts without tags, and posts already in relatedPosts
   const otherPosts = posts.filter(post => 
     post.slug !== currentSlug && 
     post.tags && 
-    post.tags.length > 0
+    post.tags.length > 0 &&
+    !relatedPosts.some(p => p.slug === post.slug)
   );
 
   // Calculate tag frequencies across all posts (only if using weighting)
@@ -99,10 +143,10 @@ const getRelatedPosts = async (currentSlug, currentTags = [], limit = 2, useWeig
   });
 
   // Filter posts that have at least one shared tag
-  const relatedPosts = postsWithScores.filter(post => post.relevanceScore > 0);
+  const tagBasedPosts = postsWithScores.filter(post => post.relevanceScore > 0);
 
   // Sort by relevance score (descending), then by date (descending) for tie-breaking
-  relatedPosts.sort((a, b) => {
+  tagBasedPosts.sort((a, b) => {
     const scoreDiff = useWeighting ? 
       Math.abs(a.relevanceScore - b.relevanceScore) > 0.001 :
       a.relevanceScore !== b.relevanceScore;
@@ -113,7 +157,11 @@ const getRelatedPosts = async (currentSlug, currentTags = [], limit = 2, useWeig
     return new Date(b.date) - new Date(a.date);
   });
 
-  return relatedPosts.slice(0, limit);
+  // Combine internal link posts with tag-based posts, up to the limit
+  const remainingSlots = limit - relatedPosts.length;
+  const finalRelatedPosts = [...relatedPosts, ...tagBasedPosts.slice(0, remainingSlots)];
+
+  return finalRelatedPosts;
 };
 
 export default getRelatedPosts;
