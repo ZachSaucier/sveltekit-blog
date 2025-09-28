@@ -7,6 +7,13 @@
   * {
     margin: 0;
   }
+  html {
+    hanging-punctuation: first allow-end last;
+    word-break: break-word;
+  }
+  :target {
+    scroll-margin: 3rlh;
+  }
   h1,
   h2,
   h3,
@@ -14,6 +21,10 @@
   h5,
   h6 {
     font: inherit;
+  }
+  p,
+  li {
+    text-wrap: pretty;
   }
   fieldset {
     border: 0;
@@ -183,9 +194,13 @@
     line-height: 1.2;
   }
 
+  pre {
+    white-space: pre-wrap;
+  }
   pre,
-  code {
-    font-family: var(--font-code);
+  code,
+  kbd {
+    font-family: ui-monospace, SFMono-Regular, monospace;
   }
 
   a {
