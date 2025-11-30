@@ -89,19 +89,22 @@
   }
 
   html {
-    --bright-teal: oklch(69.71% 0.195 236.12);
+    /* Follow user preferences by default */
+    color-scheme: light dark;
 
-    --accent: var(--bright-teal);
-    --accent-dark: #212121;
-    --background-color: #fff;
+    --accent: oklch(69.71% 0.195 236.12);
+    --text-color: light-dark(#212121, #e8e8e8);
+    --background-color: light-dark(#fff, #2c2c2c);
 
-    --link-color: var(--accent);
-    --link-color-hover: color-mix(
-      in srgb,
-      var(--link-color) 80%,
-      var(--background-color)
-    ); /* Approx #46adff */
-    --link-color-visited: color-mix(in srgb, var(--link-color) 90%, #00f); /* Approx #0e5bf0 */
+    --link-color: light-dark(var(--accent), oklch(0.64 0.18 237));
+    --link-color-hover: light-dark(
+      color-mix(in srgb, var(--accent) 80%, var(--background-color)),
+      oklch(0.84 0.11 228.79)
+    );
+    --link-color-visited: light-dark(
+      color-mix(in srgb, var(--accent) 90%, #00f),
+      color-mix(in srgb, oklch(0.64 0.18 237) 50%, #fff)
+    );
 
     --grayed-text: #aaa;
     --gray-accent: #ededed;
@@ -116,13 +119,17 @@
 
     font-size: 19px;
 
-    --button-dark-background: color-mix(
-      in srgb,
-      var(--accent-dark) 80%,
-      var(--background-color)
-    ); /* Approx #4d4d4d */
+    --button-background: light-dark(
+      color-mix(in srgb, var(--text-color) 80%, var(--background-color)),
+      var(--link-color)
+    );
+    --button-background-hover: light-dark(
+      var(--link-color-hover),
+      color-mix(in srgb, var(--link-color) 80%, #000)
+    );
+    --button-color: light-dark(var(--background-color), var(--text-color));
 
-    --border-dashed-color: rgb(121 121 121);
+    --border-dashed-color: light-dark(rgb(121 121 121), rgb(176 176 176));
     --border-dashed: linear-gradient(
         90deg,
         rgba(0, 0, 0, 0) 0%,
@@ -137,39 +144,23 @@
     @media (max-width: 749px) {
       --content-gutter: 25px;
     }
-
-    --button-background: var(--button-dark-background);
-    --button-background-hover: var(--link-color-hover);
-    --button-color: var(--background-color);
   }
 
-  html.dark {
-    --accent-dark: #e8e8e8;
-    --background-color: #2c2c2c;
+  /* If user picks a light theme via toggle */
+  html[data-theme='light'] {
+    color-scheme: light;
+  }
 
-    --link-color: oklch(0.64 0.18 237);
-    --link-color-hover: color-mix(
-      in srgb,
-      var(--link-color) 80%,
-      var(--background-color)
-    ); /* Approx #46adff */
-    --link-color-visited: color-mix(in srgb, var(--link-color) 50%, #fff); /* Approx #0e5bf0 */
-
-    --link-color-dark: oklab(0.74 -0.11 -0.14);
-    --link-color-dark-hover: oklch(0.84 0.11 228.79);
-
-    --border-dashed-color: rgb(176 176 176);
-
-    --button-background: var(--link-color);
-    --button-background-hover: var(--link-color-hover);
-    --button-color: var(--accent-dark);
+  /* If user picks a dark theme via toggle */
+  html[data-theme='dark'] {
+    color-scheme: dark;
   }
 
   body {
     font-family: var(--font-sans-serif);
     line-height: 1.6;
     background: var(--background-color) url('/images/noise.png') top left;
-    color: var(--accent-dark);
+    color: var(--text-color);
     overscroll-behavior: none;
   }
 
@@ -179,7 +170,7 @@
   }
 
   a::selection {
-    color: var(--accent-dark);
+    color: var(--text-color);
   }
 
   main {
@@ -214,6 +205,18 @@
     &:is(:hover, :focus) {
       color: var(--link-color-hover);
       text-decoration: underline;
+    }
+  }
+
+  main a {
+    color: light-dark(var(--link-color), var(--text-color));
+  }
+
+  main article a {
+    color: var(--link-color);
+
+    &:is(:hover, :focus, :visited) {
+      color: var(--link-color-hover);
     }
   }
 
@@ -342,10 +345,13 @@
   }
 
   .section_heading.section_heading.section_heading {
-    color: var(--accent-dark);
+    color: var(--text-color);
 
     &::after {
-      content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' width='18' aria-hidden='true'%3E%3Cpath fill='%23000' d='m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z'%3E%3C/path%3E%3C/svg%3E");
+      content: light-dark(
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' width='18' aria-hidden='true'%3E%3Cpath fill='%23000' d='m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z'%3E%3C/path%3E%3C/svg%3E"),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' width='18' aria-hidden='true'%3E%3Cpath fill='%23ffffff' d='m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z'%3E%3C/path%3E%3C/svg%3E")
+      );
       width: 18px;
       display: inline-block;
       margin-inline-start: 8px;
@@ -366,8 +372,8 @@
     font-size: 13px;
     line-height: 1.65;
     padding: 1rem 0.8rem;
-    background-color: #ebebeb;
-    border: 1px dashed #141414;
+    background-color: light-dark(#ebebeb, #434343);
+    border: 1px dashed light-dark(#141414, var(--text-color));
   }
   .content_aside:not(:last-child) {
     margin-block-end: 1rem;
@@ -375,8 +381,8 @@
 
   .content_aside--ad.content_aside--ad {
     container: ad / inline-size;
-    background-color: var(--accent-dark);
-    color: var(--background-color);
+    background-color: var(--text-color);
+    color: light-dark(var(--background-color), var(--text-color));
     border: none;
     font-size: 1rem;
     padding: 6cqi 2cqi 4.5cqi;
@@ -396,43 +402,12 @@
     }
   }
 
-  html.dark .content_aside--ad {
-    color: var(--accent-dark);
-  }
-
   .content_aside :is(h1, h2, h3, h4, h5, h6) {
     margin-block-start: 0;
   }
 
-  html.dark {
-    & a {
-      color: var(--link-color-dark);
-    }
-
-    & main a {
-      color: var(--accent-dark);
-    }
-
-    & main article a {
-      color: var(--link-color-dark);
-
-      &:is(:hover, :focus, :visited) {
-        color: var(--link-color-dark-hover);
-      }
-    }
-
-    & .content_aside {
-      background-color: #434343;
-      border: 1px dashed var(--accent-dark);
-    }
-
-    & .section_heading.section_heading.section_heading::after {
-      content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' width='18' aria-hidden='true'%3E%3Cpath fill='%23ffffff' d='m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z'%3E%3C/path%3E%3C/svg%3E");
-    }
-
-    & img {
-      border-color: var(--accent-dark);
-    }
+  img {
+    border-color: light-dark(inherit, var(--text-color));
   }
 
   figure {
@@ -473,12 +448,12 @@
 
   blockquote {
     font-style: italic;
-    background-image: linear-gradient(to right, currentColor 10px, #ebebeb 10px);
+    background-image: linear-gradient(
+      to right,
+      currentColor 10px,
+      light-dark(#ebebeb, #434343) 10px
+    );
     padding: 1rem 0.8rem 1rem 1.4rem;
-  }
-
-  html.dark blockquote {
-    background-image: linear-gradient(to right, currentColor 10px, #434343 10px);
   }
 
   /* Code highlighting */

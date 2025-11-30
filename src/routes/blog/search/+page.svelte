@@ -37,7 +37,7 @@
   #search {
     --pagefind-ui-font: var(--font-sans-serif);
     --pagefind-ui-primary: var(--link-color);
-    --pagefind-ui-text: var(--accent-dark);
+    --pagefind-ui-text: var(--text-color);
     --pagefind-ui-background: var(--background-color);
     --pagefind-ui-border: var(--border-dashed-color);
     --pagefind-ui-tag: var(--border-dashed-color);

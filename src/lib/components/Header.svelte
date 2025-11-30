@@ -35,7 +35,7 @@
     justify-content: center;
     align-items: center;
     height: 3rem;
-    background-color: var(--accent-dark);
+    background-color: var(--text-color);
     color: var(--background-color);
 
     &:focus {

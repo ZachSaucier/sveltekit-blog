@@ -192,7 +192,7 @@
     transition: opacity 0.2s linear;
 
     &:is(:hover, :focus) {
-      background-color: var(--accent-dark);
+      background-color: light-dark(var(--text-color), #fff);
       color: var(--background-color);
     }
 
@@ -200,10 +200,6 @@
       left: auto;
       right: 300px;
     }
-  }
-
-  :global(html.dark .collapse_button.collapse_button:is(:hover, :focus)) {
-    background-color: #fff;
   }
 
   main {

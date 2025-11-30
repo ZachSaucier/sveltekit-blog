@@ -94,14 +94,14 @@
     background-color: var(--background-color);
     font-size: 0.8em;
     line-height: 1.5em;
-    color: var(--accent-dark);
+    color: var(--text-color);
     border-radius: 0.4em;
     border: 1px solid #ddd;
     width: 32px;
     height: 32px;
 
     &[aria-current='page'] {
-      background-color: var(--accent-dark);
+      background-color: var(--text-color);
       color: var(--background-color);
     }
   }

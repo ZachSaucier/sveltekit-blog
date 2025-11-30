@@ -50,7 +50,7 @@
 
 <style>
   ::selection {
-    background-color: var(--accent-dark);
+    background-color: var(--text-color);
     color: var(--background-color);
   }
 
@@ -95,7 +95,7 @@
   [type='search'] {
     padding: 5px;
     border-radius: 100px;
-    border: none;
+    border: light-dark(none, 1px solid var(--background-color));
 
     @media (max-width: 749px) {
       width: 55px;
@@ -104,10 +104,6 @@
     &::placeholder {
       overflow: visible;
     }
-  }
-
-  :global(html.dark [type='search']) {
-    border: 1px solid var(--background-color);
   }
 
   .theme_toggle_item {

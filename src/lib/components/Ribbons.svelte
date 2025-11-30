@@ -5,12 +5,8 @@
 
 <style>
   .ribbons {
-    --color-horiz: var(--accent);
-    --color-vert: var(--accent-dark);
-  }
-  :global(html.dark .ribbons) {
-    --color-horiz: #fff;
-    --color-vert: var(--accent);
+    --color-horiz: light-dark(var(--accent), #fff);
+    --color-vert: light-dark(#212121, var(--accent));
   }
 
   .ribbon {

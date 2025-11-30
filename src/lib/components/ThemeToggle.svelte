@@ -9,25 +9,18 @@
     const theme_cookie = getCookie('theme');
     is_dark_mode = theme_cookie === 'dark';
     if (theme_cookie) {
-      if (theme_cookie === 'dark') {
-        document.documentElement.classList.add('dark');
-      }
-    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      document.documentElement.classList.add('dark');
-      setCookie('theme', 'dark');
-    } else {
-      setCookie('theme', 'light');
+      // User has explicitly chosen a theme - apply it
+      document.documentElement.dataset.theme = theme_cookie;
     }
+    // If no cookie, don't set data-theme - let color-scheme: light dark follow system preference
   }
 
   function handleSwitchDarkMode() {
     is_dark_mode = !is_dark_mode;
 
-    setCookie('theme', is_dark_mode ? 'dark' : 'light');
-
-    is_dark_mode
-      ? document.documentElement.classList.add('dark')
-      : document.documentElement.classList.remove('dark');
+    const newTheme = is_dark_mode ? 'dark' : 'light';
+    setCookie('theme', newTheme);
+    document.documentElement.dataset.theme = newTheme;
   }
 </script>
 
@@ -36,13 +29,12 @@
     const getInitCookie = (cookieName) =>
       (document.cookie.match(`(^|;) *${cookieName}=([^;]*)`) || [])[2];
 
-    if (getInitCookie('theme')) {
-      if (getInitCookie('theme') === 'dark') {
-        document.documentElement.classList.add('dark');
-      }
-    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      document.documentElement.classList.add('dark');
+    const themeCookie = getInitCookie('theme');
+    if (themeCookie) {
+      // User has explicitly chosen a theme - apply it
+      document.documentElement.dataset.theme = themeCookie;
     }
+    // If no cookie, don't set data-theme - let color-scheme: light dark follow system preference
   </script>
 </svelte:head>
 
