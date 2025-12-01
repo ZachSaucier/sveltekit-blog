@@ -65,6 +65,10 @@ I lead a productive team at a Fortune 500 company. If you're an early-stage star
 
 Be specific.
 
+This means that ***you should put the name of the company, a link to your company's website, and a job posting in the message!*** I never thought I'd have to tell recruiters to say what company they're recruiting for but I've gotten so many messages without it that I had to include this.
+
+This also means that I'm not interested in pool hiring unless that pool is for a specific subset of teams that align specifically with my interests.
+
 ## What I'm looking for
 
 I really love being able to direct what my team is working on while also build things myself. I love creating efficient processes for high quality teams and code. I excel at both making top-tier marketing websites and building enterprise software.

@@ -96,7 +96,7 @@
     --text-color: light-dark(#212121, #e8e8e8);
     --background-color: light-dark(#fff, #2c2c2c);
 
-    --link-color: light-dark(var(--accent), oklch(0.64 0.18 237));
+    --link-color: light-dark(var(--accent), oklab(0.74 -0.11 -0.14));
     --link-color-hover: light-dark(
       color-mix(in srgb, var(--accent) 80%, var(--background-color)),
       oklch(0.84 0.11 228.79)
