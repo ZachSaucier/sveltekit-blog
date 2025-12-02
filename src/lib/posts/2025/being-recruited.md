@@ -1,5 +1,5 @@
 ---
-title: Being recruited
+title: Being recruited as a staff+ engineer
 date: 2025-05-08
 description: Thoughts around what makes recruiting messages effective.
 tags:
@@ -9,7 +9,7 @@ tags:
   - companies
 ---
 
-I'm always open to getting messages from companies. I like hearing about companies that I haven't heard of and learning more about ones I have heard of. But the vast majority of recruiting messages are not good, especially for senior+ candidates.
+I'm always open to getting messages from companies. I like hearing about companies that I haven't heard of and learning more about ones I have heard of. But the vast majority of recruiting messages are not good, especially for staff+ candidates.
 
 <span class="excerpt_marker"></span>
 
@@ -65,7 +65,7 @@ I lead a productive team at a Fortune 500 company. If you're an early-stage star
 
 Be specific.
 
-This means that ***you should put the name of the company, a link to your company's website, and a job posting in the message!*** I never thought I'd have to tell recruiters to say what company they're recruiting for but I've gotten so many messages without it that I had to include this.
+This means that **_you should put the name of the company, a link to the company's website, and a job posting in the message!_** I never thought I'd have to tell recruiters to say what company they're recruiting for but I've gotten so many messages without it that I had to include this.
 
 This also means that I'm not interested in pool hiring unless that pool is for a specific subset of teams that align specifically with my interests.
 
