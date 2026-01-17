@@ -18,14 +18,9 @@
   const dataInnerWidth = $derived(data.innerWidth);
   const dataRecentPosts = $derived(data.recent_posts);
 
-  let collapsed = $state(dataCollapsed === 'true');
-  let innerWidth = $state(parseInt(dataInnerWidth) || 1200);
+  let collapsed = $derived(dataCollapsed === 'true');
+  let innerWidth = $derived(parseInt(dataInnerWidth) || 1200);
   let scrollY = $state(0);
-  
-  $effect(() => {
-    collapsed = dataCollapsed === 'true';
-    innerWidth = parseInt(dataInnerWidth) || 1200;
-  });
 
   function toggleCollapsed() {
     collapsed = !collapsed;
@@ -143,8 +138,7 @@
       padding-left: 40px;
     }
 
-    & main,
-    & footer {
+    & main {
       margin: 0 auto;
 
       @media (max-width: 999px) {
@@ -176,18 +170,6 @@
       @media (max-width: 1199px) {
         display: none;
       }
-    }
-
-    & .sidebar {
-      display: none;
-
-      @media (max-width: 1199px) {
-        display: block;
-      }
-    }
-
-    & footer ul {
-      justify-content: center;
     }
   }
 

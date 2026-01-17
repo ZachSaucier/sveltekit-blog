@@ -77,6 +77,4 @@ I want you to be excited at the prospect of us working together, not just one of
 
 ## Reach out to me!
 
-You can [reach out](mailto:hello@zachsaucier.com) to me!
-
-Like I said, I'm always open to hearing from you.
+Please use [hello@zachsaucier.com](mailto:hello@zachsaucier.com)! Like I said, I'm always open to hearing from you.

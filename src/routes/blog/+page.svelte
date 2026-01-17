@@ -4,9 +4,7 @@
   import PostsList from '$lib/components/PostsList.svelte';
   import Pagination from '$lib/components/Pagination.svelte';
 
-  let { data } = $props();
-
-  const { total_posts, posts } = data;
+  const { total_posts, posts } = $props();
 
   const lower_bound = $derived(posts_per_page - (posts_per_page - 1) || 1);
   const upper_bound = $derived(Math.min(posts_per_page, total_posts));

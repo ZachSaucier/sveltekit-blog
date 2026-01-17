@@ -1,9 +1,9 @@
 <script>
   let { input_date, updated = false, short = false, style = false } = $props();
 
-  const date = new Date(input_date);
-  const date_string =
-    short || date.getFullYear() === new Date().getFullYear()
+  const date_string = $derived.by(() => {
+    const date = new Date(input_date);
+    return short || date.getFullYear() === new Date().getFullYear()
       ? date.toLocaleDateString(undefined, {
           month: 'short',
           day: 'numeric',
@@ -15,10 +15,11 @@
           day: 'numeric',
           timeZone: 'UTC',
         });
+  });
 
-  const updated_date = new Date(updated);
-  const updated_string =
-    short || updated_date.getFullYear() === new Date().getFullYear()
+  const updated_string = $derived.by(() => {
+    const updated_date = new Date(updated);
+    return short || updated_date.getFullYear() === new Date().getFullYear()
       ? updated_date.toLocaleDateString(undefined, {
           month: 'short',
           day: 'numeric',
@@ -30,6 +31,7 @@
           day: 'numeric',
           timeZone: 'UTC',
         });
+  });
 </script>
 
 <time datetime={updated ? updated_string : date_string} {style}>

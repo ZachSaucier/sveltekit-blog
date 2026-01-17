@@ -11,6 +11,8 @@
   let url = $state('');
   onMount(() => (url = window.location.href));
 
+  const { postHtml, relatedPosts } = $derived.by(() => data);
+
   const {
     title,
     description,
@@ -22,8 +24,7 @@
     cover_alt,
     cover_in_post,
     tags,
-  } = data.meta;
-  const { postHtml, relatedPosts } = data;
+  } = meta;
 </script>
 
 <svelte:head>

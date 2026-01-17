@@ -1,8 +1,9 @@
 <script>
   let { type, width, fill = 'var(--text-color)' } = $props();
 
-  const title =
-    type === 'Sun' ? 'Switch to light theme' : type === 'Moon' ? 'Switch to dark theme' : type;
+  const title = $derived(
+    type === 'Sun' ? 'Switch to light theme' : type === 'Moon' ? 'Switch to dark theme' : type
+  );
 </script>
 
 <svg class={type} viewBox="0 0 32 32" {width} xmlns="http://www.w3.org/2000/svg" fill="none">
