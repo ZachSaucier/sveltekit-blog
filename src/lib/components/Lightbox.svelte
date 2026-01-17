@@ -1,33 +1,37 @@
 <script>
   import { browser } from '$app/environment';
 
-  export let src;
-  export let alt;
-  export let loading = 'lazy';
-  export let width;
-  export let height;
-  export let max_display_width = 790;
-  export let quality = 'auto';
+  let {
+    src,
+    alt,
+    loading = 'lazy',
+    width,
+    height,
+    max_display_width = 790,
+    quality = 'auto'
+  } = $props();
 
-  const aspect_ratio = width / height;
-  const high_dpi = browser ? window.devicePixelRatio >= 2 : false;
+  const aspect_ratio = $derived(width / height);
+  const high_dpi = $derived(browser ? window.devicePixelRatio >= 2 : false);
 
-  const width_based_on_dpi = high_dpi ? Math.round(width / 2) : width;
-  const height_based_on_dpi = high_dpi ? Math.round(height / 2) : height;
+  const width_based_on_dpi = $derived(high_dpi ? Math.round(width / 2) : width);
+  const height_based_on_dpi = $derived(high_dpi ? Math.round(height / 2) : height);
 
-  const display_width = Math.min(width_based_on_dpi, max_display_width);
-  const display_height = Math.round(display_width / aspect_ratio);
+  const display_width = $derived(Math.min(width_based_on_dpi, max_display_width));
+  const display_height = $derived(Math.round(display_width / aspect_ratio));
 
-  const should_double_src_size = high_dpi && width >= display_width * 2;
+  const should_double_src_size = $derived(high_dpi && width >= display_width * 2);
 
-  const display_src = src.replace(
-    /\/upload\//,
-    `/upload/w_${should_double_src_size ? display_width * 2 : display_width}/q_${quality}/`
+  const display_src = $derived(
+    src.replace(
+      /\/upload\//,
+      `/upload/w_${should_double_src_size ? display_width * 2 : display_width}/q_${quality}/`
+    )
   );
 
-  let dialog;
-  let close_button;
-  let intention = false;
+  let dialog = $state();
+  let close_button = $state();
+  let intention = $state(false);
 
   function showIntention() {
     intention = true;
@@ -57,9 +61,9 @@
 {:else}
   <button
     class="lightbox__button_open"
-    on:pointerenter={showIntention}
-    on:focus={showIntention}
-    on:click={openLightbox}
+    onpointerenter={showIntention}
+    onfocus={showIntention}
+    onclick={openLightbox}
     aria-label="View larger image"
   >
     <img
@@ -73,10 +77,10 @@
     />
   </button>
 
-  <!-- svelte-ignore a11y-click-events-have-key-events -->
-  <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
-  <dialog bind:this={dialog} on:click={closeLightbox}>
-    <button bind:this={close_button} class="lightbox__close" on:click={closeLightbox}>Close</button>
+  <!-- svelte-ignore a11y_click_events_have_key_events -->
+  <!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
+  <dialog bind:this={dialog} onclick={closeLightbox}>
+    <button bind:this={close_button} class="lightbox__close" onclick={closeLightbox}>Close</button>
     {#if intention}
       <img
         class="lightbox__image_full"

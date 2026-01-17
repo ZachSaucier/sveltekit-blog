@@ -11,11 +11,21 @@
   import Sidebar from '$lib/components/Sidebar.svelte';
   import Footer from '$lib/components/Footer.svelte';
 
-  export let data;
+  let { data, children } = $props();
 
-  let collapsed = data.collapsed === 'true';
-  let innerWidth = parseInt(data.innerWidth) || 1200;
-  let scrollY = 0;
+  const dataPath = $derived(data.path);
+  const dataCollapsed = $derived(data.collapsed);
+  const dataInnerWidth = $derived(data.innerWidth);
+  const dataRecentPosts = $derived(data.recent_posts);
+
+  let collapsed = $state(dataCollapsed === 'true');
+  let innerWidth = $state(parseInt(dataInnerWidth) || 1200);
+  let scrollY = $state(0);
+  
+  $effect(() => {
+    collapsed = dataCollapsed === 'true';
+    innerWidth = parseInt(dataInnerWidth) || 1200;
+  });
 
   function toggleCollapsed() {
     collapsed = !collapsed;
@@ -26,7 +36,9 @@
     setCookie('innerWidth', innerWidth);
   }
 
-  recent_posts.set(data.recent_posts);
+  $effect(() => {
+    recent_posts.set(dataRecentPosts);
+  });
 
   const transitionIn = { delay: 150, duration: 150 };
   const transitionOut = { duration: 100 };
@@ -35,7 +47,9 @@
    * Updates the global store with the current path. (Used for highlighting
    * the current page in the nav, but could be useful for other purposes.)
    **/
-  $: current_page.set(data.path);
+  $effect(() => {
+    current_page.set(dataPath);
+  });
 
   /**
    * This pre-fetches all top-level routes on the site in the background for faster loading.
@@ -50,7 +64,7 @@
   //   preloadCode(...navRoutes);
   // });
 
-  $: translateX = () => {
+  const translateX = $derived(() => {
     if (collapsed) {
       if (innerWidth < 1199) {
         return 0;
@@ -64,21 +78,21 @@
         return 0;
       }
     }
-  };
+  });
 </script>
 
-<svelte:window bind:innerWidth bind:scrollY on:resize={handleResize} />
+<svelte:window bind:innerWidth bind:scrollY onresize={handleResize} />
 
 <div class="outer_container" class:collapsed>
   {#if innerWidth >= 1200}
     <button
       class="collapse_button"
       aria-pressed={collapsed}
-      on:click={toggleCollapsed}
+      onclick={toggleCollapsed}
       title={collapsed ? 'Open sidebar' : 'Collapse sidebar'}
       style={`transform: translateX(${translateX()}) translateY(-${Math.min(scrollY, 210)}px)`}
     >
-      <span aria-hidden>{collapsed ? '«' : '»'}</span>
+      <span aria-hidden="true">{collapsed ? '«' : '»'}</span>
       <span class="sr-only">Collapse sidebar</span>
     </button>
   {/if}
@@ -87,9 +101,9 @@
 
   <Header style="grid-area: Header;" />
 
-  {#key data.path}
+  {#key dataPath}
     <main id="main" tabindex="-1" in:fade={transitionIn} out:fade={transitionOut}>
-      <slot />
+      {@render children()}
     </main>
   {/key}
 

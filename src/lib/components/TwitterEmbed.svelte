@@ -1,12 +1,13 @@
 <script>
   import { browser } from '$app/environment';
+  import { getCookie } from '$lib/utilities/cookies';
 
-  export let expandable = false;
+  let { expandable = false, children } = $props();
 
-  let theme = 'light';
+  let theme = $state('light');
 
   if (browser) {
-    theme = getCookie('theme');
+    theme = getCookie('theme') || 'light';
   }
 </script>
 
@@ -18,12 +19,12 @@
   <details>
     <summary>View tweet</summary>
     <blockquote class="twitter-tweet" data-theme={theme}>
-      <slot />
+      {@render children()}
     </blockquote>
   </details>
 {:else}
   <blockquote class="twitter-tweet" data-theme={theme}>
-    <slot />
+    {@render children()}
   </blockquote>
 {/if}
 

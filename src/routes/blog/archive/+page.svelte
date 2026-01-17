@@ -3,7 +3,7 @@
   import PageTitle from '$lib/components/PageTitle.svelte';
   import Date from '$lib/components/Date.svelte';
   import { title_ending } from '$lib/config';
-  export let data;
+  let { data } = $props();
   const { archive_data } = data;
 
   const date_styles = 'top: 0.85rem; left: 0; font-size: 0.9em; line-height: 1.5;';

@@ -2,7 +2,7 @@
   import { current_page } from '$lib/utilities/store';
   import { site_author, nav_items } from '$lib/config';
 
-  export let style = '';
+  let { style = '' } = $props();
 </script>
 
 <footer {style}>

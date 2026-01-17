@@ -6,9 +6,9 @@
   import Date from '$lib/components/Date.svelte';
   import BlueskyShare from '$lib/components/BlueskyShare.svelte';
 
-  export let data;
+  let { data } = $props();
 
-  let url = ``;
+  let url = $state('');
   onMount(() => (url = window.location.href));
 
   const {

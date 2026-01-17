@@ -1,6 +1,6 @@
 <div class="ribbons">
-  <div class="ribbon ribbon__horiz" />
-  <div class="ribbon ribbon__vert" />
+  <div class="ribbon ribbon__horiz"></div>
+  <div class="ribbon ribbon__vert"></div>
 </div>
 
 <style>

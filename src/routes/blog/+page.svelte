@@ -4,12 +4,12 @@
   import PostsList from '$lib/components/PostsList.svelte';
   import Pagination from '$lib/components/Pagination.svelte';
 
-  export let data;
+  let { data } = $props();
 
   const { total_posts, posts } = data;
 
-  $: lower_bound = posts_per_page - (posts_per_page - 1) || 1;
-  $: upper_bound = Math.min(posts_per_page, total_posts);
+  const lower_bound = $derived(posts_per_page - (posts_per_page - 1) || 1);
+  const upper_bound = $derived(Math.min(posts_per_page, total_posts));
 </script>
 
 <svelte:head>

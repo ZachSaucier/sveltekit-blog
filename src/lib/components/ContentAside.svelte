@@ -1,7 +1,7 @@
 <script>
-  export let type = 'default';
+  let { type = 'default', children } = $props();
 </script>
 
 <aside class="content_aside content_aside--{type}">
-  <slot />
+  {@render children()}
 </aside>

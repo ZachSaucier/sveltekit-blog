@@ -3,13 +3,14 @@
   import PageTitle from '$lib/components/PageTitle.svelte';
   import Date from '$lib/components/Date.svelte';
 
-  export let posts = [];
-  export let tag = '';
+  let { posts = [], tag = '', children } = $props();
 </script>
 
 <Section no_border={true}>
   <PageTitle title="Tag: {tag}">
-    <slot />
+    {#if children}
+      {@render children()}
+    {/if}
   </PageTitle>
 </Section>
 

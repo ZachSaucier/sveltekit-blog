@@ -1,7 +1,7 @@
 <script>
   import Section from '$lib/components/Section.svelte';
   import Date from '$lib/components/Date.svelte';
-  export let posts = [];
+  let { posts = [] } = $props();
 </script>
 
 <div class="posts_list">

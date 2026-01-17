@@ -1,4 +1,5 @@
 import { posts_per_page } from '$lib/config';
+import { render } from 'svelte/server';
 
 const SEPARATOR = '<span class="excerpt_marker"></span>';
 const TOC_MATCH = new RegExp('<nav class="toc"(?:.*)>(.*)</ol></nav>');
@@ -6,22 +7,33 @@ const TOC_MATCH = new RegExp('<nav class="toc"(?:.*)>(.*)</ol></nav>');
 const fetchPosts = async ({ offset = 0, limit = posts_per_page, tag } = {}) => {
   let posts = await Promise.all(
     Object.entries(import.meta.glob('/src/lib/posts/**/*.md')).map(async ([path, resolver]) => {
-      const { metadata, ...rest } = await resolver();
-      const path_pieces = path.split('/');
-      // const year = path_pieces[4];
-      const slug = path_pieces.pop().slice(0, -3);
-      const full_post = rest.default.render().html;
-      let excerpt = full_post.indexOf(SEPARATOR) !== -1 ? full_post.split(SEPARATOR)[0] : null;
-      // Strip table of contents from the excerpt
-      const toc = excerpt && excerpt.match(TOC_MATCH);
-      if (toc) {
-        excerpt = excerpt.replace(toc[0], '');
+      try {
+        const { metadata, ...rest } = await resolver();
+        const path_pieces = path.split('/');
+        // const year = path_pieces[4];
+        const slug = path_pieces.pop().slice(0, -3);
+        const Component = rest.default;
+        if (!Component) {
+          console.error(`No component found for ${path}`);
+          return null;
+        }
+        const { body } = render(Component, {});
+        const full_post = body;
+        let excerpt = full_post.indexOf(SEPARATOR) !== -1 ? full_post.split(SEPARATOR)[0] : null;
+        // Strip table of contents from the excerpt
+        const toc = excerpt && excerpt.match(TOC_MATCH);
+        if (toc) {
+          excerpt = excerpt.replace(toc[0], '');
+        }
+        return { ...metadata, slug, full_post, excerpt };
+      } catch (error) {
+        console.error(`Error processing ${path}:`, error);
+        return null;
       }
-      return { ...metadata, slug, full_post, excerpt };
     })
   );
 
-  posts = posts.filter((post) => !post.draft);
+  posts = posts.filter((post) => post && !post.draft);
 
   let sorted_posts = posts.sort((a, b) => new Date(b.date) - new Date(a.date));
 

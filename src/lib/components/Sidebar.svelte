@@ -2,7 +2,7 @@
   import { recent_posts } from '$lib/utilities/store';
   import Icon from '$lib/components/Icon.svelte';
 
-  export let style = '';
+  let { style = '' } = $props();
 
   const projects = [
     {

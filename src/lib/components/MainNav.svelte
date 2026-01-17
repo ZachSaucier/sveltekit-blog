@@ -32,7 +32,7 @@
     {/each}
     <li class="search_item">
       <search>
-        <form on:submit|preventDefault={handleSearchSubmit}>
+        <form onsubmit={(e) => { e.preventDefault(); handleSearchSubmit(e); }}>
           <input type="search" name="search" results="0" placeholder="Search" />
         </form>
       </search>

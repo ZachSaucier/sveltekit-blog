@@ -1,8 +1,5 @@
 <script>
-  export let input_date;
-  export let updated = false;
-  export let short = false;
-  export let style = false;
+  let { input_date, updated = false, short = false, style = false } = $props();
 
   const date = new Date(input_date);
   const date_string =

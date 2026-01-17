@@ -1,7 +1,5 @@
 <script>
-  export let type;
-  export let width;
-  export let fill = 'var(--text-color)';
+  let { type, width, fill = 'var(--text-color)' } = $props();
 
   const title =
     type === 'Sun' ? 'Switch to light theme' : type === 'Moon' ? 'Switch to dark theme' : type;

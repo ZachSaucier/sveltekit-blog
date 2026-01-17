@@ -2,7 +2,7 @@
   import { title_ending } from '$lib/config';
   import Section from '$lib/components/Section.svelte';
   import PageTitle from '$lib/components/PageTitle.svelte';
-  export let data;
+  let { data } = $props();
   const { tags } = data;
 </script>
 

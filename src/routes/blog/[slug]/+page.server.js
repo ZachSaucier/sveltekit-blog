@@ -1,6 +1,7 @@
 import { start_year } from '$lib/config';
 import { error } from '@sveltejs/kit';
 import getRelatedPosts from '$lib/utilities/getRelatedPosts.js';
+import { render } from 'svelte/server';
 
 export const load = async ({ params }) => {
   // This searches through the directories of posts, looking for a file that matches the slug, regardless of the year
@@ -13,17 +14,20 @@ export const load = async ({ params }) => {
       const post = await match();
       const meta = { ...post.metadata, slug: `${params.slug}` };
 
+      const Component = post.default;
+      const { body } = render(Component, {});
+
       // Get related posts based on internal links first, then tags
       let relatedPosts;
       try {
-        const postHtml = structuredClone(post.default.render().html);
+        const postHtml = structuredClone(body);
         relatedPosts = await getRelatedPosts(params.slug, meta.tags, 2, true, postHtml);
       } catch (e) {
         console.log(e);
       }
 
       return {
-        postHtml: structuredClone(post.default.render().html),
+        postHtml: structuredClone(body),
         meta,
         relatedPosts,
       };

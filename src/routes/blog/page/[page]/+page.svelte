@@ -4,11 +4,11 @@
   import Pagination from '$lib/components/Pagination.svelte';
   import { posts_per_page, site_description } from '$lib/config';
 
-  export let data;
+  let { data } = $props();
   const { page, total_posts, posts } = data;
 
-  $: lower_bound = page * posts_per_page - (posts_per_page - 1) || 1;
-  $: upper_bound = Math.min(page * posts_per_page, total_posts);
+  const lower_bound = $derived(page * posts_per_page - (posts_per_page - 1) || 1);
+  const upper_bound = $derived(Math.min(page * posts_per_page, total_posts));
 
   const path = '/blog/page';
 </script>
