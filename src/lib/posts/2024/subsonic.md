@@ -65,11 +65,11 @@ The first time this issue happened I was able to fix it by just bumping up the m
 
 A clean reinstalling fixes all of these issues. It's now what I do anytime Subsonic fails to startup, which is a little annoying, but with practice you can get going again in a few minutes.
 
-**Note:** Before you carry out the steps below, I highly recommend backing up your `subsonic.properties` file from within the `subsonic` directory and all of your playlists! I made [a script](https://gist.github.com/ZachSaucier/ecb911278a999b1d4bb505cd5548bb4e) to download all playlists that you have, just make sure the number of playlists is changed to ID number of the most recent playlist that you have.
+**Note:** Before you carry out the steps below, I highly recommend backing up your `subsonic.properties` file from within the `subsonic` directory and all of your playlists! I made [a script](https://gist.github.com/ZachSaucier/ecb911278a999b1d4bb505cd5548bb4e) to download all playlists that you have, just make sure the number of playlists is changed to ID number of the most recent playlist that you have and that the URL of your server is correct.
 
 To do a clean reinstall, make sure to delete both the Subsonic application directory (for me that was `C:\Program Files (x86)\Subsonic\`) _and_ the Subsonic personal directory (for me that was `C:\subsonic\`). Install using whatever means of installing Subsonic, add your `subsonic.properties` file back to the `subsonic` directory, and then upload your playlists.
 
-Pro tips for importing playlists more quickly: In `subsonic\jetty\0cfa60\webapp\WEB-INF\jsp\importPlaylist.jsp`, add `style="width:500px;height:500px;"` to the `input` with the type of `file` to make the drag area larger. You can also navigate directly to the `http://localhost:4040/importPlaylist.view` to prevent Subsonic from navigating to the playlist that you imported each time!
+To load all of your playlists quickly, put them in a directory on your server. Then go to Settings -> General -> Import playlists from and enter the path to that directory. Then go to Settings -> Media folders -> Scan media folder now. Done!
 
 ## Where I stand with Subsonic
 
