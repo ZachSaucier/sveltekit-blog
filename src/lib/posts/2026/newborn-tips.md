@@ -18,6 +18,8 @@ cover_in_post: false
 
 Here's a list of things that I wrote down about being a parent in the first few weeks. Quite a few of them I wish someone had told us before having a baby. I hope it helps!
 
+<span class="excerpt_marker"></span>
+
 - This goes without saying, but it's a very good idea to think through and start gathering the supplies you'll need in the hospital and the first couple of weeks ahead of time (probably more than a month before).
 - If you're using an epidural, pushing the bolus button should make a noise when it works and always display a message (whether or not medicine was delivered) on the screen. For us it wasn't working and didn't do this but we had no idea it was supposed to.
 - A woman in labor will likely feel a lot of pain but sometimes the pain is exacerbated by the positioning. Try mixing up the positioning before going to an epidural, even if you want to get an epidural eventually.
