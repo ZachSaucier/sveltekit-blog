@@ -23,39 +23,35 @@ I published my first fully vibe coded application: [Toddler Photo Lock](https://
 
 ## Why I wanted this app
 
-Around 10 months old, my daughter started getting quite excited when she saw us using our phones and computers. My wife and I don't want her to think that phones are exciting.
+My wife and I try to minimize our use of screens around our daughter so as to not get her overly interested in them. The American Academy of Pediatrics recommends zero screen time for children under 18 months, except for FaceTime with family. But when our daughter was 10 months old, she started reaching for our phones and getting very frustrated when we didn't let her have them.
 
-We had the idea of showing her an image and locking the screen so that she can hold the phone. With nothing else to do, we thought she would eventually get bored.
+Even if children only see phones used for photos and FaceTime, they are naturally still going to be very curious about them (this is true for all objects they see their parents using). We felt that fighting a battle and saying "NO!" every time she saw a phone would just draw more attention to it and make it more enticing. We were looking for a solution that would allow her to hold the phone for short periods of time without getting sucked into all the swiping and interactivity that exists even on the default lock screen. With nothing else to do, we thought she would eventually get bored.
 
-Apple's built-in Guided Access feature along with the default Photos app nearly got us all the way there. But when using Guided Access in Photos she can still swipe between media and cause havoc with buttons. Then we tried but failed to find any app in the app store for this use case.
-
-So I vibe coded it.
+Apple's built-in Guided Access feature along with the default Photos app got us almost all the way there. But when using Guided Access in Photos, she can still swipe between media and cause havoc with buttons. We tried but failed to find any app in the app store for this use case, so I decided to vibe code it.
 
 ## A perfect match for vibe coding
 
 A few things make this app a great candidate for full vibe coding:
 
 - It's fully local-only by design. This means no server, no real security, and no worry about load. In other words, I don't need to make important architectural decisions that have long term impacts.
-- Its scope is extremely limited. Grant access to some photos, pick one, and have the screen lock. That covers the main features! With an app this simple you don't have to worry about code reuse, following consistent patterns across the application, or any of the concerns that you have with large codebases.
-- (personal reason) It's an iOS-native application. I'm a web developer. I know close to nothing about native mobile application development. I could have made a web app and added it to my home screen via "Add to Home Screen" but then 1. there's a lot of overhead with a web browser and 2. if you're going to vibe code something why not vibe code the more correct thing?
+- Its scope is extremely limited. Grant access to some photos, pick one, and have the screen lock. That covers the main features! With an app this simple you don't have to worry about code reuse, following consistent patterns across the application, or any of the concerns you have with large codebases.
+- (personal reason) It's an iOS-native application. I'm a web developer and know close to nothing about native mobile application development. I could have made a web app and added it to my home screen via "Add to Home Screen" but then 1. there's a lot of overhead with a web browser and 2. if you're going to vibe code something why not vibe code the more correct thing?
 
 ## Fully vibed still requires effort
 
-My daughter was 14 months old when I finally got the app published in the App Store. Building the initial app that worked on my phone only took a day. Getting the app published (with my limited ability to work on the app) took 3 months.
+My daughter was 14 months old when I finally got the app published in the App Store. Building the initial app that worked on my phone only took a day. Getting the app published (with my limited time to work on the app) took 3 months.
 
 I worked with Gemini to estimate the feasibilty of the app and create a big picture plan. I then worked with Augment Code with GPT 5.4 to flesh out the plan and made some manual edits.
 
-Then I had Augment go at it. It got the job done! But, naturally, there were ambiguous or missing things in the spec and I had to iterate a bit. This is where the majority of the actual development time was spent, adding little features that I didn't think of or didn't know were required to publish to the app store (like having an in-app privacy page).
+Then I had Augment go at it. It got the job done! Naturally, there were ambiguous or missing things in the spec and I had to iterate a bit. This is where the majority of the actual development time was spent, adding little features that I didn't think of or didn't know were required to publish to the app store (like having an in-app privacy page).
 
-I then spent time setting up the project [on GitHub](https://github.com/ZachSaucier/Toddler-Photo-Lock/) with an MIT license (because I feel like anything modest and fully vibe coded should probably be open source) including creating [a FAQ](https://github.com/ZachSaucier/Toddler-Photo-Lock/wiki/FAQ) and GitHub [issue templates](https://github.com/ZachSaucier/Toddler-Photo-Lock/tree/main/.github/ISSUE_TEMPLATE) because I've found both of those things to be incredibly useful with [Just Read](https://justread.link).
+I then spent time setting up the project [on GitHub](https://github.com/ZachSaucier/Toddler-Photo-Lock/) with an MIT license (because I think anything modest and fully vibe coded should be open source). I created [a FAQ](https://github.com/ZachSaucier/Toddler-Photo-Lock/wiki/FAQ) and GitHub [issue templates](https://github.com/ZachSaucier/Toddler-Photo-Lock/tree/main/.github/ISSUE_TEMPLATE), because I've found both of them to be incredibly useful with [Just Read](https://justread.link). As a web developer, I also felt the need to create a tiny, bare-boned [marketing site](https://toddlerphotolock.com).
 
-I also felt the need to create a tiny, bareboned [marketing site](https://toddlerphotolock.com).
+### App Store review is the worst
 
-### App Store review is hell
+To get the app in the App Store I had to do a _ton_ of small tasks like adding a description, adding preview photos, creating an icon, and sizing everything in the way that they want.
 
-To get the app in the App Store I had to do a _ton_ of little tasks like adding a description, adding preview photos, creating an icon, and sizing everything in the way that they want.
-
-I learned that in order to post to the App Store you have to join the Apple Developer Program. And it costs nearly $110 annually!?! Coming from the web side of things that's crazy to me. On the web all you need is a ~$10 domain (if that!) and a static file host. Thanks vendor lock in and monopolization...
+In order to post to the App Store, you have to join the Apple Developer Program. And it costs nearly $110 annually!?! On the web all you need is a ~$10 domain (if that!) and a static file host. Thanks vendor lock in and monopolization...
 
 The App Store has many checklists of requirements / tasks, one after another. No checklist is comprehensive. Some todo items in App Store Connect didn't show the first time around. Documentation for uploading a build was hard to find and what I found had broken links and no clear steps. I resorted to using Google Search's AI answer which was more useful.
 
@@ -69,17 +65,15 @@ When I tried to resubmit to the app store I got a "You do not have required cont
 
 I failed the next submission because I didn't sign the paid app agreement but it didn't tell me I needed to sign that until they rejected my submission.
 
-The next submission was rejected for 3 reasons, none of which were made clear how I broke them. I asked for clarification and they said 2 were not issues and gave me additional info about the third was, which I then fixed.
+The next submission was rejected for 3 reasons, none of which were made clear. I asked for clarification and they said 2 were not issues and gave me additional info about the third was, which I then fixed.
 
 This confusing back and worth happened several more times. If Steve Jobs were watching I think he would have fired people who were responsible for such a terrible experience.
 
 ### Time taken
 
-Lastly I felt the need to write this blog posts...
+All in all, the app itself took me around 3 hours of planning and "development" time-- mostly multi tasking, checking in, and giving new prompts. I spent another 6+ hours setting up the GitHub project, creating a website, and getting the app in the App store (not counting the 3 months in App Store back-and-forth purgatory...).
 
-All in all the app itself took me around 3 hours of planning and "development" time (which was mostly me multi tasking, checking in and giving new prompts). I spent another 6+ hours setting up the GitHub project, creating a website, and getting the app in the App store. Then I spent 3 months in App Store back-and-forth hell...
-
-Without LLMs developing this app would have taken me significantly more time. Realistically I just wouldn't have ever made the app.
+Without LLMs, developing this app would have taken a lot longer (realistically I just wouldn't have ever made the app).
 
 ## In general I don't recommend using AI in this way
 
@@ -87,4 +81,12 @@ Though I did look at a small portion of the code to update strings and such (e.g
 
 This app was a great fit for coding in this way. Most apps are not.
 
-In my day job I use agents to speed up the planning and coding processes but do a _LOT_ more technical-level implementation guiding. In large, complicated, convoluted codebases there's also more areas where this generation of agents gets stuck / gets it wrong. So I don't expect to be fully vibe coding most of the time during my day job, at least in the near term.
+In my day job, I use agents to speed up the planning and coding processes with a _LOT_ more technical-level implementation guiding. In large, complicated, convoluted codebases there's also more areas where this generation of agents gets stuck / gets it wrong. So I don't expect to be fully vibe coding in my day job, at least in the near term.
+
+## So did the app help?
+
+If you read to the end, you might be wondering if the app has been successful for our family. We think so!
+
+Our daughter still gets excited when she sees a phone, and often wants to hold it. When she does, she looks at the locked picture and talks to it as if she's on FaceTime. She also puts the phone up to her ear and says "Hello?!" and babbles a fake conversation. It has been one of her first instances of "pretend play" and the type of phone usage we want her to be excited about when she is older. She does eventually get bored of it on her own within 5 minutes, which has not happened when she holds a phone on the lock screen (usually she ends up taking an infinite vlog of herself).
+
+Toddler Photo Lock gives us the option to treat the phone as neutral instead of forbidden. If she reaches for one of our phones, we can choose whether it is a good time to let her hold it or not, just like we would anything else. We know that phone usage will continue to be a challenge as she grows older but we are happy to have a solution that is working for us right now!
