@@ -69,9 +69,9 @@ When I tried to resubmit to the app store I got a "You do not have required cont
 
 I failed the next submission because I didn't sign the paid app agreement but it didn't tell me I needed to sign that until they rejected my submission.
 
-The next submission was rejected for 3 reasons, none of which were made clearhow I broke them. I asked and they said 2 were not issues and told me what the third was, which I then fixed.
+The next submission was rejected for 3 reasons, none of which were made clear how I broke them. I asked for clarification and they said 2 were not issues and gave me additional info about the third was, which I then fixed.
 
-This confusing back and worth happened several more times. If Steve Jobs were watching I think he would have fired some people who were responsible for such a terrible experience.
+This confusing back and worth happened several more times. If Steve Jobs were watching I think he would have fired people who were responsible for such a terrible experience.
 
 ### Time taken
 
