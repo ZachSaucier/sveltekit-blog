@@ -11,6 +11,11 @@
       link: 'https://justread.link/',
     },
     {
+      title: 'Toddler Photo Lock',
+      description: 'An iOS app to help your toddler lose interest in smart phones',
+      link: 'https://toddlerphotolock.com/',
+    },
+    {
       title: 'Disentegrate.js',
       description: 'Break DOM elements into animated particles.',
       link: 'https://github.com/ZachSaucier/Disintegrate',

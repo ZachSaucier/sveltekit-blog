@@ -131,6 +131,7 @@
     & h2 {
       font-family: inherit;
       line-height: inherit;
+      white-space: nowrap;
     }
 
     & h2,
