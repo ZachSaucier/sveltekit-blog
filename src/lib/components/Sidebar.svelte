@@ -71,7 +71,7 @@
       </section>
     {/if}
 
-    <section>
+    <!-- <section>
       <h1>Blog highlights newsletter</h1>
       <div class="sidebar_content">
         <p>Get emails about the top blog posts every once in a while.</p>
@@ -94,7 +94,7 @@
           <input type="submit" name="subscribe" id="mc-embedded-subscribe" value="Subscribe" />
         </form>
       </div>
-    </section>
+    </section> -->
 
     <section>
       <h1>Favorite side projects</h1>
@@ -173,9 +173,9 @@
     margin-block-end: 0.4em;
   }
 
-  form {
+  /* form {
     margin-block-start: 0.3em;
-  }
+  } */
 
   .socials {
     display: flex;

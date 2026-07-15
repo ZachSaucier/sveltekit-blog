@@ -1,7 +1,7 @@
 ---
 title: I'm a vibe coder
 date: 2026-06-27
-description:
+description: A reflection on my first published, fully vibe-coded application.
 tags:
   - code
   - projects

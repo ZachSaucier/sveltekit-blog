@@ -1,7 +1,7 @@
 ---
 title: Newborn tips
 date: 2026-03-04
-description:
+description: A few tips I wish I had known before having a child.
 tags:
   - rambling
   - parenting

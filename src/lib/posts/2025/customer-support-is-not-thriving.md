@@ -1,7 +1,7 @@
 ---
 title: Customer support is not thriving
 date: 2025-09-08
-description:
+description: Some thoughts about what makes good customer support and how I was failed by one company.
 tags:
   - rambling
   - products
