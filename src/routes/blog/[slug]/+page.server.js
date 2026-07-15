@@ -11,7 +11,7 @@ export const load = async ({ params }) => {
     try {
       const match = modules[`/src/lib/posts/${year}/${params.slug}.md`];
       const post = await match();
-      const meta = { ...post.metadata, slug: `${params.slug}` };
+      const meta = { ...post.metadata, slug: `${params.slug}`, year };
 
       // Get related posts based on internal links first, then tags
       let relatedPosts;
@@ -23,7 +23,6 @@ export const load = async ({ params }) => {
       }
 
       return {
-        postHtml: structuredClone(post.default.render().html),
         meta,
         relatedPosts,
       };

@@ -23,7 +23,12 @@
     cover_in_post,
     tags,
   } = data.meta;
-  const { postHtml, relatedPosts } = data;
+  const { relatedPosts } = data;
+
+  // Eagerly import all post modules so the server-rendered component markup can be hydrated on the client.
+  const modules = import.meta.glob('/src/lib/posts/**/*.md', { eager: true });
+  const postModule = modules[`/src/lib/posts/${data.meta.year}/${data.meta.slug}.md`];
+  let Post = postModule ? postModule.default : null;
 </script>
 
 <svelte:head>
@@ -63,7 +68,7 @@
         style="aspect-ratio: {cover_width} / {cover_height}"
       />
     {/if}
-    {@html postHtml}
+    <svelte:component this={Post} />
   </article>
 
   {#if tags}

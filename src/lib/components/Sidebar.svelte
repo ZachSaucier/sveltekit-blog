@@ -161,8 +161,9 @@
   }
 
   ul,
-  ol,
-  .sidebar_content {
+  ol
+  /* ,
+  .sidebar_content */ {
     padding-inline-start: 1.25rem;
     font-size: 0.9rem;
   }
