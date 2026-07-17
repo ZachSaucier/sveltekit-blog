@@ -6,7 +6,7 @@ tags:
   - projects
   - products
   - music
-cover_image: https://res.cloudinary.com/desumhldo/image/upload/q_100/v1712180702/Subsonic.png
+cover_image: https://res.cloudinary.com/desumhldo/image/upload/v1712180702/Subsonic.png
 cover_width: 1096
 cover_height: 653
 cover_alt: A screenshot of my Subsonic app

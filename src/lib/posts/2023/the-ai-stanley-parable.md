@@ -10,7 +10,7 @@ tags:
   - technology
   - products
   - process
-cover_image: https://res.cloudinary.com/desumhldo/image/upload/q_100/v1702850590/ai-stanley_wliaiy.webp
+cover_image: https://res.cloudinary.com/desumhldo/image/upload/v1702850590/ai-stanley_wliaiy.webp
 cover_width: 1024
 cover_height: 1024
 cover_alt: A dark office that shows a CRT monitor with a terminal on it. The image has the text "The AI Stanley Parable" on it.

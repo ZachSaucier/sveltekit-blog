@@ -1,4 +1,8 @@
 <script>
+  // Lightbox component for responsive images with zoom modal
+  // Expected src format: https://res.cloudinary.com/[account]/image/upload/[path]
+  // Do not include width (w_) or quality (q_) parameters in the src URL—the component will add them
+  
   export let src;
   export let alt;
   export let loading = 'lazy';
@@ -44,23 +48,16 @@
   }
 </script>
 
-{#if display_width < max_display_width}
-  <!-- If image is too small to lightbox, don't add the functionality -->
-  <img
-    class="lightbox__button_open lightbox__image_inline"
-    src={display_src}
-    srcset={srcset}
-    sizes={`(max-width: ${max_display_width}px) 100vw, ${max_display_width}px`}
-    {alt}
-    {loading}
-    width={display_width}
-    height={display_height}
-    data-pagefind-index-attrs="alt"
-  />
-{:else}
-  <div class="lightbox__wrapper" style:--lightbox-threshold={`${max_display_width}px`}>
+{#if width >= max_display_width}
+  <button
+    class="lightbox__button_open"
+    on:pointerenter={showIntention}
+    on:focus={showIntention}
+    on:click={openLightbox}
+    aria-label="View larger image"
+  >
     <img
-      class="lightbox__image_inline lightbox__image_inline--fallback"
+      class="lightbox__image_inline"
       src={display_src}
       srcset={srcset}
       sizes={`(max-width: ${max_display_width}px) 100vw, ${max_display_width}px`}
@@ -69,26 +66,7 @@
       width={display_width}
       height={display_height}
     />
-
-    <button
-      class="lightbox__button_open"
-      on:pointerenter={showIntention}
-      on:focus={showIntention}
-      on:click={openLightbox}
-      aria-label="View larger image"
-    >
-      <img
-        class="lightbox__image_inline"
-        src={display_src}
-        srcset={srcset}
-        sizes={`(max-width: ${max_display_width}px) 100vw, ${max_display_width}px`}
-        {alt}
-        {loading}
-        width={display_width}
-        height={display_height}
-      />
-    </button>
-  </div>
+  </button>
 
   <!-- svelte-ignore a11y-click-events-have-key-events -->
   <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
@@ -104,16 +82,22 @@
       />
     {/if}
   </dialog>
+{:else}
+  <img
+    class="lightbox__image_inline"
+    src={display_src}
+    srcset={srcset}
+    sizes={`(max-width: ${max_display_width}px) 100vw, ${max_display_width}px`}
+    {alt}
+    {loading}
+    width={display_width}
+    height={display_height}
+    data-pagefind-index-attrs="alt"
+  />
 {/if}
 
 <style>
-  .lightbox__wrapper {
-    container-type: inline-size;
-    display: block;
-  }
-
   .lightbox__button_open {
-    display: none;
     box-sizing: content-box;
     padding: 0;
     background: none !important;
@@ -122,20 +106,6 @@
     border: var(--background-color) 0.3rem solid;
     box-shadow: rgba(0, 0, 0, 0.15) 0 1px 4px;
     margin-block-end: 0.5rem;
-  }
-
-  .lightbox__image_inline--fallback {
-    display: block;
-  }
-
-  @container (min-width: 790px) {
-    .lightbox__button_open {
-      display: block;
-    }
-
-    .lightbox__image_inline--fallback {
-      display: none;
-    }
   }
 
   :global(html.dark .lightbox__button_open) {

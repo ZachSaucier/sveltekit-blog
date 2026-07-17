@@ -7,7 +7,7 @@ tags:
   - javascript
   - css
   - svg
-cover_image: https://res.cloudinary.com/desumhldo/image/upload/q_100/v1702838810/console-delight/cover_daxdj0.webp
+cover_image: https://res.cloudinary.com/desumhldo/image/upload/v1702838810/console-delight/cover_daxdj0.webp
 cover_width: 1620
 cover_height: 582
 cover_alt: An animation running in the dev tools console.

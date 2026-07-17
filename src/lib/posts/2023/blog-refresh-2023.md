@@ -7,7 +7,7 @@ tags:
   - projects
   - css
   - svelte
-cover_image: https://res.cloudinary.com/desumhldo/image/upload/w_1600/v1700621534/blog_ybcr0n.webp
+cover_image: https://res.cloudinary.com/desumhldo/image/upload/v1700621534/blog_ybcr0n.webp
 cover_width: 1600
 cover_height: 864
 cover_alt: A screenshot of the new blog.
