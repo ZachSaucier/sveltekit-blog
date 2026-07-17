@@ -1,6 +1,4 @@
 <script>
-  import { browser } from '$app/environment';
-
   export let src;
   export let alt;
   export let loading = 'lazy';
@@ -10,20 +8,22 @@
   export let quality = 'auto';
 
   const aspect_ratio = width / height;
-  const high_dpi = browser ? window.devicePixelRatio >= 2 : false;
-
-  const width_based_on_dpi = high_dpi ? Math.round(width / 2) : width;
-  const height_based_on_dpi = high_dpi ? Math.round(height / 2) : height;
-
-  const display_width = Math.min(width_based_on_dpi, max_display_width);
+  const display_width = Math.min(width, max_display_width);
   const display_height = Math.round(display_width / aspect_ratio);
 
-  const should_double_src_size = high_dpi && width >= display_width * 2;
+  function buildCloudinaryUrl(width_value) {
+    return src.replace(/\/upload\//, `/upload/w_${width_value}/q_${quality}/`);
+  }
 
-  const display_src = src.replace(
-    /\/upload\//,
-    `/upload/w_${should_double_src_size ? display_width * 2 : display_width}/q_${quality}/`
-  );
+  const candidate_widths = Array.from(
+    new Set([display_width, Math.round(display_width * 2), width].filter(Boolean))
+  ).sort((a, b) => a - b);
+
+  const srcset = candidate_widths
+    .map((candidateWidth) => `${buildCloudinaryUrl(candidateWidth)} ${candidateWidth}w`)
+    .join(', ');
+  const display_src = buildCloudinaryUrl(display_width);
+  const full_src = buildCloudinaryUrl(width);
 
   let dialog;
   let close_button;
@@ -34,6 +34,7 @@
   }
 
   function openLightbox() {
+    intention = true;
     dialog.showModal();
     close_button.focus();
   }
@@ -48,6 +49,8 @@
   <img
     class="lightbox__button_open lightbox__image_inline"
     src={display_src}
+    srcset={srcset}
+    sizes={`(max-width: ${max_display_width}px) 100vw, ${max_display_width}px`}
     {alt}
     {loading}
     width={display_width}
@@ -55,23 +58,37 @@
     data-pagefind-index-attrs="alt"
   />
 {:else}
-  <button
-    class="lightbox__button_open"
-    on:pointerenter={showIntention}
-    on:focus={showIntention}
-    on:click={openLightbox}
-    aria-label="View larger image"
-  >
+  <div class="lightbox__wrapper" style:--lightbox-threshold={`${max_display_width}px`}>
     <img
-      class="lightbox__image_inline"
+      class="lightbox__image_inline lightbox__image_inline--fallback"
       src={display_src}
+      srcset={srcset}
+      sizes={`(max-width: ${max_display_width}px) 100vw, ${max_display_width}px`}
       {alt}
       {loading}
       width={display_width}
       height={display_height}
-      data-pagefind-index-attrs="alt"
     />
-  </button>
+
+    <button
+      class="lightbox__button_open"
+      on:pointerenter={showIntention}
+      on:focus={showIntention}
+      on:click={openLightbox}
+      aria-label="View larger image"
+    >
+      <img
+        class="lightbox__image_inline"
+        src={display_src}
+        srcset={srcset}
+        sizes={`(max-width: ${max_display_width}px) 100vw, ${max_display_width}px`}
+        {alt}
+        {loading}
+        width={display_width}
+        height={display_height}
+      />
+    </button>
+  </div>
 
   <!-- svelte-ignore a11y-click-events-have-key-events -->
   <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
@@ -80,17 +97,23 @@
     {#if intention}
       <img
         class="lightbox__image_full"
-        {src}
+        src={full_src}
         {alt}
-        width={width_based_on_dpi}
-        height={height_based_on_dpi}
+        width={width}
+        height={height}
       />
     {/if}
   </dialog>
 {/if}
 
 <style>
+  .lightbox__wrapper {
+    container-type: inline-size;
+    display: block;
+  }
+
   .lightbox__button_open {
+    display: none;
     box-sizing: content-box;
     padding: 0;
     background: none !important;
@@ -99,6 +122,20 @@
     border: var(--background-color) 0.3rem solid;
     box-shadow: rgba(0, 0, 0, 0.15) 0 1px 4px;
     margin-block-end: 0.5rem;
+  }
+
+  .lightbox__image_inline--fallback {
+    display: block;
+  }
+
+  @container (min-width: 790px) {
+    .lightbox__button_open {
+      display: block;
+    }
+
+    .lightbox__image_inline--fallback {
+      display: none;
+    }
   }
 
   :global(html.dark .lightbox__button_open) {
