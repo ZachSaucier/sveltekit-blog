@@ -78,7 +78,7 @@
       title={collapsed ? 'Open sidebar' : 'Collapse sidebar'}
       style={`transform: translateX(${translateX()}) translateY(-${Math.min(scrollY, 210)}px)`}
     >
-      <span aria-hidden>{collapsed ? '«' : '»'}</span>
+      <span aria-hidden="true">{collapsed ? '«' : '»'}</span>
       <span class="sr-only">Collapse sidebar</span>
     </button>
   {/if}
@@ -128,14 +128,14 @@
     @media (max-width: 749px) {
       padding-left: 40px;
     }
+  }
 
-    & main,
-    & footer {
-      margin: 0 auto;
+  .outer_container main,
+  :global(.outer_container footer) {
+    margin: 0 auto;
 
-      @media (max-width: 999px) {
-        width: 100%;
-      }
+    @media (max-width: 999px) {
+      width: 100%;
     }
   }
 
@@ -163,18 +163,18 @@
         display: none;
       }
     }
+  }
 
-    & .sidebar {
-      display: none;
+  :global(.outer_container .sidebar) {
+    display: none;
 
-      @media (max-width: 1199px) {
-        display: block;
-      }
+    @media (max-width: 1199px) {
+      display: block;
     }
+  }
 
-    & footer ul {
-      justify-content: center;
-    }
+  :global(.outer_container footer ul) {
+    justify-content: center;
   }
 
   .collapse_button {
