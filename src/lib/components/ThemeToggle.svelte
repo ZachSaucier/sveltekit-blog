@@ -3,7 +3,7 @@
   import { getCookie, setCookie } from '$lib/utilities/cookies';
   import Icon from '$lib/components/Icon.svelte';
 
-  let is_dark_mode = false;
+  let is_dark_mode = $state(false);
 
   if (browser) {
     const theme_cookie = getCookie('theme');
@@ -42,7 +42,7 @@
   id="theme_toggle"
   name="Theme toggle"
   checked={is_dark_mode}
-  on:click={handleSwitchDarkMode}
+  onclick={handleSwitchDarkMode}
   type="checkbox"
 />
 

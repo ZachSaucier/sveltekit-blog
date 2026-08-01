@@ -1,32 +1,48 @@
 <script>
   import { posts_per_page, tags_per_page } from '$lib/config';
 
-  export let current_page;
-  export let path = '/blog/page';
-  export let total_posts;
-  export let lower_bound;
-  export let upper_bound;
-  export let is_tag_pagination = false;
+  /**
+   * @typedef {Object} Props
+   * @property {any} current_page
+   * @property {string} [path]
+   * @property {any} total_posts
+   * @property {any} lower_bound
+   * @property {any} upper_bound
+   * @property {boolean} [is_tag_pagination]
+   */
 
-  const per_page = is_tag_pagination ? tags_per_page : posts_per_page;
-  const pages_available = Math.ceil(total_posts / per_page);
+  /** @type {Props} */
+  let {
+    current_page,
+    path = '/blog/page',
+    total_posts,
+    lower_bound,
+    upper_bound,
+    is_tag_pagination = false,
+  } = $props();
+
+  const per_page = $derived(is_tag_pagination ? tags_per_page : posts_per_page);
+  const pages_available = $derived(Math.ceil(total_posts / per_page));
 
   const is_current_page = (page) => (page === current_page ? 'page' : false);
 
-  const is_small_num_pages = pages_available <= 5;
+  const is_small_num_pages = $derived(pages_available <= 5);
 
-  const pages_to_show = [];
-  if (is_small_num_pages) {
-    for (let i = 1; i <= pages_available; i++) {
-      pages_to_show.push(i);
-    }
-  } else {
-    for (let i = current_page - 2; i < current_page + 3; i++) {
-      if (i > 0 && i <= pages_available) {
+  const pages_to_show = $derived.by(() => {
+    const pages_to_show = [];
+    if (is_small_num_pages) {
+      for (let i = 1; i <= pages_available; i++) {
         pages_to_show.push(i);
       }
+    } else {
+      for (let i = current_page - 2; i < current_page + 3; i++) {
+        if (i > 0 && i <= pages_available) {
+          pages_to_show.push(i);
+        }
+      }
     }
-  }
+    return pages_to_show;
+  });
 </script>
 
 <!-- For some reason, pagination clicks don't re-render properly without the #key block -->

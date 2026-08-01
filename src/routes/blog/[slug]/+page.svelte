@@ -6,29 +6,27 @@
   import Date from '$lib/components/Date.svelte';
   import BlueskyShare from '$lib/components/BlueskyShare.svelte';
 
-  export let data;
+  let { data } = $props();
 
-  let url = ``;
+  let url = $state('');
   onMount(() => (url = window.location.href));
 
-  const {
-    title,
-    description,
-    date,
-    updated,
-    cover_image,
-    cover_width,
-    cover_height,
-    cover_alt,
-    cover_in_post,
-    tags,
-  } = data.meta;
-  const { relatedPosts } = data;
+  const title = $derived(data.meta.title);
+  const description = $derived(data.meta.description);
+  const date = $derived(data.meta.date);
+  const updated = $derived(data.meta.updated);
+  const cover_image = $derived(data.meta.cover_image);
+  const cover_width = $derived(data.meta.cover_width);
+  const cover_height = $derived(data.meta.cover_height);
+  const cover_alt = $derived(data.meta.cover_alt);
+  const cover_in_post = $derived(data.meta.cover_in_post);
+  const tags = $derived(data.meta.tags);
+  const relatedPosts = $derived(data.relatedPosts);
 
-  // Eagerly import all post modules so the server-rendered component markup can be hydrated on the client.
+  // Eagerly import post modules so embedded Svelte components hydrate on the client.
   const modules = import.meta.glob('/src/lib/posts/**/*.md', { eager: true });
-  const postModule = modules[`/src/lib/posts/${data.meta.year}/${data.meta.slug}.md`];
-  let Post = postModule ? postModule.default : null;
+  const postModule = $derived(modules[`/src/lib/posts/${data.meta.year}/${data.meta.slug}.md`]);
+  const Post = $derived(postModule?.default ?? null);
 </script>
 
 <svelte:head>
@@ -68,7 +66,9 @@
         style="aspect-ratio: {cover_width} / {cover_height}"
       />
     {/if}
-    <svelte:component this={Post} />
+    {#if Post}
+      <Post />
+    {/if}
   </article>
 
   {#if tags}

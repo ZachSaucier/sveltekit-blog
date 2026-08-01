@@ -41,7 +41,7 @@ I have never been a recruiter, so I don't know what it's like. I know they are p
 
 But to me, messages like this are not appealing. If I were desperate for a job I might respond. But are those the only candidates that you want to hire?
 
-Then they also have the gall to message me *two more times*, often with even less helpful messages, without any response from me. If I don't respond, please don't message me again about the same role.
+Then they also have the gall to message me _two more times_, often with even less helpful messages, without any response from me. If I don't respond, please don't message me again about the same role.
 
 If you're a startup cold-calling people trying to get good talent, it's unlikely that you'll be able to offer a salary higher than most big tech companies. So you need to stand out by investing more time.
 

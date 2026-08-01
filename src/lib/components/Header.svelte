@@ -1,18 +1,23 @@
 <script>
   import MainNav from '$lib/components/MainNav.svelte';
 
-  export let style = '';
+  /**
+   * @typedef {Object} Props
+   * @property {string} [style]
+   */
 
-  const focusMain = () => {
+  /** @type {Props} */
+  let { style = '' } = $props();
+
+  const focusMain = (event) => {
+    event.preventDefault();
     const main = document.querySelector('main');
-    main.focus();
+    main?.focus();
   };
 </script>
 
 <header {style} data-pagefind-ignore="all">
-  <a on:click|preventDefault={focusMain} class="skip_to_content" href="#main">
-    Skip to main content
-  </a>
+  <a onclick={focusMain} class="skip_to_content" href="#main"> Skip to main content </a>
 
   <div class="site_title_wrapper">
     <a href="/blog">

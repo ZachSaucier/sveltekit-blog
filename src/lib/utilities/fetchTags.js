@@ -6,7 +6,7 @@ const fetchTags = async () => {
       // const year = path_pieces[4];
       const slug = `/blog/${path_pieces.pop().slice(0, -3)}`;
       return { ...metadata, slug };
-    })
+    }),
   );
 
   posts = posts.filter((post) => !post.draft);

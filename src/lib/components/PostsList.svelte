@@ -1,7 +1,7 @@
 <script>
   import Section from '$lib/components/Section.svelte';
   import Date from '$lib/components/Date.svelte';
-  export let posts = [];
+  let { posts = [] } = $props();
 </script>
 
 <div class="posts_list">
@@ -58,7 +58,7 @@
       transition: 0.15s;
     }
 
-    &:is(:hover, :focus)::after {
+    &:is(:global(:hover, :focus))::after {
       transform: translateX(6px);
     }
   }

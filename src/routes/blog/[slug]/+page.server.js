@@ -27,7 +27,7 @@ export const load = async ({ params }) => {
         meta,
         relatedPosts,
       };
-    } catch (err) {
+    } catch {
       // it's fine, try the next year
     }
     year++;

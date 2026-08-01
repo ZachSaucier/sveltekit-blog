@@ -1,9 +1,16 @@
 <script>
   import { browser } from '$app/environment';
 
-  export let expandable = false;
+  /**
+   * @typedef {Object} Props
+   * @property {boolean} [expandable]
+   * @property {import('svelte').Snippet} [children]
+   */
 
-  let theme = 'light';
+  /** @type {Props} */
+  let { expandable = false, children } = $props();
+
+  let theme = $state('light');
 
   if (browser) {
     theme = getCookie('theme');
@@ -18,12 +25,12 @@
   <details>
     <summary>View tweet</summary>
     <blockquote class="twitter-tweet" data-theme={theme}>
-      <slot />
+      {@render children?.()}
     </blockquote>
   </details>
 {:else}
   <blockquote class="twitter-tweet" data-theme={theme}>
-    <slot />
+    {@render children?.()}
   </blockquote>
 {/if}
 

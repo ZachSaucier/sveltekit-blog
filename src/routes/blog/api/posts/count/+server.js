@@ -4,12 +4,12 @@ export const prerender = true;
 
 export const GET = async () => {
   let posts = await Promise.all(
-    Object.entries(import.meta.glob('/src/lib/posts/**/*.md')).map(async ([path, resolver]) => {
+    Object.values(import.meta.glob('/src/lib/posts/**/*.md')).map(async (resolver) => {
       const { metadata } = await resolver();
       return {
         draft: metadata?.draft,
       };
-    })
+    }),
   );
 
   posts = posts.filter((post) => !post.draft);

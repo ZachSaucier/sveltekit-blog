@@ -1,12 +1,25 @@
 <script>
   import { onMount } from 'svelte';
 
-  export let pen_title;
-  export let slug;
-  export let tab = 'html,result';
-  export let height = 400;
-  export let username = 'ZachSaucier';
-  export let name = 'Zach Saucier';
+  /**
+   * @typedef {Object} Props
+   * @property {any} pen_title
+   * @property {any} slug
+   * @property {string} [tab]
+   * @property {number} [height]
+   * @property {string} [username]
+   * @property {string} [name]
+   */
+
+  /** @type {Props} */
+  let {
+    pen_title,
+    slug,
+    tab = 'html,result',
+    height = 400,
+    username = 'ZachSaucier',
+    name = 'Zach Saucier',
+  } = $props();
 
   onMount(() => __CPEmbed());
 </script>

@@ -14,9 +14,9 @@ export const load = async ({ data, url, fetch }) => {
     return {
       ...data,
       path: url.pathname,
-      recent_posts: recent_posts,
+      recent_posts,
     };
-  } catch (err) {
+  } catch {
     error(500, {
       message: 'Internal server error',
     });

@@ -1,8 +1,14 @@
 <script>
-  import { recent_posts } from '$lib/utilities/store';
   import Icon from '$lib/components/Icon.svelte';
 
-  export let style = '';
+  /**
+   * @typedef {Object} Props
+   * @property {string} [style]
+   * @property {Array<any>} [recent_posts]
+   */
+
+  /** @type {Props} */
+  let { style = '', recent_posts = [] } = $props();
 
   const projects = [
     {
@@ -56,11 +62,11 @@
 
 <aside class="sidebar" {style} data-pagefind-ignore="all">
   <div class="aside_content">
-    {#if $recent_posts.length}
+    {#if recent_posts.length}
       <h1>Recent posts</h1>
       <section>
         <ol>
-          {#each $recent_posts as post}
+          {#each recent_posts as post}
             <li>
               <a href={`/blog/${post.slug}`}>
                 <h2>{post.title}</h2>

@@ -1,28 +1,43 @@
 <script>
   import { browser } from '$app/environment';
-  export let src;
-  export let type = 'video/mp4';
-  export let width;
-  export let height;
-  export let alt;
-  export let max_display_width = 790;
-  export let quality = 'auto';
-  export let controls = true;
+  /**
+   * @typedef {Object} Props
+   * @property {any} src
+   * @property {string} [type]
+   * @property {any} width
+   * @property {any} height
+   * @property {any} alt
+   * @property {number} [max_display_width]
+   * @property {string} [quality]
+   * @property {boolean} [controls]
+   */
 
-  src = src.replace(/\/upload\//, `/upload/q_${quality}/`);
+  /** @type {Props} */
+  let {
+    src = $bindable(),
+    type = 'video/mp4',
+    width,
+    height,
+    alt,
+    max_display_width = 790,
+    quality = 'auto',
+    controls = true,
+  } = $props();
 
-  const aspect_ratio = width / height;
+  const display_src = $derived(src.replace(/\/upload\//, `/upload/q_${quality}/`));
+
+  const aspect_ratio = $derived(width / height);
   const high_dpi = browser ? window.devicePixelRatio >= 2 : false;
 
-  const width_based_on_dpi = high_dpi ? Math.round(width / 2) : width;
+  const width_based_on_dpi = $derived(high_dpi ? Math.round(width / 2) : width);
 
-  const display_width = Math.min(width_based_on_dpi, max_display_width);
-  const display_height = Math.round(display_width / aspect_ratio);
+  const display_width = $derived(Math.min(width_based_on_dpi, max_display_width));
+  const display_height = $derived(Math.round(display_width / aspect_ratio));
 </script>
 
-<!-- svelte-ignore a11y-media-has-caption -->
+<!-- svelte-ignore a11y_media_has_caption -->
 <video {controls} width={display_width} height={display_height}>
-  <source {src} {type} />
+  <source src={display_src} {type} />
   <p>{alt}</p>
 </video>
 

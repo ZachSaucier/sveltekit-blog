@@ -1,12 +1,15 @@
 <script>
   import { goto } from '$app/navigation';
-  import { current_page } from '$lib/utilities/store';
+  import { page as app_page } from '$app/state';
   import { nav_items } from '$lib/config';
   import Icon from '$lib/components/Icon.svelte';
   import ThemeToggle from '$lib/components/ThemeToggle.svelte';
 
-  function handleSearchSubmit(e) {
-    const form_data = new FormData(e.target);
+  const current_path = $derived(app_page.url.pathname);
+
+  function handleSearchSubmit(event) {
+    event.preventDefault();
+    const form_data = new FormData(event.currentTarget);
     let search_query = form_data.get('search');
     search_query = search_query.trim();
     if (search_query.length < 1) return;
@@ -16,9 +19,9 @@
 
 <nav>
   <ul>
-    {#each nav_items as page}
+    {#each nav_items as page (page.route)}
       {@const href = page.route}
-      {@const is_current_page = $current_page.startsWith(href)}
+      {@const is_current_page = current_path.startsWith(href)}
       <li>
         <a
           {href}
@@ -32,7 +35,7 @@
     {/each}
     <li class="search_item">
       <search>
-        <form on:submit|preventDefault={handleSearchSubmit}>
+        <form onsubmit={handleSearchSubmit}>
           <input type="search" name="search" results="0" placeholder="Search" />
         </form>
       </search>
@@ -59,7 +62,7 @@
     text-decoration: none;
   }
 
-  a:is(:hover, :focus) {
+  a:is(:global(:hover, :focus)) {
     text-decoration: underline;
   }
 

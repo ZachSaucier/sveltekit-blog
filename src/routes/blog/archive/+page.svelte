@@ -3,8 +3,8 @@
   import PageTitle from '$lib/components/PageTitle.svelte';
   import Date from '$lib/components/Date.svelte';
   import { title_ending } from '$lib/config';
-  export let data;
-  const { archive_data } = data;
+  let { data } = $props();
+  const archive_data = $derived(data.archive_data);
 
   const date_styles = 'top: 0.85rem; left: 0; font-size: 0.9em; line-height: 1.5;';
 </script>
@@ -76,7 +76,7 @@
   a {
     color: inherit;
 
-    &:is(:hover, :focus) {
+    &:is(:global(:hover, :focus)) {
       color: var(--link-color-hover);
     }
   }

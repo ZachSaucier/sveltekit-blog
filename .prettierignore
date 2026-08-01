@@ -1,0 +1,8 @@
+.codex
+.devcontainer
+.ona
+.svelte-kit
+build
+node_modules
+package
+static/pagefind

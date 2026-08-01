@@ -19,7 +19,7 @@ const fetchPosts = async ({ offset = 0, limit = posts_per_page, tag } = {}) => {
         excerpt = excerpt.replace(toc[0], '');
       }
       return { ...metadata, slug, full_post, excerpt };
-    })
+    }),
   );
 
   posts = posts.filter((post) => !post.draft);

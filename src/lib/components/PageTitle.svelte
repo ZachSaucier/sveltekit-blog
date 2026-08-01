@@ -1,11 +1,11 @@
 <script>
-  export let title;
+  let { title, children } = $props();
 </script>
 
 <header>
   <h1>{title}</h1>
   <div>
-    <slot />
+    {@render children?.()}
   </div>
 </header>
 

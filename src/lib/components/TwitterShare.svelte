@@ -1,22 +1,30 @@
 <script>
   import { twitter_handle } from '$lib/config';
 
-  export let text = null;
-  export let url;
-  export let hashtags = null;
-  export let related = null;
+  /**
+   * @typedef {Object} Props
+   * @property {any} [text]
+   * @property {any} url
+   * @property {any} [hashtags]
+   * @property {any} [related]
+   */
 
-  $: query = [
-    `via=${encodeURIComponent(twitter_handle)}`,
-    text && `text=${encodeURIComponent(text)}`,
-    url && `url=${encodeURIComponent(url)}`,
-    hashtags && `hashtags=${hashtags}`,
-    related && `related=${encodeURIComponent(related)}`,
-  ]
-    .filter(Boolean)
-    .join('&');
+  /** @type {Props} */
+  let { text = null, url, hashtags = null, related = null } = $props();
 
-  $: href = `https://twitter.com/intent/tweet?${query}`;
+  let query = $derived(
+    [
+      `via=${encodeURIComponent(twitter_handle)}`,
+      text && `text=${encodeURIComponent(text)}`,
+      url && `url=${encodeURIComponent(url)}`,
+      hashtags && `hashtags=${hashtags}`,
+      related && `related=${encodeURIComponent(related)}`,
+    ]
+      .filter(Boolean)
+      .join('&'),
+  );
+
+  let href = $derived(`https://twitter.com/intent/tweet?${query}`);
 </script>
 
 <svelte:head>

@@ -1,10 +1,17 @@
 <script>
-  export let type;
-  export let width;
-  export let fill = 'var(--text-color)';
+  /**
+   * @typedef {Object} Props
+   * @property {any} type
+   * @property {any} width
+   * @property {string} [fill]
+   */
 
-  const title =
-    type === 'Sun' ? 'Switch to light theme' : type === 'Moon' ? 'Switch to dark theme' : type;
+  /** @type {Props} */
+  let { type, width, fill = 'var(--text-color)' } = $props();
+
+  const title = $derived(
+    type === 'Sun' ? 'Switch to light theme' : type === 'Moon' ? 'Switch to dark theme' : type,
+  );
 </script>
 
 <svg class={type} viewBox="0 0 32 32" {width} xmlns="http://www.w3.org/2000/svg" fill="none">

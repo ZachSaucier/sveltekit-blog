@@ -1,37 +1,51 @@
 <script>
-  // Lightbox component for responsive images with zoom modal
-  // Expected src format: https://res.cloudinary.com/[account]/image/upload/[path]
-  // Do not include width (w_) or quality (q_) parameters in the src URL—the component will add them
-  
-  export let src;
-  export let alt;
-  export let loading = 'lazy';
-  export let width;
-  export let height;
-  export let max_display_width = 790;
-  export let quality = 'auto';
+  /**
+   * @typedef {Object} Props
+   * @property {string} src - Cloudinary URL without w_/q_ params
+   * @property {string} alt
+   * @property {string} [loading]
+   * @property {number} width
+   * @property {number} height
+   * @property {number} [max_display_width]
+   * @property {string} [quality]
+   */
 
-  const aspect_ratio = width / height;
-  const display_width = Math.min(width, max_display_width);
-  const display_height = Math.round(display_width / aspect_ratio);
+  /** @type {Props} */
+  let {
+    src,
+    alt,
+    loading = 'lazy',
+    width,
+    height,
+    max_display_width = 790,
+    quality = 'auto',
+  } = $props();
+
+  const aspect_ratio = $derived(width / height);
+  const display_width = $derived(Math.min(width, max_display_width));
+  const display_height = $derived(Math.round(display_width / aspect_ratio));
 
   function buildCloudinaryUrl(width_value) {
     return src.replace(/\/upload\//, `/upload/w_${width_value}/q_${quality}/`);
   }
 
-  const candidate_widths = Array.from(
-    new Set([display_width, Math.round(display_width * 2), width].filter(Boolean))
-  ).sort((a, b) => a - b);
+  const candidate_widths = $derived(
+    Array.from(new Set([display_width, Math.round(display_width * 2), width].filter(Boolean))).sort(
+      (a, b) => a - b,
+    ),
+  );
 
-  const srcset = candidate_widths
-    .map((candidateWidth) => `${buildCloudinaryUrl(candidateWidth)} ${candidateWidth}w`)
-    .join(', ');
-  const display_src = buildCloudinaryUrl(display_width);
-  const full_src = buildCloudinaryUrl(width);
+  const srcset = $derived(
+    candidate_widths
+      .map((candidateWidth) => `${buildCloudinaryUrl(candidateWidth)} ${candidateWidth}w`)
+      .join(', '),
+  );
+  const display_src = $derived(buildCloudinaryUrl(display_width));
+  const full_src = $derived(buildCloudinaryUrl(width));
 
-  let dialog;
-  let close_button;
-  let intention = false;
+  let dialog = $state();
+  let close_button = $state();
+  let intention = $state(false);
 
   function showIntention() {
     intention = true;
@@ -51,15 +65,15 @@
 {#if width >= max_display_width}
   <button
     class="lightbox__button_open"
-    on:pointerenter={showIntention}
-    on:focus={showIntention}
-    on:click={openLightbox}
+    onpointerenter={showIntention}
+    onfocus={showIntention}
+    onclick={openLightbox}
     aria-label="View larger image"
   >
     <img
       class="lightbox__image_inline"
       src={display_src}
-      srcset={srcset}
+      {srcset}
       sizes={`(max-width: ${max_display_width}px) 100vw, ${max_display_width}px`}
       {alt}
       {loading}
@@ -68,25 +82,19 @@
     />
   </button>
 
-  <!-- svelte-ignore a11y-click-events-have-key-events -->
-  <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
-  <dialog bind:this={dialog} on:click={closeLightbox}>
-    <button bind:this={close_button} class="lightbox__close" on:click={closeLightbox}>Close</button>
+  <!-- svelte-ignore a11y_click_events_have_key_events -->
+  <!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
+  <dialog bind:this={dialog} onclick={closeLightbox}>
+    <button bind:this={close_button} class="lightbox__close" onclick={closeLightbox}>Close</button>
     {#if intention}
-      <img
-        class="lightbox__image_full"
-        src={full_src}
-        {alt}
-        width={width}
-        height={height}
-      />
+      <img class="lightbox__image_full" src={full_src} {alt} {width} {height} />
     {/if}
   </dialog>
 {:else}
   <img
     class="lightbox__image_inline"
     src={display_src}
-    srcset={srcset}
+    {srcset}
     sizes={`(max-width: ${max_display_width}px) 100vw, ${max_display_width}px`}
     {alt}
     {loading}
@@ -103,13 +111,9 @@
     background: none !important;
 
     border-radius: 0.3rem;
-    border: var(--background-color) 0.3rem solid;
+    border: light-dark(var(--background-color), var(--gray-accent)) 0.3rem solid;
     box-shadow: rgba(0, 0, 0, 0.15) 0 1px 4px;
     margin-block-end: 0.5rem;
-  }
-
-  :global(html.dark .lightbox__button_open) {
-    border-color: var(--gray-accent);
   }
 
   dialog {
