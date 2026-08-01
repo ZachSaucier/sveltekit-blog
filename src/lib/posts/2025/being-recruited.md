@@ -77,6 +77,6 @@ I really love being able to direct what my team is working on while also buildin
 
 I want you to be excited at the prospect of us working together, not just one of many candidates. If you're not a little sad if I turn down the position then I'm probably not right for the role.
 
-## [Reach out](mailto:hello@zachsaucier.com) to me!
+## Reach out to me!
 
-Like I said, I'm always open to hearing from you.
+Like I said, I'm always open to hearing from you. [Reach out via email](mailto:hello@zachsaucier.com)!

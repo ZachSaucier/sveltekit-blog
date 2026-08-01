@@ -80,6 +80,16 @@ const config = {
       ],
     },
   },
+
+  vitePlugin: {
+    dynamicCompileOptions: ({ filename }) => {
+      if (filename.endsWith('.md')) {
+        // mdsvex output uses push() directly; dev-mode HTML validation expects
+        // a component context that mdsvex doesn't set up under Svelte 5.
+        return { dev: false };
+      }
+    },
+  },
 };
 
 export default config;
