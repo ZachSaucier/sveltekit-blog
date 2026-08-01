@@ -1,5 +1,6 @@
 import { start_year } from '$lib/config';
 import { error } from '@sveltejs/kit';
+import { render } from 'svelte/server';
 import getRelatedPosts from '$lib/utilities/getRelatedPosts.js';
 
 export const load = async ({ params }) => {
@@ -16,18 +17,18 @@ export const load = async ({ params }) => {
       // Get related posts based on internal links first, then tags
       let relatedPosts;
       try {
-        const postHtml = structuredClone(post.default.render().html);
+        const postHtml = render(post.default).body;
         relatedPosts = await getRelatedPosts(params.slug, meta.tags, 2, true, postHtml);
       } catch (e) {
         console.log(e);
       }
 
       return {
-        postHtml: structuredClone(post.default.render().html),
+        postHtml: render(post.default).body,
         meta,
         relatedPosts,
       };
-    } catch (err) {
+    } catch {
       // it's fine, try the next year
     }
     year++;

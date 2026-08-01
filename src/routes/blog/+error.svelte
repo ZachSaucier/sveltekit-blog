@@ -1,5 +1,5 @@
 <script>
-  import { page } from '$app/stores';
+  import { page } from '$app/state';
   import Section from '$lib/components/Section.svelte';
 </script>
 
@@ -15,7 +15,7 @@
     <footer>
       <sub>
         <h2>Error info</h2>
-        <p>{$page.status}: {$page.error.message}</p>
+        <p>{page.status}: {page.error.message}</p>
       </sub>
     </footer>
   </article>

@@ -1,8 +1,16 @@
 <script>
-  import { current_page } from '$lib/utilities/store';
+  import { page as app_page } from '$app/state';
   import { site_author, nav_items } from '$lib/config';
 
-  export let style = '';
+  /**
+   * @typedef {Object} Props
+   * @property {string} [style]
+   */
+
+  /** @type {Props} */
+  let { style = '' } = $props();
+
+  const current_path = $derived(app_page.url.pathname);
 </script>
 
 <footer {style}>
@@ -11,9 +19,9 @@
       <li>
         <p>&copy;{new Date().getFullYear()} {site_author}</p>
       </li>
-      {#each nav_items as page}
+      {#each nav_items as page (page.route)}
         {@const href = page.route}
-        {@const is_current_page = $current_page.startsWith(href)}
+        {@const is_current_page = current_path.startsWith(href)}
         <li>
           <a {href} class:active={is_current_page} aria-current={is_current_page ? 'page' : false}>
             {page.title}

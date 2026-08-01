@@ -5,7 +5,6 @@ import { mdsvex } from 'mdsvex';
 import rehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeToc from '@jsdevtools/rehype-toc';
-import { rehypeAccessibleEmojis } from 'rehype-accessible-emojis';
 import rehypeWidont from 'rehype-widont';
 import remarkGfm from 'remark-gfm';
 import remarkFootnotes from 'remark-footnotes';
@@ -49,7 +48,6 @@ const config = {
             },
           },
         ],
-        rehypeAccessibleEmojis,
         rehypeWidont,
       ],
 

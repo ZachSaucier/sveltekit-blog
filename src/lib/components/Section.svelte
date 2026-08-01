@@ -1,10 +1,17 @@
 <script>
-  export let searchable = false;
-  export let no_border = false;
+  /**
+   * @typedef {Object} Props
+   * @property {boolean} [searchable]
+   * @property {boolean} [no_border]
+   * @property {import('svelte').Snippet} [children]
+   */
+
+  /** @type {Props} */
+  let { searchable = false, no_border = false, children } = $props();
 </script>
 
 <section class:no_border data-pagefind-body={searchable || null}>
-  <slot />
+  {@render children?.()}
 </section>
 
 <style>

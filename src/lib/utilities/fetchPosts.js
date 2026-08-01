@@ -1,4 +1,5 @@
 import { posts_per_page } from '$lib/config';
+import { render } from 'svelte/server';
 
 const SEPARATOR = '<span class="excerpt_marker"></span>';
 const TOC_MATCH = new RegExp('<nav class="toc"(?:.*)>(.*)</ol></nav>');
@@ -10,7 +11,7 @@ const fetchPosts = async ({ offset = 0, limit = posts_per_page, tag } = {}) => {
       const path_pieces = path.split('/');
       // const year = path_pieces[4];
       const slug = path_pieces.pop().slice(0, -3);
-      const full_post = rest.default.render().html;
+      const full_post = render(rest.default).body;
       let excerpt = full_post.indexOf(SEPARATOR) !== -1 ? full_post.split(SEPARATOR)[0] : null;
       // Strip table of contents from the excerpt
       const toc = excerpt && excerpt.match(TOC_MATCH);
@@ -18,7 +19,7 @@ const fetchPosts = async ({ offset = 0, limit = posts_per_page, tag } = {}) => {
         excerpt = excerpt.replace(toc[0], '');
       }
       return { ...metadata, slug, full_post, excerpt };
-    })
+    }),
   );
 
   posts = posts.filter((post) => !post.draft);

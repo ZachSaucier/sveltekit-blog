@@ -53,7 +53,8 @@
   dialog,
   ::backdrop {
     --transition-duration: 0s;
-    transition: opacity var(--transition-duration),
+    transition:
+      opacity var(--transition-duration),
       display var(--transition-duration) allow-discrete;
     opacity: 0;
   }
@@ -224,8 +225,7 @@
     text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
   }
 
-  a[href^='https']:not([href^='https://zachsaucier.com'])
-  {
+  a[href^='https']:not([href^='https://zachsaucier.com']) {
     display: inline-flex;
     align-items: center;
     gap: 2px;

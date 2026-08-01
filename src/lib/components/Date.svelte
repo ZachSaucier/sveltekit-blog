@@ -1,11 +1,17 @@
 <script>
-  export let input_date;
-  export let updated = false;
-  export let short = false;
-  export let style = false;
+  /**
+   * @typedef {Object} Props
+   * @property {any} input_date
+   * @property {boolean} [updated]
+   * @property {boolean} [short]
+   * @property {boolean} [style]
+   */
 
-  const date = new Date(input_date);
-  const date_string =
+  /** @type {Props} */
+  let { input_date, updated = false, short = false, style = false } = $props();
+
+  const date = $derived(new Date(input_date));
+  const date_string = $derived(
     short || date.getFullYear() === new Date().getFullYear()
       ? date.toLocaleDateString(undefined, {
           month: 'short',
@@ -17,10 +23,11 @@
           month: 'short',
           day: 'numeric',
           timeZone: 'UTC',
-        });
+        }),
+  );
 
-  const updated_date = new Date(updated);
-  const updated_string =
+  const updated_date = $derived(new Date(updated));
+  const updated_string = $derived(
     short || updated_date.getFullYear() === new Date().getFullYear()
       ? updated_date.toLocaleDateString(undefined, {
           month: 'short',
@@ -32,7 +39,8 @@
           month: 'short',
           day: 'numeric',
           timeZone: 'UTC',
-        });
+        }),
+  );
 </script>
 
 <time datetime={updated ? updated_string : date_string} {style}>

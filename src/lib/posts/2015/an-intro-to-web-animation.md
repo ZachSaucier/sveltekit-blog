@@ -82,7 +82,9 @@ We can also make individual properties transition in at different speeds. _How_ 
 ```css
 .rocky {
   /* CSS from before... */
-  transition: 0.3s, transform 1s; /* Always put the more general before the less general */
+  transition:
+    0.3s,
+    transform 1s; /* Always put the more general before the less general */
 }
 ```
 
@@ -137,7 +139,9 @@ But first we need to do some preparation with our CSS. Let’s remove the hover 
   padding: 20px;
   margin-block-end: 15px;
   font-size: 2rem;
-  transition: 0.3s, transform 1s;
+  transition:
+    0.3s,
+    transform 1s;
 }
 .moved {
   color: white;

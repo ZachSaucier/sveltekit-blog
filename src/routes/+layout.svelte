@@ -1,21 +1,21 @@
 <script>
+  import { untrack } from 'svelte';
   import { fade } from 'svelte/transition';
   // import { preloadCode } from '$app/navigation';
 
   // import { nav_items } from '$lib/config';
   import { setCookie } from '$lib/utilities/cookies.js';
-  import { current_page, recent_posts } from '$lib/utilities/store';
 
   import Ribbons from '$lib/components/Ribbons.svelte';
   import Header from '$lib/components/Header.svelte';
   import Sidebar from '$lib/components/Sidebar.svelte';
   import Footer from '$lib/components/Footer.svelte';
 
-  export let data;
+  let { data, children } = $props();
 
-  let collapsed = data.collapsed === 'true';
-  let innerWidth = parseInt(data.innerWidth) || 1200;
-  let scrollY = 0;
+  let collapsed = $state(untrack(() => data.collapsed === 'true'));
+  let innerWidth = $state(untrack(() => parseInt(data.innerWidth) || 1200));
+  let scrollY = $state(0);
 
   function toggleCollapsed() {
     collapsed = !collapsed;
@@ -26,16 +26,8 @@
     setCookie('innerWidth', innerWidth);
   }
 
-  recent_posts.set(data.recent_posts);
-
   const transitionIn = { delay: 150, duration: 150 };
   const transitionOut = { duration: 100 };
-
-  /**
-   * Updates the global store with the current path. (Used for highlighting
-   * the current page in the nav, but could be useful for other purposes.)
-   **/
-  $: current_page.set(data.path);
 
   /**
    * This pre-fetches all top-level routes on the site in the background for faster loading.
@@ -50,7 +42,7 @@
   //   preloadCode(...navRoutes);
   // });
 
-  $: translateX = () => {
+  const translateX = $derived.by(() => {
     if (collapsed) {
       if (innerWidth < 1199) {
         return 0;
@@ -64,21 +56,21 @@
         return 0;
       }
     }
-  };
+  });
 </script>
 
-<svelte:window bind:innerWidth bind:scrollY on:resize={handleResize} />
+<svelte:window bind:innerWidth bind:scrollY onresize={handleResize} />
 
 <div class="outer_container" class:collapsed>
   {#if innerWidth >= 1200}
     <button
       class="collapse_button"
       aria-pressed={collapsed}
-      on:click={toggleCollapsed}
+      onclick={toggleCollapsed}
       title={collapsed ? 'Open sidebar' : 'Collapse sidebar'}
-      style={`transform: translateX(${translateX()}) translateY(-${Math.min(scrollY, 210)}px)`}
+      style={`transform: translateX(${translateX}) translateY(-${Math.min(scrollY, 210)}px)`}
     >
-      <span aria-hidden>{collapsed ? '«' : '»'}</span>
+      <span aria-hidden="true">{collapsed ? '«' : '»'}</span>
       <span class="sr-only">Collapse sidebar</span>
     </button>
   {/if}
@@ -89,11 +81,11 @@
 
   {#key data.path}
     <main id="main" tabindex="-1" in:fade={transitionIn} out:fade={transitionOut}>
-      <slot />
+      {@render children?.()}
     </main>
   {/key}
 
-  <Sidebar style="grid-area: Aside;" />
+  <Sidebar style="grid-area: Aside;" recent_posts={data.recent_posts} />
 
   <Footer style="grid-area: Footer" />
 </div>
@@ -130,7 +122,7 @@
     }
 
     & main,
-    & footer {
+    & :global(footer) {
       margin: 0 auto;
 
       @media (max-width: 999px) {
@@ -164,7 +156,7 @@
       }
     }
 
-    & .sidebar {
+    & :global(.sidebar) {
       display: none;
 
       @media (max-width: 1199px) {
@@ -172,7 +164,7 @@
       }
     }
 
-    & footer ul {
+    & :global(footer ul) {
       justify-content: center;
     }
   }
@@ -191,7 +183,7 @@
     border-bottom-right-radius: 4px;
     transition: opacity 0.2s linear;
 
-    &:is(:hover, :focus) {
+    &:is(:global(:hover, :focus)) {
       background-color: light-dark(var(--text-color), #fff);
       color: var(--background-color);
     }

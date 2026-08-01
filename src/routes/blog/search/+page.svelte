@@ -1,6 +1,6 @@
 <script>
   import { onMount } from 'svelte';
-  import { page } from '$app/stores';
+  import { page } from '$app/state';
   import { PagefindUI } from '@pagefind/default-ui';
   import '@pagefind/default-ui/css/ui.css';
   import { title_ending } from '$lib/config';
@@ -14,7 +14,7 @@
       showEmptyFilters: false,
       autofocus: true,
     });
-    pagefind.triggerSearch($page.url.searchParams.get('q'));
+    pagefind.triggerSearch(page.url.searchParams.get('q'));
     const search_input = document.querySelector('#search input');
     search_input.addEventListener('input', (e) => {
       const search_params = new URLSearchParams(window.location.search);
@@ -30,7 +30,7 @@
 </svelte:head>
 
 <Section>
-  <div id="search" />
+  <div id="search"></div>
 </Section>
 
 <style>

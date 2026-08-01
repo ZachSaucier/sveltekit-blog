@@ -3,13 +3,20 @@
   import PageTitle from '$lib/components/PageTitle.svelte';
   import Date from '$lib/components/Date.svelte';
 
-  export let posts = [];
-  export let tag = '';
+  /**
+   * @typedef {Object} Props
+   * @property {any} [posts]
+   * @property {string} [tag]
+   * @property {import('svelte').Snippet} [children]
+   */
+
+  /** @type {Props} */
+  let { posts = [], tag = '', children } = $props();
 </script>
 
 <Section no_border={true}>
   <PageTitle title="Tag: {tag}">
-    <slot />
+    {@render children?.()}
   </PageTitle>
 </Section>
 

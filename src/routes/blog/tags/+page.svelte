@@ -2,8 +2,8 @@
   import { title_ending } from '$lib/config';
   import Section from '$lib/components/Section.svelte';
   import PageTitle from '$lib/components/PageTitle.svelte';
-  export let data;
-  const { tags } = data;
+  let { data } = $props();
+  const tags = $derived(data.tags);
 </script>
 
 <svelte:head>

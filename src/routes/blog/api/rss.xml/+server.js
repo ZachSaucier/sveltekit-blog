@@ -8,7 +8,7 @@ export const GET = async () => {
       const { metadata } = await page();
       const slug = path.split('/').pop().split('.').shift();
       return { ...metadata, slug };
-    })
+    }),
   ).then((posts) => {
     return posts.sort((a, b) => new Date(b.date) - new Date(a.date));
   });
@@ -41,7 +41,7 @@ ${posts
 <link>${site_link}/${post.slug}</link>
 <description>${post.description}</description>
 <pubDate>${new Date(post.date).toUTCString()}</pubDate>
-</item>`
+</item>`,
   )
   .join('')}
 </channel>

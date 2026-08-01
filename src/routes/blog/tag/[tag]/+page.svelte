@@ -5,13 +5,16 @@
   import TagPostsList from '$lib/components/TagPostsList.svelte';
   import Pagination from '$lib/components/Pagination.svelte';
 
-  export let data;
-  const { page, tag, total_posts, posts } = data;
+  let { data } = $props();
+  const page = $derived(data.page);
+  const tag = $derived(data.tag);
+  const total_posts = $derived(data.total_posts);
+  const posts = $derived(data.posts);
 
-  $: lower_bound = page * tags_per_page - (tags_per_page - 1) || 1;
-  $: upper_bound = Math.min(page * tags_per_page, total_posts);
+  let lower_bound = $derived(page * tags_per_page - (tags_per_page - 1) || 1);
+  let upper_bound = $derived(Math.min(page * tags_per_page, total_posts));
 
-  const path = `/blog/tag/${tag}/page`;
+  let path = $derived(`/blog/tag/${tag}/page`);
 </script>
 
 <svelte:head>
