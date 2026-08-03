@@ -65,6 +65,11 @@ const config = {
           return;
         }
       },
+      handleInvalidUrl: ({ href, message }) => {
+        // Standard.site verification uses at:// URIs in <link> tags — not crawlable HTTP URLs
+        if (href.startsWith('at://')) return;
+        throw new Error(message);
+      },
       entries: [
         '/blog/',
         '/blog/page',
