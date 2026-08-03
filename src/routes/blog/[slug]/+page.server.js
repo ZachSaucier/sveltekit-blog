@@ -1,4 +1,5 @@
 import { start_year } from '$lib/config';
+import { getDocumentUriForSlug } from '$lib/atproto.js';
 import { error } from '@sveltejs/kit';
 import getRelatedPosts from '$lib/utilities/getRelatedPosts.js';
 import { renderPostHtml } from '$lib/utilities/renderPost.js';
@@ -26,6 +27,7 @@ export const load = async ({ params }) => {
       return {
         meta,
         relatedPosts,
+        documentAtUri: getDocumentUriForSlug(params.slug),
       };
     } catch {
       // it's fine, try the next year

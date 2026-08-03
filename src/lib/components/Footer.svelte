@@ -1,6 +1,6 @@
 <script>
   import { page as app_page } from '$app/state';
-  import { site_author, nav_items } from '$lib/config';
+  import { site_author, nav_items, bluesky_handle } from '$lib/config';
 
   /**
    * @typedef {Object} Props

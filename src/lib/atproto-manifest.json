@@ -1,0 +1,177 @@
+{
+  "publicationUri": "at://did:plc:r54odj7uf6ogi5gbwydg7okd/site.standard.publication/3ms5eaakno22x",
+  "documents": {
+    "vibe-coder": {
+      "uri": "at://did:plc:r54odj7uf6ogi5gbwydg7okd/site.standard.document/3ms5eaamgckik",
+      "rkey": "3ms5eaamgckik"
+    },
+    "newborn-tips": {
+      "uri": "at://did:plc:r54odj7uf6ogi5gbwydg7okd/site.standard.document/3ms5eaapunsj3",
+      "rkey": "3ms5eaapunsj3"
+    },
+    "customer-support-is-not-thriving": {
+      "uri": "at://did:plc:r54odj7uf6ogi5gbwydg7okd/site.standard.document/3ms5eaaqxssif",
+      "rkey": "3ms5eaaqxssif"
+    },
+    "llm-intelligence": {
+      "uri": "at://did:plc:r54odj7uf6ogi5gbwydg7okd/site.standard.document/3ms5eaart5scm",
+      "rkey": "3ms5eaart5scm"
+    },
+    "facebook-marketplace": {
+      "uri": "at://did:plc:r54odj7uf6ogi5gbwydg7okd/site.standard.document/3ms5eaaspi2jo",
+      "rkey": "3ms5eaaspi2jo"
+    },
+    "notes-the-best-todo-app": {
+      "uri": "at://did:plc:r54odj7uf6ogi5gbwydg7okd/site.standard.document/3ms5eaauk325w",
+      "rkey": "3ms5eaauk325w"
+    },
+    "being-recruited": {
+      "uri": "at://did:plc:r54odj7uf6ogi5gbwydg7okd/site.standard.document/3ms5eaavvzct5",
+      "rkey": "3ms5eaavvzct5"
+    },
+    "ceramic-chickens": {
+      "uri": "at://did:plc:r54odj7uf6ogi5gbwydg7okd/site.standard.document/3ms5eaawpfsyd",
+      "rkey": "3ms5eaawpfsyd"
+    },
+    "cheaper-labor": {
+      "uri": "at://did:plc:r54odj7uf6ogi5gbwydg7okd/site.standard.document/3ms5eaaxmpc2y",
+      "rkey": "3ms5eaaxmpc2y"
+    },
+    "creators-and-curators-dilemma": {
+      "uri": "at://did:plc:r54odj7uf6ogi5gbwydg7okd/site.standard.document/3ms5eaayqtknm",
+      "rkey": "3ms5eaayqtknm"
+    },
+    "user-centered-iteration": {
+      "uri": "at://did:plc:r54odj7uf6ogi5gbwydg7okd/site.standard.document/3ms5eab24rs7j",
+      "rkey": "3ms5eab24rs7j"
+    },
+    "external-link-icons": {
+      "uri": "at://did:plc:r54odj7uf6ogi5gbwydg7okd/site.standard.document/3ms5eab2x5ksk",
+      "rkey": "3ms5eab2x5ksk"
+    },
+    "subsonic": {
+      "uri": "at://did:plc:r54odj7uf6ogi5gbwydg7okd/site.standard.document/3ms5eab3vgcd3",
+      "rkey": "3ms5eab3vgcd3"
+    },
+    "the-ai-stanley-parable": {
+      "uri": "at://did:plc:r54odj7uf6ogi5gbwydg7okd/site.standard.document/3ms5eab4kvss4",
+      "rkey": "3ms5eab4kvss4"
+    },
+    "5-year-anniversary-party": {
+      "uri": "at://did:plc:r54odj7uf6ogi5gbwydg7okd/site.standard.document/3ms5eab5gas65",
+      "rkey": "3ms5eab5gas65"
+    },
+    "blog-refresh-2023": {
+      "uri": "at://did:plc:r54odj7uf6ogi5gbwydg7okd/site.standard.document/3ms5eab63qcq2",
+      "rkey": "3ms5eab63qcq2"
+    },
+    "site-redesign-2017": {
+      "uri": "at://did:plc:r54odj7uf6ogi5gbwydg7okd/site.standard.document/3ms5eab6yzsep",
+      "rkey": "3ms5eab6yzsep"
+    },
+    "developer-chatroom-etiquette": {
+      "uri": "at://did:plc:r54odj7uf6ogi5gbwydg7okd/site.standard.document/3ms5eab7qhs2c",
+      "rkey": "3ms5eab7qhs2c"
+    },
+    "lessons-learned-from-a-dining-hall": {
+      "uri": "at://did:plc:r54odj7uf6ogi5gbwydg7okd/site.standard.document/3ms5eabaiv2ip",
+      "rkey": "3ms5eabaiv2ip"
+    },
+    "an-activity-discovery-app": {
+      "uri": "at://did:plc:r54odj7uf6ogi5gbwydg7okd/site.standard.document/3ms5eabbg6kvt",
+      "rkey": "3ms5eabbg6kvt"
+    },
+    "want-to-learn-web-development": {
+      "uri": "at://did:plc:r54odj7uf6ogi5gbwydg7okd/site.standard.document/3ms5eabc6ls5z",
+      "rkey": "3ms5eabc6ls5z"
+    },
+    "desktop-background-visualization": {
+      "uri": "at://did:plc:r54odj7uf6ogi5gbwydg7okd/site.standard.document/3ms5eabcxycrj",
+      "rkey": "3ms5eabcxycrj"
+    },
+    "intro-to-electronic-music": {
+      "uri": "at://did:plc:r54odj7uf6ogi5gbwydg7okd/site.standard.document/3ms5eabdz6s77",
+      "rkey": "3ms5eabdz6s77"
+    },
+    "spiral-learning": {
+      "uri": "at://did:plc:r54odj7uf6ogi5gbwydg7okd/site.standard.document/3ms5eabeslcoz",
+      "rkey": "3ms5eabeslcoz"
+    },
+    "create-useful-things": {
+      "uri": "at://did:plc:r54odj7uf6ogi5gbwydg7okd/site.standard.document/3ms5eabfovkb3",
+      "rkey": "3ms5eabfovkb3"
+    },
+    "starting-js": {
+      "uri": "at://did:plc:r54odj7uf6ogi5gbwydg7okd/site.standard.document/3ms5eabgic267",
+      "rkey": "3ms5eabgic267"
+    },
+    "starting-html-and-css": {
+      "uri": "at://did:plc:r54odj7uf6ogi5gbwydg7okd/site.standard.document/3ms5eabhpe227",
+      "rkey": "3ms5eabhpe227"
+    },
+    "the-why-and-what-of-web-development": {
+      "uri": "at://did:plc:r54odj7uf6ogi5gbwydg7okd/site.standard.document/3ms5eabiplcwi",
+      "rkey": "3ms5eabiplcwi"
+    },
+    "personal-studies": {
+      "uri": "at://did:plc:r54odj7uf6ogi5gbwydg7okd/site.standard.document/3ms5eabjqrsiq",
+      "rkey": "3ms5eabjqrsiq"
+    },
+    "asset-loading-effects": {
+      "uri": "at://did:plc:r54odj7uf6ogi5gbwydg7okd/site.standard.document/3ms5eabki7svc",
+      "rkey": "3ms5eabki7svc"
+    },
+    "the-ultimate-wearable": {
+      "uri": "at://did:plc:r54odj7uf6ogi5gbwydg7okd/site.standard.document/3ms5eabljgc25",
+      "rkey": "3ms5eabljgc25"
+    },
+    "definition-vs-description": {
+      "uri": "at://did:plc:r54odj7uf6ogi5gbwydg7okd/site.standard.document/3ms5eabm7v27e",
+      "rkey": "3ms5eabm7v27e"
+    },
+    "an-intro-to-web-animation": {
+      "uri": "at://did:plc:r54odj7uf6ogi5gbwydg7okd/site.standard.document/3ms5eabnltcdb",
+      "rkey": "3ms5eabnltcdb"
+    },
+    "how-to-learn-anything": {
+      "uri": "at://did:plc:r54odj7uf6ogi5gbwydg7okd/site.standard.document/3ms5eaboj4sp7",
+      "rkey": "3ms5eaboj4sp7"
+    },
+    "why-i-still-contribute-to-stack-overflow": {
+      "uri": "at://did:plc:r54odj7uf6ogi5gbwydg7okd/site.standard.document/3ms5eabpmbskz",
+      "rkey": "3ms5eabpmbskz"
+    },
+    "avoiding-tables-for-layout": {
+      "uri": "at://did:plc:r54odj7uf6ogi5gbwydg7okd/site.standard.document/3ms5eabqtds62",
+      "rkey": "3ms5eabqtds62"
+    },
+    "javascript-vs-flash": {
+      "uri": "at://did:plc:r54odj7uf6ogi5gbwydg7okd/site.standard.document/3ms5eabrrmkhh",
+      "rkey": "3ms5eabrrmkhh"
+    },
+    "limiting-reflow": {
+      "uri": "at://did:plc:r54odj7uf6ogi5gbwydg7okd/site.standard.document/3ms5eabsg4sgo",
+      "rkey": "3ms5eabsg4sgo"
+    },
+    "responsive-units": {
+      "uri": "at://did:plc:r54odj7uf6ogi5gbwydg7okd/site.standard.document/3ms5eabt6k2fl",
+      "rkey": "3ms5eabt6k2fl"
+    },
+    "the-picture-element": {
+      "uri": "at://did:plc:r54odj7uf6ogi5gbwydg7okd/site.standard.document/3ms5eabtxwk6j",
+      "rkey": "3ms5eabtxwk6j"
+    },
+    "responsive-design-primer": {
+      "uri": "at://did:plc:r54odj7uf6ogi5gbwydg7okd/site.standard.document/3ms5eabupekzl",
+      "rkey": "3ms5eabupekzl"
+    },
+    "the-creative-process": {
+      "uri": "at://did:plc:r54odj7uf6ogi5gbwydg7okd/site.standard.document/3ms5eabvlosw4",
+      "rkey": "3ms5eabvlosw4"
+    },
+    "shapes-with-gradients": {
+      "uri": "at://did:plc:r54odj7uf6ogi5gbwydg7okd/site.standard.document/3ms5eabwmvcq6",
+      "rkey": "3ms5eabwmvcq6"
+    }
+  }
+}

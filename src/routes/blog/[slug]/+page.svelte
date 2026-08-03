@@ -45,6 +45,9 @@
     <meta name="twitter:image" content={cover_image} />
     <meta name="twitter:image:alt" content={cover_alt} />
   {/if}
+  {#if data.documentAtUri}
+    <link rel="site.standard.document" href={data.documentAtUri} />
+  {/if}
 </svelte:head>
 
 <Section searchable={true}>
@@ -151,9 +154,12 @@
       list-style: none;
     }
 
+    & li {
+      white-space: nowrap;
+    }
+
     & li:not(:last-child)::after {
       content: ', ';
-      margin-inline-start: -5px;
     }
   }
 

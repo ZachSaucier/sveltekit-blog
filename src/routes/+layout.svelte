@@ -4,6 +4,7 @@
   // import { preloadCode } from '$app/navigation';
 
   // import { nav_items } from '$lib/config';
+  import { atproto_publication_uri } from '$lib/atproto.js';
   import { setCookie } from '$lib/utilities/cookies.js';
 
   import Ribbons from '$lib/components/Ribbons.svelte';
@@ -60,6 +61,12 @@
 </script>
 
 <svelte:window bind:innerWidth bind:scrollY onresize={handleResize} />
+
+<svelte:head>
+  {#if atproto_publication_uri}
+    <link rel="site.standard.publication" href={atproto_publication_uri} />
+  {/if}
+</svelte:head>
 
 <div class="outer_container" class:collapsed>
   {#if innerWidth >= 1200}

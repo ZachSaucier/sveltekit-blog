@@ -60,6 +60,11 @@ const config = {
   kit: {
     adapter: adapter(),
     prerender: {
+      handleHttpError: ({ path, status }) => {
+        if (path === '/.well-known/site.standard.publication' && status === 404) {
+          return;
+        }
+      },
       entries: [
         '/blog/',
         '/blog/page',
@@ -75,6 +80,7 @@ const config = {
         '/blog/api/posts/count/',
         '/blog/api/posts/page/[page]/',
         '/blog/api/rss.xml/',
+        '/.well-known/site.standard.publication/',
       ],
     },
   },
