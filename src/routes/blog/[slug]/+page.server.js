@@ -3,6 +3,7 @@ import { getDocumentUriForSlug } from '$lib/atproto.js';
 import { error } from '@sveltejs/kit';
 import getRelatedPosts from '$lib/utilities/getRelatedPosts.js';
 import { renderPostHtml } from '$lib/utilities/renderPost.js';
+import { normalizeTags } from '$lib/utilities/normalizeTags.js';
 
 export const load = async ({ params }) => {
   // This searches through the directories of posts, looking for a file that matches the slug, regardless of the year
@@ -13,7 +14,7 @@ export const load = async ({ params }) => {
     try {
       const match = modules[`/src/lib/posts/${year}/${params.slug}.md`];
       const post = await match();
-      const meta = { ...post.metadata, slug: `${params.slug}`, year };
+      const meta = { ...post.metadata, slug: `${params.slug}`, year, tags: normalizeTags(post.metadata.tags) };
 
       // Get related posts based on internal links first, then tags
       let relatedPosts;

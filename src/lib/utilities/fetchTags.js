@@ -1,3 +1,5 @@
+import { normalizeTags } from './normalizeTags.js';
+
 const fetchTags = async () => {
   let posts = await Promise.all(
     Object.entries(import.meta.glob('/src/lib/posts/**/*.md')).map(async ([path, resolver]) => {
@@ -5,7 +7,7 @@ const fetchTags = async () => {
       const path_pieces = path.split('/');
       // const year = path_pieces[4];
       const slug = `/blog/${path_pieces.pop().slice(0, -3)}`;
-      return { ...metadata, slug };
+      return { ...metadata, tags: normalizeTags(metadata.tags), slug };
     }),
   );
 
@@ -14,7 +16,6 @@ const fetchTags = async () => {
   let unique_tags = {};
 
   posts.forEach((post) => {
-    post.tags = post.tags || [];
     post.tags.forEach((tag) => {
       if (Object.prototype.hasOwnProperty.call(unique_tags, tag)) {
         unique_tags[tag].count += 1;

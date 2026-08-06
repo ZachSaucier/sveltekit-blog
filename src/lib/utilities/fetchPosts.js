@@ -1,5 +1,6 @@
 import { posts_per_page } from '$lib/config';
 import { renderPostHtml } from '$lib/utilities/renderPost.js';
+import { normalizeTags } from '$lib/utilities/normalizeTags.js';
 
 const SEPARATOR = '<span class="excerpt_marker"></span>';
 const TOC_MATCH = new RegExp('<nav class="toc"(?:.*)>(.*)</ol></nav>');
@@ -18,7 +19,7 @@ const fetchPosts = async ({ offset = 0, limit = posts_per_page, tag } = {}) => {
       if (toc) {
         excerpt = excerpt.replace(toc[0], '');
       }
-      return { ...metadata, slug, full_post, excerpt };
+      return { ...metadata, tags: normalizeTags(metadata.tags), slug, full_post, excerpt };
     }),
   );
 

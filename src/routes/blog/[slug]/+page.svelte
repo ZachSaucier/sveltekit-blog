@@ -5,6 +5,7 @@
   import Section from '$lib/components/Section.svelte';
   import Date from '$lib/components/Date.svelte';
   import BlueskyShare from '$lib/components/BlueskyShare.svelte';
+  import { normalizeTags } from '$lib/utilities/normalizeTags.js';
 
   let { data } = $props();
 
@@ -20,7 +21,7 @@
   const cover_height = $derived(data.meta.cover_height);
   const cover_alt = $derived(data.meta.cover_alt);
   const cover_in_post = $derived(data.meta.cover_in_post);
-  const tags = $derived(data.meta.tags);
+  const tags = $derived(normalizeTags(data.meta.tags));
   const relatedPosts = $derived(data.relatedPosts);
 
   // Eagerly import post modules so embedded Svelte components hydrate on the client.
@@ -74,12 +75,12 @@
     {/if}
   </article>
 
-  {#if tags}
+  {#if tags.length > 0}
     <aside>
       <div class="tags">
         <h2>Tags:</h2>
         <ul>
-          {#each tags as tag}
+          {#each tags as tag (tag)}
             <li>
               <a href="/blog/tag/{tag}/">
                 {tag}
