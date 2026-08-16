@@ -23,7 +23,10 @@ const fetchPosts = async ({ offset = 0, limit = posts_per_page, tag } = {}) => {
     }),
   );
 
-  posts = posts.filter((post) => !post.draft);
+  // Hide drafts in production builds; show them during `npm run dev`
+  if (!import.meta.env.DEV) {
+    posts = posts.filter((post) => !post.draft);
+  }
 
   let sorted_posts = posts.sort((a, b) => new Date(b.date) - new Date(a.date));
 

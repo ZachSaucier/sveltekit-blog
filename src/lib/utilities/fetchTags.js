@@ -11,7 +11,9 @@ const fetchTags = async () => {
     }),
   );
 
-  posts = posts.filter((post) => !post.draft);
+  if (!import.meta.env.DEV) {
+    posts = posts.filter((post) => !post.draft);
+  }
 
   let unique_tags = {};
 

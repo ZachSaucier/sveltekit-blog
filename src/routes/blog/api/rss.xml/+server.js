@@ -13,7 +13,9 @@ export const GET = async () => {
     return posts.sort((a, b) => new Date(b.date) - new Date(a.date));
   });
 
-  data = data.filter((post) => !post.draft);
+  if (!import.meta.env.DEV) {
+    data = data.filter((post) => !post.draft);
+  }
 
   const body = render(data);
   const headers = {

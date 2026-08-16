@@ -12,7 +12,9 @@ export const GET = async () => {
     }),
   );
 
-  posts = posts.filter((post) => !post.draft);
+  if (!import.meta.env.DEV) {
+    posts = posts.filter((post) => !post.draft);
+  }
 
   return json(Object.keys(posts).length);
 };
