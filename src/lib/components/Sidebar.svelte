@@ -13,18 +13,13 @@
   const projects = [
     {
       title: 'Just Read',
-      description: 'A customizable read mode web extension.',
+      description: 'A customizable read mode web extension. 250k weekly users.',
       link: 'https://justread.link/',
     },
     {
       title: 'Toddler Photo Lock',
-      description: 'An iOS app to help your toddler lose interest in smart phones',
+      description: 'An iOS app to help your toddler lose interest in smart phones.',
       link: 'https://toddlerphotolock.com/',
-    },
-    {
-      title: 'Disentegrate.js',
-      description: 'Break DOM elements into animated particles.',
-      link: 'https://github.com/ZachSaucier/Disintegrate',
     },
   ];
 

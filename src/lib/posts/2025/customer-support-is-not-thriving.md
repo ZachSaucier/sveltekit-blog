@@ -17,7 +17,7 @@ cover_alt: A clay person that has multiple toothpicks stabbed into them with Xs 
 cover_in_post: false
 ---
 
-I've been doing some form of "customer support" for more than the last 12 years. I started my programming journey by participating on StackOverflow, answering more than 600 questions and doing around 7,000 other actions like commenting and making edits. My first full-time tech job at GSAP required heavy involvement in the (very helpful) [GSAP forums](https://gsap.com/community/). I've been maintaining a fairly well used (>200k monthly) open-source web extension, [Just Read](https://justread.link), for the last 10 years. Supporting Just Read means responding to customer emails and (now over 430!) [GitHub issues](https://github.com/ZachSaucier/Just-Read/issues).
+I've been doing some form of "customer support" for more than the last 12 years. I started my programming journey by participating on StackOverflow, answering more than 600 questions and doing around 7,000 other actions like commenting and making edits. My first full-time tech job at GSAP required heavy involvement in the (very helpful) [GSAP forums](https://gsap.com/community/). I've been maintaining a well used (>250k weekly) open-source web extension, [Just Read](https://justread.link), for the last 10 years. Supporting Just Read means responding to customer emails and (now over 430!) [GitHub issues](https://github.com/ZachSaucier/Just-Read/issues).
 
 All of that is to say that while I've never worked full-time in customer support, I've done my share of it.
 
