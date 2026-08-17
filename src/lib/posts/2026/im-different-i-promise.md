@@ -1,7 +1,7 @@
 ---
 title: Am I different than the average engineer?
-date: 2026-08-18
-description: Trying to put words to what makes me a great engineer.
+date: 2026-08-17
+description: Trying to put words to what I think makes me a great engineer.
 tags:
   - rambling
   - life
@@ -14,7 +14,6 @@ cover_width: 1024
 cover_height: 616
 cover_alt: Four birds on a branch. Three are mostly green and of the same species. The fourth is a different species and more rainbow in color.
 cover_in_post: true
-draft: true
 ---
 
 I have held a diverse set of full-time roles within the tech industry. These roles have ranged from a jack-of-all-trades at a 2-person product company to a lead developer for some of the best marketing sites in the world.
