@@ -6,11 +6,11 @@ tags:
   - projects
   - products
   - music
-cover_image: https://res.cloudinary.com/desumhldo/image/upload/v1787444176/navidrome_qvhxpt.webp
-cover_width: 1688
-cover_height: 889
-cover_alt: A screenshot of my Navidrome app
-cover_in_post: false
+cover_image: https://res.cloudinary.com/desumhldo/image/upload/v1787447003/friendship-ended_uphfmp.webp
+cover_width: 1000
+cover_height: 750
+cover_alt: The "Friendship ended" meme saying my friendship ended with Subsonic and now Navidrome is my best friend.
+cover_in_post: true
 ---
 
 I've been using [Subsonic](https://www.subsonic.org/pages/index.jsp) to self-host my personal music library for many years. I even wrote [a love / hate blog post](/blog/subsonic) about it back in 2024. It's always been "good enough". 

@@ -14,7 +14,13 @@ cover_in_post: false
 draft: true
 ---
 
-Here's a list of things that I accomplished using one month of Cursor's $20 / month paid plan, in my (very) limited free time:
+I use Cursor daily at work. It's been great!
+
+This past month I decided to purchase the most basic, $20 / month plan for Cursor to do some work on my personal projects.
+ 
+Here's a list of things that I accomplished using the $20 / month plan in my (very) limited free time:
+
+<span class="excerpt_marker"></span>
 
 - Migrated my blog from Svelte 4 to Svelte 5
 - Added AT Protocol / Bluesky support to my blog

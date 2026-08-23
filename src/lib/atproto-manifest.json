@@ -176,6 +176,10 @@
     "im-different-i-promise": {
       "uri": "at://did:plc:r54odj7uf6ogi5gbwydg7okd/site.standard.document/3mtcvkxmjzkk5",
       "rkey": "3mtcvkxmjzkk5"
+    },
+    "navidrome": {
+      "uri": "at://did:plc:r54odj7uf6ogi5gbwydg7okd/site.standard.document/3mtpjxqmdp2kz",
+      "rkey": "3mtpjxqmdp2kz"
     }
   }
 }
