@@ -13,6 +13,14 @@ cover_alt: A screenshot of my Subsonic app
 cover_in_post: false
 ---
 
+<script>
+	import ContentAside from "$lib/components/ContentAside.svelte";
+</script>
+
+<ContentAside>
+  <strong>Aside:</strong> I no longer use Subsonic. See my post about <a href="/blog/navidrome">Navidrome</a>!
+</ContentAside>
+
 ## My pre-Subsonic era
 
 Remember the days when all the music you owned was on some hardware in your home (computer, iPod Shuffle, CD, etc.)? Before streaming was the norm every person had to be their own music curator.
@@ -76,3 +84,5 @@ To load all of your playlists quickly, put them in a directory on your server. T
 I bought the unlimited Premium package. Sure Subsonic has its issues but it solves more important issues that other platforms don't solve for me. Thankfully the code is also fairly easy to make minor tweaks to.
 
 Is there room for a better product in this space? Definitely. But I'm happy with Subsonic until I hear about something better for my use case.
+
+**Edit:** I no longer use Subsonic. See my post about [Navidrome](/blog/navidrome)!
