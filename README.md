@@ -21,6 +21,7 @@ Did you find this repo useful? I'd really appreciate it if you would consider bu
 - **Related posts functionality** which makes use of your tags to link to similar posts in your blog.
 - **RSS feed** for users to easily subscribe to new posts.
 - **AT Protocol (Standard.site) sync** so blog posts are published as records on your PDS for discovery on Bluesky and other AT apps. See [AT Protocol sync](#at-protocol-sync) below.
+- **Bluesky comments support.** Link a Bluesky post in the front matter under `bluesky` and it will automatically convert it to an `at://...` URI and embed any comments that exist.
 - **Draft blog post functionality** so you can save to the same place but not have the link show up in your listings or counts.
 - **Footnotes functionality**
 - **Blog excerpt functionality** so that you can show the start of your blog posts on the blog homepage instead of the description.

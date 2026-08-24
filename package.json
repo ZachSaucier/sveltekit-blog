@@ -12,6 +12,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
+    "@ewanc26/svelte-standard-site": "^0.2.4",
     "@microflash/rehype-toc": "^1.0.2",
     "@pagefind/default-ui": "^1.0.4",
     "@sveltejs/adapter-static": "^3.0.10",
@@ -21,6 +22,7 @@
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-svelte": "^3.20.0",
     "globals": "^17.7.0",
+    "gray-matter": "^4.0.3",
     "mdsvex": "^0.12.7",
     "pagefind": "^1.0.4",
     "prettier": "^3.9.4",
@@ -36,8 +38,6 @@
     "svelte-preprocess-import-assets": "^1.0.1",
     "svelte-sitemap": "^2.6.0",
     "vite": "^8.1.3",
-    "@ewanc26/svelte-standard-site": "^0.2.4",
-    "gray-matter": "^4.0.3",
     "zod": "^4.4.3"
   },
   "type": "module",
@@ -46,5 +46,8 @@
     "@ewanc26/tid": "1.1.3",
     "@ewanc26/utils": "0.1.5",
     "cookie": "^0.7.2"
+  },
+  "dependencies": {
+    "bsky-comments": "^1.0.1"
   }
 }

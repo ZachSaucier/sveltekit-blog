@@ -5,6 +5,7 @@
   import Section from '$lib/components/Section.svelte';
   import Date from '$lib/components/Date.svelte';
   import BlueskyShare from '$lib/components/BlueskyShare.svelte';
+  import BlueskyComments from '$lib/components/BlueskyComments.svelte';
   import { normalizeTags } from '$lib/utilities/normalizeTags.js';
 
   let { data } = $props();
@@ -23,6 +24,7 @@
   const cover_in_post = $derived(data.meta.cover_in_post);
   const tags = $derived(normalizeTags(data.meta.tags));
   const relatedPosts = $derived(data.relatedPosts);
+  const bluesky = $derived(data.meta.bluesky);
 
   // Eagerly import post modules so embedded Svelte components hydrate on the client.
   const modules = import.meta.glob('/src/lib/posts/**/*.md', { eager: true });
@@ -105,6 +107,10 @@
         {/each}
       </ul>
     </aside>
+  {/if}
+
+  {#if bluesky}
+    <BlueskyComments {bluesky} />
   {/if}
 
   <aside>

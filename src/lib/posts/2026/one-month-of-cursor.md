@@ -46,5 +46,6 @@ After all of this, I had only spent 14% of my total monthly Cursor model allowan
 
 - Swap from [Subsonic](/blog/subsonic/) to [Navidrome](https://www.navidrome.org/) for my self-hosted music libary (I wrote a short [blog post](/blog/navidrome) about this).
 - Set up [Immich](https://immich.app/) for analyzing and categorizing our family photos locally.
+- Added Bluesky comments functionality to my blog (done client side to keep my site static).
 
 21% used
